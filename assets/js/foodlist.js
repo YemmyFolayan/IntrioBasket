@@ -1,24 +1,39 @@
-fetch("http://intriobasket.pexceptos.com/api/food", {
-  method: "GET",
-  body:
-    "title=" +
-    encodeURIComponent("My awesome new article") +
-    "&body=" +
-    encodeURIComponent("This is the text of my article"),
-})
-  .then(function (response) {
-    // The API call was successful!
-    if (response.ok) {
-      return response.json();
-    } else {
-      return Promise.reject(response);
-    }
-  })
-  .then(function (data) {
-    // This is the JSON from our response
-    console.log(data);
-  })
-  .catch(function (err) {
-    // There was an error
-    console.warn("Something went wrong.", err);
-  });
+const app = document.getElementById("root");
+
+
+
+const containers = document.createElement("div");
+containers.setAttribute("class", "containers");
+
+
+app.appendChild(containers);
+
+var request = new XMLHttpRequest();
+request.open("GET", "https://ghibliapi.herokuapp.com/films", true);
+request.onload = function () {
+  // Begin accessing JSON data here
+  var data = JSON.parse(this.response);
+  if (request.status >= 200 && request.status < 400) {
+    data.forEach((movie) => {
+      const card = document.createElement("div");
+      card.setAttribute("class", "card");
+
+      const h6 = document.createElement("h6");
+      h6.textContent = movie.title;
+
+      const p = document.createElement("p");
+      movie.description = movie.description.substring(0, 300);
+      p.textContent = `${movie.description}...`;
+
+      containers.appendChild(card);
+      card.appendChild(h6);
+      card.appendChild(p);
+    });
+  } else {
+    const errorMessage = document.createElement("marquee");
+    errorMessage.textContent = `Gah, it's not working!`;
+    app.appendChild(errorMessage);
+  }
+};
+
+request.send();
