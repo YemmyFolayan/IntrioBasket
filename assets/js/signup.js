@@ -1,11 +1,9 @@
 // const fetchHelper = ("http://intriobasket.pexceptos.com/api/user/create", config = {}) => {
-//     const token = localStorage.getItem("token")
-//     return fetch(
-//     "http://intriobasket.pexceptos.com/api/user/create",
-//     { ...config, headers: { ...config.headers, Authorization: `Bearer ${token}` } })
+//      const token = localStorage.getItem("token")
+//      return fetch(
+//      "http://intriobasket.pexceptos.com/api/user/create",
+//      { ...config, headers: { ...config.headers, Authorization: `Bearer ${token}` } })
 // }
-    
-
 
 fetch("http://intriobasket.pexceptos.com/api/user/create", {
   method: "POST",
