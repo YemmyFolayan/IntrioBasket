@@ -5,27 +5,42 @@
 //      { ...config, headers: { ...config.headers, Authorization: `Bearer ${token}` } })
 // }
 
-fetch("http://intriobasket.pexceptos.com/api/user/create", {
-  method: "POST",
-  body:
-    "title=" +
-    encodeURIComponent("My awesome new article") +
-    "&body=" +
-    encodeURIComponent("This is the text of my article"),
-})
-  .then(function (response) {
-    // The API call was successful!
-    if (response.ok) {
-      return response.json();
-    } else {
-      return Promise.reject(response);
-    }
-  })
-  .then(function (data) {
-    // This is the JSON from our response
-    console.log(data);
-  })
-  .catch(function (err) {
-    // There was an error
-    console.warn("Something went wrong.", err);
+const activateLoginApicall = () => {
+  const formElement = document.getElementById("form");
+  // 'email' is the value of the name attribute of the input element for email
+  // 'password' is the value of the name attribute of the input element for password
+  const email = formElement.elements["email"].value;
+  const password = formElement.elements["password"].value;
+  const url = "http://intriobasket.pexceptos.com/api/user/login";
+
+  return new Promise((resolve, reject) => {
+    fetch(url, {
+      method: "POST",
+      body: {
+        email,
+        password,
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          reject(response);
+        }
+      })
+      .then((data) => resolve(data))
+      .catch((err) => {
+        reject(err);
+      });
   });
+};
+
+const login = async (event) => {
+  event.preventDefault();
+  try {
+    const data = await activateLoginApicall();
+    //whatever you want to do with data
+  } catch (error) {
+    //oops error, whatever you want to do with the error
+  }
+};
