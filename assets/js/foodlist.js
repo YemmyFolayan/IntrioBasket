@@ -1,10 +1,7 @@
 const app = document.getElementById("root");
 
-
-
 const containers = document.createElement("div");
 containers.setAttribute("class", "containers");
-
 
 app.appendChild(containers);
 
@@ -22,6 +19,8 @@ request.onload = function () {
       h6.textContent = movie.title;
 
       const p = document.createElement("p");
+      p.class = 'fooddetails';
+      // p.id = 'food';
       movie.description = movie.description.substring(0, 300);
       p.textContent = `${movie.description}...`;
 
