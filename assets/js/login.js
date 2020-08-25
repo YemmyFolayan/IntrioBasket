@@ -5,6 +5,7 @@ window.addEventListener("load", function () {
     // 'password' is the value of the name attribute of the input element for password
     const email = formElement.elements["email"].value;
     const password = formElement.elements["password"].value;
+    console.log(password);
     const url = "http://intriobasket.pexceptos.com/api/user/login";
 
     return new Promise((resolve, reject) => {

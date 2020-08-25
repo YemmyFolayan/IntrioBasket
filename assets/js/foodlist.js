@@ -12,23 +12,23 @@ request.onload = function () {
   var data = JSON.parse(this.response);
   console.log(data);
   if (request.status >= 200 && request.status < 400) {
-    data.payload.forEach(({ product_type, cost }) => {
+    data.payload.forEach(({ food_product_name, image_link }) => {
       const card = document.createElement("div");
       card.setAttribute("class", "card");
 
       const h6 = document.createElement("h6");
-      h6.textContent = product_type;
+      h6.textContent = food_product_name;
 
-      const p = document.createElement("p");
+      const img = document.createElement("img");
 
-      // cost = cost.substring(0, 300);
-      p.textContent = `${cost}...`;
+      // image_link = image_link.substring(0, 300);
+      img.src = `${image_link}...`;
 
-      console.log(cost);
+      console.log(image_link);
 
       containers.appendChild(card);
       card.appendChild(h6);
-      card.appendChild(p);
+      card.appendChild(img);
     });
   } else {
     const errorMessage = document.createElement("marquee");
@@ -38,7 +38,5 @@ request.onload = function () {
 };
 
 request.send();
-
-
 
 // Create element and append the value to it

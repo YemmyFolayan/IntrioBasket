@@ -1,10 +1,15 @@
-const activateLoginApicall = () => {
-  const formElement = document.getElementById("form");
+// const activateLoginApicall = () => {
+const formElement = document.getElementById("form");
+console.log(formElement);
+
+
   // 'email' is the value of the name attribute of the input element for email
   // 'password' is the value of the name attribute of the input element for password
-  const email = formElement.elements["email"].value;
-  const password = formElement.elements["password"].value;
-  const url = "http://intriobasket.pexceptos.com/api/user/create";
+const email = formElement.elements["email"].value;
+const password = formElement.elements["password"].value;
+console.log(email);
+
+const url = "http://intriobasket.pexceptos.com/api/user/create";
 
   return new Promise((resolve, reject) => {
     fetch(url, {
