@@ -137,7 +137,6 @@ p {
   transition-duration: 0.4s;
   transition-property: all;
   transition-timing-function: ease;
-  vertical-align: baseline;
 }
 
 .card:hover .product-select button {
@@ -148,8 +147,7 @@ p {
   position: absolute;
   transition: 0.3s ease;
   top: 100%;
-  z-index: 6;
-  bottom: 0;
+  
 }
 .card .product-select button {
   height: 40px;

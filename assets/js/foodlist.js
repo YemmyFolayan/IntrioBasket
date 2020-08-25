@@ -43,7 +43,7 @@ request.onload = function () {
       const addview = document.createElement("button");
       addview.setAttribute("class", "quickview");
 
-      
+
 
       // <button class="add-to-wishlist round-icon-btn"> <i class="icon_heart_alt"></i></button>
       // <button class="add-to-cart round-icon-btn">  <i class="icon_bag_alt"></i></button>
