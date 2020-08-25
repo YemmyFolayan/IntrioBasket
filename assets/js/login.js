@@ -28,19 +28,17 @@ window.addEventListener("load", function () {
         });
     });
   };
-};
-  const login = async (event) => {
-    event.preventDefault();
-    try {
-      const data = await activateLoginApicall();
-      alert("opppsssss";)
-      //whatever you want to do with data
-    } catch (error) {
-     
-      //oops error, whatever you want to do with the error
-    }
-  };
+});
+const loginsss = async (event) => {
+  event.preventDefault();
+  try {
+    const data = await activateLoginApicall();
 
+    //whatever you want to do with data
+  } catch (error) {
+    //oops error, whatever you want to do with the error
+  }
+};
 
 // <form id="myForm">
 //   <label for="myName">Send me your name:</label>
