@@ -12,12 +12,18 @@ request.onload = function () {
   var data = JSON.parse(this.response);
   console.log(data);
   if (request.status >= 200 && request.status < 400) {
-    data.payload.forEach(({ food_product_name, image_link }) => {
+    data.payload.forEach(({ food_product_name, image_link, cost }) => {
       const card = document.createElement("div");
       card.setAttribute("class", "card");
 
       const h6 = document.createElement("h6");
       h6.textContent = food_product_name;
+
+      const p = document.createElement("p");
+      p.textContent = cost;
+
+
+
 
       const img = document.createElement("img");
 
@@ -27,8 +33,10 @@ request.onload = function () {
       console.log(image_link);
 
       containers.appendChild(card);
-      card.appendChild(h6);
       card.appendChild(img);
+      card.appendChild(h6);
+      card.appendChild(p);
+      
     });
   } else {
     const errorMessage = document.createElement("marquee");
