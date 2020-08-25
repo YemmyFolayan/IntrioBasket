@@ -144,12 +144,17 @@ p {
   transform: scale(1) translateY(-10px);
   color: black;
   border: none;
+  border-radius: 100%;
   justify-content: center;
   align-items: center;
   padding: 10px;
   z-index: 6;
   transition: 0.3s ease;
   margin-bottom: 50px;
+}
+
+button:hover{
+  border: 2px solid #88c74a;
 }
 
 .card .product-select {
@@ -207,8 +212,6 @@ p {
   transition: 0.3s ease;
 }
 
-
-
 .card:hover {
   border: 0px solid transparent;
   box-shadow: 0px 20px 32px 0 rgba(53, 78, 84, 0.15);
@@ -253,7 +256,7 @@ img {
   font-stretch: 100%;
   font-weight: 400;
   justify-content: center;
-  line-height: 16px;
+  /* line-height: 16px; */
 }
 
 .card:hover .product-img {
