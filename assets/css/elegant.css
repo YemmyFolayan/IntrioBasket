@@ -826,6 +826,7 @@ you can use the generic selector below, but it's slower:
 }
 .icon_heart_alt:before {
   content: "\e030";
+  
 }
 .icon_star_alt:before {
   content: "\e031";

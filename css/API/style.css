@@ -16,6 +16,8 @@ html {
   margin: 0 auto;
 }
 
+
+
 h6 {
   text-align: center;
   padding: 1.5rem 2.5rem;
@@ -142,6 +144,8 @@ p {
 
 .card:hover .product-select button {
   transform: scale(1) translateY(-20px);
+  color: black;
+  border: none;
 }
 
 .card .product-select {
