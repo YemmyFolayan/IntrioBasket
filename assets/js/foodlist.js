@@ -32,18 +32,16 @@ request.onload = function () {
       carty.setAttribute("class", "product-select");
 
       const addcart = document.createElement("button");
-      addcart.setAttribute("class", "add-to-cart");
+      addcart.setAttribute("class", "icon_bag_alt");
 
       const addlist = document.createElement("button");
-      addlist.setAttribute("class", "add-to-wishlist");
+      addlist.setAttribute("class", "icon_heart_alt");
 
       const addcomp = document.createElement("button");
-      addcomp.setAttribute("class", "add-to-compare");
+      addcomp.setAttribute("class", "fas fa-random");
 
       const addview = document.createElement("button");
-      addview.setAttribute("class", "quickview");
-
-
+      addview.setAttribute("class", "far fa-eye");
 
       // <button class="add-to-wishlist round-icon-btn"> <i class="icon_heart_alt"></i></button>
       // <button class="add-to-cart round-icon-btn">  <i class="icon_bag_alt"></i></button>
