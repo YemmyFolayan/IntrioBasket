@@ -16,8 +16,6 @@ html {
   margin: 0 auto;
 }
 
-
-
 h6 {
   text-align: center;
   padding: 1.5rem 2.5rem;
@@ -143,9 +141,15 @@ p {
 }
 
 .card:hover .product-select button {
-  transform: scale(1) translateY(-20px);
+  transform: scale(1) translateY(-10px);
   color: black;
   border: none;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  z-index: 6;
+  transition: 0.3s ease;
+  margin-bottom: 50px;
 }
 
 .card .product-select {
@@ -166,9 +170,51 @@ p {
   font-size: 1.5rem;
   color: white;
   border: none;
-  margin-top: -20pxS;
-
+  margin-top: -20pxs;
 }
+
+.card:hover:after {
+  height: 45px;
+  box-shadow: 0px 20px 32px 0 rgba(53, 78, 84, 0.15);
+  opacity: 1;
+  bottom: -40px;
+}
+.card:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0px;
+  left: 0;
+  height: 0px;
+  width: 100%;
+  background-color: white;
+  z-index: 0;
+  opacity: 0;
+  border: 1px solid transparent;
+  transition: 0.3s;
+}
+.card .product-img {
+  height: 138px;
+  width: 100%;
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.card .product-img img {
+  max-width: 100%;
+  max-height: 100%;
+  transition: 0.3s ease;
+}
+
+
+
+.card:hover {
+  border: 0px solid transparent;
+  box-shadow: 0px 20px 32px 0 rgba(53, 78, 84, 0.15);
+  z-index: 20;
+}
+
 /* img {
   display: block;
   margin: 1rem auto;
