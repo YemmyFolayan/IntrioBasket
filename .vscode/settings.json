@@ -2,8 +2,13 @@
     "cSpell.words": [
         "activate",
         "activate login apicall",
+        "addcart",
+        "addcomp",
+        "addlist",
+        "addview",
         "apicall",
         "fooddetails",
-        "login"
+        "login",
+        "quickview"
     ]
 }
