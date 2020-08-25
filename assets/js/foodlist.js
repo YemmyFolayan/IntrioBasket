@@ -21,6 +21,7 @@ request.onload = function () {
 
       const p = document.createElement("p");
       p.textContent = `#${cost}`;
+      console.log(cost);
 
       const img = document.createElement("img");
       img.setAttribute("class", "product-img");
