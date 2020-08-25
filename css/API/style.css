@@ -65,7 +65,7 @@ h6 {
   margin-bottom: 10px;
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 0px;
+  margin-top: -20px;
   padding-bottom: 0px;
   padding-left: 0px;
   padding-right: 0px;
@@ -137,6 +137,7 @@ p {
   transition-duration: 0.4s;
   transition-property: all;
   transition-timing-function: ease;
+  vertical-align: baseline;
 }
 
 .card:hover .product-select button {
@@ -147,7 +148,8 @@ p {
   position: absolute;
   transition: 0.3s ease;
   top: 100%;
-  
+  z-index: 5;
+  bottom: 0;
 }
 .card .product-select button {
   height: 40px;
@@ -157,9 +159,11 @@ p {
 }
 
 .product-select {
-
   font-size: 1.5rem;
   color: white;
+  border: none;
+  margin-top: -20pxS;
+
 }
 /* img {
   display: block;

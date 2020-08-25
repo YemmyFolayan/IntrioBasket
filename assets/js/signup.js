@@ -1,7 +1,6 @@
 // const activateLoginApicall = () => {
 const formElement = document.getElementById("form");
 
-
   // 'email' is the value of the name attribute of the input element for email
   // 'password' is the value of the name attribute of the input element for password
 const email = formElement.elements["email"].value;
