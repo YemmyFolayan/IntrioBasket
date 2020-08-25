@@ -23,6 +23,60 @@ h6 {
   margin: 0 0 2rem 0;
   font-size: 1.5rem;
   color: white;
+
+  border-bottom-color: rgb(37, 37, 37);
+  border-bottom-style: none;
+  border-bottom-width: 0px;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
+  border-left-color: rgb(37, 37, 37);
+  border-left-style: none;
+  border-left-width: 0px;
+  border-right-color: rgb(37, 37, 37);
+  border-right-style: none;
+  border-right-width: 0px;
+  border-top-color: rgb(37, 37, 37);
+  border-top-style: none;
+  border-top-width: 0px;
+  box-sizing: border-box;
+  color: rgb(37, 37, 37);
+  display: block;
+  font-family: "Cera Pro Medium";
+  font-feature-settings: normal;
+  font-kerning: auto;
+  font-language-override: normal;
+  font-optical-sizing: auto;
+  font-size: 20px;
+  font-size-adjust: none;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant: normal;
+  font-variant-alternates: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-variant-position: normal;
+  font-variation-settings: normal;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  text-align: left;
+  transition-delay: 0s;
+  transition-duration: 0.4s;
+  transition-property: all;
+  transition-timing-function: ease;
+  vertical-align: baseline;
 }
 
 /* img {
@@ -42,7 +96,6 @@ img {
 }
 
 .card {
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,18 +107,37 @@ img {
   transition: 0.3s ease;
   margin-bottom: 30px;
 
-
   margin: 1rem;
   background: white;
-  box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: all 0.2s linear;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+  font-size-adjust: none;
+  font-stretch: 100%;
+  font-weight: 400;
+  justify-content: center;
+  line-height: 16px;
 }
 
-.card:hover {
-  box-shadow: 2px 8px 45px rgba(0, 0, 0, 0.15);
-  transform: translate3D(0, -2px, 0);
+.card:hover .product-img {
+  transform: scale(1.1);
+  transform-origin: 50% 50%;
+}
+
+.card .product-img {
+  height: 138px;
+  width: 100%;
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .product-img {
+  max-width: 100%;
+  max-height: 100%;
+  transition: 0.3s ease;
 }
 
 @media screen and (min-width: 600px) {
@@ -79,7 +151,7 @@ img {
     flex: 1 1 calc(33% - 2rem);
   }
 }
-
+/* 
 .card:nth-child(2n) h6 {
   background-image: linear-gradient(120deg, #88c74a 0%, #88c74a 100%);
 }
@@ -90,4 +162,4 @@ img {
 
 .card:nth-child(5n) h6 {
   background-image: linear-gradient(120deg, #88c74a 0%, #88c74a 100%);
-}
+} */

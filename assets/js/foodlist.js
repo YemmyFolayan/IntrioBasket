@@ -22,10 +22,8 @@ request.onload = function () {
       const p = document.createElement("p");
       p.textContent = cost;
 
-
-
-
       const img = document.createElement("img");
+      img.setAttribute("class", "product-img");
 
       // image_link = image_link.substring(0, 300);
       img.src = `${image_link}...`;
@@ -36,7 +34,6 @@ request.onload = function () {
       card.appendChild(img);
       card.appendChild(h6);
       card.appendChild(p);
-      
     });
   } else {
     const errorMessage = document.createElement("marquee");
