@@ -9,6 +9,7 @@
         "apicall",
         "fooddetails",
         "login",
+        "passcode",
         "quickview"
     ]
 }

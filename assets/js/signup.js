@@ -1,3 +1,37 @@
+var form = document.getElementById('form');
+
+form.addEventListener('submit' , function(e) {
+
+    e.preventDefault();
+
+    var name = document.getElementById('user-name');
+    var password = document.getElementById('password');
+
+    fetch("http://intriobasket.pexceptos.com/api/user/create", {
+        method: 'POST',
+        body: JSON.stringify({
+            username: name,
+            passcode : password
+        }),
+        headers: {
+            "Content-Type": "application/json; charset= UTF-8"
+        }
+    })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+        console.log(data);
+    })
+}
+
+
+
+
+
+
+
+
 // // const activateLoginApicall = () => {
 // const formElement = document.getElementById("form");
 
@@ -66,9 +100,9 @@
 // //    }
 // //  };
 
- const fetchHelper = ("http://intriobasket.pexceptos.com/api/user/create", config = {}) => {
-      const token = localStorage.getItem("token")
-      return fetch(
-      "http://intriobasket.pexceptos.com/api/user/create",
-      { ...config, headers: { ...config.headers, Authorization: `Bearer ${token}` } })
- }
+//  const fetchHelper = ("http://intriobasket.pexceptos.com/api/user/create", config = {}) => {
+//       const token = localStorage.getItem("token")
+//       return fetch(
+//       "http://intriobasket.pexceptos.com/api/user/create",
+//       { ...config, headers: { ...config.headers, Authorization: `Bearer ${token}` } })
+//  }
