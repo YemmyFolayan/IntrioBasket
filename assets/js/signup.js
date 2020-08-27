@@ -1,46 +1,66 @@
 // const activateLoginApicall = () => {
 const formElement = document.getElementById("form");
 
-  // 'email' is the value of the name attribute of the input element for email
-  // 'password' is the value of the name attribute of the input element for password
-const email = formElement.elements["email"].value;
-const password = formElement.elements["password"].value;
-console.log(email);
-console.log(formElement);
+// 'email' is the value of the name attribute of the input element for email
+// 'password' is the value of the name attribute of the input element for password
+//  const email = formElement.elements["email"].value;
+//  const password = formElement.elements["password"].value;
+//  console.log(email);
+//  console.log(formElement);
 const url = "http://intriobasket.pexceptos.com/api/user/create";
 
-  return new Promise((resolve, reject) => {
-    fetch(url, {
-      method: "POST",
-      body: {
-        email,
-        password,
-      },
+formElement.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  const searchParams = new URLSearchParams();
+
+  fetch(url, {
+    method: "post",
+    body: searchParams,
+  })
+    .then(function (response) {
+      return response.text();
     })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          reject(response);
-        }
-      })
-      .then((data) => resolve(data))
-      .catch((err) => {
-        reject(err);
-      });
-  });
-};
+    .then(function (text) {
+      console.log(text);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+});
 
-const login = async (event) => {
-  event.preventDefault();
-  try {
-    const data = await activateLoginApicall();
+//  console.log(formData);
+//    return new Promise((resolve, reject) => {
+//      fetch(url, {
+//        method: "POST",
+//        body: search,
+//      })
+//        .then((response) => {
+//          if (response.ok) {
+//            return response.json();
+//          } else {
+//            reject(response);
+//          }
+//        })
+//        .then((data) => resolve(data))
+//        log
+//        .catch((err) => {
+//          reject(err);
+//        });
+//    });
+//  };
 
-    //whatever you want to do with data
-  } catch (error) {
-    //oops error, whatever you want to do with the error
-  }
-};
+//  const login = async (event) => {
+//    event.preventDefault();
+//    try {
+//      const data = await activateLoginApicall();
+
+//      //whatever you want to do with data
+//    } catch (error) {
+//      //oops error, whatever you want to do with the error
+//    }
+//  };
 
 // const fetchHelper = ("http://intriobasket.pexceptos.com/api/user/create", config = {}) => {
 //      const token = localStorage.getItem("token")
