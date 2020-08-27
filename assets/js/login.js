@@ -9,7 +9,7 @@ form.addEventListener('submit' , function(e) {
 
     console.log(password);
 
-    fetch("http://intriobasket.pexceptos.com/api/user/create", {
+    fetch("http://intriobasket.pexceptos.com/api/user/login", {
         method: 'POST',
         body: JSON.stringify({
             username: name,
