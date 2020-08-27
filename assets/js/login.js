@@ -1,59 +1,35 @@
-var form = document.getElementById('form');
+var Form = document.getElementById("form");
 
-form.addEventListener('submit' , function(e) {
+Form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    e.preventDefault();
+  var name = document.getElementById("user-name").value;
+  var password = document.getElementById("password").value;
 
-    var name = document.getElementById('user-name').value;
-    var password = document.getElementById('password').value;
-  
-    console.log("hello");
+  console.log("hello");
 
-    console.log(name);
+  console.log(name);
 
-    fetch("http://intriobasket.pexceptos.com/api/user/login", {
-        method: 'POST',
-        body: JSON.stringify({
-            username: name,
-            passcode : password
-        }),
-        headers: {
-            "Content-Type": "application/json; charset= UTF-8"
-        }
+  fetch("http://intriobasket.pexceptos.com/api/user/login", {
+    method: "POST",
+    body: JSON.stringify({
+      username: name,
+      passcode: password,
+    }),
+    headers: {
+      "Content-Type": "application/json; charset= UTF-8",
+    },
+  })
+    .then(function (response) {
+      return response.json();
     })
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-        console.log(data);
-    })
-}
-
+    .then(function (data) {
+      console.log(data);
+    });
+});
 
 console.log(data);
 console.log("hi");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // window.addEventListener("load", function () {
 //   const activateLoginApicall = () => {
