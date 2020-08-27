@@ -9,28 +9,30 @@ const formElement = document.getElementById("form");
 //  console.log(formElement);
 const url = "http://intriobasket.pexceptos.com/api/user/create";
 
-formElement.addEventListener("submit", function (e) {
-  e.preventDefault();
+formElement
+    .addEventListener("submit", function (e) {
+        e.preventDefault();
 
-  const formData = new FormData(this);
-  const searchParams = new URLSearchParams();
+        const formData = new FormData(this);
+        const searchParams = new URLSearchParams();
 
-  fetch(url, {
-    method: "post",
-    body: searchParams,
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        reject(response);
-      }
-    })
-    .then((data) => resolve(data));
-  log.catch((err) => {
-    reject(err);
-  });
-});
+        return new Promise((resolve, reject) => {
+
+            fetch(url, {
+                method: "post",
+                body: searchParams,
+            }).then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    reject(response);
+                }
+            });
+        })
+            .then((data) => resolve(data))
+            .catch((err) => {
+                reject(err);
+            });
 
 //  console.log(formData);
 //    return new Promise((resolve, reject) => {
