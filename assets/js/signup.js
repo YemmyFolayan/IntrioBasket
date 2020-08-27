@@ -33,6 +33,9 @@ formElement
             .catch((err) => {
                 reject(err);
             });
+        
+    }
+}
 
 //  console.log(formData);
 //    return new Promise((resolve, reject) => {
