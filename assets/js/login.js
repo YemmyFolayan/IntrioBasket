@@ -6,8 +6,10 @@ form.addEventListener('submit' , function(e) {
 
     var name = document.getElementById('user-name').value;
     var password = document.getElementById('password').value;
+  
+    console.log("hello");
 
-    console.log(password);
+    console.log(name);
 
     fetch("http://intriobasket.pexceptos.com/api/user/login", {
         method: 'POST',
