@@ -4,8 +4,10 @@ form.addEventListener('submit' , function(e) {
 
     e.preventDefault();
 
-    var name = document.getElementById('user-name');
-    var password = document.getElementById('password');
+    var name = document.getElementById('user-name').value;
+    var password = document.getElementById('password').value;
+
+    console.log(password);
 
     fetch("http://intriobasket.pexceptos.com/api/user/create", {
         method: 'POST',
