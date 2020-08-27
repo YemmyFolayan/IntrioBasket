@@ -19,15 +19,17 @@ formElement.addEventListener("submit", function (e) {
     method: "post",
     body: searchParams,
   })
-    .then(function (response) {
-      return response.text();
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        reject(response);
+      }
     })
-    .then(function (text) {
-      console.log(text);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    .then((data) => resolve(data));
+  log.catch((err) => {
+    reject(err);
+  });
 });
 
 //  console.log(formData);
