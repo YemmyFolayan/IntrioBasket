@@ -6,9 +6,8 @@ containers.setAttribute("class", "containers");
 app.appendChild(containers);
 
 const url = "http://intriobasket.pexceptos.com/api/food";
-fetch(url, {
-  method: "GET",
-})
+
+fetch(url)
   .then((response) => {
     if (response.ok) {
       return response.json();
@@ -27,6 +26,7 @@ fetch(url, {
 
         const p = document.createElement("p");
         p.textContent = `#${cost}`;
+
         console.log(cost);
 
         const img = document.createElement("img");
