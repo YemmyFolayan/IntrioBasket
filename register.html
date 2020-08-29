@@ -168,12 +168,29 @@
             <div class="col-12 col-md-6 mx-auto">
               <h1 class="title">Register</h1>
                 <form id="form" method="post">
-                <label for="user-name">Username or email address *</label>
-                <input class="no-round-input" id="user-name" type="email" name="email">
+                <label for="user-name">Fullname</label>
+                <input class="no-round-input" id="fullname" type="text" name="fullname">
+
+                <label for="user-name">email address *</label>
+                <input class="no-round-input" id="email" type="email" name="email">
+               
                 <label for="password">Password *</label>
                 <input class="no-round-input" id="password" type="password" name="password">
-                <label for="confirm">Comfirm password *</label>
-                <input class="no-round-input" id="confirm" type="password">
+                <!--<label for="confirm">Comfirm password *</label>
+                <input class="no-round-input" id="confirm" type="password">-->
+
+
+                <label for="user-name">Phone Number</label>
+                <input class="no-round-input" id="phonenumber" type="text" name="phonenumber">
+               
+
+                <label for="Gender">Gender</label>
+
+                <select class="no-round-input" id="Gender" type="text" name="Gender"> <option value="male"> Male </option>
+                  <option value="female"> Female </option>
+                
+                </select>
+              
                 <div class="account-function">
                   <button class="no-round-btn" type="submit">Register</button><a class="create-account" href="login.html">Or login</a>
                 </div>
