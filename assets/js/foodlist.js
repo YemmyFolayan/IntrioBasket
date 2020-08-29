@@ -15,7 +15,7 @@ fetch(url)
       reject(response);
     }
   })
-  .then(function (data) {
+  .then((data) => {
     if (request.status >= 200 && request.status < 400) {
       data.payload.forEach(({ food_product_name, image_link, cost }) => {
         const card = document.createElement("div");
