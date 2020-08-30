@@ -8,27 +8,29 @@ Form.addEventListener("submit", function (e) {
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
   var phonenumber = document.getElementById("phonenumber").value;
-  var Gender = document.getElementById("Gender").value;
+  var gender = document.getElementById("gender").value;
 
   console.log(fullname);
   console.log(password);
   console.log(email);
   console.log(phonenumber);
-  console.log(Gender);
+  console.log(gender);
 
-  fetch("https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create", {
-    method: "POST",
-    body: JSON.stringify({
-      fullname: fullname,
-      email: email,
-      password: password,
-      phonenumber: phonenumber,
-      Gender: Gender,
-    }),
-    headers: {
-      "Content-Type": "application/json; charset= UTF-8",
-    },
-  })
+  fetch("https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        fullname: fullname,
+        email: email,
+        password: password,
+        phonenumber: phonenumber,
+        gender: gender,
+      }),
+      headers: {
+        "Content-Type": "application/json; charset= UTF-8",
+      },
+    }
+  )
     .then(function (response) {
       return response.json();
     })
