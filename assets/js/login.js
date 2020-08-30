@@ -3,18 +3,17 @@ var Form = document.getElementById("form");
 Form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  var name = document.getElementById("user-name").value;
+  var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
 
-  console.log("hello");
-
-  console.log(name);
+  console.log(email);
+  console.log(password);
 
   fetch("http://intriobasket.pexceptos.com/api/user/login", {
     method: "POST",
     body: JSON.stringify({
-      username: name,
-      passcode: password,
+      email: email,
+      password: password,
     }),
     headers: {
       "Content-Type": "application/json; charset= UTF-8",
@@ -34,8 +33,8 @@ console.log("hi");
 // window.addEventListener("load", function () {
 //   const activateLoginApicall = () => {
 //     const formElement = document.getElementById("form");
-//     // 'email' is the value of the name attribute of the input element for email
-//     // 'password' is the value of the name attribute of the input element for password
+//     // 'email' is the value of the email attribute of the input element for email
+//     // 'password' is the value of the email attribute of the input element for password
 //     const email = formElement.elements["email"].value;
 //     const password = formElement.elements["password"].value;
 //     console.log(password);
@@ -75,8 +74,8 @@ console.log("hi");
 // };
 
 // // <form id="myForm">
-// //   <label for="myName">Send me your name:</label>
-// //   <input id="myName" name="name" value="John">
+// //   <label for="myemail">Send me your email:</label>
+// //   <input id="myemail" email="email" value="John">
 // //   <input type="submit" value="Send Me!">
 // // </form>
 
@@ -119,10 +118,10 @@ console.log("hi");
 
 // // <form  id="postData">
 // //     <div>
-// //         <input type="text" name="" id="tittle">
+// //         <input type="text" email="" id="tittle">
 // //     </div>
 // //     <div>
-// //         <textarea name="" id="body" cols="20" rows="5"></textarea>
+// //         <textarea email="" id="body" cols="20" rows="5"></textarea>
 // //     </div>
 // //     <input type="submit" value="SEND POST">
 // // </form>

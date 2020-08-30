@@ -1,38 +1,41 @@
-var form = document.getElementById('form');
+var Form = document.getElementById("form");
 
-form.addEventListener('submit' , function(e) {
+Form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    e.preventDefault();
+  var fullname = document.getElementById("fullname").value;
 
-    var name = document.getElementById('user-name').value;
-    var password = document.getElementById('password').value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  var phonenumber = document.getElementById("phonenumber").value;
+  var Gender = document.getElementById("Gender").value;
 
-    console.log(password);
+  console.log(fullname);
+  console.log(password);
+  console.log(email);
+  console.log(phonenumber);
+  console.log(Gender);
 
-    fetch("http://intriobasket.pexceptos.com/api/user/create", {
-        method: 'POST',
-        body: JSON.stringify({
-            username: name,
-            passcode : password
-        }),
-        headers: {
-            "Content-Type": "application/json; charset= UTF-8"
-        }
+  fetch("http://intriobasket.pexceptos.com/api/user/create", {
+    method: "POST",
+    body: JSON.stringify({
+      fullname: fullname,
+      email: email,
+      password: password,
+      phonenumber: phonenumber,
+      Gender: Gender,
+    }),
+    headers: {
+      "Content-Type": "application/json; charset= UTF-8",
+    },
+  })
+    .then(function (response) {
+      return response.json();
     })
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-        console.log(data);
-    })
-}
-
-
-
-
-
-
-
+    .then(function (data) {
+      console.log(data);
+    });
+});
 
 // // const activateLoginApicall = () => {
 // const formElement = document.getElementById("form");
@@ -51,7 +54,7 @@ form.addEventListener('submit' , function(e) {
 
 //     const formData = new FormData(this);
 //       const searchParams = new URLSearchParams();
-      
+
 //     return new Promise((resolve, reject) => {
 
 //     fetch(url, {

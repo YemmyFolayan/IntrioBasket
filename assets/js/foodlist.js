@@ -5,7 +5,8 @@ containers.setAttribute("class", "containers");
 
 app.appendChild(containers);
 
-const url = "http://intriobasket.pexceptos.com/api/food";
+const url ="https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food";
+console.log("foodlists");
 
 fetch(url)
   .then((response) => {
@@ -56,6 +57,7 @@ fetch(url)
         // <button class="quickview round-icon-btn"> <i class="far fa-eye"></i></button>
 
         console.log(image_link);
+        console.log("hi");
 
         containers.appendChild(card);
         card.appendChild(img);
