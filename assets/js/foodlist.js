@@ -29,7 +29,7 @@ fetch(url)
       const p = document.createElement("p");
       p.textContent = `#${cost}`;
 
-      console.log(cost);
+      // console.log(cost);
 
       const img = document.createElement("img");
       img.setAttribute("class", "product-img");
@@ -57,8 +57,7 @@ fetch(url)
       // <button class="add-to-compare round-icon-btn"><i class="fas fa-random"></i></button>
       // <button class="quickview round-icon-btn"> <i class="far fa-eye"></i></button>
 
-      console.log(image_link);
-      console.log("hi");
+      // console.log(image_link);
 
       containers.appendChild(card);
       card.appendChild(img);
