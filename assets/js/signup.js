@@ -16,7 +16,7 @@ Form.addEventListener("submit", function (e) {
   console.log(phonenumber);
   console.log(Gender);
 
-  fetch("http://intriobasket.pexceptos.com/api/user/create", {
+  fetch("https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create", {
     method: "POST",
     body: JSON.stringify({
       fullname: fullname,

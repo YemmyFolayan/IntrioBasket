@@ -9,7 +9,7 @@ Form.addEventListener("submit", function (e) {
   console.log(email);
   console.log(password);
 
-  fetch("http://intriobasket.pexceptos.com/api/user/login", {
+  fetch("https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/login", {
     method: "POST",
     body: JSON.stringify({
       email: email,
