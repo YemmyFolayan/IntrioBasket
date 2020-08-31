@@ -12,108 +12,115 @@ caches.open("mycache").then((cache) => {
     );
     });
     
-    // const app = document.getElementById("root");
+    const app = document.getElementById("root");
     
-    // const container = document.createElement("div");
-    // container.setAttribute("class", "row no-gutters-sm");
+    const container = document.createElement("div");
+    container.setAttribute("class", "row no-gutters-sm");
     
-    // const subcontainer = document.createElement("div");
-    // subcontainer.setAttribute("class", "col-6 col-md-4 col-lg-3");
+    const subcontainer = document.createElement("div");
+    subcontainer.setAttribute("class", "col-6 col-md-4 col-lg-3");
     
-    // app.appendChild(container);
-    // container.appendChild(subcontainer);
+    app.appendChild(container);
+    container.appendChild(subcontainer);
     
-    // const url = "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food";
-    //  console.log("foodlists");
+    const url = "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food";
+     console.log("foodlists");
     
-    // fetch(url)
-    //   .then((response) => {
-    //     if (response.ok) {
-    //       return response.json();
-    //     } else {
-    //       reject(response);
-    //     })
-    //   .then((data) => {
-    //     // if (request.status >= 200 && request.status < 400) {
-    //     data.payload.forEach(({ food_product_name, image_link, cost }) => {
-    //       const product = document.createElement("div");
-    //       card.setAttribute("class", "product");
+    fetch(url)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          reject(response);
+        })
+      .then((data) => {
+        // if (request.status >= 200 && request.status < 400) {
+        data.payload.forEach(({ food_product_name, image_link, cost }) => {
+          const product = document.createElement("div");
+          card.setAttribute("class", "product");
     
-    //       const img = document.createElement("img");
-    //       img.setAttribute("class", "product-img");
-    //       img.src = `${image_link}...`;
+          const img = document.createElement("img");
+          img.setAttribute("class", "product-img");
+          img.src = `${image_link}...`;
     
-    //       const h5 = document.createElement("h5");
-    //       h5.textContent = food_product_name;
+          const h5 = document.createElement("h5");
+          h5.textContent = food_product_name;
     
-    //       h5.setAttribute("class", "product-type");
+          h5.setAttribute("class", "product-type");
     
-    //       const h3cost = document.createElement("h3");
-    //       h3cost.textContent = food_product_name;
+          const h3cost = document.createElement("h3");
+          h3cost.textContent = food_product_name;
     
-    //       h3cost.setAttribute("class", "product-name");
+          h3cost.setAttribute("class", "product-name");
     
-    //       const h3 = document.createElement("h3");
-    //       h3.textContent = `#${cost}`;
+          const h3 = document.createElement("h3");
+          h3.textContent = `#${cost}`;
     
-    //       h3.setAttribute("class", "product-price");
+          h3.setAttribute("class", "product-price");
     
-    //       const productselect = document.createElement("div");
-    //       productselect.setAttribute("class", "product-select");
+          const productselect = document.createElement("div");
+          productselect.setAttribute("class", "product-select");
     
-    //       const addlist = document.createElement("button");
-    //       addlist.setAttribute("class", "add-to-wishlist round-icon-btn");
+          const addlist = document.createElement("button");
+          addlist.setAttribute("class", "add-to-wishlist round-icon-btn");
     
-    //       const iconlist = document.createElement("i");
-    //       iconlist.setAttribute("class", "icon_heart_alt");
+          const iconlist = document.createElement("i");
+          iconlist.setAttribute("class", "icon_heart_alt");
     
-    //       const addcart = document.createElement("button");
-    //       addcart.setAttribute("class", "add-to-cart round-icon-btn");
+          const addcart = document.createElement("button");
+          addcart.setAttribute("class", "add-to-cart round-icon-btn");
     
-    //       const iconcart = document.createElement("i");
-    //       iconcart.setAttribute("class", "icon_bag_alt");
+          const iconcart = document.createElement("i");
+          iconcart.setAttribute("class", "icon_bag_alt");
     
-    //       const addcomp = document.createElement("button");
-    //       addcomp.setAttribute("class", "add-to-compare round-icon-btn");
+          const addcomp = document.createElement("button");
+          addcomp.setAttribute("class", "add-to-compare round-icon-btn");
     
-    //       const iconcomp = document.createElement("i");
-    //       iconcomp.setAttribute("class", "fas fa-random");
+          const iconcomp = document.createElement("i");
+          iconcomp.setAttribute("class", "fas fa-random");
     
-    //       const addview = document.createElement("button");
-    //       addview.setAttribute("class", "quickview round-icon-btn");
+          const addview = document.createElement("button");
+          addview.setAttribute("class", "quickview round-icon-btn");
     
-    //       const iconview = document.createElement("i");
-    //       iconview.setAttribute("class", "far fa-eye");
+          const iconview = document.createElement("i");
+          iconview.setAttribute("class", "far fa-eye");
     
-    //       subcontainer.appendChild(product);
+          subcontainer.appendChild(product);
     
-    //       product.appendChild(img);
-    //       product.appendChild(h5);
+          product.appendChild(img);
+          product.appendChild(h5);
     
-    //       product.appendChild(h3cost);
+          product.appendChild(h3cost);
     
-    //       product.appendChild(h3);
+          product.appendChild(h3);
     
-    //       product.appendChild(productselect);
+          product.appendChild(productselect);
     
-    //       productselect.appendChild(addlist);
+          productselect.appendChild(addlist);
     
-    //       addlist.appendChild(iconlist);
+          addlist.appendChild(iconlist);
     
-    //       productselect.appendChild(addcart);
+          productselect.appendChild(addcart);
     
-    //       addcart.appendChild(iconcart);
+          addcart.appendChild(iconcart);
     
-    //       productselect.appendChild(addcomp);
+          productselect.appendChild(addcomp);
     
-    //       addcomp.appendChild(iconcomp);
+          addcomp.appendChild(iconcomp);
     
-    //       productselect.appendChild(addview);
+          productselect.appendChild(addview);
     
-    //       addview.appendChild(iconview);
-    //     });
-    //   });
+          addview.appendChild(iconview);
+        });
+      });
     
+
+
+
+
+
+
+
     //       card.appendChild(p);
     //       card.appendChild(carty);
     //       carty.appendChild(addcart);
