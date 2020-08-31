@@ -8,8 +8,15 @@
         "addview",
         "apicall",
         "fooddetails",
+        "iconadd",
+        "iconcart",
+        "iconcomp",
+        "iconlist",
+        "iconview",
         "login",
         "passcode",
-        "quickview"
+        "productselect",
+        "quickview",
+        "subcontainer"
     ]
 }
