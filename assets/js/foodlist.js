@@ -39,7 +39,7 @@ fetch(url)
     // if (request.status >= 200 && request.status < 400) {
     data.payload.forEach(({ food_product_name, image_link, cost }) => {
       const product = document.createElement("div");
-      card.setAttribute("class", "product");
+      product.setAttribute("class", "product");
 
       const img = document.createElement("img");
       img.setAttribute("class", "product-img");
