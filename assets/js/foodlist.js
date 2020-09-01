@@ -1,4 +1,4 @@
-const app = document.getElementById("foodlist");
+cconst app = document.getElementById("root");
 
 const container = document.createElement("div");
 container.setAttribute("class", "row no-gutters-sm");
@@ -22,88 +22,84 @@ fetch(url)
     }
   })
   .then((data) => {
-    if (request.status >= 200 && request.status < 400) {
+    // if (request.status >= 200 && request.status < 400) {
+    data.payload.forEach(({ food_product_name, image_link, cost }) => {
+      const product = document.createElement("div");
+      product.setAttribute("class", "product");
 
-      //index the items and access first 10 items for now
+      const img = document.createElement("img");
+      img.setAttribute("class", "product-img");
+      img.src = `${image_link}...`;
 
-      data.payload.forEach(({ food_product_name, image_link, cost }) => {
-        const product = document.createElement("div");
-        product.setAttribute("class", "product");
+      const h5 = document.createElement("h5");
+      h5.textContent = food_product_name;
 
-        const img = document.createElement("img");
-        img.setAttribute("class", "product-img");
-        img.src = `${image_link}...`;
+      h5.setAttribute("class", "product-type");
 
-        const h5 = document.createElement("h5");
-        h5.textContent = food_product_name;
+      const h3cost = document.createElement("h3");
+      h3cost.textContent = food_product_name;
 
-        h5.setAttribute("class", "product-type");
+      h3cost.setAttribute("class", "product-name");
 
-        const h3cost = document.createElement("h3");
-        h3cost.textContent = food_product_name;
+      const h3 = document.createElement("h3");
+      h3.textContent = `#${cost}`;
 
-        h3cost.setAttribute("class", "product-name");
+      h3.setAttribute("class", "product-price");
 
-        const h3 = document.createElement("h3");
-        h3.textContent = `#${cost}`;
+      const productselect = document.createElement("div");
+      productselect.setAttribute("class", "product-select");
 
-        h3.setAttribute("class", "product-price");
+      const addlist = document.createElement("button");
+      addlist.setAttribute("class", "add-to-wishlist round-icon-btn");
 
-        const productselect = document.createElement("div");
-        productselect.setAttribute("class", "product-select");
+      const iconlist = document.createElement("i");
+      iconlist.setAttribute("class", "icon_heart_alt");
 
-        const addlist = document.createElement("button");
-        addlist.setAttribute("class", "add-to-wishlist round-icon-btn");
+      const addcart = document.createElement("button");
+      addcart.setAttribute("class", "add-to-cart round-icon-btn");
 
-        const iconlist = document.createElement("i");
-        iconlist.setAttribute("class", "icon_heart_alt");
+      const iconcart = document.createElement("i");
+      iconcart.setAttribute("class", "icon_bag_alt");
 
-        const addcart = document.createElement("button");
-        addcart.setAttribute("class", "add-to-cart round-icon-btn");
+      const addcomp = document.createElement("button");
+      addcomp.setAttribute("class", "add-to-compare round-icon-btn");
 
-        const iconcart = document.createElement("i");
-        iconcart.setAttribute("class", "icon_bag_alt");
+      const iconcomp = document.createElement("i");
+      iconcomp.setAttribute("class", "fas fa-random");
 
-        const addcomp = document.createElement("button");
-        addcomp.setAttribute("class", "add-to-compare round-icon-btn");
+      const addview = document.createElement("button");
+      addview.setAttribute("class", "quickview round-icon-btn");
 
-        const iconcomp = document.createElement("i");
-        iconcomp.setAttribute("class", "fas fa-random");
+      const iconview = document.createElement("i");
+      iconview.setAttribute("class", "far fa-eye");
 
-        const addview = document.createElement("button");
-        addview.setAttribute("class", "quickview round-icon-btn");
+      subcontainer.appendChild(product);
 
-        const iconview = document.createElement("i");
-        iconview.setAttribute("class", "far fa-eye");
+      product.appendChild(img);
+      product.appendChild(h5);
 
-        subcontainer.appendChild(product);
+      product.appendChild(h3cost);
 
-        product.appendChild(img);
-        product.appendChild(h5);
+      product.appendChild(h3);
 
-        product.appendChild(h3cost);
+      product.appendChild(productselect);
 
-        product.appendChild(h3);
+      productselect.appendChild(addlist);
 
-        product.appendChild(productselect);
+      addlist.appendChild(iconlist);
 
-        productselect.appendChild(addlist);
+      productselect.appendChild(addcart);
 
-        addlist.appendChild(iconlist);
+      addcart.appendChild(iconcart);
 
-        productselect.appendChild(addcart);
+      productselect.appendChild(addcomp);
 
-        addcart.appendChild(iconcart);
+      addcomp.appendChild(iconcomp);
 
-        productselect.appendChild(addcomp);
+      productselect.appendChild(addview);
 
-        addcomp.appendChild(iconcomp);
-
-        productselect.appendChild(addview);
-
-        addview.appendChild(iconview);
-      });
-    }
+      addview.appendChild(iconview);
+    });
   });
 
 
