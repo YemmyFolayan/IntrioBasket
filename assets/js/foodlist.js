@@ -57,9 +57,6 @@ const cachedFetch = (url, options) => {
           .clone()
           .text()
           .then((data) => {
-            localStorage.setItem(cacheKey, data);
-            localStorage.setItem(cacheKey + ":ts", Date.now());
-
             data.payload.forEach(({ food_product_name, image_link, cost }) => {
               const product = document.createElement("div");
               product.setAttribute("class", "product");
@@ -140,6 +137,8 @@ const cachedFetch = (url, options) => {
               addview.appendChild(iconview);
             });
           });
+        localStorage.setItem(cacheKey, data);
+        localStorage.setItem(cacheKey + ":ts", Date.now());
       }
     }
   });
