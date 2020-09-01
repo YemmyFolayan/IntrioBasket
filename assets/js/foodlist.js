@@ -1,4 +1,4 @@
-cconst app = document.getElementById("root");
+const app = document.getElementById("root");
 
 const container = document.createElement("div");
 container.setAttribute("class", "row no-gutters-sm");
@@ -101,31 +101,6 @@ fetch(url)
       addview.appendChild(iconview);
     });
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // // // // // const app = document.getElementById("root");
 // // // // // const container = document.createElement("div");
