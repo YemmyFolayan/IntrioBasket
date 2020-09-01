@@ -1,13 +1,13 @@
 const app = document.getElementById("root");
 
-const container = document.createElement("div");
-container.setAttribute("class", "row no-gutters-sm");
+// const container = document.createElement("div");
+// container.setAttribute("class", "row no-gutters-sm");
 
 const subcontainer = document.createElement("div");
 subcontainer.setAttribute("class", "col-6 col-md-4 col-lg-3");
 
-app.appendChild(container);
-container.appendChild(subcontainer);
+app.appendChild(subcontainer);
+// container.appendChild(subcontainer);
 
 const url =
   "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food";
