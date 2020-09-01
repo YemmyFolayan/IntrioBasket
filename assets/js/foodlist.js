@@ -10,7 +10,7 @@ container.appendChild(subcontainer);
 
 const url =
   "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food";
-console.log("foodlists");
+console.log("foodlistssssssssssssssss");
 
 const cachedFetch = (url, options) => {
   let expiry = 1 * 60; // 1 min default
@@ -70,6 +70,10 @@ const cachedFetch = (url, options) => {
               const h5 = document.createElement("h5");
               h5.textContent = food_product_name;
 
+              console.log(food_product_name);
+
+              console.log("food name");
+
               h5.setAttribute("class", "product-type");
 
               const h3cost = document.createElement("h3");
@@ -125,6 +129,7 @@ const cachedFetch = (url, options) => {
               productselect.appendChild(addlist);
 
               addlist.appendChild(iconlist);
+              console.log("food name");
 
               productselect.appendChild(addcart);
 
