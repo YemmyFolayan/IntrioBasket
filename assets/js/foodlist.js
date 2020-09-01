@@ -48,6 +48,9 @@ const cachedFetch = (url, options) => {
       if (response.status === 200) {
         let ct = response.headers.get("Content-Type");
         if (ct && (ct.match(/application\/json/i) || ct.match(/text\//i))) {
+
+          
+        
           // There is a .json() instead of .text() but
           // we're going to store it in sessionStorage as
           // string anyway.
@@ -144,7 +147,10 @@ const cachedFetch = (url, options) => {
 
         addview.appendChild(iconview);
       });
+
+      return data;
     });
+      
 };
 
 // // // const app = document.getElementById("root");
