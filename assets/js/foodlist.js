@@ -8,8 +8,8 @@ subcontainer.setAttribute("class", "col-6 col-md-4 col-lg-3");
 app.appendChild(container);
 container.appendChild(subcontainer);
 
-const url =
-  "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food";
+// const url =
+//   "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food";
 console.log("foodlists");
 
 const cachedFetch = (url, options) => {
@@ -41,12 +41,20 @@ const cachedFetch = (url, options) => {
       localStorage.removeItem(cacheKey + ":ts");
     }
   }
+  console.log("before return");
 
-  return fetch(url, options).then((response) => {
+  return fetch(
+    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food",
+    options
+  ).then((response) => {
     // let's only store in cache if the content-type is
     // JSON or something non-binary
+
+    console.log("after return");
     if (response.status === 200) {
       let ct = response.headers.get("Content-Type");
+
+      console.log("if after ret");
       if (ct && (ct.match(/application\/json/i) || ct.match(/text\//i))) {
         // There is a .json() instead of .text() but
         // we're going to store it in sessionStorage as
@@ -54,6 +62,7 @@ const cachedFetch = (url, options) => {
         // If we don't clone the response, it will be
         // consumed by the time it's returned. This
         // way we're being un-intrusive.
+        console.log("if");
         response
           .clone()
           .text()
@@ -145,31 +154,39 @@ const cachedFetch = (url, options) => {
               addview.appendChild(iconview);
             });
           });
-
-        // Default 5 min
-        cachedFetch("https://httpbin.org/get")
-          .then((r) => r.json())
-          .then((info) => {
-            console.log("Your origin is " + info.origin);
-          });
-
-        // 2 minutes
-        cachedFetch("http://httpbin.org/gzip", 2 * 60)
-          .then((r) => r.json())
-          .then((info) => {
-            console.log("Your origin (with gzip) is " + info.origin);
-          });
-
-        // 1 minute
-        cachedFetch("http://httpbin.org/ip", { seconds: 60 })
-          .then((r) => r.json())
-          .then((info) => {
-            console.log("Your origin (by ip only) is " + info.origin);
-          });
       }
     }
   });
 };
+
+// Default 5 min
+cachedFetch(
+  "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food"
+)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log("Your origin is " + data);
+  });
+
+// 2 minutes
+cachedFetch(
+  "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food",
+  2 * 60
+)
+  .then((response) => response.json())
+  .then((info) => {
+    console.log("Your origin (with gzip) is " + info.origin);
+  });
+
+// 1 minute
+cachedFetch(
+  "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food",
+  { seconds: 60 }
+)
+  .then((r) => r.json())
+  .then((info) => {
+    console.log("Your origin (by ip only) is " + info.origin);
+  });
 
 // // const cachedFetch = (url, options) => {
 // //   let expiry = 5 * 60 // 5 min default
@@ -507,4 +524,3 @@ const cachedFetch = (url, options) => {
 //     }
 //     return response
 //   })
-// }
