@@ -525,3 +525,9 @@ body#checkout-page #site-info {
 #paypal-form {
   margin: 1.5em 0;
 }
+
+
+.displayflex{
+  display: flex;
+  flex-direction: row;
+}

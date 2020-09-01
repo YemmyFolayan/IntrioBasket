@@ -153,7 +153,7 @@ p {
   margin-bottom: 50px;
 }
 
-button:hover{
+button:hover {
   border: 2px solid #88c74a;
 }
 
@@ -302,3 +302,8 @@ img {
 .card:nth-child(5n) h6 {
   background-image: linear-gradient(120deg, #88c74a 0%, #88c74a 100%);
 } */
+
+.displayflex {
+  display: flex;
+  flex-direction: row;
+}
