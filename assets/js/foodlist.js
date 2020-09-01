@@ -22,14 +22,17 @@ fetch(url)
     }
   })
   .then((data) => {
-    
     // First, parse the JSON into an array of Objects:
 
     // var data = JSON.parse(json);
 
     // Then combine sort and slice to achieve your goal:
-    var top10 = data.payload.sort(function (a, b) { return a.Variable1 < b.Variable1 ? 1 : -1; }).slice(0, 10);
-    
+    var top10 = data.payload
+      .sort(function (a, b) {
+        return a.Variable1 < b.Variable1 ? 1 : -1;
+      })
+      .slice(0, 10);
+
     console.log(top10);
     // if (request.status >= 200 && request.status < 400) {
     top10.forEach(({ food_product_name, image_link, cost }) => {
@@ -51,7 +54,7 @@ fetch(url)
       h3cost.setAttribute("class", "product-name");
 
       const h3 = document.createElement("h3");
-      h3.textContent = `NGN${cost}`;
+      h3.textContent = `NGN ${cost}`;
 
       h3.setAttribute("class", "product-price");
 
