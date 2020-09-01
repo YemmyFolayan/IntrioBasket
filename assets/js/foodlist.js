@@ -13,7 +13,7 @@ const url =
 console.log("foodlists");
 
 const cachedFetch = (url, options) => {
-  let expiry = 1 * 60; // 5 min default
+  let expiry = 1 * 60; // 1 min default
   if (typeof options === "number") {
     expiry = options;
     options = undefined;
@@ -57,6 +57,8 @@ const cachedFetch = (url, options) => {
           .clone()
           .text()
           .then((data) => {
+            localStorage.setItem(cacheKey, data);
+            localStorage.setItem(cacheKey + ":ts", Date.now());
             data.payload.forEach(({ food_product_name, image_link, cost }) => {
               const product = document.createElement("div");
               product.setAttribute("class", "product");
@@ -137,8 +139,6 @@ const cachedFetch = (url, options) => {
               addview.appendChild(iconview);
             });
           });
-        localStorage.setItem(cacheKey, data);
-        localStorage.setItem(cacheKey + ":ts", Date.now());
       }
     }
   });
