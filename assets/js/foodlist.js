@@ -1,4 +1,4 @@
-const app = document.getElementById("root");
+const app = document.getElementById("foodlist");
 
 const container = document.createElement("div");
 container.setAttribute("class", "row no-gutters-sm");
@@ -23,6 +23,9 @@ fetch(url)
   })
   .then((data) => {
     if (request.status >= 200 && request.status < 400) {
+
+      //index the items and access first 10 items for now
+
       data.payload.forEach(({ food_product_name, image_link, cost }) => {
         const product = document.createElement("div");
         product.setAttribute("class", "product");
@@ -100,7 +103,9 @@ fetch(url)
 
         addview.appendChild(iconview);
       });
-    });
+    }
+  });
+
 
 
 
