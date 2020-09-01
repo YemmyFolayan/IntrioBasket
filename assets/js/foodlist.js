@@ -13,7 +13,7 @@ const url =
 console.log("foodlists");
 
 const cachedFetch = (url, options) => {
-  let expiry = 5 * 60; // 5 min default
+  let expiry = 1 * 60; // 5 min default
   if (typeof options === "number") {
     expiry = options;
     options = undefined;
