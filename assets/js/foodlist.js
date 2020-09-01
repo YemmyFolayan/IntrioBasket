@@ -4,7 +4,7 @@ const container = document.createElement("div");
 container.setAttribute("class", "row no-gutters-sm");
 
 const subcontainer = document.createElement("div");
-subcontainer.setAttribute("class", "col-6 col-md-4 col-lg-3");
+subcontainer.setAttribute("class", "displayflex");
 
 app.appendChild(container);
 container.appendChild(subcontainer);
