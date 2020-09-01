@@ -42,7 +42,7 @@ fetch(url)
       h3cost.setAttribute("class", "product-name");
 
       const h3 = document.createElement("h3");
-      h3.textContent = `#${cost}`;
+      h3.textContent = `NGN${cost}`;
 
       h3.setAttribute("class", "product-price");
 
