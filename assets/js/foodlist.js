@@ -7,6 +7,8 @@ const app = document.getElementById("root");
 
 // container.appendChild(subcontainer);
 
+app.appendChild(container);
+
 const url =
   "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food";
 console.log("foodlists");
