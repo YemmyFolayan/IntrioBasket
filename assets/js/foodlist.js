@@ -31,7 +31,7 @@ fetch(url)
     // if (request.status >= 200 && request.status < 400) {
     top10.forEach(({ food_product_name, image_link, cost }) => {
       const app = document.getElementById("root");
-      // app.setAttribute("class", "col-6 col-md-4 col-lg-3");
+      app.setAttribute("class", "col-6 col-md-4 col-lg-3");
 
       const container = document.createElement("div");
       container.setAttribute("class", "product");
