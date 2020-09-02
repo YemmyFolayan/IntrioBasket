@@ -12,8 +12,11 @@ html {
 } */
 
 #root {
-  max-width: 1200px;
+  max-width: 248px;
+  max-height: 299px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 h6 {

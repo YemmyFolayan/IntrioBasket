@@ -27,7 +27,7 @@ fetch(url)
       .sort(function (a, b) {
         return a.Variable1 < b.Variable1 ? 1 : -1;
       })
-      .slice(0, 2);
+      .slice(0, 6);
 
     console.log(top10);
     // if (request.status >= 200 && request.status < 400) {
