@@ -1,3 +1,5 @@
+const app = document.getElementById("root");
+
 // const subcontainer = document.createElement("div");
 // subcontainer.setAttribute("class", "displayflex");
 
@@ -25,14 +27,11 @@ fetch(url)
       .sort(function (a, b) {
         return a.Variable1 < b.Variable1 ? 1 : -1;
       })
-      .slice(0, 5);
+      .slice(0, 2);
 
     console.log(top10);
     // if (request.status >= 200 && request.status < 400) {
     top10.forEach(({ food_product_name, image_link, cost }) => {
-      const app = document.getElementById("root");
-      // app.setAttribute("class", "col-6 col-md-4 col-lg-3");
-
       const container = document.createElement("div");
       container.setAttribute("class", "product");
 
