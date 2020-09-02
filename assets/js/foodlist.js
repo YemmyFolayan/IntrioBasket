@@ -1,9 +1,12 @@
 const app = document.getElementById("root");
-app.setAttribute("class", "flex-row");
+
+const container = document.createElement("div");
+container.setAttribute("class", "product");
 
 // const subcontainer = document.createElement("div");
 // subcontainer.setAttribute("class", "displayflex");
 
+app.appendChild(container);
 // container.appendChild(subcontainer);
 
 const url =
@@ -33,16 +36,17 @@ fetch(url)
     console.log(top10);
     // if (request.status >= 200 && request.status < 400) {
     top10.forEach(({ food_product_name, image_link, cost }) => {
-      const container = document.createElement("div");
-      container.setAttribute("class", "product");
-
       const productdetails = document.createElement("a");
       productdetails.setAttribute("class", "product-img");
       productdetails.setAttribute("href", "shop_detail.html");
 
+
+
+
       const img = document.createElement("img");
       img.setAttribute("alt", "product");
       img.src = `${image_link}...`;
+
 
       const h5 = document.createElement("h5");
       h5.textContent = food_product_name;
@@ -59,6 +63,8 @@ fetch(url)
 
       h3.setAttribute("class", "product-price");
 
+
+     
       const productselect = document.createElement("div");
       productselect.setAttribute("class", "product-select");
 
@@ -86,7 +92,13 @@ fetch(url)
       const iconview = document.createElement("i");
       iconview.setAttribute("class", "far fa-eye");
 
-      app.appendChild(container);
+
+
+
+
+
+
+
 
       container.appendChild(productdetails);
 
