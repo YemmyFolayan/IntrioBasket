@@ -1,4 +1,5 @@
 const app = document.getElementById("root");
+app.setAttribute("class", "product");
 
 // const subcontainer = document.createElement("div");
 // subcontainer.setAttribute("class", "displayflex");
