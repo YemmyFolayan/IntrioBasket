@@ -37,7 +37,7 @@ fetch(url)
 
       const productdetails = document.createElement("a");
       productdetails.setAttribute("class", "product-img");
-      productdetails.setAttribute("href", "shop_detail.html");
+      productdetails.setAttribute("href", "shop_detail_fullwidth.html");
 
       const img = document.createElement("img");
       img.setAttribute("alt", "product");
