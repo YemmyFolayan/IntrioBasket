@@ -1403,6 +1403,7 @@ a:focus {
 	Product
 *************************************/
 .product {
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1413,6 +1414,8 @@ a:focus {
   z-index: 6;
   transition: 0.3s ease;
   margin-bottom: 30px;
+  height: 45px;
+  width: 45px;
 }
 .product.borderless {
   border: 0;
