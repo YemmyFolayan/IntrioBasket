@@ -1,6 +1,9 @@
 const app = document.getElementById("root");
 
-const imagyy = document.getElementById("imagy");
+
+
+
+
 
 // const subcontainer = document.createElement("div");
 // subcontainer.setAttribute("class", "displayflex");
@@ -46,8 +49,10 @@ fetch(url)
       img.src = `${image_link}...`;
 
       //product details
+      // const imagyy = document.getElementById("imagy");
 
       
+
 
       const h5 = document.createElement("h5");
       h5.textContent = food_product_name;
@@ -120,7 +125,10 @@ fetch(url)
 
       addview.appendChild(iconview);
 
-      imagyy.src = image_link;
+
+      // imagyy.appendChild(img);
+
+      
     });
   });
 
