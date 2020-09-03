@@ -7,6 +7,8 @@
         "addlist",
         "addview",
         "apicall",
+        "basket",
+        "containerr",
         "displayflex",
         "fooddetails",
         "foodlist",
@@ -19,12 +21,16 @@
         "imaggy",
         "imagy",
         "imagyy",
+        "intrio",
+        "intrio basket",
         "login",
         "passcode",
         "productdetails",
         "productselect",
         "quickview",
         "rowwrap",
-        "subcontainer"
+        "subcontainer",
+        "validatefullname",
+        "validators"
     ]
 }
