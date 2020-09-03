@@ -12,7 +12,7 @@ html {
 } */
 /* 
 #root {
-
+  max-width: 1200px;
   margin: 0 auto;
 } */
 
@@ -303,7 +303,3 @@ img {
   background-image: linear-gradient(120deg, #88c74a 0%, #88c74a 100%);
 } */
 
-.displayflex {
-  display: flex;
-  flex-direction: row;
-}
