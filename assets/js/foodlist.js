@@ -47,7 +47,7 @@ fetch(url)
 
       //product details
 
-      imagyy.src = `${image_link}...`;
+      // imagyy.src = `${image_link}...`;
 
       const h5 = document.createElement("h5");
       h5.textContent = food_product_name;
