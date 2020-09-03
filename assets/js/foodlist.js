@@ -43,6 +43,10 @@ fetch(url)
       img.setAttribute("alt", "product");
       img.src = `${image_link}...`;
 
+      //product details
+      
+
+
       const h5 = document.createElement("h5");
       h5.textContent = food_product_name;
 
@@ -113,6 +117,8 @@ fetch(url)
       productselect.appendChild(addview);
 
       addview.appendChild(iconview);
+
+      document.getElementById("imagy").appendChild(img);
     });
   });
 
