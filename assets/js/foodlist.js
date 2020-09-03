@@ -120,7 +120,7 @@ fetch(url)
 
       addview.appendChild(iconview);
 
-      imagyy.src = `${image_link}...`;
+      imagyy.src = image_link;
     });
   });
 
