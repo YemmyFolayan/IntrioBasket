@@ -1,5 +1,8 @@
 const app = document.getElementById("root");
 
+
+const imagy = document.getElementById("imagy");
+
 // const subcontainer = document.createElement("div");
 // subcontainer.setAttribute("class", "displayflex");
 
@@ -118,7 +121,10 @@ fetch(url)
 
       addview.appendChild(iconview);
 
-      document.getElementById("imagy").appendChild(img);
+
+      imagy.appendChild(img);
+
+      
     });
   });
 
