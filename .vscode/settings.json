@@ -21,6 +21,7 @@
         "productdetails",
         "productselect",
         "quickview",
+        "rowwrap",
         "subcontainer"
     ]
 }
