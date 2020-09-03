@@ -766,7 +766,7 @@ pre {
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
 }
-.no-gutters {
+  .rowwrap .no-gutters{
   margin-right: 0;
   margin-left: 0; }
   .no-gutters > .col,
