@@ -4,7 +4,7 @@ const email = document.getElementById("email");
 // Form
 const form = document.getElementById("form");
 // Validation colors
-const green = "#4CAF50";
+const green = "rgb(136, 199, 74)";
 const red = "#F44336";
 
 // Handle form
