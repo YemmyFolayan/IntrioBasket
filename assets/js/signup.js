@@ -1,7 +1,7 @@
 var Form = document.getElementById("form");
 
-Form.addEventListener("submit", function (e) {
-  e.preventDefault();
+// Form.addEventListener("submit", function (e) {
+//   e.preventDefault();
 
   var fullname = document.getElementById("fullname").value;
 
