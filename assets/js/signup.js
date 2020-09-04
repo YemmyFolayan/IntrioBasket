@@ -1,7 +1,7 @@
 var Form = document.getElementById("form");
 
-// Form.addEventListener("submit", function (e) {
-//   e.preventDefault();
+Form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
   var fullname = document.getElementById("fullname").value;
 
@@ -16,7 +16,8 @@ var Form = document.getElementById("form");
   console.log(phonenumber);
   console.log(gender);
 
-  fetch("https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create",
+  fetch(
+    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create",
     {
       method: "POST",
       body: JSON.stringify({
