@@ -46,7 +46,7 @@ Form.addEventListener("submit", function (e) {
     });
 });
 
-console.log(data);
+console.log(text);
 console.log("hi");
 
 // window.addEventListener("load", function () {
