@@ -26,10 +26,13 @@ Form.addEventListener("submit", function (e) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      var msg = data.message;
+
+      console.log(msg);
     });
 });
 
+console.log(data);
 console.log("hi");
 
 // window.addEventListener("load", function () {

@@ -17,167 +17,9 @@
     <link rel="stylesheet" href="assets/css/icomoon.css">
     <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
     <link rel="shortcut icon" href="assets/images/shortcut_logo.png">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="assets/css/materialize.css">
-    <link rel="stylesheet" href="assets/css/materialize.min.css">
-    <script type="text/javascript" src="assets/js/jquery.shop.js"></script>
-
-    <!--<script>
-    const password = document.getElementById("password");
-    const email = document.getElementById("email");
-    // Form
-    const form = document.getElementById("form");
-
-    function validatePassword() {
-      // Empty check
-      if (checkIfEmpty(password)) return;
-      // Must of in certain length
-      if (!meetLength(password, 4, 100)) return;
-      // check password against our character set
-      // 1- a
-      // 2- a 1
-      // 3- A a 1
-      // 4- A a 1 @
-      //   if (!containsCharacters(password, 4)) return;
-      return true;
-      }
-
-      function validateEmail() {
-      if (checkIfEmpty(email)) return;
-      if (!containsCharacters(email, 5)) return;
-      return true;
-      }
-      // Utility functions
-      function checkIfEmpty(field) {
-      if (isEmpty(field.value.trim())) {
-          // set field invalid
-          setInvalid(field, `${field.name} must not be empty`);
-          return true;
-      } else {
-          // set field valid
-          setValid(field);
-          return false;
-      }
-      }
-      function isEmpty(value) {
-      if (value === "") return true;
-      return false;
-      }    }
-      function checkIfOnlyLetters(field) {
-      if (/^[a-zA-Z ]+$/.test(field.value)) {
-          setValid(field);
-          return true;
-      } else {
-          setInvalid(field, `${field.name} must contain only letters`);
-          return false;
-      }
-      }
-      function meetLength(field, minLength, maxLength) {
-      if (field.value.length >= minLength && field.value.length < maxLength) {
-          setValid(field);
-          return true;
-      } else if (field.value.length < minLength) {
-          setInvalid(
-          field,
-          `${field.name} must be at least ${minLength} characters long`
-          );
-          return false;
-      } else {
-          setInvalid(
-          field,
-          `${field.name} must be shorter than ${maxLength} characters`
-          );
-          return false;
-      }
-      }
-      function containsCharacters(field, code) {
-      let regEx;
-      switch (code) {
-          case 1:
-          // letters
-          regEx = /(?=.*[a-zA-Z])/;
-          return matchWithRegEx(regEx, field, "Must contain at least one letter");
-          case 2:
-          // letter and numbers
-          regEx = /(?=.*\d)(?=.*[a-zA-Z])/;
-          return matchWithRegEx(
-              regEx,
-              field,
-              "Must contain at least one letter and one number"
-          );
-          case 3:
-          // uppercase, lowercase and number
-          regEx = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/;
-          return matchWithRegEx(
-              regEx,
-              field,
-              "Must contain at least one uppercase, one lowercase letter and one number"
-          );
-          case 4:
-          // uppercase, lowercase, number and special char
-          regEx = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
-          return matchWithRegEx(
-              regEx,
-              field,
-              "Must contain at least one uppercase, one lowercase letter, one number and one special character"
-          );
-          case 5:
-          // Email pattern
-          regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-          return matchWithRegEx(regEx, field, "Must be a valid email address");
-          default:
-          return false;
-      }
-      }
-      function matchWithRegEx(regEx, field, message) {
-      if (field.value.match(regEx)) {
-          setValid(field);
-          return true;
-      } else {
-          setInvalid(field, message);
-          return false;
-      }
-    }
-    }
-
-  
-
-    function myFunction() {
-      if (
-          // validateLastName() &&
-          validatePassword() &&
-          validateEmail()
-      ) {
-        //if conditio
-        window.location.href="/index.html";
-
-      }
-    }
-    
-
-   
-
-
-    </script>-->
-
-   <!--<script>
-
-    function myFunction() {
-     
-        window.location.href="/index.html";
-
-      }
-
-      </script>
-
-      -->
-  
-
-   
-    
-   
   </head>
-    <body>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <body>
     <div id="main">
       <header>
         <div class="header-block d-flex align-items-center">
@@ -209,13 +51,13 @@
                     <li class="toggleable"> <a class="menu-item" href="index.html">Home</a>
                     
                     </li>
-                    <li class="toggleable"> <a class="menu-item" href="shop.html">Shop</a>
+                    <li class="toggleable"> <a class="menu-item" href="shop_grid+list_3col.html">Shop</a>
                       <ul class="sub-menu shop d-flex">
                
                         <div class="nav-column">
                           <h2>Detail shop</h2>
                           <li><a href="shop_detail_fullwidth.html">shop detail fullwidth</a></li>
-                          
+                          <li><a href="shop_detail.html">shop detail sidebar</a></li>
                         </div>
                         <div class="nav-column">
                           <h2>Pages shop</h2>
@@ -228,14 +70,14 @@
                       </ul>
                     </li>
                    
-                    <li class="toggleable"> <a class="menu-item active" href="javascript:void()">Pages</a>
+                    <li class="toggleable"> <a class="menu-item active" href="#">Pages</a>
                       <ul class="sub-menu">
                         <li><a href="login.html">login</a></li>
                         <li><a href="register.html">register</a></li>
                         <li><a href="FAQ.html">FAQ</a></li>
-                       
+                        <li><a href="coming_soon.html">coming soon</a></li>
                         <li><a href="contact_us.html">contact us</a></li>
-                        
+                        <li><a href="404_error.html">404 error</a></li>
                       </ul>
                     </li>
                     <li class="toggleable"><a class="menu-item" href="about_us.html">About us</a></li>
@@ -250,7 +92,7 @@
           <div class="container">
             <div class="row">
               <div class="col-3">
-                <div class="mobile-menu_block d-flex align-items-center"><a class="mobile-menu--control" href="javascript:void()"><i class="fas fa-bars"></i></a>
+                <div class="mobile-menu_block d-flex align-items-center"><a class="mobile-menu--control" href="#"><i class="fas fa-bars"></i></a>
                   <div id="ogami-mobile-menu">
                     <button class="no-round-btn" id="mobile-menu--closebtn">Close menu</button>
                     <div class="mobile-menu_items">
@@ -258,20 +100,40 @@
                         <li class="toggleable"> <a class="menu-item active" href="index.html">Home</a><span class="sub-menu--expander"><i class="icon_plus"></i></span>
                         
                         </li>
-                        <li class="toggleable"><a class="menu-item" href="shop.html">Shop</a><span class="sub-menu--expander"><i class="icon_plus"></i></span>
+                        <li class="toggleable"><a class="menu-item" href="shop_grid+list_3col.html">Shop</a><span class="sub-menu--expander"><i class="icon_plus"></i></span>
                           <ul class="sub-menu">
-                           </ul>
+                            <li><a href="shop_grid+list_fullwidth.html">Shop grid fullwidth</a></li>
+                            <li><a href="shop_grid+list_fullwidth.html">Shop list fullwidth</a></li>
+                            <li><a href="shop_grid+list_3col.html">shop grid 3 column</a></li>
+                            <li><a href="shop_grid+list_3col.html">shop list 3 column</a></li>
+                            <li><a href="shop_detail.html">shop detail</a></li>
+                            <li><a href="shop_detail_fullwidth.html">shop detail fullwidth</a></li>
+                            <li><a href="shop_checkout.html">checkout</a></li>
+                            <li><a href="shop_order_complete.html">order complete</a></li>
+                            <li><a href="shop_wishlist.html">wishlist</a></li>
+                            <li><a href="shop_compare.html">compare</a></li>
+                            <li><a href="shop_cart.html">cart</a></li>
+                          </ul>
                         </li>
-                       
-                        <li class="toggleable"><a class="menu-item" href="javascript:void()">Pages</a><span class="sub-menu--expander"><i class="icon_plus"></i></span>
+                        <li class="toggleable"> <a class="menu-item" href="blog_list_sidebar.html">Blog</a><span class="sub-menu--expander"><i class="icon_plus"></i></span>
+                          <ul class="sub-menu">
+                            <li><a href="blog_list_sidebar.html">Blog List Sidebar</a></li>
+                            <li><a href="blog_grid_2col.html">Blog Grid 2 column</a></li>
+                            <li><a href="blog_grid_sidebar.html">Blog Grid sidebar</a></li>
+                            <li><a href="blog_masonry.html">Blog masonry</a></li>
+                            <li><a href="blog_grid_1col.html">Blog Grid 1 column sidebar</a></li>
+                            <li><a href="blog_detail_sidebar.html">Blog detail sidebar</a></li>
+                          </ul>
+                        </li>
+                        <li class="toggleable"><a class="menu-item" href="#">Pages</a><span class="sub-menu--expander"><i class="icon_plus"></i></span>
                           <ul class="sub-menu">
                             <li><a href="login.html">login</a></li>
                             <li><a href="register.html">register</a></li>
-                            <li><a href="FAQ.html">FAQ</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
                             <li><a href="coming_soon.html">coming soon</a></li>
                             <li><a href="about_us.html">about us</a></li>
                             <li><a href="contact_us.html">contact us</a></li>
-                            
+                            <li><a href="404_error.html">404 error</a></li>
                           </ul>
                         </li>
                       </ul>
@@ -288,7 +150,7 @@
                 <div class="mobile-menu_logo text-center d-flex justify-content-center align-items-center"><a href=""><img src="assets/images/logo.png" alt=""></a></div>
               </div>
               <div class="col-3">
-                <div class="mobile-product_function d-flex align-items-center justify-content-end"><a class="function-icon icon_heart_alt" href="shop_wishlist.html"></a><a class="function-icon icon_bag_alt" href="shop_cart.html"></a></div>
+                <div class="mobile-product_function d-flex align-items-center justify-content-end"><a class="function-icon icon_heart_alt" href="wishlist.html"></a><a class="function-icon icon_bag_alt" href="shop_cart.html"></a></div>
               </div>
             </div>
           </div>
@@ -300,7 +162,7 @@
         <div class="container">
           <ul>
             <li> <a class="breadcrumb-link" href="index.html"> <i class="fas fa-home"></i>Home</a></li>
-            <li> <a class="breadcrumb-link active" href="javascript:void()">Login</a></li>
+            <li> <a class="breadcrumb-link active" href="#">Login</a></li>
           </ul>
         </div>
       </div>
@@ -308,26 +170,22 @@
       <div class="account">
         <div class="container">
           <div class="row">
-            <div class="col-12 col-md-6 mx-auto" id="containerr">
+            <div class="col-12 col-md-6 mx-auto">
               <h1 class="title">Login</h1>
               <form id="form" method="post">
                 <label for="user-name">Username or email address *</label>
-                <input class="no-round-input" id="email" type="email" name="email" onfocusout="validateEmail()">
-                <span class="helper-text"></span>
-                
+                <input class="no-round-input" id="email" type="email" name="email">
                 <label for="password">Password *</label>
-                <input class="no-round-input" id="password" type="password" name="password" onfocusout="validatePassword()">
-                <span class="helper-text"></span>
-                
+                <input class="no-round-input" id="password" type="password" name="password" >
                 <div class="account-method">
                   <div class="account-save">
                     <input id="savepass" type="checkbox">
                     <label for="savepass">Save Password</label>
                   </div>
-                  <div class="account-forgot"><a href="javascript:void()">Forget your Password</a></div>
+                  <div class="account-forgot"><a href="#">Forget your Password</a></div>
                 </div>
                 <div class="account-function">
-                <button class="no-round-btn" type="submit">Sign in</button><a class="create-account" href="register.html">Or create an account</a>
+                  <button class="no-round-btn" type="submit">Sign in</button><a class="create-account" href="register.html">Or create an account</a>
                 </div>
               </form>
             </div>
@@ -353,17 +211,17 @@
               <div class="row">
                 <div class="col-12 col-sm-4 text-sm-center text-md-left">
                   <div class="footer-quicklink">
-                    <h5>Infomation</h5><a href="about_us.html">About us</a><a href="checkout.html">Check out</a><a href="contact_us.html">Contact</a><a href="about_us.html">Service</a>
+                    <h5>Infomation</h5><a href="about_us.html">About us</a><a href="checkout.html">Check out</a><a href="contact.html">Contact</a><a href="about_us.html">Service</a>
                   </div>
                 </div>
                 <div class="col-12 col-sm-4 text-sm-center text-md-left">
                   <div class="footer-quicklink">
-                    <h5>My Account</h5><a href="login.html">My Account</a><a href="contact_us.html">Contact</a><a href="shop_cart.html">Shopping cart</a><a href="shop.html">Shop</a>
+                    <h5>My Account</h5><a href="login.html">My Account</a><a href="contact.html">Contact</a><a href="shop_shop_cart.html">Shopping cart</a><a href="shop_grid+list_3col.html">Shop</a>
                   </div>
                 </div>
                 <div class="col-12 col-sm-4 text-sm-center text-md-left">
                   <div class="footer-quicklink">
-                    <h5>Quick Shop</h5><a href="about_us.html">About us</a><a href="checkout.html">Check out</a><a href="contact_us.html">Contact</a><a href="about_us.html">Service</a>
+                    <h5>Quick Shop</h5><a href="about_us.html">About us</a><a href="checkout.html">Check out</a><a href="contact.html">Contact</a><a href="about_us.html">Service</a>
                   </div>
                 </div>
               </div>
@@ -414,21 +272,15 @@
 
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-  
+    <script type="text/javascript" src="assets/js/jquery.shop.js"></script>
     
-    <script type="text/javascript" src="assets/js/formvalidationlogin.js"></script>
 
-       
-    <script type="text/javascript" src="assets/js/materialize.min.js"></script>
-    <script type="text/javascript" src="assets/js/materialize.js"></script>
+    <script type="text/javascript" src="assets/js/login.js"></script>
 
+ 
 
-    
   
 
-
-  </body>
-  <script type="text/javascript" src="assets/js/login.js"></script>
   
+
 </html>
