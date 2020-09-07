@@ -239,20 +239,26 @@ Form.addEventListener("submit", function (e) {
       return response.json();
     })
     .then(function (data) {
+        var msg = data.message;
+       
+  
+        if (msg == "User Created Succesfully") {
+          window.location.assign("/login.html");
 
-      var msg = data.message;
-
-
-      if (msg =="Log in Successful") {
-        window.location.assign('/index.html');
-        localStorage.setItem('login', true);
-        console.log(msg);
-      }
-      else {
-        
-        window.location.assign('/index.html');
-        localStorage.setItem('login', true);
-
+          
+          
+          console.log("User Created Succesfully");
+  
+        } else if (msg == "Email already exists") {
+  
+          console.log("Email already exists");
+        } else if (msg == "Please input all fields") {
+  
+          console.log("Please input all fields");
+        } else {
+          
+          console.log("An error occurred, Try Again!");
+         
      
     });
 });
