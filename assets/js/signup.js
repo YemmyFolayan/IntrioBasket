@@ -40,22 +40,23 @@ Form.addEventListener("submit", function (e) {
         var msg = data.message;
        
   
-        if (msg == "User Created Succesfully") {
-          window.location.assign("/login.html");
+      if (msg == "User Created Succesfully") {
+        window.location.assign("/login.html");
 
           
           
-          console.log("User Created Succesfully");
+        console.log("User Created Succesfully");
   
-        } else if (msg == "Email already exists") {
+      } else if (msg == "Email already exists") {
   
-          console.log("Email already exists");
-        } else if (msg == "Please input all fields") {
+        console.log("Email already exists");
+      } else if (msg == "Please input all fields") {
   
-          console.log("Please input all fields");
-        } else {
+        console.log("Please input all fields");
+      } else {
           
-          console.log("An error occurred, Try Again!");
+        console.log("An error occurred, Try Again!");
+      }
          
      
     });
