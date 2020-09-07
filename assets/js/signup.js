@@ -36,11 +36,9 @@ Form.addEventListener("submit", function (e) {
       return response.json();
     })
     .then(function (data) {
-        var msg = data.message;
-       
-  
-      if (msg == "User Created Succesfully") {
+      var msg = data.message;
 
+      if (msg == "User Created Succesfully") {
         const name = email;
         const container = document.getElementById("containerr");
         const loader = document.createElement("div");
@@ -50,47 +48,92 @@ Form.addEventListener("submit", function (e) {
         loader.appendChild(loadingBar);
         container.appendChild(loader);
         setTimeout(function () {
-        const loaderDiv = document.querySelector("div.progress");
-        const panel = document.createElement("div");
-        panel.className = "card-panel green";
-        const text = document.createElement("span");
-        text.className = "white-text";
-        text.appendChild(
+          const loaderDiv = document.querySelector("div.progress");
+          const panel = document.createElement("div");
+          panel.className = "card-panel green";
+          const text = document.createElement("span");
+          text.className = "white-text";
+          text.appendChild(
             document.createTextNode(
-            `User Created Succesfully !, welcome to IntrioBasket ${name}`
+              `User Created Succesfully !, welcome to IntrioBasket ${name}`
             )
-        );
-        panel.appendChild(text);
-        container.replaceChild(panel, loaderDiv);
+          );
+          panel.appendChild(text);
+          container.replaceChild(panel, loaderDiv);
         }, 1000);
         //window.location.assign("/login.html");
 
-        
-
-          
-          
         console.log("User Created Succesfully");
-  
       } else if (msg == "Email already exists") {
-  
+        const name = email;
+        const container = document.getElementById("containerr");
+        const loader = document.createElement("div");
+        loader.className = "progress";
+        const loadingBar = document.createElement("div");
+        loadingBar.className = "indeterminate";
+        loader.appendChild(loadingBar);
+        container.appendChild(loader);
+        setTimeout(function () {
+          const loaderDiv = document.querySelector("div.progress");
+          const panel = document.createElement("div");
+          panel.className = "card-panel green";
+          const text = document.createElement("span");
+          text.className = "white-text";
+          text.appendChild(
+            document.createTextNode(`Email already exists !, Try Again`)
+          );
+          panel.appendChild(text);
+          container.replaceChild(panel, loaderDiv);
+        }, 1000);
+
         console.log("Email already exists");
       } else if (msg == "Please input all fields") {
-  
+        const name = email;
+        const container = document.getElementById("containerr");
+        const loader = document.createElement("div");
+        loader.className = "progress";
+        const loadingBar = document.createElement("div");
+        loadingBar.className = "indeterminate";
+        loader.appendChild(loadingBar);
+        container.appendChild(loader);
+        setTimeout(function () {
+          const loaderDiv = document.querySelector("div.progress");
+          const panel = document.createElement("div");
+          panel.className = "card-panel green";
+          const text = document.createElement("span");
+          text.className = "white-text";
+          text.appendChild(document.createTextNode(`Please input all fields!`));
+          panel.appendChild(text);
+          container.replaceChild(panel, loaderDiv);
+        }, 1000);
+
         console.log("Please input all fields");
       } else {
-          
+        const name = email;
+        const container = document.getElementById("containerr");
+        const loader = document.createElement("div");
+        loader.className = "progress";
+        const loadingBar = document.createElement("div");
+        loadingBar.className = "indeterminate";
+        loader.appendChild(loadingBar);
+        container.appendChild(loader);
+        setTimeout(function () {
+          const loaderDiv = document.querySelector("div.progress");
+          const panel = document.createElement("div");
+          panel.className = "card-panel green";
+          const text = document.createElement("span");
+          text.className = "white-text";
+          text.appendChild(
+            document.createTextNode(`An error occurred, Try Again!`)
+          );
+          panel.appendChild(text);
+          container.replaceChild(panel, loaderDiv);
+        }, 1000);
+
         console.log("An error occurred, Try Again!");
       }
-         
-     
     });
 });
-
-
-
-
-
-
 
 // // const activateLoginApicall = () => {
 // const formElement = document.getElementById("form");
