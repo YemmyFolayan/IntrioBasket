@@ -28,7 +28,17 @@ Form.addEventListener("submit", function (e) {
     .then(function (data) {
       var msg = data.message;
 
-      console.log(msg);
+      if (msg == "Log in Successful") {
+        window.location.assign('/index.html');
+        localStorage.setItem('login', true);
+      }
+      else {
+        console.log(msg);
+
+      }
+   
+
+      
     });
 });
 
