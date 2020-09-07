@@ -33,11 +33,15 @@ Form.addEventListener("submit", function (e) {
         window.location.assign("/index.html");
         localStorage.setItem("login", true);
         console.log("logged in");
+
       } else if (msg == "Incorrect Email or Password") {
+
         console.log("Incorrect Email or Password");
       } else if (msg == "Email not found") {
+
         console.log("Email not found");
       } else {
+        
         console.log("not logged in");
         console.log(JSON.stringify(msg) == "Log in Successful");
       }
