@@ -27,7 +27,7 @@ Form.addEventListener("submit", function (e) {
     })
     .then(function (data) {
       var msg = data.message;
-      var mssg = JSON.parse(msg)
+      var mssg = JSON.stringify(msg)
       console.log(mssg);
 
 
@@ -38,7 +38,7 @@ Form.addEventListener("submit", function (e) {
       }
       else {
         console.log("not looged in");
-        console.log(mssg == "Log in Successful");
+        console.log(JSON.stringify(mssg) == "Log in Successful");
 
       }
    
