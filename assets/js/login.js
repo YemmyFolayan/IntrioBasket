@@ -27,7 +27,7 @@ Form.addEventListener("submit", function (e) {
     })
     .then(function (data) {
       var msg = data.message;
-      var mssg = JSON.stringify(msg)
+      var mssg = JSON.parse(msg)
       console.log(mssg);
 
 
