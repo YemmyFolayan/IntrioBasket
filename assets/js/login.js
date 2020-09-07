@@ -23,10 +23,10 @@ Form.addEventListener("submit", function (e) {
     }
   )
     .then(function (response) {
-      return response.json();
+      return response.text();
     })
-    .then(function (data) {
-      var msg = data.message;
+    .then(function (text) {
+      var msg = text.message;
 
 
       if (msg =="Log in Successful") {
@@ -35,7 +35,7 @@ Form.addEventListener("submit", function (e) {
         console.log(msg);
       }
       else {
-        
+     
         window.location.assign('/index.html');
         localStorage.setItem('login', true);
 
