@@ -32,12 +32,12 @@ Form.addEventListener("submit", function (e) {
       if (msg =="Log in Successful") {
         window.location.assign('/index.html');
         localStorage.setItem('login', true);
-        console.log(msg);
+        console.log("logged in");
       }
       else {
      
-        window.location.assign('/index.html');
-        localStorage.setItem('login', true);
+       
+        console.log("not looged in");
 
       }
    
