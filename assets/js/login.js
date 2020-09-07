@@ -23,14 +23,15 @@ Form.addEventListener("submit", function (e) {
     }
   )
     .then(function (response) {
-      return response.text();
+      return response.json();
     })
-    .then(function (text) {
-      var msg = text.message;
-      console.log(msg);
+    .then(function (data) {
+      var msg = data.message;
+      var mssg = JSON.stringify(msg)
+      console.log(mssg);
 
 
-      if (msg =="Log in Successful") {
+      if (mssg =="Log in Successful") {
         window.location.assign('/index.html');
         localStorage.setItem('login', true);
         console.log("logged in");
@@ -47,7 +48,7 @@ Form.addEventListener("submit", function (e) {
     });
 });
 
-console.log(text);
+console.log(data);
 console.log("hi");
 
 // window.addEventListener("load", function () {
