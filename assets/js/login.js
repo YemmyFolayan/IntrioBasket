@@ -31,15 +31,14 @@ Form.addEventListener("submit", function (e) {
       console.log(mssg);
 
 
-      if (mssg =="Log in Successful") {
+      if (mssg == "Log in Successful") {
         window.location.assign('/index.html');
         localStorage.setItem('login', true);
         console.log("logged in");
       }
       else {
-     
-       
         console.log("not looged in");
+        console.log(mssg == "Log in Successful");
 
       }
    
