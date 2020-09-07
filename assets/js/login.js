@@ -27,6 +27,7 @@ Form.addEventListener("submit", function (e) {
     })
     .then(function (text) {
       var msg = text.message;
+      console.log(msg);
 
 
       if (msg =="Log in Successful") {
