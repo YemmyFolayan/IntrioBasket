@@ -27,23 +27,20 @@ Form.addEventListener("submit", function (e) {
     })
     .then(function (data) {
       var msg = data.message;
-      var mssg = JSON.stringify(msg)
-      console.log(mssg);
+     
 
-
-      if (mssg == "Log in Successful") {
-        window.location.assign('/index.html');
-        localStorage.setItem('login', true);
+      if (msg == "Log in Successful") {
+        window.location.assign("/index.html");
+        localStorage.setItem("login", true);
         console.log("logged in");
+      } else if (msg == "Incorrect Email or Password") {
+        console.log("Incorrect Email or Password");
+      } else if (msg == "Email not found") {
+        console.log("Email not found");
+      } else {
+        console.log("not logged in");
+        console.log(JSON.stringify(msg) == "Log in Successful");
       }
-      else {
-        console.log("not looged in");
-        console.log(JSON.stringify(mssg) == "Log in Successful");
-
-      }
-   
-
-      
     });
 });
 
