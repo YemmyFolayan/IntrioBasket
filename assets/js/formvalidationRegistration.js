@@ -19,6 +19,37 @@ form.addEventListener("submit", function (event) {
 
 
 
+  if (
+    validatefullname() &&
+    // validateLastName() &&
+    validatePassword() &&
+    validateConfirmPassword() &&
+    validateEmail()
+  ) {
+    const name = fullname.value;
+    const container = document.getElementById("containerr");
+    const loader = document.createElement("div");
+    loader.className = "progress";
+    const loadingBar = document.createElement("div");
+    loadingBar.className = "indeterminate";
+    loader.appendChild(loadingBar);
+    container.appendChild(loader);
+    setTimeout(function () {
+      const loaderDiv = document.querySelector("div.progress");
+      const panel = document.createElement("div");
+      panel.className = "card-panel green";
+      const text = document.createElement("span");
+      text.className = "white-text";
+      text.appendChild(
+        document.createTextNode(
+          `Sign up successful, welcome to IntrioBasket ${name}, Kindly proceed to Login!`
+        )
+      );
+      panel.appendChild(text);
+      container.replaceChild(panel, loaderDiv);
+    }, 1000);
+  }
+
 
   var fullname = document.getElementById("fullname").value;
 
@@ -73,57 +104,6 @@ form.addEventListener("submit", function (event) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  if (
-    validatefullname() &&
-    // validateLastName() &&
-    validatePassword() &&
-    validateConfirmPassword() &&
-    validateEmail()
-  ) {
-    const name = fullname.value;
-    const container = document.getElementById("containerr");
-    const loader = document.createElement("div");
-    loader.className = "progress";
-    const loadingBar = document.createElement("div");
-    loadingBar.className = "indeterminate";
-    loader.appendChild(loadingBar);
-    container.appendChild(loader);
-    setTimeout(function () {
-      const loaderDiv = document.querySelector("div.progress");
-      const panel = document.createElement("div");
-      panel.className = "card-panel green";
-      const text = document.createElement("span");
-      text.className = "white-text";
-      text.appendChild(
-        document.createTextNode(
-          `Sign up successful, welcome to IntrioBasket ${name}, Kindly proceed to Login!`
-        )
-      );
-      panel.appendChild(text);
-      container.replaceChild(panel, loaderDiv);
-    }, 1000);
-  }
 });
 
 // Validators
