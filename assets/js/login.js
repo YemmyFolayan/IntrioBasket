@@ -28,12 +28,14 @@ Form.addEventListener("submit", function (e) {
     .then(function (data) {
       var msg = data.message;
 
+
       if (msg =="Log in Successful") {
         window.location.assign('/index.html');
         localStorage.setItem('login', true);
+        console.log(msg);
       }
       else {
-        console.log(msg);
+        
         window.location.assign('/index.html');
         localStorage.setItem('login', true);
 
