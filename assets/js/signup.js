@@ -59,7 +59,6 @@ Form.addEventListener("submit", function (e) {
             )
           );
 
-          document.remove(container);
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
@@ -86,15 +85,9 @@ Form.addEventListener("submit", function (e) {
           panel.className = "card-panel green";
           const text = document.createElement("span");
           text.className = "white-text";
-          text.appendChild(
-            document.createTextNode(
-              `Email already exists !`
-            )
-          );
-          document.remove(container);
+          text.appendChild(document.createTextNode(`Email already exists !`));
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
-          
         }, 1000);
 
         console.log("Email already exists");
@@ -114,10 +107,9 @@ Form.addEventListener("submit", function (e) {
           const text = document.createElement("span");
           text.className = "white-text";
           text.appendChild(document.createTextNode(`Please input all fields!`));
-          document.remove(container);
+
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
-          
         }, 1000);
 
         console.log("Please input all fields");
@@ -139,7 +131,7 @@ Form.addEventListener("submit", function (e) {
           text.appendChild(
             document.createTextNode(`An error occurred, Try Again!`)
           );
-          document.remove(container);
+
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
