@@ -55,7 +55,7 @@ Form.addEventListener("submit", function (e) {
           text.className = "white-text";
           text.appendChild(
             document.createTextNode(
-              `User Created Succesfully !, welcome to IntrioBasket ${name}`
+              `User Created Succesfully !, welcome to IntrioBasket ${name}, Proceed to Sign In`
             )
           );
           panel.appendChild(text);
@@ -63,7 +63,10 @@ Form.addEventListener("submit", function (e) {
         }, 1000);
 
         //redirect user to homepage after successful login
-        window.location.assign("/login.html");
+
+        setTimeout(function () {
+          window.location.assign("/login.html");
+        }, 1200);
 
         console.log("User Created Succesfully");
       } else if (msg == "Email already exists") {

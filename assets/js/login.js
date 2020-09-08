@@ -52,7 +52,10 @@ Form.addEventListener("submit", function (e) {
           container.replaceChild(panel, loaderDiv);
         }, 1000);
 
-        window.location.assign("/index.html");
+        setTimeout(function () {
+          window.location.assign("/index.html");
+        }, 1200);
+
         localStorage.setItem("login", true);
         console.log("logged in");
       } else if (msg == "Incorrect Email or Password") {
