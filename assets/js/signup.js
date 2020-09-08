@@ -61,7 +61,9 @@ Form.addEventListener("submit", function (e) {
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
-        //window.location.assign("/login.html");
+
+        //redirect user to homepage after successful login
+        window.location.assign("/login.html");
 
         console.log("User Created Succesfully");
       } else if (msg == "Email already exists") {
