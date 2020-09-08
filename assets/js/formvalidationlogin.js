@@ -45,7 +45,7 @@ function validatePassword() {
 // Empty check
 if (checkIfEmpty(password)) return;
 // Must of in certain length
-if (!meetLength(password, 4, 100)) return;
+
 // check password against our character set
 // 1- a
 // 2- a 1
