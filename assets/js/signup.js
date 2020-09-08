@@ -59,9 +59,9 @@ Form.addEventListener("submit", function (e) {
             )
           );
 
-          
+          document.remove(container);
           panel.appendChild(text);
-          container.replaceChild(panel, loaderDiv).remove(container);;
+          container.replaceChild(panel, loaderDiv);
         }, 1000);
 
         //redirect user to homepage after successful login
@@ -91,6 +91,7 @@ Form.addEventListener("submit", function (e) {
               `Email already exists !`
             )
           );
+          document.remove(container);
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
           
@@ -113,10 +114,10 @@ Form.addEventListener("submit", function (e) {
           const text = document.createElement("span");
           text.className = "white-text";
           text.appendChild(document.createTextNode(`Please input all fields!`));
-         
+          document.remove(container);
           panel.appendChild(text);
-          container.replaceChild(panel, loaderDiv).remove(container);;
-       
+          container.replaceChild(panel, loaderDiv);
+          
         }, 1000);
 
         console.log("Please input all fields");
@@ -138,10 +139,9 @@ Form.addEventListener("submit", function (e) {
           text.appendChild(
             document.createTextNode(`An error occurred, Try Again!`)
           );
-          container.remove(panel);
+          document.remove(container);
           panel.appendChild(text);
-          container.replaceChild(panel, loaderDiv).remove(container);;
- 
+          container.replaceChild(panel, loaderDiv);
         }, 1000);
 
         console.log("An error occurred, Try Again!");
