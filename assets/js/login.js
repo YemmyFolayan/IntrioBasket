@@ -27,10 +27,8 @@ Form.addEventListener("submit", function (e) {
     })
     .then(function (data) {
       var msg = data.message;
-     
 
       if (msg == "Log in Successful") {
-        
         const name = email;
         const container = document.getElementById("containerr");
         const loader = document.createElement("div");
@@ -45,7 +43,11 @@ Form.addEventListener("submit", function (e) {
           panel.className = "card-panel green";
           const text = document.createElement("span");
           text.className = "white-text";
-          text.appendChild(document.createTextNode(`Log in Succesfully !, welcome to IntrioBasket ${name}`));
+          text.appendChild(
+            document.createTextNode(
+              `Log in Succesfully !, welcome to IntrioBasket ${name}`
+            )
+          );
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
@@ -53,9 +55,7 @@ Form.addEventListener("submit", function (e) {
         window.location.assign("/index.html");
         localStorage.setItem("login", true);
         console.log("logged in");
-
       } else if (msg == "Incorrect Email or Password") {
-
         const name = email;
         const container = document.getElementById("containerr");
         const loader = document.createElement("div");
@@ -70,15 +70,15 @@ Form.addEventListener("submit", function (e) {
           panel.className = "card-panel green";
           const text = document.createElement("span");
           text.className = "white-text";
-          text.appendChild(document.createTextNode(`Incorrect Email or Password`));
+          text.appendChild(
+            document.createTextNode(`Incorrect Email or Password`)
+          );
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
 
-
         console.log("Incorrect Email or Password");
       } else if (msg == "Email not found") {
-
         const name = email;
         const container = document.getElementById("containerr");
         const loader = document.createElement("div");
@@ -98,11 +98,8 @@ Form.addEventListener("submit", function (e) {
           container.replaceChild(panel, loaderDiv);
         }, 1000);
 
-
-
         console.log("Email not found");
       } else {
-
         const name = email;
         const container = document.getElementById("containerr");
         const loader = document.createElement("div");
@@ -125,7 +122,6 @@ Form.addEventListener("submit", function (e) {
         }, 1000);
 
         console.log("An error occurred, Try Again!");
-        
       }
     });
 });
