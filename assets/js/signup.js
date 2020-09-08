@@ -58,6 +58,8 @@ Form.addEventListener("submit", function (e) {
               `User Created Succesfully !, welcome to IntrioBasket ${name}, Proceed to Sign In`
             )
           );
+
+          container.remove(panel);
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
@@ -90,7 +92,7 @@ Form.addEventListener("submit", function (e) {
             )
           );
 
-          
+          container.remove(panel);
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
           
@@ -113,6 +115,7 @@ Form.addEventListener("submit", function (e) {
           const text = document.createElement("span");
           text.className = "white-text";
           text.appendChild(document.createTextNode(`Please input all fields!`));
+          container.remove(panel);
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
           
