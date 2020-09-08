@@ -91,6 +91,7 @@ Form.addEventListener("submit", function (e) {
           );
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
+          container.replaceChild(panel, panel);
         }, 1000);
 
         console.log("Email already exists");
@@ -112,6 +113,7 @@ Form.addEventListener("submit", function (e) {
           text.appendChild(document.createTextNode(`Please input all fields!`));
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
+          
         }, 1000);
 
         console.log("Please input all fields");
