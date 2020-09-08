@@ -1,10 +1,5 @@
 const app = document.getElementById("root");
 
-
-
-
-
-
 // const subcontainer = document.createElement("div");
 // subcontainer.setAttribute("class", "displayflex");
 
@@ -32,7 +27,7 @@ fetch(url)
       .sort(function (a, b) {
         return a.Variable1 < b.Variable1 ? 1 : -1;
       })
-      .slice(0, 10);
+      .slice(8, 18);
 
     console.log(top10);
     // if (request.status >= 200 && request.status < 400) {
@@ -50,9 +45,6 @@ fetch(url)
 
       //product details
       // const imagyy = document.getElementById("imagy");
-
-      
-
 
       const h5 = document.createElement("h5");
       h5.textContent = food_product_name;
@@ -125,10 +117,7 @@ fetch(url)
 
       addview.appendChild(iconview);
 
-
       // imagyy.appendChild(img);
-
-      
     });
   });
 
