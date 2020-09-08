@@ -89,9 +89,11 @@ Form.addEventListener("submit", function (e) {
               `Email already exists !`
             )
           );
+
+          
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
-          container.replaceChild(panel, panel);
+          
         }, 1000);
 
         console.log("Email already exists");
@@ -135,6 +137,7 @@ Form.addEventListener("submit", function (e) {
           text.appendChild(
             document.createTextNode(`An error occurred, Try Again!`)
           );
+          container.remove(panel);
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
