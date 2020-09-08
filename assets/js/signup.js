@@ -86,7 +86,7 @@ Form.addEventListener("submit", function (e) {
           text.className = "white-text";
           text.appendChild(
             document.createTextNode(
-              `Email already exists !, Sign Up with a Distinct Email`
+              `Email already exists !`
             )
           );
           panel.appendChild(text);
