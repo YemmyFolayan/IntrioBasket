@@ -153,11 +153,15 @@
           <div class="row">
             <div class="col-12 col-md-6 mx-auto" id="containerr">
               <h1 class="title">Login</h1>
-              <form id="form" method="post">
+              <form id="form" method="post" novalidate>
                 <label for="user-name">Username or email address *</label>
-                <input class="no-round-input" id="email" type="email" name="email">
+                <input class="no-round-input" id="email" type="email" name="email" onfocusout="validateEmail()">
+                <span class="helper-text"></span>
                 <label for="password">Password *</label>
-                <input class="no-round-input" id="password" type="password" name="password" >
+
+                <input class="no-round-input" id="password" type="password" name="password" onfocusout="validatePassword()">
+                <span class="helper-text"></span>
+
                 <div class="account-method">
                   <div class="account-save">
                     <input id="savepass" type="checkbox">
@@ -257,7 +261,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.shop.js"></script>
 
-
+    <script type="text/javascript" src="assets/js/formvalidationlogin.js"></script>
     <script type="text/javascript" src="assets/js/materialize.min.js"></script>
     <script type="text/javascript" src="assets/js/materialize.js"></script>
 
