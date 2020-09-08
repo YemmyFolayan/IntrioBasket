@@ -4267,19 +4267,19 @@ html {
 
 @media only screen and (min-width: 0) {
   html {
-    font-size: 14px;
+    font-size: 18px;
   }
 }
 
 @media only screen and (min-width: 992px) {
   html {
-    font-size: 14.5px;
+    font-size: 20.5px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   html {
-    font-size: 15px;
+    font-size: 23px;
   }
 }
 

@@ -80,7 +80,9 @@ Form.addEventListener("submit", function (e) {
           const text = document.createElement("span");
           text.className = "white-text";
           text.appendChild(
-            document.createTextNode(`Email already exists !, Try Again`)
+            document.createTextNode(
+              `Email already exists !, Sign Up with a Distinct Email`
+            )
           );
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);

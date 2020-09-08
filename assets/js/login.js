@@ -71,7 +71,7 @@ Form.addEventListener("submit", function (e) {
           const text = document.createElement("span");
           text.className = "white-text";
           text.appendChild(
-            document.createTextNode(`Incorrect Email or Password`)
+            document.createTextNode(`Incorrect Email or Password!`)
           );
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
@@ -93,7 +93,7 @@ Form.addEventListener("submit", function (e) {
           panel.className = "card-panel green";
           const text = document.createElement("span");
           text.className = "white-text";
-          text.appendChild(document.createTextNode(`Email not found`));
+          text.appendChild(document.createTextNode(`Email not found!`));
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
