@@ -66,7 +66,7 @@ Form.addEventListener("submit", function (e) {
 
         setTimeout(function () {
           window.location.assign("/login.html");
-        }, 2000);
+        }, 2500);
 
         console.log("User Created Succesfully");
       } else if (msg == "Email already exists") {

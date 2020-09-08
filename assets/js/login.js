@@ -54,7 +54,7 @@ Form.addEventListener("submit", function (e) {
 
         setTimeout(function () {
           window.location.assign("/index.html");
-        }, 2000);
+        }, 2500);
 
         localStorage.setItem("login", true);
         console.log("logged in");
