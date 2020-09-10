@@ -16,6 +16,18 @@ Form.addEventListener("submit", function (e) {
   console.log(phonenumber);
   console.log(gender);
 
+  const name = email;
+  const container = document.getElementById("containerr");
+  const loader = document.createElement("div");
+  loader.className = "progress";
+  const loadingBar = document.createElement("div");
+  loadingBar.className = "indeterminate";
+  loader.appendChild(loadingBar);
+  container.appendChild(loader);
+  const loaderDiv = document.querySelector("div.progress");
+  const panel = document.createElement("div");
+  panel.className = "card-panel green";
+  const text = document.createElement("span");
   fetch(
     "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create",
     {
@@ -39,19 +51,7 @@ Form.addEventListener("submit", function (e) {
       var msg = data.message;
 
       if (msg == "User Created Succesfully") {
-        const name = email;
-        const container = document.getElementById("containerr");
-        const loader = document.createElement("div");
-        loader.className = "progress";
-        const loadingBar = document.createElement("div");
-        loadingBar.className = "indeterminate";
-        loader.appendChild(loadingBar);
-        container.appendChild(loader);
         setTimeout(function () {
-          const loaderDiv = document.querySelector("div.progress");
-          const panel = document.createElement("div");
-          panel.className = "card-panel green";
-          const text = document.createElement("span");
           text.className = "white-text";
           text.appendChild(
             document.createTextNode(
@@ -62,7 +62,6 @@ Form.addEventListener("submit", function (e) {
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
-        
 
         //redirect user to homepage after successful login
 
@@ -72,19 +71,7 @@ Form.addEventListener("submit", function (e) {
 
         console.log("User Created Succesfully");
       } else if (msg == "Email already exists") {
-        const name = email;
-        const container = document.getElementById("containerr");
-        const loader = document.createElement("div");
-        loader.className = "progress";
-        const loadingBar = document.createElement("div");
-        loadingBar.className = "indeterminate";
-        loader.appendChild(loadingBar);
-        container.appendChild(loader);
         setTimeout(function () {
-          const loaderDiv = document.querySelector("div.progress");
-          const panel = document.createElement("div");
-          panel.className = "card-panel green";
-          const text = document.createElement("span");
           text.className = "white-text";
           text.appendChild(document.createTextNode(`Email already exists !`));
           panel.appendChild(text);
@@ -93,19 +80,7 @@ Form.addEventListener("submit", function (e) {
 
         console.log("Email already exists");
       } else if (msg == "Please input all fields") {
-        const name = email;
-        const container = document.getElementById("containerr");
-        const loader = document.createElement("div");
-        loader.className = "progress";
-        const loadingBar = document.createElement("div");
-        loadingBar.className = "indeterminate";
-        loader.appendChild(loadingBar);
-        container.appendChild(loader);
         setTimeout(function () {
-          const loaderDiv = document.querySelector("div.progress");
-          const panel = document.createElement("div");
-          panel.className = "card-panel green";
-          const text = document.createElement("span");
           text.className = "white-text";
           text.appendChild(document.createTextNode(`Please input all fields!`));
 
@@ -115,19 +90,7 @@ Form.addEventListener("submit", function (e) {
 
         console.log("Please input all fields");
       } else {
-        const name = email;
-        const container = document.getElementById("containerr");
-        const loader = document.createElement("div");
-        loader.className = "progress";
-        const loadingBar = document.createElement("div");
-        loadingBar.className = "indeterminate";
-        loader.appendChild(loadingBar);
-        container.appendChild(loader);
         setTimeout(function () {
-          const loaderDiv = document.querySelector("div.progress");
-          const panel = document.createElement("div");
-          panel.className = "card-panel green";
-          const text = document.createElement("span");
           text.className = "white-text";
           text.appendChild(
             document.createTextNode(`An error occurred, Try Again!`)
