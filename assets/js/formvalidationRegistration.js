@@ -14,7 +14,6 @@ const red = "#F44336";
 form.addEventListener("submit", function (event) {
   // Prevent default behaviour
   event.preventDefault();
- 
 });
 
 // Validators
@@ -38,7 +37,7 @@ function validatePassword() {
   // Empty check
   if (checkIfEmpty(password)) return;
   // Must of in certain length
-   // check password against our character set
+  // check password against our character set
   // 1- a
   // 2- a 1
   // 3- A a 1
@@ -166,7 +165,3 @@ function matchWithRegEx(regEx, field, message) {
     return false;
   }
 }
-
-
-
-
