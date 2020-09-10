@@ -66,7 +66,7 @@ Form.addEventListener("submit", function (e) {
 
         }, 1000);
 
-        
+        container.removeChild(panel);
 
         //redirect user to homepage after successful login
 
@@ -85,6 +85,9 @@ Form.addEventListener("submit", function (e) {
           container.removeChild(loaderDiv)
         }, 1000);
 
+        container.removeChild(panel);
+      
+
         console.log("Email already exists");
       } else if (msg == "Please input all fields") {
         setTimeout(function () {
@@ -96,6 +99,10 @@ Form.addEventListener("submit", function (e) {
           
           container.removeChild(loaderDiv)
         }, 1000);
+
+        container.removeChild(panel);
+      
+
 
         console.log("Please input all fields");
       } else {
@@ -110,6 +117,10 @@ Form.addEventListener("submit", function (e) {
           
           container.removeChild(loaderDiv)
         }, 1000);
+
+        container.removeChild(panel);
+      
+
 
         console.log("An error occurred, Try Again!");
       }
