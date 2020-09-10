@@ -61,6 +61,8 @@ Form.addEventListener("submit", function (e) {
 
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
+          container.removeChild(panel);
+          container.removeChild(loaderDiv)
         }, 1000);
 
         //redirect user to homepage after successful login
@@ -76,6 +78,8 @@ Form.addEventListener("submit", function (e) {
           text.appendChild(document.createTextNode(`Email already exists !`));
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
+          container.removeChild(panel);
+          container.removeChild(loaderDiv)
         }, 1000);
 
         console.log("Email already exists");
@@ -86,6 +90,8 @@ Form.addEventListener("submit", function (e) {
 
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
+          container.removeChild(panel);
+          container.removeChild(loaderDiv)
         }, 1000);
 
         console.log("Please input all fields");
@@ -98,6 +104,8 @@ Form.addEventListener("submit", function (e) {
 
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
+          container.removeChild(panel);
+          container.removeChild(loaderDiv)
         }, 1000);
 
         console.log("An error occurred, Try Again!");
