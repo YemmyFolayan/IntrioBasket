@@ -62,6 +62,7 @@ Form.addEventListener("submit", function (e) {
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
+        
 
         //redirect user to homepage after successful login
 
