@@ -1,0 +1,1 @@
+curl --location --request GET 'http://localhost:4000/api/food/get?food_product_name=Cocoa%20powder'

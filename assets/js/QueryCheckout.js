@@ -1,0 +1,1 @@
+curl --location --request GET 'http://intriobasket.pexceptos.com/api/checkout?purchaser_id=5f4d0fd68cc9aa11e6151b88'
