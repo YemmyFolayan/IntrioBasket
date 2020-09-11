@@ -63,11 +63,12 @@ Form.addEventListener("submit", function (e) {
 
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
-        }, 1000);
-        setTimeout(function () {
-          // Removes an element from the document
           $(".card-panel green").remove();
-        }, 1009);
+        }, 1000);
+        // setTimeout(function () {
+        //   // Removes an element from the document
+        //   $(".card-panel green").remove();
+        // }, 1009);
 
         //redirect user to homepage after successful login
 
@@ -82,11 +83,12 @@ Form.addEventListener("submit", function (e) {
           text.appendChild(document.createTextNode(`Email already exists !`));
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
-        }, 1000);
-        setTimeout(function () {
-          // Removes an element from the document
           $(".card-panel green").remove();
-        }, 1009);
+        }, 1000);
+        // setTimeout(function () {
+        //   // Removes an element from the document
+        //   $(".card-panel green").remove();
+        // }, 1009);
 
         console.log("Email already exists");
       } else if (msg == "Please input all fields") {
@@ -96,11 +98,12 @@ Form.addEventListener("submit", function (e) {
 
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
-        }, 1000);
-        setTimeout(function () {
-          // Removes an element from the document
           $(".card-panel green").remove();
-        }, 1009);
+        }, 1000);
+        // setTimeout(function () {
+        //   // Removes an element from the document
+        //   $(".card-panel green").remove();
+        // }, 1009);
 
         console.log("Please input all fields");
       } else {
@@ -112,11 +115,12 @@ Form.addEventListener("submit", function (e) {
 
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
-        }, 1000);
-        setTimeout(function () {
-          // Removes an element from the document
           $(".card-panel green").remove();
-        }, 1009);
+        }, 1000);
+        // setTimeout(function () {
+        //   // Removes an element from the document
+        //   $(".card-panel green").remove();
+        // }, 1009);
 
         console.log("An error occurred, Try Again!");
       }
