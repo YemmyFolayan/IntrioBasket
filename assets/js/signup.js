@@ -29,6 +29,13 @@ Form.addEventListener("submit", function (e) {
   panel.className = "card-panel green";
   const text = document.createElement("span");
 
+  setTimeout(function removeElement(containerr) {
+    // Removes an element from the document
+    var element = document.getElementById(containerr);
+    element.parentNode.removeChild(element);
+  }, 1000);
+
+
   fetch(
     "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create",
     {
@@ -51,12 +58,6 @@ Form.addEventListener("submit", function (e) {
     .then(function (data) {
       var msg = data.message;
       
-      setTimeout(function removeElement(containerr) {
-        // Removes an element from the document
-        var element = document.getElementById(containerr);
-        element.parentNode.removeChild(element);
-      }, 1009);
-
       if (msg == "User Created Succesfully") {
         setTimeout(function () {
           text.className = "white-text";
