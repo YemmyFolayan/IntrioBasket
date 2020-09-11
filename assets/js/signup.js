@@ -50,6 +50,12 @@ Form.addEventListener("submit", function (e) {
     })
     .then(function (data) {
       var msg = data.message;
+      
+      setTimeout(function removeElement(containerr) {
+        // Removes an element from the document
+        var element = document.getElementById(containerr);
+        element.parentNode.removeChild(element);
+      }, 1009);
 
       if (msg == "User Created Succesfully") {
         setTimeout(function () {
