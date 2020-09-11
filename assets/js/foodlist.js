@@ -42,8 +42,8 @@ fetch(url)
       const img = document.createElement("img");
       img.setAttribute("alt", "product");
       img.src = `${image_link}...`;
-      img.setAttribute("height", "300");
-      img.setAttribute("width", "300");
+      img.setAttribute("height", "200");
+      img.setAttribute("width", "200");
 
  
 
