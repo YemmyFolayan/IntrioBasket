@@ -26,16 +26,9 @@ Form.addEventListener("submit", function (e) {
   container.appendChild(loader);
   const loaderDiv = document.querySelector("div.progress");
   const panel = document.createElement("div");
-  panel.setAttribute("id", "boxe")
+  panel.setAttribute("id", "boxe");
   panel.className = "card-panel green";
   const text = document.createElement("span");
-
-  setTimeout(function removeElement(boxe) {
-    // Removes an element from the document
-    var element = document.getElementById(boxe);
-    element.parentNode.removeChild(element);
-  }, 1000);
-
 
   fetch(
     "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create",
@@ -58,7 +51,7 @@ Form.addEventListener("submit", function (e) {
     })
     .then(function (data) {
       var msg = data.message;
-      
+
       if (msg == "User Created Succesfully") {
         setTimeout(function () {
           text.className = "white-text";
@@ -71,12 +64,10 @@ Form.addEventListener("submit", function (e) {
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
-        setTimeout(function removeElement(boxe) {
+        setTimeout(function () {
           // Removes an element from the document
-          var element = document.getElementById(boxe);
-          element.parentNode.removeChild(element);
-        }, 1000);
-
+          $(".card-panel green").remove();
+        }, 1009);
 
         //redirect user to homepage after successful login
 
@@ -92,13 +83,10 @@ Form.addEventListener("submit", function (e) {
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
-        setTimeout(function removeElement(boxe) {
+        setTimeout(function () {
           // Removes an element from the document
-          var element = document.getElementById(boxe);
-          element.parentNode.removeChild(element);
-        }, 1000);
-
-
+          $(".card-panel green").remove();
+        }, 1009);
 
         console.log("Email already exists");
       } else if (msg == "Please input all fields") {
@@ -109,13 +97,10 @@ Form.addEventListener("submit", function (e) {
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
-        setTimeout(function removeElement(boxe) {
+        setTimeout(function () {
           // Removes an element from the document
-          var element = document.getElementById(boxe);
-          element.parentNode.removeChild(element);
-        }, 1000);
-
-
+          $(".card-panel green").remove();
+        }, 1009);
 
         console.log("Please input all fields");
       } else {
@@ -128,12 +113,10 @@ Form.addEventListener("submit", function (e) {
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
-        setTimeout(function removeElement(boxe) {
+        setTimeout(function () {
           // Removes an element from the document
-          var element = document.getElementById(boxe);
-          element.parentNode.removeChild(element);
-        }, 1000);
-
+          $(".card-panel green").remove();
+        }, 1009);
 
         console.log("An error occurred, Try Again!");
       }
