@@ -23,15 +23,9 @@ fetch(url)
     // var data = JSON.parse(json);
 
     // Then combine sort and slice to achieve your goal:
-    var top10 = data.payload
-      .sort(function (a, b) {
-        return a.Variable1 < b.Variable1 ? 1 : -1;
-      })
-      .slice(0, 10);
 
-    console.log(top10);
     // if (request.status >= 200 && request.status < 400) {
-    top10.forEach(({ food_product_name, image_link, cost }) => {
+    data.payload.forEach(({ food_product_name, image_link, cost }) => {
       const container = document.createElement("div");
       container.setAttribute("class", "product");
 
