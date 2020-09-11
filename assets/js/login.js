@@ -52,15 +52,15 @@ Form.addEventListener("submit", function (e) {
           container.replaceChild(panel, loaderDiv);
         }, 1000);
 
-        setTimeout(function () {
+        setTimeout(function loggedin() {
           window.location.assign("/index.html");
-
-          
-        }, 2200);
-        function dellogin() {
           document.getElementById("mobilelogin").style.visibility = "hidden";
           document.getElementById("loginflex").style.visibility = "hidden";
-        };
+       
+        }, 2200);
+        
+        
+         
 
         localStorage.setItem("login", true);
         console.log("logged in");
