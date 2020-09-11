@@ -56,6 +56,9 @@ Form.addEventListener("submit", function (e) {
           window.location.assign("/index.html");
         }, 2200);
 
+        document.getElementById("mobilelogin").style.visibility = "hidden";
+        document.getElementById("loginflex").style.visibility = "hidden";
+
         localStorage.setItem("login", true);
         console.log("logged in");
       } else if (msg == "Incorrect Email or Password") {
