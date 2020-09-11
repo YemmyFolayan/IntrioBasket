@@ -54,13 +54,8 @@ Form.addEventListener("submit", function (e) {
 
         setTimeout(function loggedin() {
           window.location.assign("/index.html");
-          document.getElementById("mobilelogin").style.visibility = "hidden";
-          document.getElementById("loginflex").style.visibility = "hidden";
-       
+          window.location;
         }, 2200);
-        
-        
-         
 
         localStorage.setItem("login", true);
         console.log("logged in");
