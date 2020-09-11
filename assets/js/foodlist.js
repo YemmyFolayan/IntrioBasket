@@ -34,7 +34,7 @@ fetch(url)
     top10.forEach(({ food_product_name, image_link, cost }) => {
       const container = document.createElement("div");
       container.setAttribute("class", "product");
-
+      
       const productdetails = document.createElement("a");
       productdetails.setAttribute("class", "product-img");
       productdetails.setAttribute("href", "shop_detail_fullwidth.html");
@@ -42,6 +42,10 @@ fetch(url)
       const img = document.createElement("img");
       img.setAttribute("alt", "product");
       img.src = `${image_link}...`;
+      img.setAttribute("height", "300");
+      img.setAttribute("width", "300");
+
+ 
 
       //product details
       // const imagyy = document.getElementById("imagy");
@@ -118,6 +122,11 @@ fetch(url)
       addview.appendChild(iconview);
 
       // imagyy.appendChild(img);
+
+      // setTimeout (function() {
+      //   //post cost product name to the cart with jquery.shop
+
+      // }, 1000);
     });
   });
 
