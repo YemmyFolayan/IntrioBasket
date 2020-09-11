@@ -28,7 +28,6 @@ Form.addEventListener("submit", function (e) {
   const panel = document.createElement("div");
   panel.className = "card-panel green";
   const text = document.createElement("span");
-  container.removeChild(panel);
 
   fetch(
     "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create",
@@ -64,6 +63,11 @@ Form.addEventListener("submit", function (e) {
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
+        setTimeout(function removeElement(containerr) {
+          // Removes an element from the document
+          var element = document.getElementById(containerr);
+          element.parentNode.removeChild(element);
+        }, 1100);
 
         //redirect user to homepage after successful login
 
@@ -79,6 +83,12 @@ Form.addEventListener("submit", function (e) {
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
+        setTimeout(function removeElement(containerr) {
+          // Removes an element from the document
+          var element = document.getElementById(containerr);
+          element.parentNode.removeChild(element);
+        }, 1100);
+
 
         console.log("Email already exists");
       } else if (msg == "Please input all fields") {
@@ -89,6 +99,12 @@ Form.addEventListener("submit", function (e) {
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
+        setTimeout(function removeElement(containerr) {
+          // Removes an element from the document
+          var element = document.getElementById(containerr);
+          element.parentNode.removeChild(element);
+        }, 1100);
+
 
         console.log("Please input all fields");
       } else {
@@ -101,6 +117,12 @@ Form.addEventListener("submit", function (e) {
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
+        setTimeout(function removeElement(containerr) {
+          // Removes an element from the document
+          var element = document.getElementById(containerr);
+          element.parentNode.removeChild(element);
+        }, 1100);
+
 
         console.log("An error occurred, Try Again!");
       }
