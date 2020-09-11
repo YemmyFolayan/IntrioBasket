@@ -26,12 +26,13 @@ Form.addEventListener("submit", function (e) {
   container.appendChild(loader);
   const loaderDiv = document.querySelector("div.progress");
   const panel = document.createElement("div");
+  panel.setAttribute("id", "boxe")
   panel.className = "card-panel green";
   const text = document.createElement("span");
 
-  setTimeout(function removeElement(containerr) {
+  setTimeout(function removeElement(boxe) {
     // Removes an element from the document
-    var element = document.getElementById(containerr);
+    var element = document.getElementById(boxe);
     element.parentNode.removeChild(element);
   }, 1000);
 
@@ -70,11 +71,12 @@ Form.addEventListener("submit", function (e) {
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
-        setTimeout(function removeElement(containerr) {
+        setTimeout(function removeElement(boxe) {
           // Removes an element from the document
-          var element = document.getElementById(containerr);
+          var element = document.getElementById(boxe);
           element.parentNode.removeChild(element);
-        }, 1100);
+        }, 1000);
+
 
         //redirect user to homepage after successful login
 
@@ -90,11 +92,12 @@ Form.addEventListener("submit", function (e) {
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
-        setTimeout(function removeElement(containerr) {
+        setTimeout(function removeElement(boxe) {
           // Removes an element from the document
-          var element = document.getElementById(containerr);
+          var element = document.getElementById(boxe);
           element.parentNode.removeChild(element);
-        }, 1100);
+        }, 1000);
+
 
 
         console.log("Email already exists");
@@ -106,11 +109,12 @@ Form.addEventListener("submit", function (e) {
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
-        setTimeout(function removeElement(containerr) {
+        setTimeout(function removeElement(boxe) {
           // Removes an element from the document
-          var element = document.getElementById(containerr);
+          var element = document.getElementById(boxe);
           element.parentNode.removeChild(element);
-        }, 1100);
+        }, 1000);
+
 
 
         console.log("Please input all fields");
@@ -124,11 +128,11 @@ Form.addEventListener("submit", function (e) {
           panel.appendChild(text);
           container.replaceChild(panel, loaderDiv);
         }, 1000);
-        setTimeout(function removeElement(containerr) {
+        setTimeout(function removeElement(boxe) {
           // Removes an element from the document
-          var element = document.getElementById(containerr);
+          var element = document.getElementById(boxe);
           element.parentNode.removeChild(element);
-        }, 1100);
+        }, 1000);
 
 
         console.log("An error occurred, Try Again!");
