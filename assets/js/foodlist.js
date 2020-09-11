@@ -74,7 +74,7 @@ fetch(url)
       addcart.setAttribute("class", "add-to-cart round-icon-btn");
 
       const iconcart = document.createElement("i");
-      iconcart.setAttribute("class", "icon_bag_alt");
+      iconcart.setAttribute("class", "fa fa-shopping-cart");
 
       const addcomp = document.createElement("button");
       addcomp.setAttribute("class", "add-to-compare round-icon-btn");
@@ -234,7 +234,7 @@ fetch(url)
 // // // // //               addcart.setAttribute("class", "add-to-cart round-icon-btn");
 
 // // // // //               const iconcart = document.createElement("i");
-// // // // //               iconcart.setAttribute("class", "icon_bag_alt");
+// // // // //               iconcart.setAttribute("class", "fa fa-shopping-cart");
 
 // // // // //               const addcomp = document.createElement("button");
 // // // // //               addcomp.setAttribute("class", "add-to-compare round-icon-btn");
@@ -456,7 +456,7 @@ fetch(url)
 // // // //    addcart.setAttribute("class", "add-to-cart round-icon-btn");
 
 // // // //    const iconcart = document.createElement("i");
-// // // //    iconcart.setAttribute("class", "icon_bag_alt");
+// // // //    iconcart.setAttribute("class", "fa fa-shopping-cart");
 
 // // // //    const addcomp = document.createElement("button");
 // // // //    addcomp.setAttribute("class", "add-to-compare round-icon-btn");
@@ -521,7 +521,7 @@ fetch(url)
 // // // //  // </h3>
 // // // //  // <div class="product-select">
 // // // //  //   <button class="add-to-wishlist round-icon-btn"> <i class="icon_heart_alt"></i></button>
-// // // //  //   <button class="add-to-cart round-icon-btn">  <i class="icon_bag_alt"></i></button>
+// // // //  //   <button class="add-to-cart round-icon-btn">  <i class="fa fa-shopping-cart"></i></button>
 // // // //  //   <button class="add-to-compare round-icon-btn"><i class="fas fa-random"></i></button>
 // // // //  //   <button class="quickview round-icon-btn"> <i class="far fa-eye"></i></button>
 
@@ -568,7 +568,7 @@ fetch(url)
 // // // //  //   carty.setAttribute("class", "product-select");
 
 // // // //  //   const addcart = document.createElement("button");
-// // // //  //   addcart.setAttribute("class", "icon_bag_alt");
+// // // //  //   addcart.setAttribute("class", "fa fa-shopping-cart");
 
 // // // //  //   const addlist = document.createElement("button");
 // // // //  //   addlist.setAttribute("class", "icon_heart_alt");
@@ -580,7 +580,7 @@ fetch(url)
 // // // //  //   addview.setAttribute("class", "far fa-eye");
 
 // // // //  //   // <button class="add-to-wishlist round-icon-btn"> <i class="icon_heart_alt"></i></button>
-// // // //  //   // <button class="add-to-cart round-icon-btn">  <i class="icon_bag_alt"></i></button>
+// // // //  //   // <button class="add-to-cart round-icon-btn">  <i class="fa fa-shopping-cart"></i></button>
 // // // //  //   // <button class="add-to-compare round-icon-btn"><i class="fas fa-random"></i></button>
 // // // //  //   // <button class="quickview round-icon-btn"> <i class="far fa-eye"></i></button>
 
@@ -723,7 +723,7 @@ fetch(url)
 //       addcart.setAttribute("class", "add-to-cart round-icon-btn");
 
 //       const iconcart = document.createElement("i");
-//       iconcart.setAttribute("class", "icon_bag_alt");
+//       iconcart.setAttribute("class", "fa fa-shopping-cart");
 
 //       const addcomp = document.createElement("button");
 //       addcomp.setAttribute("class", "add-to-compare round-icon-btn");
