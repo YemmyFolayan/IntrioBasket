@@ -43,7 +43,7 @@ fetch(url)
       img.setAttribute("alt", "product");
       img.src = `${image_link}...`;
       img.setAttribute("height", "200");
-      img.setAttribute("width", "200");
+      img.setAttribute("width", "250");
 
  
 
