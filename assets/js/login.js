@@ -53,7 +53,7 @@ Form.addEventListener("submit", function (e) {
         }, 1000);
 
         setTimeout(function loggedin() {
-          window.location.assign("/index.html");
+          window.location.assign("/Homepage.html");
           window.location;
         }, 2200);
 
