@@ -68,7 +68,7 @@ fetch(url)
       addcart.setAttribute("class", "add-to-cart round-icon-btn");
 
       const iconcart = document.createElement("i");
-      iconcart.setAttribute("class", "icon_bag_alt");
+      iconcart.setAttribute("class", "fa fa-shopping-cart");
 
       const addcomp = document.createElement("button");
       addcomp.setAttribute("class", "add-to-compare round-icon-btn");
