@@ -1,3 +1,5 @@
+//session management implemented and check out
+
 var Form = document.getElementById("form");
 
 Form.addEventListener("submit", function (e) {
@@ -54,7 +56,7 @@ Form.addEventListener("submit", function (e) {
 
         setTimeout(function loggedin() {
           window.location.assign("/Homepage.html");
-          
+
           window.location;
         }, 2200);
 
