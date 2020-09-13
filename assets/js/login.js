@@ -54,6 +54,7 @@ Form.addEventListener("submit", function (e) {
 
         setTimeout(function loggedin() {
           window.location.assign("/Homepage.html");
+          
           window.location;
         }, 2200);
 
