@@ -145,7 +145,7 @@ fetch(url)
 // // // // // console.log("foodlists");
 
 // // // // // const cachedFetch = (url, options) => {
-// // // // //   console.log("casched fetch");
+// // // // //   console.log("cached fetch");
 // // // // //   let expiry = 5 * 60; // 5 min default
 // // // // //   if (typeof options === "number") {
 // // // // //     expiry = options;
