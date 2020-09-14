@@ -34,7 +34,7 @@ fetch(url)
     top10.forEach(({ food_product_name, image_link, cost }) => {
       const container = document.createElement("div");
       container.setAttribute("class", "product");
-      
+
       const productdetails = document.createElement("a");
       productdetails.setAttribute("class", "product-img");
       productdetails.setAttribute("href", "shop_detail_fullwidth.html");
@@ -44,8 +44,6 @@ fetch(url)
       img.src = `${image_link}...`;
       img.setAttribute("height", "200");
       img.setAttribute("width", "250");
-
- 
 
       //product details
       // const imagyy = document.getElementById("imagy");
