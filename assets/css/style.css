@@ -6402,6 +6402,9 @@ header.coffee-2
 .items-category {
   padding: 100px 0 60px 0;
 }
+.items-category h1 {
+  margin-bottom: 35px;
+}
 .items-category .product-item {
   width: 100%;
   position: relative;
