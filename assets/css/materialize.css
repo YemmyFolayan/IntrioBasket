@@ -6477,10 +6477,14 @@ textarea.materialize-textarea + label:after,
 
 .input-field .helper-text {
   position: relative;
-  min-height: 18px;
+  min-height: 11px;
   display: block;
-  font-size: 12px;
+  font-size: 12px !important;
   color: rgba(0, 0, 0, 0.54);
+}
+
+.helper-text {
+  font-size: 12px !important;
 }
 
 .input-field .helper-text::after {
