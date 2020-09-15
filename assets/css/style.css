@@ -1403,9 +1403,6 @@ a:focus {
 	Product
 *************************************/
 .product {
-
-
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1417,19 +1414,12 @@ a:focus {
   transition: 0.3s ease;
   margin-bottom: 30px;
   height: 250px;
-
 }
-
-
-
 
 product-img {
   max-width: 90%;
   height: auto;
 }
-
-
-
 
 .product.borderless {
   border: 0;
@@ -4181,6 +4171,7 @@ product-img {
   display: block;
   margin-bottom: 0;
 }
+
 
 .shop-sidebar .shop-sidebar_tag .tag_bottom .tag-btn {
   margin: 0 8px 8px 0;
@@ -13162,6 +13153,10 @@ footer.coffee .newletter .newletter_input button:focus {
 }
 .contact-us .leave-message {
   text-align: center;
+}
+
+ {
+  text-align: left !important;
 }
 .contact-us .leave-message .title,
 .contact-us .leave-message .title-bb {
