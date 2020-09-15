@@ -6,7 +6,7 @@ const featuredProductItem = (productDetails) => {
             <a class="product-img" href="shop_detail_fullwidth.html">
                 <img alt="product" src="${productDetails.imageUrl}" height="200" width="250">
             </a>
-            <h5 class="product-type">${productDetails.name}</h5>
+            <h5 class="product-type">${productDetails.type}</h5>
             <h3 class="product-name">${productDetails.name}</h3>
             <h3 class="product-price">${productDetails.price}</h3>
             <div class="product-select">
@@ -42,8 +42,10 @@ const fetchFoodList = async () => {
 
         let productDetails = {
             name: product.food_product_name,
+            type: product.product_type,
             imageUrl: product.image_link,
             price: product.cost
+            
             // TODO: there should also be a product url...
         };
 
