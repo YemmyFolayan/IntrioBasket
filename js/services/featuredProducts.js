@@ -8,7 +8,7 @@ const featuredProductItem = (productDetails) => {
             </a>
             <h5 class="product-type">${productDetails.type}</h5>
             <h3 class="product-name">${productDetails.name}</h3>
-            <h3 class="product-price">${productDetails.price}</h3>
+            <h3 class="product-price">NGN ${productDetails.price}</h3>
             <div class="product-select">
                 <button class="add-to-wishlist round-icon-btn">
                     <i class="icon_heart_alt"></i>
