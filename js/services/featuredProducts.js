@@ -13,7 +13,7 @@ const featuredProductItem = (productDetails) => {
                 <button class="add-to-wishlist round-icon-btn">
                     <i class="icon_heart_alt"></i>
                 </button>
-                <button class="add-to-cart round-icon-btn">
+                <button onclick="addToCart('${productDetails.id}','${productDetails.name}','${productDetails.type}','${productDetails.imageUrl}','${productDetails.price}')" class="add-to-cart round-icon-btn">
                     <i class="fa fa-shopping-cart"></i>
                 </button>
                 <button class="add-to-compare round-icon-btn">
@@ -41,11 +41,11 @@ const fetchFoodList = async () => {
     featuredProducts.forEach(product => {
 
         let productDetails = {
+            id: product._id,
             name: product.food_product_name,
             type: product.product_type,
             imageUrl: product.image_link,
             price: product.cost
-            
             // TODO: there should also be a product url...
         };
 

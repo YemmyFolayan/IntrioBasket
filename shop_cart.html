@@ -1,218 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Shopping Cart</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-    <meta name="keywords" content="blog, business, clean, clear, cooporate, creative, design web, flat, marketing, minimal, portfolio, shop, shopping, unique">
-    <meta name="author" content="MARTECH | Deer Creative Theme">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/custom_bootstrap.css">
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/elegant.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/scroll.css">
-    <link rel="stylesheet" href="assets/css/icomoon.css">
-    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
-    <link rel="shortcut icon" href="assets/images/shortcut_logo.png">
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script type="text/javascript" src="js/jquery.shop.js"></script>
-  
-  </head>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<head>
+  <title>Shopping Cart</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <meta name="keywords"
+    content="blog, business, clean, clear, cooporate, creative, design web, flat, marketing, minimal, portfolio, shop, shopping, unique">
+  <meta name="author" content="MARTECH | Deer Creative Theme">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/custom_bootstrap.css">
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/elegant.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/scroll.css">
+  <link rel="stylesheet" href="assets/css/icomoon.css">
+  <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+  <link rel="shortcut icon" href="assets/images/shortcut_logo.png">
+</head>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 
-  <body>
-    <div id="main">
-      <header>
-        <div class="header-block d-flex align-items-center">
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-6">
-                <div class="header-left d-flex flex-column flex-md-row align-items-center">
-                  <p class="d-flex align-items-center"><i class="fas fa-envelope"></i>info@gmail.com</p>
-                  <p class="d-flex align-items-center"><i class="fas fa-phone"></i>+234456789999</p>
-                </div>
-              </div>
-              <div class="col-12 col-md-6">
-                <div class="header-right d-flex flex-column flex-md-row justify-content-md-end justify-content-center align-items-center">
-                  <div class="social-link d-flex"><a href=""><i class="fab fa-facebook-f"> </i></a><a href=""><i class="fab fa-twitter"></i></a><a href=""><i class="fab fa-invision"> </i></a><a href=""><i class="fab fa-pinterest-p"> </i></a></div>
-                  <div class="language">
-                    <div class="selected-language"><img src="assets/images/homepage01/usa.jpg" alt="">English<i class="arrow_carrot-down"></i>
-                      <ul class="list-language">
-                        <li><img src="assets/images/homepage01/usa.jpg" alt="">English</li>
-                        <li><img src="assets/images/homepage01/usa.jpg" alt="">Spain</li>
-                        <li><img src="assets/images/homepage01/usa.jpg" alt="">Japan</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="login d-flex"><a href="login.html"><i class="fas fa-user"></i>Login</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <nav class="navigation d-flex align-items-center">
-          <div class="container">
-            <div class="row">
-              <div class="col-2"><a class="logo" href="index.html"><img src="assets/images/logo.png" alt=""></a></div>
-              <div class="col-8">
-                <div class="navgition-menu d-flex align-items-center justify-content-center">
-                  <ul class="mb-0">
-                    <li class="toggleable"> <a class="menu-item" href="index.html">Home</a>
-                     
-                    </li>
-                    <li class="toggleable"> <a class="menu-item active" href="shop.html">Shop</a>
-                      
-                    <li class="toggleable"> <a class="menu-item" href="javascript:void()">Pages</a>
-                      <ul class="sub-menu">
-                        <li><a href="login.html">login</a></li>
-                        <li><a href="register.html">register</a></li>
-                        <li><a href="FAQ.html">FAQ</a></li>
-                        
-                        <li><a href="contact_us.html">contact us</a></li>
-                        
-                      </ul>
-                    </li>
-                    <li class="toggleable"><a class="menu-item" href="about_us.html">About us</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-2">
-                <div class="product-function d-flex align-items-center justify-content-end">
-                  <div id="wishlist"><a class="function-icon icon_heart_alt" href=""></a></div>
-                  <div id="cart"><a class="function-icon fa fa-shopping-cart" href=""><span>#150.00</span></a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
-        <div id="mobile-menu">
-          <div class="container">
-            <div class="row">
-              <div class="col-3">
-                <div class="mobile-menu_block d-flex align-items-center"><a class="mobile-menu--control" href="javascript:void()"><i class="fas fa-bars"></i></a>
-                  <div id="ogami-mobile-menu">
-                    <button class="no-round-btn" id="mobile-menu--closebtn">Close menu</button>
-                    <div class="mobile-menu_items">
-                      <ul class="mb-0 d-flex flex-column">
-                        <li class="toggleable"> <a class="menu-item active" href="index.html">Home</a><span class="sub-menu--expander"><i class="icon_plus"></i></span>
-                          <ul class="sub-menu">
-                            <li><a href="index.html">Homepage</a></li>
-                          </ul>
-                        </li>
-                        <li class="toggleable"><a class="menu-item" href="shop.html">Shop</a><span class="sub-menu--expander"><i class="icon_plus"></i></span>
-                         
-                        </li>
-                       
-                        <li class="toggleable"><a class="menu-item" href="javascript:void()">Pages</a><span class="sub-menu--expander"><i class="icon_plus"></i></span>
-                          <ul class="sub-menu">
-                            <li><a href="login.html">login</a></li>
-                            <li><a href="register.html">register</a></li>
-                            <li><a href="FAQ.html">FAQ</a></li>
-                            
-                            <li><a href="about_us.html">about us</a></li>
-                            <li><a href="contact_us.html">contact us</a></li>
-                          
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="mobile-login">
-                      <h2>My account</h2><a href="login.html">Login</a><a href="register.html">Register</a>
-                    </div>
-                    <div class="mobile-social"><a href=""><i class="fab fa-facebook-f"> </i></a><a href=""><i class="fab fa-twitter"></i></a><a href=""><i class="fab fa-invision"> </i></a><a href=""><i class="fab fa-pinterest-p"> </i></a></div>
-                  </div>
-                  <div class="ogamin-mobile-menu_bg"></div>
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="mobile-menu_logo text-center d-flex justify-content-center align-items-center"><a href=""><img src="assets/images/logo.png" alt=""></a></div>
-              </div>
-              <div class="col-3">
-                <div class="mobile-product_function d-flex align-items-center justify-content-end"><a class="function-icon icon_heart_alt" href="shop_wishlist.html"></a><a class="function-icon fa fa-shopping-cart" href="shop_cart.html"></a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </header>
-      <!-- End header-->
-
-      <div class="ogami-breadcrumb">
-        <div class="container">
-          <ul>
-            <li> <a class="breadcrumb-link" href="index.html"> <i class="fas fa-home"></i>Home</a></li>
-            <li> <a class="breadcrumb-link" href="index.html">Shop</a></li>
-            <li> <a class="breadcrumb-link active" href="index.html">Shoping cart</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- End breadcrumb-->
-      <div class="order-step">
+<body>
+  <div id="main">
+    <header>
+      <div class="header-block d-flex align-items-center">
         <div class="container">
           <div class="row">
-            <div class="col-12">
-              <div class="order-step_block">
-                <div class="row no-gutters">
-                  <div class="col-12 col-md-4">
-                    <div class="step-block active">
-                      <div class="step">
-                       
-                       
-                       
-                       	<div id="content">	</div>
-	
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                        <h2>Shopping Cart</h2><span>01</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-4">
-                    <div class="step-block">
-                      <div class="step">
-                        <h2>Check Out</h2><span>02</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-4">
-                    <div class="step-block">
-                      <div class="step">
-                        <h2>Order Completed</h2><span>03</span>
-                      </div>
-                    </div>
+            <div class="col-12 col-md-6">
+              <div class="header-left d-flex flex-column flex-md-row align-items-center">
+                <p class="d-flex align-items-center"><i class="fas fa-envelope"></i>info@gmail.com</p>
+                <p class="d-flex align-items-center"><i class="fas fa-phone"></i>+234456789999</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div
+                class="header-right d-flex flex-column flex-md-row justify-content-md-end justify-content-center align-items-center">
+                <div class="social-link d-flex"><a href=""><i class="fab fa-facebook-f"> </i></a><a href=""><i
+                      class="fab fa-twitter"></i></a><a href=""><i class="fab fa-invision"> </i></a><a href=""><i
+                      class="fab fa-pinterest-p"> </i></a></div>
+                <div class="language">
+                  <div class="selected-language"><img src="assets/images/homepage01/usa.jpg" alt="">English<i
+                      class="arrow_carrot-down"></i>
+                    <ul class="list-language">
+                      <li><img src="assets/images/homepage01/usa.jpg" alt="">English</li>
+                      <li><img src="assets/images/homepage01/usa.jpg" alt="">Spain</li>
+                      <li><img src="assets/images/homepage01/usa.jpg" alt="">Japan</li>
+                    </ul>
                   </div>
                 </div>
+                <div class="login d-flex"><a href="login.html"><i class="fas fa-user"></i>Login</a></div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- End order step-->
-      <div class="shopping-cart">
+      <nav class="navigation d-flex align-items-center">
         <div class="container">
           <div class="row">
-            <div class="col-12">
-              <div class="product-table">
-<!---->
-                <h1>Your Shopping Cart</h1>
-             <form id="shopping-cart" action="shop_cart.html" method="post">
+            <div class="col-2"><a class="logo" href="index.html"><img src="assets/images/logo.png" alt=""></a></div>
+            <div class="col-8">
+              <div class="navgition-menu d-flex align-items-center justify-content-center">
+                <ul class="mb-0">
+                  <li class="toggleable">
+                    <a class="menu-item" href="index.html">Home</a>
+                  </li>
+                  <li class="toggleable">
+                    <a class="menu-item active" href="shop.html">Shop</a>
+                  </li>
+                  <li class="toggleable">
+                    <a class="menu-item" href="javascript:void()">Pages</a>
+                    <ul class="sub-menu">
+                      <li><a href="login.html">login</a></li>
+                      <li><a href="register.html">register</a></li>
+                      <li><a href="FAQ.html">FAQ</a></li>
+                      <li><a href="contact_us.html">contact us</a></li>
+                    </ul>
+                  </li>
+                  <li class="toggleable">
+                    <a class="menu-item" href="about_us.html">About us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="product-function d-flex align-items-center justify-content-end">
+                <div id="wishlist"><a class="function-icon icon_heart_alt" href=""></a></div>
+                <div id="cartButton" class="function-icon hover">
+                  <i class="fa fa fa-shopping-cart"></i>
+                  <sup style="top: -.5em">
+                    <span id="cartButtonBadge" class="my-badge badge-success">0</span>
+                  </sup>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="mobile-menu">
+        <div class="container">
+          <div class="row">
+            <div class="col-3">
+              <div class="mobile-menu_block d-flex align-items-center"><a class="mobile-menu--control"
+                  href="javascript:void()"><i class="fas fa-bars"></i></a>
+                <div id="ogami-mobile-menu">
+                  <button class="no-round-btn" id="mobile-menu--closebtn">Close menu</button>
+                  <div class="mobile-menu_items">
+                    <ul class="mb-0 d-flex flex-column">
+                      <li class="toggleable"> <a class="menu-item active" href="index.html">Home</a><span
+                          class="sub-menu--expander"><i class="icon_plus"></i></span>
+                        <ul class="sub-menu">
+                          <li><a href="index.html">Homepage</a></li>
+                        </ul>
+                      </li>
+                      <li class="toggleable">
+                        <a class="menu-item" href="shop.html">Shop</a>
+                        <span class="sub-menu--expander"><i class="icon_plus"></i></span>
+                      </li>
+                      <li class="toggleable">
+                        <a class="menu-item" href="javascript:void()">Pages</a>
+                        <span class="sub-menu--expander"><i class="icon_plus"></i></span>
+                        <ul class="sub-menu">
+                          <li><a href="login.html">login</a></li>
+                          <li><a href="register.html">register</a></li>
+                          <li><a href="FAQ.html">FAQ</a></li>
+                          <li><a href="about_us.html">about us</a></li>
+                          <li><a href="contact_us.html">contact us</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mobile-login">
+                    <h2>My account</h2><a href="login.html">Login</a><a href="register.html">Register</a>
+                  </div>
+                  <div class="mobile-social"><a href=""><i class="fab fa-facebook-f"> </i></a><a href=""><i
+                        class="fab fa-twitter"></i></a><a href=""><i class="fab fa-invision"> </i></a><a href=""><i
+                        class="fab fa-pinterest-p"> </i></a></div>
+                </div>
+                <div class="ogamin-mobile-menu_bg"></div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="mobile-menu_logo text-center d-flex justify-content-center align-items-center"><a href=""><img
+                    src="assets/images/logo.png" alt=""></a></div>
+            </div>
+            <div class="col-3">
+              <div class="mobile-product_function d-flex align-items-center justify-content-end"><a
+                  class="function-icon icon_heart_alt" href="shop_wishlist.html"></a><a
+                  class="function-icon fa fa-shopping-cart" href="shop_cart.html"></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End header-->
 
+    <div class="ogami-breadcrumb">
+      <div class="container">
+        <ul>
+          <li> <a class="breadcrumb-link" href="index.html"> <i class="fas fa-home"></i>Home</a></li>
+          <li> <a class="breadcrumb-link" href="index.html">Shop</a></li>
+          <li> <a class="breadcrumb-link active" href="index.html">Shoping cart</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- End breadcrumb-->
 
+    <div class="order-step">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="order-step_block">
+              <div class="row no-gutters">
+                <div class="col-12 col-md-4">
+                  <div class="step-block active">
+                    <div class="step">
+                      <div id="content"> </div>
+                      <h2>Shopping Cart</h2><span>01</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="step-block">
+                    <div class="step">
+                      <h2>Check Out</h2><span>02</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="step-block">
+                    <div class="step">
+                      <h2>Order Completed</h2><span>03</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End order step-->
 
-                <table class="table table-responsive"> 
+    <div class="shopping-cart">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="product-table">
+              <h1>Your Shopping Cart</h1>
+              <form id="shopping-cart" action="shop_cart.html" method="post">
+                <table class="table table-responsive">
                   <colgroup>
                     <col span="1" style="width: 15%">
                     <col span="1" style="width: 30%">
@@ -221,162 +220,169 @@
                     <col span="1" style="width: 15%">
                     <col span="1" style="width: 10%">
                   </colgroup>
-
-                
-                  <thead >
+                  <thead>
                     <tr>
                       <th class="product-name" scope="col">Product name</th>
                       <th class="product-price" scope="col">Price</th>
                       <th class="product-quantity" scope="col">Quantity</th>
                       <th class="product-total" scope="col" id="sub-total">Total</th>
-                      <th class="product-clear" scope="col"> 
+                      <th class="product-clear" scope="col">
                         <button class="no-round-btn"><i class="icon_close"></i></button>
                       </th>
                     </tr>
                   </thead>
-
                   <tbody>
-
                   </tbody>
-
-<tbody>
+                  <tbody>
                     <tr>
-                     
                       <td class="product-name">Pure Pineapple</td>
                       <td class="product-price">#460.00</td>
-                      <td class="product-quantity"> 
+                      <td class="product-quantity">
                         <input class="quantity no-round-input" type="number" min="1" value="1">
                       </td>
                       <td class="product-total">#460.00</td>
-                      <td class="product-clear"> 
+                      <td class="product-clear">
                         <button class="no-round-btn"><i class="icon_close"></i></button>
                       </td>
                     </tr>
-                   
-                  </tbody> 
-                </table>
-              </div>
-            </div>
-            
-            <div class="col-12 col-sm-12 text-center">
-              <button class="no-round-btn black cart-update">Upadate cart</button>
-
-              <button class="no-round-btn black cart-update">Empty Cart</button>
-
-              <a href="index.html"> <button class="no-round-btn black cart-update">Continue Shoping</button></a>
-          
-            </div>
-          </div>
-          <div class="row justify-content-end">
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="cart-total_block">
-                <h2>Cart total</h2>
-                <table class="table">
-                  <colgroup>
-                    <col span="1" style="width: 50%">
-                    <col span="1" style="width: 50%">
-                  </colgroup>
-                  <tbody>
-                    <tr>
-                      <th><p id="sub-total">
-                      <strong>SUBTOTAL</strong>:</th>
-                      <td> <span id="stotal"></span></td>
-                    </tr>
-
-                    </tr>
-                    <tr>
-                      <th>TOTAL</th>
-                      <td>#169.00</td>
-                    </tr>
                   </tbody>
                 </table>
-                <div class="checkout-method">
-                  <button class="no-round-btn black cart-update">Proceed to Checkout</button>
-                  <span><strong>- or -</strong></span><a href="shop_checkout.html"><strong>Check out with PayPal</strong></a>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-12 text-center">
+            <button class="no-round-btn black cart-update">Upadate cart</button>
+            <button class="no-round-btn black cart-update">Empty Cart</button>
+            <a href="index.html"> <button class="no-round-btn black cart-update">Continue Shoping</button></a>
+          </div>
+        </div>
+        <div class="row justify-content-end">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="cart-total_block">
+              <h2>Cart total</h2>
+              <table class="table">
+                <colgroup>
+                  <col span="1" style="width: 50%">
+                  <col span="1" style="width: 50%">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th>
+                      <p id="sub-total">
+                        <strong>SUBTOTAL</strong>:
+                    </th>
+                    <td> <span id="stotal"></span></td>
+                  </tr>
+                  </tr>
+                  <tr>
+                    <th>TOTAL</th>
+                    <td>#169.00</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="checkout-method">
+                <button class="no-round-btn black cart-update">Proceed to Checkout</button>
+                <span><strong>- or -</strong></span><a href="shop_checkout.html"><strong>Check out with
+                    PayPal</strong></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End shopping cart-->
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-4 text-sm-center text-md-left">
+            <div class="footer-logo"><img src="assets/images/logo.png" alt=""></div>
+            <div class="footer-contact">
+              <p>Address: S01, Pathfield mall, Beside Rainoil Filling Station, 4th Avenue,Gwarimpa, Abuja, F.C.T</p>
+              <p>Phone: +234456789999</p>
+              <p>Email: info@gmail.com</p>
+            </div>
+            <div class="footer-social"><a class="round-icon-btn" href=""><i class="fab fa-facebook-f"> </i></a><a
+                class="round-icon-btn" href=""><i class="fab fa-twitter"></i></a><a class="round-icon-btn" href=""><i
+                  class="fab fa-invision"> </i></a><a class="round-icon-btn" href=""><i
+                  class="fab fa-pinterest-p"></i></a></div>
+          </div>
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-12 col-sm-4 text-sm-center text-md-left">
+                <div class="footer-quicklink">
+                  <h5>Infomation</h5><a href="about_us.html">About us</a><a href="checkout.html">Check out</a><a
+                    href="contact_us.html">Contact</a><a href="about_us.html">Service</a>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4 text-sm-center text-md-left">
+                <div class="footer-quicklink">
+                  <h5>My Account</h5><a href="login.html">My Account</a><a href="contact_us.html">Contact</a><a
+                    href="shop_cart.html">Shopping cart</a><a href="shop.html">Shop</a>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4 text-sm-center text-md-left">
+                <div class="footer-quicklink">
+                  <h5>Quick Shop</h5><a href="about_us.html">About us</a><a href="checkout.html">Check out</a><a
+                    href="contact_us.html">Contact</a><a href="about_us.html">Service</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- End shopping cart-->
-     
-      <footer>
+      <div class="newletter">
         <div class="container">
-          <div class="row">
-            <div class="col-12 col-sm-12 col-md-4 text-sm-center text-md-left">
-              <div class="footer-logo"><img src="assets/images/logo.png" alt=""></div>
-              <div class="footer-contact">
-                <p>Address: S01, Pathfield mall, Beside Rainoil Filling Station, 4th Avenue,Gwarimpa, Abuja, F.C.T</p>
-                <p>Phone: +234456789999</p>
-                <p>Email: info@gmail.com</p>
+          <div class="row justify-content-between align-items-center">
+            <div class="col-12 col-md-7">
+              <div class="newletter_text text-center text-md-left">
+                <h5>Join Our Newsletter Now</h5>
+                <p>Get E-mail updates about our latest shop and special offers.</p>
               </div>
-              <div class="footer-social"><a class="round-icon-btn" href=""><i class="fab fa-facebook-f"> </i></a><a class="round-icon-btn" href=""><i class="fab fa-twitter"></i></a><a class="round-icon-btn" href=""><i class="fab fa-invision"> </i></a><a class="round-icon-btn" href=""><i class="fab fa-pinterest-p"></i></a></div>
             </div>
-            <div class="col-md-8">
-              <div class="row">
-                <div class="col-12 col-sm-4 text-sm-center text-md-left">
-                  <div class="footer-quicklink">
-                    <h5>Infomation</h5><a href="about_us.html">About us</a><a href="checkout.html">Check out</a><a href="contact_us.html">Contact</a><a href="about_us.html">Service</a>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-4 text-sm-center text-md-left">
-                  <div class="footer-quicklink">
-                    <h5>My Account</h5><a href="login.html">My Account</a><a href="contact_us.html">Contact</a><a href="shop_cart.html">Shopping cart</a><a href="shop.html">Shop</a>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-4 text-sm-center text-md-left">
-                  <div class="footer-quicklink">
-                    <h5>Quick Shop</h5><a href="about_us.html">About us</a><a href="checkout.html">Check out</a><a href="contact_us.html">Contact</a><a href="about_us.html">Service</a>
-                  </div>
-                </div>
+            <div class="col-12 col-md-5">
+              <div class="newletter_input">
+                <input class="round-input" type="text" placeholder="Enter your email">
+                <button>Subcribe</button>
               </div>
             </div>
           </div>
         </div>
-        <div class="newletter">
-          <div class="container">
-            <div class="row justify-content-between align-items-center">
-              <div class="col-12 col-md-7">
-                <div class="newletter_text text-center text-md-left">
-                  <h5>Join Our Newsletter Now</h5>
-                  <p>Get E-mail updates about our latest shop and special offers.</p>
-                </div>
-              </div>
-              <div class="col-12 col-md-5">
-                <div class="newletter_input">
-                  <input class="round-input" type="text" placeholder="Enter your email">
-                  <button>Subcribe</button>
-                </div>
-              </div>
-            </div>
+      </div>
+      <div class="footer-credit">
+        <div class="container">
+          <div
+            class="footer-creadit_block d-flex flex-column flex-md-row justify-content-start justify-content-md-between align-items-baseline align-items-md-center">
+            <p class="author">Copyright © 2020 IntrioBasket- All Rights Reserved.</p><img class="payment-method"
+              src="assets/images/payment.png" alt="">
           </div>
         </div>
-        <div class="footer-credit">
-          <div class="container">
-            <div class="footer-creadit_block d-flex flex-column flex-md-row justify-content-start justify-content-md-between align-items-baseline align-items-md-center">
-              <p class="author">Copyright © 2020 IntrioBasket- All Rights Reserved.</p><img class="payment-method" src="assets/images/payment.png" alt="">
-            </div>
-          </div>
-        </div>
-      </footer>
-      <!-- End footer-->
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="assets/js/jquery-ui.min.js"></script>
-    <script src="assets/js/jquery.countdown.min.js"></script>
-    <script src="assets/js/slick.min.js"></script>
-    <script src="assets/js/jquery.easing.js"></script>
-    <script src="assets/js/jquery.scrollUp.min.js"></script>
-    <script src="assets/js/jquery.zoom.min.js"></script>
-    <script src="assets/js/parallax.js"></script>
-    <script src="assets/js/jquery.fancybox.js"></script>
-    <script src="assets/js/numscroller-1.0.js"></script>
-    <script src="assets/js/vanilla-tilt.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    
+      </div>
+    </footer>
+    <!-- End footer-->
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="assets/js/jquery-ui.min.js"></script>
+  <script src="assets/js/jquery.countdown.min.js"></script>
+  <script src="assets/js/slick.min.js"></script>
+  <script src="assets/js/jquery.easing.js"></script>
+  <script src="assets/js/jquery.scrollUp.min.js"></script>
+  <script src="assets/js/jquery.zoom.min.js"></script>
+  <script src="assets/js/parallax.js"></script>
+  <script src="assets/js/jquery.fancybox.js"></script>
+  <script src="assets/js/numscroller-1.0.js"></script>
+  <script src="assets/js/vanilla-tilt.min.js"></script>
+  <script src="assets/js/main.js"></script>
 
+  <!--Config -->
+  <script src="config/constants.js"></script>
 
-    <script></script>
-  </body>
+  <!-- Utils -->
+  <script src="js/utils/api-request.js"></script>
+
+  <!-- App Logic -->
+  <script src="js/app.js"></script>
+
+</body>
+
 </html>
