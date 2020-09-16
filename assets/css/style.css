@@ -11350,6 +11350,9 @@ footer.coffee .newletter .newletter_input button:focus {
 .shopping-cart {
   margin-bottom: 60px;
 }
+.shopping-cart h1{
+  margin-bottom:20px;
+}
 .shopping-cart .product-table .table {
   border: 1px solid #ebebeb;
 }

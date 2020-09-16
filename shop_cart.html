@@ -207,78 +207,50 @@
     <div class="shopping-cart">
       <div class="container">
         <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="title mx-auto">Your Shopping Cart</h1>
+          </div>
           <div class="col-12">
             <div class="product-table">
-              <h1>Your Shopping Cart</h1>
-              <form id="shopping-cart" action="shop_cart.html" method="post">
-                <table class="table table-responsive">
-                  <colgroup>
-                    <col span="1" style="width: 15%">
-                    <col span="1" style="width: 30%">
-                    <col span="1" style="width: 15%">
-                    <col span="1" style="width: 15%">
-                    <col span="1" style="width: 15%">
-                    <col span="1" style="width: 10%">
-                  </colgroup>
-                  <thead>
-                    <tr>
-                      <th class="product-name" scope="col">Product name</th>
-                      <th class="product-price" scope="col">Price</th>
-                      <th class="product-quantity" scope="col">Quantity</th>
-                      <th class="product-total" scope="col" id="sub-total">Total</th>
-                      <th class="product-clear" scope="col">
-                        <button class="no-round-btn"><i class="icon_close"></i></button>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  </tbody>
-                  <tbody>
-                    <tr>
-                      <td class="product-name">Pure Pineapple</td>
-                      <td class="product-price">#460.00</td>
-                      <td class="product-quantity">
-                        <input class="quantity no-round-input" type="number" min="1" value="1">
-                      </td>
-                      <td class="product-total">#460.00</td>
-                      <td class="product-clear">
-                        <button class="no-round-btn"><i class="icon_close"></i></button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+              <table class="table table-responsive">
+                <colgroup>
+                  <col span="1" style="width: 15%">
+                  <col span="1" style="width: 30%">
+                  <col span="1" style="width: 15%">
+                  <col span="1" style="width: 15%">
+                  <col span="1" style="width: 15%">
+                  <col span="1" style="width: 10%">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th class="product-name" scope="col">Product name</th>
+                    <th class="product-price" scope="col">Price</th>
+                    <th class="product-quantity" scope="col">Quantity</th>
+                    <th class="product-total" scope="col" id="sub-total">Total</th>
+                    <th class="product-clear" scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="shopCartTBody"></tbody>
+              </table>
             </div>
           </div>
 
           <div class="col-12 col-sm-12 text-center">
-            <button class="no-round-btn black cart-update">Upadate cart</button>
-            <button class="no-round-btn black cart-update">Empty Cart</button>
-            <a href="index.html"> <button class="no-round-btn black cart-update">Continue Shoping</button></a>
+            <button id="updateCartButton" class="no-round-btn black cart-update">Upadate cart</button>
+            <button id="emptyCartButton" class="no-round-btn black cart-update">Empty Cart</button>
+            <button onclick="router('index')" class="no-round-btn black cart-update">Continue Shoping</button>
           </div>
         </div>
         <div class="row justify-content-end">
           <div class="col-12 col-md-6 col-lg-4">
-            <div class="cart-total_block">
+            <div id="cartTotalTable" class="cart-total_block">
               <h2>Cart total</h2>
               <table class="table">
                 <colgroup>
                   <col span="1" style="width: 50%">
                   <col span="1" style="width: 50%">
                 </colgroup>
-                <tbody>
-                  <tr>
-                    <th>
-                      <p id="sub-total">
-                        <strong>SUBTOTAL</strong>:
-                    </th>
-                    <td> <span id="stotal"></span></td>
-                  </tr>
-                  </tr>
-                  <tr>
-                    <th>TOTAL</th>
-                    <td>#169.00</td>
-                  </tr>
-                </tbody>
+                <tbody id="cartTotalTBody"></tbody>
               </table>
               <div class="checkout-method">
                 <button class="no-round-btn black cart-update">Proceed to Checkout</button>
@@ -383,6 +355,8 @@
   <!-- App Logic -->
   <script src="js/app.js"></script>
 
+  <!-- Services -->
+  <script src="js/services/cart.js"></script>
 </body>
 
 </html>
