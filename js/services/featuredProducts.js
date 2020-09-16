@@ -1,6 +1,6 @@
 const featuredProductDOM = document.getElementById("featuredProducts");
 
-const featuredProductItem = (productDetails) => {
+const featuredProductItemTemplate = (productDetails) => {
     return `
         <div class="product">
             <a class="product-img" href="shop_detail_fullwidth.html">
@@ -49,7 +49,7 @@ const fetchFoodList = async () => {
             // TODO: there should also be a product url...
         };
 
-        let itemString = featuredProductItem(productDetails);
+        let itemString = featuredProductItemTemplate(productDetails);
         let itemFragment = document.createElement('div')
         itemFragment.innerHTML = itemString
         featuredProductDOM.appendChild(itemFragment)
