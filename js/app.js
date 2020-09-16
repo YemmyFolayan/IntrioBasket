@@ -11,6 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
  * addToCart: This function adds products to user cart.
  * - Cart is persistent
  * 
+ * Hook this  endpoint up with addtocart function to allow processing at the backend 
+ * http://intriobasket.pexceptos.com/api/user/create-cart
+ * 
+ * Param purchase id = 5f4d0fd68cc9aa11e6151b88
+
+
  * @param {String} id 
  * @param {String} name 
  * @param {String} type 
@@ -50,9 +56,27 @@ const addToCart = (id, name, type, imageUrl, price) => {
 /**
  * Update Cart Badge Function - Updates the Cart Button on the header section
  */
+/**
+ * 
+PUT
+Hook this  endpoint up with update cart function to allow processing at the backend 
+
+Update User Checkout History
+http://intriobasket.pexceptos.com/api/checkout/user/id
+
+
+
+PUT
+
+Update User Cart
+http://intriobasket.pexceptos.com/api/user/update-cart/id
+
+ */
+
+
 const updateCartButtonBadge = () => {
 
-    const cartBadge = document.getElementById('cartButtonBadge')
+    const cartBadge = document.getElementById('cartButtonBadge');
     const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
 
     if (cartList === null) {

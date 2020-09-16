@@ -5,6 +5,7 @@
         "addcart",
         "addcomp",
         "addlist",
+        "addtocart",
         "addview",
         "apicall",
         "basket",
@@ -36,6 +37,7 @@
         "shop detail fullwidth",
         "subcontainer",
         "succesfully",
+        "updatecart",
         "validatefullname",
         "validators"
     ]
