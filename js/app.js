@@ -61,3 +61,22 @@ const updateCartButtonBadge = () => {
         cartBadge.innerText = cartList.length
     }
 }
+
+
+// Mini Router (refreshes the page) 
+const router = (url) => {
+
+    // Check for url
+    if (typeof url === 'undefined') throw new Error('Invalid URL!');
+
+    let pageUrl = '';
+    if (url.includes('.html')) {
+
+        pageUrl = url
+    } else {
+
+        pageUrl = url.concat('.html')
+    }
+
+    window.location.assign(pageUrl)
+}
