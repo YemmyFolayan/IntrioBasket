@@ -49,9 +49,9 @@ const fetchFoodList = async () => {
             // TODO: there should also be a product url...
         };
 
-        let itemString = featuredProductItemTemplate(productDetails);
+        let htmlString = featuredProductItemTemplate(productDetails);
         let itemFragment = document.createElement('div')
-        itemFragment.innerHTML = itemString
+        itemFragment.innerHTML = htmlString
         featuredProductDOM.appendChild(itemFragment)
     });
 };
