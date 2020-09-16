@@ -50,9 +50,9 @@ const fetchFoodList = async () => {
         };
 
         let htmlString = featuredProductItemTemplate(productDetails);
-        let itemFragment = document.createElement('div')
-        itemFragment.innerHTML = htmlString
-        featuredProductDOM.appendChild(itemFragment)
+        let htmlFragment = document.createElement('div')
+        htmlFragment.innerHTML = htmlString
+        featuredProductDOM.appendChild(htmlFragment)
     });
 };
 
