@@ -13230,3 +13230,22 @@ footer.coffee .newletter .newletter_input button:focus {
     margin-bottom: 60px;
   }
 }
+
+/* Utility Styles */
+.my-badge {
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: .25em .4em;
+  font-size: 75% !important;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+  color: #fff !important;
+}
+
+.hover {
+  cursor: pointer;
+}
