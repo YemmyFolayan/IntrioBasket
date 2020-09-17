@@ -208,7 +208,94 @@
                   <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
                     <div class="panel panel-danger">
                       <div class="panel-body">
-                        <form id="reused_form">
+
+
+        
+    
+                      <div class="col-12 col-md-12">
+                      <form id="javascript_form">
+
+ 
+                          
+                          <input type="text" name="subject" class="no-round-input" placeholder="Subject" />
+                          <textarea name="text"  class="no-round-input" placeholder="Message"></textarea>
+                          <input type="submit" id="js_send" class="no-round-btn" value="Send"  />
+
+                          
+
+                          <!-- not required, but we'd appreciate it if you'd link to us somewhere on your site -->
+                          <!--<p>Powered by <a href="https://postmail.invotes.com" target="_blank">PostMail</a></p>-->
+                      </form>
+                      </div>
+
+                      <script>
+
+                          //update this with your js_form selector
+                          var form_id_js = "javascript_form";
+
+                          var data_js = {
+                              "access_token": "a8uaqlfbojpib1m64sy1lnkd"
+                          };
+
+                          function js_onSuccess() {
+                              // remove this to avoid redirect
+                              window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
+                          }
+
+                          function js_onError(error) {
+                              // remove this to avoid redirect
+                              window.location = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
+                          }
+
+                          var sendButton = document.getElementById("js_send");
+
+                          function js_send() {
+                              sendButton.value='Sending…';
+                              sendButton.disabled=true;
+                              var request = new XMLHttpRequest();
+                              request.onreadystatechange = function() {
+                                  if (request.readyState == 4 && request.status == 200) {
+                                      js_onSuccess();
+                                  } else
+                                  if(request.readyState == 4) {
+                                      js_onError(request.response);
+                                  }
+                              };
+
+                              var subject = document.querySelector("#" + form_id_js + " [name='subject']").value;
+                              var message = document.querySelector("#" + form_id_js + " [name='text']").value;
+                              data_js['subject'] = subject;
+                              data_js['text'] = message;
+                              var params = toParams(data_js);
+
+                              request.open("POST", "https://postmail.invotes.com/send", true);
+                              request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+                              request.send(params);
+
+                              return false;
+                          }
+
+                          sendButton.onclick = js_send;
+
+                          function toParams(data_js) {
+                              var form_data = [];
+                              for ( var key in data_js ) {
+                                  form_data.push(encodeURIComponent(key) + "=" + encodeURIComponent(data_js[key]));
+                              }
+
+                              return form_data.join("&");
+                          }
+
+                          var js_form = document.getElementById(form_id_js);
+                          js_form.addEventListener("submit", function (e) {
+                              e.preventDefault();
+                          });
+                      </script>
+    
+
+
+                       <!-- <form id="reused_form">
                           <div class="form-group">
                             <label><i class="fa fa-user" aria-hidden="true"></i> Name</label>
                             <input type="text" name="name" class="form-control" placeholder="Enter Name">
@@ -226,7 +313,7 @@
                           <div class="form-group">
                             <button class="btn btn-raised btn-block btn-danger">Post →</button>
                           </div>
-                        </form>
+                        </form>-->
                         <div id="error_message" style="width:100%; height:100%; display:none; ">
                         <h4>Error</h4>
                         Sorry there was an error sending your form.
@@ -324,100 +411,6 @@
     <script type="text/javascript" src="assets/js/jquery.shop.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
 
-    <script>
-    $(function()
-    {
-        function after_form_submitted(data)
-        {
-            if(data.result == 'success')
-            {
-                $('form#reused_form').hide();
-                $('#success_message').show();
-                $('#error_message').hide();
-            }
-            else
-            {
-                $('#error_message').append('<ul></ul>');
-
-                jQuery.each(data.errors,function(key,val)
-                {
-                    $('#error_message ul').append('<li>'+key+':'+val+'</li>');
-                });
-                $('#success_message').hide();
-                $('#error_message').show();
-
-                //reverse the response on the button
-                $('button[type="button"]', $form).each(function()
-                {
-                    $btn = $(this);
-                    label = $btn.prop('orig_label');
-                    if(label)
-                    {
-                        $btn.prop('type','submit' );
-                        $btn.text(label);
-                        $btn.prop('orig_label','');
-                    }
-                });
-
-            }//else
-        }
-
-      $('#reused_form').submit(function(e)
-          {
-            e.preventDefault();
-
-            $form = $(this);
-            //show some response on the button
-            $('button[type="submit"]', $form).each(function()
-            {
-                $btn = $(this);
-                $btn.prop('type','button' );
-                $btn.prop('orig_label',$btn.text());
-                $btn.text('Sending ...');
-            });
-
-
-                        $.ajax({
-                    type: "POST",
-                    url: 'handler.php',
-                    data: $form.serialize(),
-                    success: after_form_submitted,
-                    dataType: 'json'
-                });
-
-          });
-    });
-    </script>
-
-    <script>
-    <?php
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-    /*
-    Tested working with PHP5.4 and above (including PHP 7 )
-
-    */
-    require_once './vendor/autoload.php';
-
-    use FormGuide\Handlx\FormHandler;
-
-
-    $pp = new FormHandler();
-
-    $validator = $pp->getValidator();
-    $validator->fields(['name','email'])->areRequired()->maxLength(50);
-    $validator->field('email')->isEmail();
-    $validator->field('comments')->maxLength(6000);
-
-
-
-
-    $pp->sendEmailTo('someone@gmail.com'); // ← Your email here
-
-    echo $pp->process($_POST);
-
-    </script>
    
   </body>
 </html>
