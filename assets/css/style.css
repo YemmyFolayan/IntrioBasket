@@ -5736,6 +5736,16 @@ header.coffee-2 .navigation .product-function .function-icon span {
   transition: 0.3s ease;
   margin-left: 15px;
 }
+
+
+
+::placeholder { 
+  color: black !important;
+
+  font-size: 10em; 
+  font-style: normal;
+ }
+
 header.coffee-2 .navigation .product-function .function-icon span:hover {
   color: #f79823;
   text-decoration: none;
