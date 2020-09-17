@@ -1,11 +1,14 @@
+//TODO : IMPLEMENT 7.5%tax on any purchase
+
 // Functions to run once DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
     // updateCartButtonBadge
-    updateCartButtonBadge()
-}, false);
-
-
+    updateCartButtonBadge();
+  },
+  false
+);
 
 /**
  * addToCart: This function adds products to user cart.
@@ -24,34 +27,30 @@ document.addEventListener('DOMContentLoaded', () => {
  * @param {String} price 
  */
 const addToCart = (id, name, type, imageUrl, price) => {
+  const productDetails = { id, name, type, imageUrl, price, qty: 1 };
 
-    const productDetails = { id, name, type, imageUrl, price, qty: 1 }
-
-    if (localStorage.getItem(CONFIG.CART_STORE) === null) {
-
-        const cartList = [];
-        cartList.push(productDetails)
-        localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
+  if (localStorage.getItem(CONFIG.CART_STORE) === null) {
+    const cartList = [];
+    cartList.push(productDetails);
+    localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
+  } else {
+    const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+    let index = cartList.findIndex(
+      (cartItem) => cartItem.id === productDetails.id
+    );
+    if (index === -1) {
+      cartList.push(productDetails);
     } else {
-
-        const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
-        let index = cartList.findIndex(cartItem => cartItem.id === productDetails.id)
-        if (index === -1) {
-
-            cartList.push(productDetails)
-        } else {
-
-            cartList[index].qty = Number(cartList[index].qty) + Number(productDetails.qty)
-        }
-
-        localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
+      cartList[index].qty =
+        Number(cartList[index].qty) + Number(productDetails.qty);
     }
 
-    // updateCartButtonBadge
-    updateCartButtonBadge()
-}
+    localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
+  }
 
-
+  // updateCartButtonBadge
+  updateCartButtonBadge();
+};
 
 /**
  * Update Cart Badge Function - Updates the Cart Button on the header section
@@ -73,36 +72,28 @@ http://intriobasket.pexceptos.com/api/user/update-cart/id
 
  */
 
-
 const updateCartButtonBadge = () => {
+  const cartBadge = document.getElementById("cartButtonBadge");
+  const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
 
-    const cartBadge = document.getElementById('cartButtonBadge');
-    const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+  if (cartList === null) {
+    cartBadge.innerText = 0;
+  } else {
+    cartBadge.innerText = cartList.length;
+  }
+};
 
-    if (cartList === null) {
-
-        cartBadge.innerText = 0
-    } else {
-
-        cartBadge.innerText = cartList.length
-    }
-}
-
-
-// Mini Router (refreshes the page) 
+// Mini Router (refreshes the page)
 const router = (url) => {
+  // Check for url
+  if (typeof url === "undefined") throw new Error("Invalid URL!");
 
-    // Check for url
-    if (typeof url === 'undefined') throw new Error('Invalid URL!');
+  let pageUrl = "";
+  if (url.includes(".html")) {
+    pageUrl = url;
+  } else {
+    pageUrl = url.concat(".html");
+  }
 
-    let pageUrl = '';
-    if (url.includes('.html')) {
-
-        pageUrl = url
-    } else {
-
-        pageUrl = url.concat('.html')
-    }
-
-    window.location.assign(pageUrl)
-}
+  window.location.assign(pageUrl);
+};

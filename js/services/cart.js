@@ -1,3 +1,8 @@
+//TODO : IMPLEMENT 7.5%tax on any purchase
+
+
+
+
 const shopCartTBodyDOM = document.getElementById('shopCartTBody');
 const updateCartButton = document.getElementById('updateCartButton');
 const emptyCartButton = document.getElementById('emptyCartButton');
