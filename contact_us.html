@@ -217,8 +217,12 @@
 
  
                           
-                          <input type="text" name="subject" class="no-round-input" placeholder="Subject" />
-                          <textarea name="text"  class="no-round-input" placeholder="Message"></textarea>
+
+                          <input type="text" name="subject" class="no-round-input" placeholder="Name" />
+
+                          <input type="email" name="email" class="no-round-input" placeholder="Email" />
+
+                          <textarea name="text"  class="textarea-form" placeholder="Message" cols="30" rows="10"></textarea>
                           <input type="submit" id="js_send" class="no-round-btn" value="Send"  />
 
                           
@@ -263,8 +267,12 @@
                               };
 
                               var subject = document.querySelector("#" + form_id_js + " [name='subject']").value;
+                              
+                              var email = document.querySelector("#" + form_id_js + " [name='email']").value;
+                     
                               var message = document.querySelector("#" + form_id_js + " [name='text']").value;
                               data_js['subject'] = subject;
+                              data_js['email'] = email;
                               data_js['text'] = message;
                               var params = toParams(data_js);
 
