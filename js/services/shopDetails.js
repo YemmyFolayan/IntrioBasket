@@ -21,7 +21,7 @@ const featuredProductItemTemplate = (productDetails) => {
 
 // Returned first 9 products so as to make the design balance on the homepage
 const getFirst9 = (foodList) => {
-    return foodList.slice(0, 9)
+    return foodList.slice(13, 23)
 };
 
 const fetchFoodList = async () => {
