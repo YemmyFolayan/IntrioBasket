@@ -6401,8 +6401,15 @@ header.coffee-2
 	Item categories
 *************************************/
 .items-category {
-  padding: 100px 0 60px 0;
+  padding: 60px 0 60px 0;
+
 }
+
+.items-category #categ{
+  padding: 0 !important;
+
+}
+
 .items-category h1 {
   margin-bottom: 35px;
 }
