@@ -49,6 +49,8 @@ const fetchFoodList = async () => {
       // TODO: there should also be a product url...
     };
 
+
+
     let htmlString = featuredProductItemTemplate(productDetails);
     let htmlFragment = document.createElement("div");
     htmlFragment.innerHTML = htmlString;
