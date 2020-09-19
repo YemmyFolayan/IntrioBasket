@@ -40,6 +40,9 @@ const fetchFoodList = async () => {
 
 
 
+    const productDetails = (id, name, description, imageUrl, price) => {
+
+  
         // let productDetails = {
         //     id: product._id,
         //     name: product.food_product_name,
