@@ -14,6 +14,7 @@
         "containerr",
         "detail",
         "displayflex",
+        "firstname",
         "fooddetails",
         "foodlist",
         "foodlistssssssssssssssss",
@@ -29,9 +30,13 @@
         "indexlogin",
         "intrio",
         "intrio basket",
+        "lastname",
         "login",
         "oleracea",
         "passcode",
+        "pay",
+        "pay with paystack",
+        "paystack",
         "productdetails",
         "productselect",
         "quickview",
@@ -42,6 +47,7 @@
         "succesfully",
         "updatecart",
         "validatefullname",
-        "validators"
+        "validators",
+        "with"
     ]
 }
