@@ -1,3 +1,4 @@
+
 const featuredProductDOM = document.getElementById("featuredProducts");
 
 const featuredProductItemTemplate = (productDetails) => {
@@ -19,34 +20,158 @@ const featuredProductItemTemplate = (productDetails) => {
     
 };
 
-// Returned first 9 products so as to make the design balance on the homepage
-const getFirst9 = (foodList) => {
-    return foodList.slice(13, 23)
-};
+      
+
+
+
+/**
+* @param {String} id 
+* @param {String} name 
+* @param {String} description
+* @param {String} imageUrl 
+* @param {String} price
+ 
+*/
+
+
+
+
+
+
+
 
 const fetchFoodList = async () => {
     const endpoint = '/food'; // THOUGHTS: There should be an endpoint for featured products...
 
     const res = await api.request(endpoint); // TODO: handle errors..
 
-    const featuredProducts = getFirst9(res.payload);
-    featuredProducts.forEach(product => {
 
-        let productDetails = {
-            id: product._id,
-            name: product.food_product_name,
-            type: product.product_type,
-            imageUrl: product.image_link,
-            price: product.cost,
-            description: product.long_description
-            // TODO: there should also be a product url...
-        };
+
+
+
+    const quickView = (id, name, description, imageUrl, price) => {
+        const productDetails = { id, name, description, imageUrl, price };
+  
+        // let productDetails = {
+        //     id: product._id,
+        //     name: product.food_product_name,
+        //     type: product.product_type,
+        //     imageUrl: product.image_link,
+        //     price: product.cost,
+        //     description: product.long_description
+        //     // TODO: there should also be a product url...
+        // };
 
         let htmlString = featuredProductItemTemplate(productDetails);
-        let htmlFragment = document.createElement('div')
-        htmlFragment.innerHTML = htmlString
-        featuredProductDOM.appendChild(htmlFragment)
-    });
-};
+        let htmlFragment = document.createElement('div');
+        htmlFragment.innerHTML = htmlString;
+        featuredProductDOM.appendChild(htmlFragment);
+    };
 
+    
+};
+    
 fetchFoodList();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Returned first 9 products so as to make the design balance on the homepage
+// const getFirst9 = (foodList) => {
+//     return foodList.slice(13, 23)
+// };
+
+
+
+// const fetchFoodList = async () => {
+//     const endpoint = '/food'; // THOUGHTS: There should be an endpoint for featured products...
+
+//     const res = await api.request(endpoint); // TODO: handle errors..
+
+//     const featuredProducts = getFirst9(res.payload);
+//     featuredProducts.forEach(product => {
+
+//         let productDetails = {
+//             id: product._id,
+//             name: product.food_product_name,
+//             type: product.product_type,
+//             imageUrl: product.image_link,
+//             price: product.cost,
+//             description: product.long_description
+//             // TODO: there should also be a product url...
+//         };
+
+//         let htmlString = featuredProductItemTemplate(productDetails);
+//         let htmlFragment = document.createElement('div')
+//         htmlFragment.innerHTML = htmlString
+//         featuredProductDOM.appendChild(htmlFragment)
+//     });
+// };
+
+// fetchFoodList();

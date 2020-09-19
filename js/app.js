@@ -52,6 +52,8 @@ const addToCart = (id, name, type, imageUrl, price) => {
   updateCartButtonBadge();
 };
 
+
+
 /**
  * Update Cart Badge Function - Updates the Cart Button on the header section
  */
