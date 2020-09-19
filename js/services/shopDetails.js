@@ -24,15 +24,6 @@ const featuredProductItemTemplate = (productDetails) => {
 
 
 
-/**
-* @param {String} id 
-* @param {String} name 
-* @param {String} description
-* @param {String} imageUrl 
-* @param {String} price
- 
-*/
-
 
 
 
@@ -49,9 +40,6 @@ const fetchFoodList = async () => {
 
 
 
-    const quickView = (id, name, description, imageUrl, price) => {
-        const productDetails = { id, name, description, imageUrl, price };
-  
         // let productDetails = {
         //     id: product._id,
         //     name: product.food_product_name,
