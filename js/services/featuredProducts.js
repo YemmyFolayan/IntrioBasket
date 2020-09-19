@@ -4,7 +4,7 @@ const featuredProductItemTemplate = (productDetails) => {
   return `
         <div class="product">
             <a class="product-img" href="shop_detail_fullwidth.html">
-                <img alt="product" src="${productDetails.imageUrl}" height="200" width="250">
+                <img alt="product" src="${productDetails.imageUrl}" height="200" width="250" onclick="shopView('${productDetails.id}','${productDetails.name}','${productDetails.description}','${productDetails.description}','${productDetails.imageUrl}','${productDetails.price}')">
             </a>
             <h5 class="product-type">${productDetails.type}</h5>
             <h3 class="product-name">${productDetails.name}</h3>
