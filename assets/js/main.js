@@ -557,29 +557,7 @@ window.onload = function () {
     /****************************************************
 				Quick view
     ****************************************************/
-    
 
-   let productDetails = {
-    id: product._id,
-    name: product.food_product_name,
-    type: product.product_type,
-    imageUrl: product.image_link,
-    price: product.cost,
-    description: product.long_description,
-    // TODO: there should also be a product url...
-  };
-
-
-  /**
-  * @param {String} id 
-  * @param {String} name 
-  * @param {String} type 
-  * @param {String} imageUrl 
-  * @param {String} description
-  */
-
-
-    
 
     $(document).on("click", ".quickview", function (event) {
       event.preventDefault();
