@@ -87,18 +87,6 @@ const lookUpCartStore = () => {
 
 lookUpCartStore();
 
-
-const emptyCart = () => {
-  updateCartButton.style.display = "none";
-  emptyCartButton.style.display = "none";
-  cartTotalTable.style.display = "none";
-  totalPriceToPay = 0;
-  totalPriceToTax = 0;
-
-
-};
-
-    
   
 
 
