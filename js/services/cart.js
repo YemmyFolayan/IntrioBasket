@@ -32,6 +32,7 @@ const cartTotalTemplate = (totalPriceToPay,totalPriceToTax) => {
         <tr>
             <th>TOTAL:</th>
             <td>NGN ${totalPriceToPay}</td>
+            <th>TOTAL:</th>
             <td>NGN ${totalPriceToTax}</td>
         </tr>
     `;
