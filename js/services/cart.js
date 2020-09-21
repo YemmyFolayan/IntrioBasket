@@ -32,7 +32,7 @@ const cartTotalTemplate = (totalPriceToPay,totalPriceToTax) => {
         <tr>
             <th>TOTAL:</th>
             <td>NGN ${totalPriceToPay}</td>
-            <th>TOTAL:</th>
+            <th>TOTAL with 7.5% Tax Rate:</th>
             <td>NGN ${totalPriceToTax}</td>
         </tr>
     `;
