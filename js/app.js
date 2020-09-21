@@ -62,6 +62,8 @@ const emptyCart = () => {
   const cartBadge = document.getElementById("emptyCartButton");
   window.localStorage.clear();
 
+
+  updateCartButtonBadge();
 };
   
   
