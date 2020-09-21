@@ -2,8 +2,8 @@
 
 
 
-const shopCartTBodyDOM = document.getElementById("shopCartTBody");
-const updateCartButton = document.getElementById("updateCartButton");
+// const shopCartTBodyDOM = document.getElementById("shopCartTBody");
+// const updateCartButton = document.getElementById("updateCartButton");
 const emptyCartButton = document.getElementById("emptyCartButton");
 const cartTotalTable = document.getElementById("cartTotalTable");
 const cartTotalTBodyDOM = document.getElementById("cartTotalTBody");
