@@ -1,12 +1,7 @@
 //TODO : IMPLEMENT 7.5%tax on any purchase
 
-
-
-const shopCartTBodyDOM = document.getElementById("shopCartTBody");
-// const updateCartButton = document.getElementById("updateCartButton");
-const emptyCartButton = document.getElementById("emptyCartButton");
 const cartTotalTable = document.getElementById("cartTotalTable");
-const cartTotalTBodyDOM = document.getElementById("cartTotalTBody");
+
 
 // Functions to run once DOM is loaded
 document.addEventListener(
@@ -72,8 +67,7 @@ const emptyCart = () => {
   const row = document.getElementById('shopCartTBody');
   row.parentNode.removeChild(row);
 
-  updateCartButton.style.display = "none";
-  emptyCartButton.style.display = "none";
+
   cartTotalTable.style.display = "none"
   
 
