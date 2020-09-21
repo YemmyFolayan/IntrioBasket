@@ -56,7 +56,7 @@ const renderCartTotalTable = () => {
 
   cartStore.forEach((product) => {
     totalPriceToPay += product.price * product.qty;
-    totalPriceToTax += totalPriceToPay * 0.75;
+    totalPriceToTax =  + totalPriceToPay + (totalPriceToPay * 0.075);
     
   });
 
