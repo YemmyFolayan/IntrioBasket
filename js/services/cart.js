@@ -98,8 +98,8 @@ const emptyCart = () => {
   updateCartButton.style.display = "none";
   emptyCartButton.style.display = "none";
   cartTotalTable.style.display = "none";
-  let totalPriceToPay = 0;
-  let totalPriceToTax = 0;
+  totalPriceToPay = 0;
+  totalPriceToTax = 0;
 
 
 };
