@@ -53,6 +53,24 @@ const addToCart = (id, name, type, imageUrl, price) => {
 };
 
 
+
+//deleteCartItem (slice)
+
+
+//Empty cart
+const emptyCart = () => {
+  const cartBadge = document.getElementById("emptyCartButton");
+  window.localStorage.clear();
+
+};
+  
+  
+
+
+
+
+
+
 /**
  * Update Cart Badge Function - Updates the Cart Button on the header section
  */
@@ -80,6 +98,7 @@ http://intriobasket.pexceptos.com/api/user/update-cart/id
 
 
 
+
 const updateCartButtonBadge = () => {
   const cartBadge = document.getElementById("cartButtonBadge");
   const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
@@ -92,6 +111,7 @@ const updateCartButtonBadge = () => {
 };
 
 // Mini Router (refreshes the page)
+//ROUTER for page redirect 
 const router = (url) => {
   // Check for url
   if (typeof url === "undefined") throw new Error("Invalid URL!");
