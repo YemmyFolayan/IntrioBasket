@@ -26,7 +26,8 @@ const cartItemTemplate = (productDetails) => {
     `;
 };
 
-const cartTotalTemplate = (totalPriceToPay, totalPriceToTax) => {
+
+const cartTotalTemplate = (totalPriceToPay,totalPriceToTax) => {
   return `
         <tr>
             <th>TOTAL:</th>
@@ -55,10 +56,11 @@ const renderCartTotalTable = () => {
 
   cartStore.forEach((product) => {
     totalPriceToPay += product.price * product.qty;
-    totalPriceToTax = totalPriceToPay + totalPriceToPay * 0.075;
+    totalPriceToTax =  totalPriceToPay + (totalPriceToPay * 0.075);
+    
   });
 
-  let htmlString = cartTotalTemplate(totalPriceToPay, totalPriceToTax);
+  let htmlString = cartTotalTemplate(totalPriceToPay,totalPriceToTax);
 
   cartTotalTBodyDOM.innerHTML = htmlString;
 };
@@ -79,28 +81,30 @@ const lookUpCartStore = () => {
 
   // call renderCartTotalTable
   renderCartTotalTable();
+
+
 };
 
 lookUpCartStore();
 
-// const emptyCart = () => {
-//   const cartBadge = document.getElementById("emptyCartButton");
-//   window.localStorage.clear();
 
-//   const row = document.getElementById('shopCartTBody');
-//   row.parentNode.removeChild(row);
+const emptyCart = () => {
+  updateCartButton.style.display = "none";
+  emptyCartButton.style.display = "none";
+  cartTotalTable.style.display = "none";
+  totalPriceToPay = 0;
+  totalPriceToTax = 0;
 
-//   updateCartButton.style.display = "none";
-//   emptyCartButton.style.display = "none";
-//   cartTotalTable.style.display = "none";
-//   totalPriceToPay = 0;
-//   totalPriceToTax = 0;
 
-// };
+};
+
+    
+  
+
 
 //productdetails template for shop_detail_fullwidth page
 const shopDetailTemplate = (productDetails) => {
-  return `
+    return `
             <div class="description-item_block">
                 <div class="row align-items-center justify-content-around">
                     <div class="col-12 col-md-4">
@@ -116,3 +120,4 @@ const shopDetailTemplate = (productDetails) => {
             </div>
             `;
 };
+    
