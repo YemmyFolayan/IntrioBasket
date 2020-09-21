@@ -10,11 +10,6 @@ document.addEventListener(
   false
 );
 
-
-const updateCartButton = document.getElementById("updateCartButton");
-const emptyCartButton = document.getElementById("emptyCartButton");
-const cartTotalTable = document.getElementById("cartTotalTable");
-
 /**
  * addToCart: This function adds products to user cart.
  * - Cart is persistent
@@ -71,11 +66,6 @@ const emptyCart = () => {
   row.parentNode.removeChild(row);
 
 
-
-  
-
-
-
   updateCartButtonBadge();
 };
   
@@ -105,10 +95,6 @@ Update User Cart
 http://intriobasket.pexceptos.com/api/user/update-cart/id
 
  */
-
-
-
-
 
 
 
