@@ -6,6 +6,7 @@ document.addEventListener(
   () => {
     // updateCartButtonBadge
     updateCartButtonBadge();
+    addToCart();
   },
   false
 );
