@@ -64,7 +64,7 @@ const emptyCart = () => {
 
 
 
-  var row = document.getElementById('shopCartTBody');
+  const row = document.getElementById('shopCartTBody');
   row.parentNode.removeChild(row);
 
 
