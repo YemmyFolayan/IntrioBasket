@@ -6,7 +6,6 @@ document.addEventListener(
   () => {
     // updateCartButtonBadge
     updateCartButtonBadge();
-    addToCart();
   },
   false
 );
@@ -70,10 +69,6 @@ const emptyCart = () => {
   
   const row = document.getElementById('shopCartTBody');
   row.parentNode.removeChild(row);
-
-  updateCartButton.style.display = "none";
-  emptyCartButton.style.display = "none";
-  cartTotalTable.style.display = "none";
 
 
 
