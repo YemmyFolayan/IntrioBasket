@@ -88,6 +88,24 @@ const lookUpCartStore = () => {
 lookUpCartStore();
 
 
+const emptyCart = () => {
+  const cartBadge = document.getElementById("emptyCartButton");
+  window.localStorage.clear();
+  
+  const row = document.getElementById('shopCartTBody');
+  row.parentNode.removeChild(row);
+  
+  updateCartButton.style.display = "none";
+  emptyCartButton.style.display = "none";
+  cartTotalTable.style.display = "none";
+  let totalPriceToPay = 0;
+  let totalPriceToTax = 0;
+
+
+};
+
+    
+  
 
 
 //productdetails template for shop_detail_fullwidth page

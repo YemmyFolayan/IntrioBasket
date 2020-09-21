@@ -61,11 +61,9 @@ const addToCart = (id, name, type, imageUrl, price) => {
 const emptyCart = () => {
   const cartBadge = document.getElementById("emptyCartButton");
   window.localStorage.clear();
-
-
-
   const row = document.getElementById('shopCartTBody');
   row.parentNode.removeChild(row);
+  
 
 
 
