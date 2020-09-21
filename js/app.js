@@ -63,6 +63,12 @@ const emptyCart = () => {
   window.localStorage.clear();
 
 
+
+  var row = document.getElementById('shopCartTBody')[0];
+  row.parentNode.removeChild(row);
+
+
+
   updateCartButtonBadge();
 };
   
