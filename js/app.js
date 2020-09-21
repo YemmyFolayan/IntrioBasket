@@ -53,7 +53,6 @@ const addToCart = (id, name, type, imageUrl, price) => {
 };
 
 
-
 /**
  * Update Cart Badge Function - Updates the Cart Button on the header section
  */
@@ -73,6 +72,13 @@ Update User Cart
 http://intriobasket.pexceptos.com/api/user/update-cart/id
 
  */
+
+
+
+
+
+
+
 
 const updateCartButtonBadge = () => {
   const cartBadge = document.getElementById("cartButtonBadge");

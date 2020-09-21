@@ -27,11 +27,12 @@ const cartItemTemplate = (productDetails) => {
 };
 
 
-const cartTotalTemplate = (totalPriceToPay) => {
+const cartTotalTemplate = (totalPriceToPay,totalPriceToTax) => {
   return `
         <tr>
             <th>TOTAL:</th>
             <td>NGN ${totalPriceToPay}</td>
+            <td>NGN ${totalPriceToTax}</td>
         </tr>
     `;
 };
@@ -44,6 +45,7 @@ const handleNoItemsInCart = () => {
 
 const renderCartTotalTable = () => {
   let totalPriceToPay = 0;
+  let totalPriceToTax = 0;
 
   const cartStore = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
 
@@ -53,9 +55,12 @@ const renderCartTotalTable = () => {
 
   cartStore.forEach((product) => {
     totalPriceToPay += product.price * product.qty;
+    totalPriceToTax += totalPriceToTax;
+    
   });
 
-  let htmlString = cartTotalTemplate(totalPriceToPay);
+  let htmlString = cartTotalTemplate(totalPriceToPay,totalPriceToTax);
+
   cartTotalTBodyDOM.innerHTML = htmlString;
 };
 
@@ -76,64 +81,10 @@ const lookUpCartStore = () => {
   // call renderCartTotalTable
   renderCartTotalTable();
 
-  this.deleteProduct();
+
 };
 
-
-
-// Delete a product from the shopping cart
-
-
-function() {
-  var self = this;
-  if( self.$formCart.length ) {
-    var cart = this._toJSONObject( this.storage.getItem( this.cartName ) );
-    var items = cart.items;
-
-    $( document ).on( "click", ".pdelete a", function( e ) {
-      e.preventDefault();
-      var productName = $( this ).data( "product" );
-      var newItems = [];
-      for( var i = 0; i < items.length; ++i ) {
-        var item = items[i];
-        var product = item.product;	
-        if( product == productName ) {
-          items.splice( i, 1 );
-        }
-      }
-      newItems = items;
-      var updatedCart = {};
-      updatedCart.items = newItems;
-
-      var updatedTotal = 0;
-      var totalQty = 0;
-      if( newItems.length == 0 ) {
-        updatedTotal = 0;
-        totalQty = 0;
-      } else {
-        for( var j = 0; j < newItems.length; ++j ) {
-          var prod = newItems[j];
-          var sub = prod.price * prod.qty;
-          updatedTotal += sub;
-          totalQty += prod.qty;
-        }
-      }
-
-      self.storage.setItem( self.total, self._convertNumber( updatedTotal ) );
-      self.storage.setItem( self.shippingRates, self._convertNumber( self._calculateShipping( totalQty ) ) );
-
-      self.storage.setItem( self.cartName, self._toJSONString( updatedCart ) );
-      $( this ).parents( "tr" ).remove();
-      self.$subTotal[0].innerHTML = self.currency + " " + self.storage.getItem( self.total );
-    });
-  }
-},
-
-
-
-
 lookUpCartStore();
-
 
 
 
