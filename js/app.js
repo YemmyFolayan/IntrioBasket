@@ -2,12 +2,12 @@
 
 // Functions to run once DOM is loaded
 document.addEventListener(
-  "DOMContentLoaded",
-  () => {
-    // updateCartButtonBadge
-    updateCartButtonBadge();
-  },
-  false
+	"DOMContentLoaded",
+	() => {
+		// updateCartButtonBadge
+		updateCartButtonBadge();
+	},
+	false
 );
 
 /**
@@ -27,43 +27,54 @@ document.addEventListener(
  * @param {String} price 
  */
 const addToCart = (id, name, type, imageUrl, price) => {
-  const productDetails = { id, name, type, imageUrl, price, qty: 1 };
+	const productDetails = { id, name, type, imageUrl, price, qty: 1 };
 
-  if (localStorage.getItem(CONFIG.CART_STORE) === null) {
-    const cartList = [];
-    cartList.push(productDetails);
-    localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
-  } else {
-    const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
-    let index = cartList.findIndex(
-      (cartItem) => cartItem.id === productDetails.id
-    );
-    if (index === -1) {
-      cartList.push(productDetails);
-    } else {
-      cartList[index].qty =
-        Number(cartList[index].qty) + Number(productDetails.qty);
-    }
+	if (localStorage.getItem(CONFIG.CART_STORE) === null) {
+		const cartList = [];
+		cartList.push(productDetails);
+		localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
+	} else {
+		const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+		let index = cartList.findIndex(
+			(cartItem) => cartItem.id === productDetails.id
+		);
+		if (index === -1) {
+			cartList.push(productDetails);
+		} else {
+			cartList[index].qty =
+				Number(cartList[index].qty) + Number(productDetails.qty);
+		}
 
-    localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
-  }
+		localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
+	}
 
-  // updateCartButtonBadge
-  updateCartButtonBadge();
+	// updateCartButtonBadge
+	updateCartButtonBadge();
 };
 
+
+
+//deleteCartItem (slice)
 
 
 //Empty cart
 const emptyCart = () => {
-  const cartBadge = document.getElementById("emptyCartButton");
-  window.localStorage.clear();
+	const cartBadge = document.getElementById("emptyCartButton");
+	window.localStorage.clear();
 
-  const row = document.getElementById("shopCartTBody");
-  row.parentNode.removeChild(row);
+	const row = document.getElementById('shopCartTBody');
+	row.parentNode.removeChild(row);
 
-  updateCartButtonBadge();
+
+	updateCartButtonBadge();
 };
+
+
+
+
+
+
+
 
 /**
  * Update Cart Badge Function - Updates the Cart Button on the header section
@@ -85,29 +96,33 @@ http://intriobasket.pexceptos.com/api/user/update-cart/id
 
  */
 
-const updateCartButtonBadge = () => {
-  const cartBadge = document.getElementById("cartButtonBadge");
-  const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
 
-  if (cartList === null) {
-    cartBadge.innerText = 0;
-  } else {
-    cartBadge.innerText = cartList.length;
-  }
+
+
+
+const updateCartButtonBadge = () => {
+	const cartBadge = document.getElementById("cartButtonBadge");
+	const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+
+	if (cartList === null) {
+		cartBadge.innerText = 0;
+	} else {
+		cartBadge.innerText = cartList.length;
+	}
 };
 
 // Mini Router (refreshes the page)
-//ROUTER for page redirect
+//ROUTER for page redirect 
 const router = (url) => {
-  // Check for url
-  if (typeof url === "undefined") throw new Error("Invalid URL!");
+	// Check for url
+	if (typeof url === "undefined") throw new Error("Invalid URL!");
 
-  let pageUrl = "";
-  if (url.includes(".html")) {
-    pageUrl = url;
-  } else {
-    pageUrl = url.concat(".html");
-  }
+	let pageUrl = "";
+	if (url.includes(".html")) {
+		pageUrl = url;
+	} else {
+		pageUrl = url.concat(".html");
+	}
 
-  window.location.assign(pageUrl);
+	window.location.assign(pageUrl);
 };
