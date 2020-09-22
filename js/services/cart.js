@@ -132,10 +132,10 @@ const deleteItem = (id) => {
   // update Cart
   shopCartTBodyDOM.innerHTML = "";
   lookUpCartStore();
-  updateCartButtonBadge();
+
 };
 
-const updateCartButton = () => {
+const updateCartButtons = () => {
   cartTotalTemplate();
   cartItemTemplate();
   lookUpCartStore();
