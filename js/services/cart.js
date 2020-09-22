@@ -1,6 +1,6 @@
 //TODO : IMPLEMENT 7.5%tax on any purchase
 
-const CartTBodyDOM = document.getElementById("shopCartTBody");
+const shopCartTBodyDOM = document.getElementById("shopCartTBody");
 const updateCartButton = document.getElementById("updateCartButton");
 const emptyCartButton = document.getElementById("emptyCartButton");
 const cartTotalTable = document.getElementById("cartTotalTable");
@@ -104,19 +104,15 @@ const shopDetailTemplate = (productDetails) => {
             `;
 };
 
-
-
-
-
 const updateCartButtonBadge = () => {
-const cartBadge = document.getElementById("cartButtonBadge");
-const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+  const cartBadge = document.getElementById("cartButtonBadge");
+  const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
 
-if (cartList === null) {
-	cartBadge.innerText = 0;
-} else {
-	cartBadge.innerText = cartList.length;
-}
+  if (cartList === null) {
+    cartBadge.innerText = 0;
+  } else {
+    cartBadge.innerText = cartList.length;
+  }
 };
 
 //delete each Item
