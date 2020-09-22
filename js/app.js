@@ -52,7 +52,7 @@ const addToCart = (id, name, type, imageUrl, price) => {
   updateCartButtonBadge();
 };
 
-//deleteCartItem (slice)
+
 
 //Empty cart
 const emptyCart = () => {

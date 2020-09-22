@@ -1,6 +1,6 @@
 //TODO : IMPLEMENT 7.5%tax on any purchase
 
-const zpCartTBodyDOM = document.getElementById("shopCartTBody");
+const CartTBodyDOM = document.getElementById("shopCartTBody");
 const updateCartButton = document.getElementById("updateCartButton");
 const emptyCartButton = document.getElementById("emptyCartButton");
 const cartTotalTable = document.getElementById("cartTotalTable");
@@ -108,18 +108,17 @@ const shopDetailTemplate = (productDetails) => {
 
 
 
-// const updateCartButtonBadge = () => {
-// 	const cartBadge = document.getElementById("cartButtonBadge");
-// 	const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
-	
-// 	if (cartList === null) {
-// 		cartBadge.innerText = 0;
-// 	} else {
-// 		cartBadge.innerText = cartList.length;
-// 	}
-// };
+const updateCartButtonBadge = () => {
+const cartBadge = document.getElementById("cartButtonBadge");
+const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
 
-	
+if (cartList === null) {
+	cartBadge.innerText = 0;
+} else {
+	cartBadge.innerText = cartList.length;
+}
+};
+
 //delete each Item
 
 const deleteItem = (id) => {
@@ -137,13 +136,12 @@ const deleteItem = (id) => {
   // update Cart
   shopCartTBodyDOM.innerHTML = "";
   lookUpCartStore();
-
+  updateCartButtonBadge();
 };
 
-
-// const updateCartButton = () => {
-//   cartTotalTemplate();
-//   cartItemTemplate();
-//   lookUpCartStore();
-//   updateCartButtonBadge();
-// };
+const updateCartButton = () => {
+  cartTotalTemplate();
+  cartItemTemplate();
+  lookUpCartStore();
+  updateCartButtonBadge();
+};
