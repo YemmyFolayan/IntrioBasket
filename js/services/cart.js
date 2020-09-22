@@ -104,16 +104,6 @@ const shopDetailTemplate = (productDetails) => {
             `;
 };
 
-// const updateCartButtonBadge = () => {
-//   const cartBadge = document.getElementById("cartButtonBadge");
-//   const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
-
-//   if (cartList === null) {
-//     cartBadge.innerText = 0;
-//   } else {
-//     cartBadge.innerText = cartList.length;
-//   }
-// };
 
 //delete each Item
 
@@ -134,10 +124,3 @@ const deleteItem = (id) => {
   lookUpCartStore();
 
 };
-
-// const updateCartButtons = () => {
-//   cartTotalTemplate();
-//   cartItemTemplate();
-//   lookUpCartStore();
-//   updateCartButtonBadge();
-// };
