@@ -137,7 +137,7 @@ const deleteItem = (id) => {
   // update Cart
   shopCartTBodyDOM.innerHTML = "";
   lookUpCartStore();
-  updateCartButtonBadge();
+
 };
 
 
