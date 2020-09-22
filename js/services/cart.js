@@ -134,3 +134,10 @@ const updateCartButtonBadge = () => {
     cartBadge.innerText = cartList.length;
   }
 };
+
+const updateCartButton = () => {
+  cartTotalTemplate();
+  cartItemTemplate();
+  lookUpCartStore();
+  updateCartButtonBadge();
+};
