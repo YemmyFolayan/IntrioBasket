@@ -128,9 +128,3 @@ const deleteItem = (id) => {
  
 };
 
-// const updateCartButton = () => {
-//   cartTotalTemplate();
-//   cartItemTemplate();
-//   lookUpCartStore();
-//   updateCartButtonBadge();
-// };
