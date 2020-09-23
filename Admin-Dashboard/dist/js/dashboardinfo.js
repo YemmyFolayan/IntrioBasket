@@ -32,9 +32,9 @@ const featuredProductItemTemplate = (userDetails) => {
 
 
 const fetchFoodList = async () => {
-  const endpoint = "/user"; // THOUGHTS: There should be an endpoint for featured products...
+ // THOUGHTS: There should be an endpoint for featured products...
 
-  const res = await api.request(endpoint); // TODO: handle errors..
+  const res = await request("http://intriobasket.pexceptos.com/api/user/"); // TODO: handle errors..
 
 
   res.payload.forEach((user) => {
