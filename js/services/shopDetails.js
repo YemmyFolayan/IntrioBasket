@@ -11,13 +11,19 @@ const featuredProductItemTemplate = (productDetails) => {
                     <div class="description-item_text">
                         <h2>${productDetails.type}</h2>
                         <h2>${productDetails.name}</h2>
-                        <h2>${productDetails.price}</h2>
+                        <h2>NGN ${productDetails.price}</h2>
                         <p>${productDetails.description}</p>
                     </div>
                 </div>
             </div>
         </div>`;
 };
+
+//write function to get element by ID or pass parameter via onclick to achieve displaying each product details
+
+// const getFirst9 = (foodList) => {
+//   return foodList.slice(0, 9);
+// };
 
 const fetchFoodList = async () => {
   const endpoint = "/food"; // THOUGHTS: There should be an endpoint for featured products...
@@ -41,7 +47,6 @@ const fetchFoodList = async () => {
     htmlFragment.innerHTML = htmlString;
     featuredProductDOM.appendChild(htmlFragment);
   });
-    
 };
 
 fetchFoodList();
