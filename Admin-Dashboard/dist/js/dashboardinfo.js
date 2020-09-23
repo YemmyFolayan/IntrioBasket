@@ -40,10 +40,8 @@ const fetchFoodList = async () => {
 
 
   res.payload.forEach((product) => {
-    let count = 0;
-    
     let productDetails = product.length;
-    console.log(product.length);
+    console.log(productDetails);
     console.log("hi lenght");
 
     let htmlString = featuredProductItemTemplate(productDetails);
