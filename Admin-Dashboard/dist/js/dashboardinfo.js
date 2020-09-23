@@ -40,11 +40,7 @@ const fetchFoodList = async () => {
 
 
   res.payload.forEach((product) => {
-    let productDetails = {
-      length: product.length,
-      
-      // TODO: there should also be a product url...
-    };
+    let productDetails = product.length;
 
     let htmlString = featuredProductItemTemplate(productDetails);
     let htmlFragment = document.createElement("div");

@@ -567,7 +567,9 @@ window.onload = function () {
 
       //Wirte Quick view block to DOM
 
-	  //define productDetails
+    //define productDetails
+      
+      
 	 
 	
 
