@@ -92,3 +92,17 @@ const fetchFoodLists = async () => {
 };
 
 fetchFoodLists();
+
+
+
+
+
+//CHECKOUT HISTORY FUNCTION
+
+
+
+
+
+
+
+//USER REGISTRATION HISTORY FUCNTION : onclick =>more info
