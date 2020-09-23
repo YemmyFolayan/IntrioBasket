@@ -4,7 +4,7 @@ const featuredProductItemTemplate = (productDetails) => {
   return `
         <div class="product">
             <a class="product-img" href="shop_detail_fullwidth.html">
-                <img alt="product" src="${productDetails.imageUrl}" height="200" width="250" onclick="shopView('${productDetails.id}','${productDetails.name}','${productDetails.description}','${productDetails.description}','${productDetails.imageUrl}','${productDetails.price}')">
+                <img alt="product" src="${productDetails.imageUrl}" height="200" width="250" onclick="featuredProductItemTemplate('${productDetails}')">
             </a>
             <h5 class="product-type">${productDetails.type}</h5>
             <h3 class="product-name">${productDetails.name}</h3>
@@ -19,7 +19,7 @@ const featuredProductItemTemplate = (productDetails) => {
                 <button class="add-to-compare round-icon-btn">
                     <i class="fas fa-random"></i>
                 </button>
-                <button onclick="quickView('${productDetails.id}','${productDetails.name}','${productDetails.description}','${productDetails.description}','${productDetails.imageUrl}','${productDetails.price}')" class="quickview round-icon-btn">
+                <button onclick="featuredProductItemTemplate('${productDetails.id}','${productDetails.name}','${productDetails.description}','${productDetails.description}','${productDetails.imageUrl}','${productDetails.price}')" class="quickview round-icon-btn">
                     <i class="far fa-eye"></i>
                 </button>
             </div>
@@ -48,8 +48,6 @@ const fetchFoodList = async () => {
       description: product.long_description,
       // TODO: there should also be a product url...
     };
-
-
 
     let htmlString = featuredProductItemTemplate(productDetails);
     let htmlFragment = document.createElement("div");
