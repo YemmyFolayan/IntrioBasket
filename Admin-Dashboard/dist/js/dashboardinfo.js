@@ -1,11 +1,11 @@
 const featuredProductDOM = document.getElementById("userReg");
 
-const featuredProductItemTemplate = (productDetails) => {
+const featuredProductItemTemplate = (userDetails) => {
   return `
     <!-- small box -->
       <div class="small-box bg-warning">
         <div class="inner">
-          <h3>44 ${productDetails.length}</h3>
+          <h3>44 ${userDetails.length}</h3>
 
           <p>User Registrations</p>
         </div>
@@ -37,14 +37,14 @@ const fetchFoodList = async () => {
   const res = await api.request(endpoint); // TODO: handle errors..
 
 
-  res.payload.forEach((product) => {
-    let productDetails = {
-      length: product.length,
+  res.payload.forEach((user) => {
+    let userDetails = {
+      length: user.length,
       
       // TODO: there should also be a product url...
     };
 
-    let htmlString = featuredProductItemTemplate(productDetails);
+    let htmlString = featuredProductItemTemplate(userDetails);
     let htmlFragment = document.createElement("div");
     htmlFragment.innerHTML = htmlString;
     featuredProductDOM.appendChild(htmlFragment);
