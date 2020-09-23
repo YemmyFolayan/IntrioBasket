@@ -569,18 +569,14 @@ window.onload = function () {
 
     //define productDetails
       
-      
-      const getFirst9 = (foodList) => {
-        return foodList.slice(0, 9);
-      };
+
 
       const fetchFoodList = async () => {
         const endpoint = "/food"; // THOUGHTS: There should be an endpoint for featured products...
 
         const res = await api.request(endpoint); // TODO: handle errors..
 
-        const featuredProducts = getFirst9(res.payload);
-        featuredProducts.forEach((product) => {
+        res.payload.forEach((product) => {
           let productDetails = {
             id: product._id,
             name: product.food_product_name,
