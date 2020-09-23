@@ -1,11 +1,11 @@
 const featuredProductDOM = document.getElementById("userReg");
 
-const featuredProductItemTemplate = (userDetails) => {
+const featuredProductItemTemplate = (productDetails) => {
   return `
     <!-- small box -->
       <div class="small-box bg-warning">
         <div class="inner">
-          <h3>44 ${userDetails.length}</h3>
+          <h3>44 ${productDetails.length}</h3>
 
           <p>User Registrations</p>
         </div>
@@ -13,7 +13,9 @@ const featuredProductItemTemplate = (userDetails) => {
           <i class="ion ion-person-add"></i>
         </div>
         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-      </div>`;
+       </div>
+
+    `;
 };
 
 
@@ -32,19 +34,19 @@ const featuredProductItemTemplate = (userDetails) => {
 
 
 const fetchFoodList = async () => {
- // THOUGHTS: There should be an endpoint for featured products...
+  const endpoint = "/user/"; // THOUGHTS: There should be an endpoint for featured products...
 
-  const res = await request("http://intriobasket.pexceptos.com/api/user/"); // TODO: handle errors..
+  const res = await api.request(endpoint); // TODO: handle errors..
 
 
-  res.payload.forEach((user) => {
-    let userDetails = {
-      length: user.length,
+  res.payload.forEach((product) => {
+    let productDetails = {
+      length: product.length,
       
       // TODO: there should also be a product url...
     };
 
-    let htmlString = featuredProductItemTemplate(userDetails);
+    let htmlString = featuredProductItemTemplate(productDetails);
     let htmlFragment = document.createElement("div");
     htmlFragment.innerHTML = htmlString;
     featuredProductDOM.appendChild(htmlFragment);
