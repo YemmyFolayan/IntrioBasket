@@ -5,7 +5,7 @@ const featuredProductItemTemplate = (product) => {
     <!-- small box -->
       <div class="small-box bg-warning">
         <div class="inner">
-          <h3>44 ${product}</h3>
+          <h3>44 ${product.length}</h3>
 
           <p>User Registrations</p>
         </div>
@@ -42,7 +42,7 @@ const fetchFoodList = async () => {
   res.payload.forEach((product) => {
     
     console.log(product.length);
-    console.log("hi lenght");
+    console.log("hi length");
 
     let htmlString = featuredProductItemTemplate(product);
     let htmlFragment = document.createElement("div");
