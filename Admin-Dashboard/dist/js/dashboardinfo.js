@@ -1,11 +1,11 @@
 const featuredProductDOM = document.getElementById("userReg");
 
-const featuredProductItemTemplate = (productDetails) => {
+const featuredProductItemTemplate = (product) => {
   return `
     <!-- small box -->
       <div class="small-box bg-warning">
         <div class="inner">
-          <h3>44 ${productDetails}</h3>
+          <h3>44 ${product}</h3>
 
           <p>User Registrations</p>
         </div>
