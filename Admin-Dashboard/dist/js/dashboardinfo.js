@@ -1,11 +1,11 @@
 const featuredProductDOM = document.getElementById("userReg");
 
-const featuredProductItemTemplate = (product) => {
+const featuredProductItemTemplate = (count) => {
   return `
     <!-- small box -->
       <div class="small-box bg-warning">
         <div class="inner">
-          <h3>44 ${res.payload.length}</h3>
+          <h3>44 ${count}</h3>
 
           <p>User Registrations</p>
         </div>
@@ -44,7 +44,7 @@ const fetchFoodList = async () => {
     console.log(res.payload.length);
     console.log("hi length");
 
-    let htmlString = featuredProductItemTemplate(product);
+    let htmlString = featuredProductItemTemplate(count);
     let htmlFragment = document.createElement("div");
     htmlFragment.innerHTML = htmlString;
     featuredProductDOM.appendChild(htmlFragment);
