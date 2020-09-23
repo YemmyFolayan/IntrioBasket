@@ -570,30 +570,55 @@ window.onload = function () {
     //define productDetails
       
       
-    const getFirst9 = (foodList) => {
-      return foodList.slice(0, 9);
-    };
+      const getFirst9 = (foodList) => {
+        return foodList.slice(0, 9);
+      };
 
-    const fetchFoodList = async () => {
-      const endpoint = "/food"; // THOUGHTS: There should be an endpoint for featured products...
+      const fetchFoodList = async () => {
+        const endpoint = "/food"; // THOUGHTS: There should be an endpoint for featured products...
 
-      const res = await api.request(endpoint); // TODO: handle errors..
+        const res = await api.request(endpoint); // TODO: handle errors..
 
-      const featuredProducts = getFirst9(res.payload);
-      featuredProducts.forEach((product) => {
-        let productDetails = {
-          id: product._id,
-          name: product.food_product_name,
-          type: product.product_type,
-          imageUrl: product.image_link,
-          price: product.cost,
-          description: product.long_description,
+        const featuredProducts = getFirst9(res.payload);
+        featuredProducts.forEach((product) => {
+          let productDetails = {
+            id: product._id,
+            name: product.food_product_name,
+            type: product.product_type,
+            imageUrl: product.image_link,
+            price: product.cost,
+            description: product.long_description,
           // TODO: there should also be a product url...
-        };
+          };
 
-        $("body").prepend(
-          `'<div id="quickview"> <div class="quickview-box"> <button class="round-icon-btn" id="quickview-close-btn"><i class="fas fa-times"></i></button> <div class="row"> <div class="col-12 col-md-6"> <div class="shop-detail_img"> <button class="round-icon-btn" id="zoom-btn"> <i class="icon_zoom-in_alt"></i></button> <div class="big-img big-img_qv"> <div class="big-img_block"><img src="+${productDetails.imageUrl}+" alt="product image"></div><div class="big-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div><div class="big-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div><div class="big-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div></div><div class="slide-img slide-img_qv"> <div class="slide-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div><div class="slide-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div><div class="slide-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div><div class="slide-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div></div></div></div><div class="col-12 col-md-6"> <div class="shop-detail_info"> <h5 class="product-type color-type">${productDetails.type} </h5><a class="product-name" href="shop_detail.html">${productDetails.name}</a> <div class="price-rate"> <h3 class="product-price">${productDetails.name}</h3> </div><p class="product-describe"> ${productDetails.description}</p><div class="quantity-select"> <label for="quantity">Quantity:</label> <input class="no-round-input" id="quantity" type="number" min="0" value="1"> </div><div class="product-select"> <button class="add-to-cart normal-btn outline">Add to Cart</button> <button class="add-to-compare normal-btn outline">+ Add to Compare</button> </div><div class="product-share"> <h5>Share link:</h5><a href=""><i class="fab fa-facebook-f"> </i></a><a href=""><i class="fab fa-twitter"></i></a><a href=""><i class="fab fa-invision"> </i></a><a href=""><i class="fab fa-pinterest-p"></i></a> </div></div></div></div></div></div>'`
-        );
+          $("body").prepend(
+            `'<div id="quickview"> <div class="quickview-box"> <button class="round-icon-btn" id="quickview-close-btn"><i class="fas fa-times"></i></button> <div class="row"> <div class="col-12 col-md-6"> <div class="shop-detail_img"> <button class="round-icon-btn" id="zoom-btn"> <i class="icon_zoom-in_alt"></i></button> <div class="big-img big-img_qv"> <div class="big-img_block"><img src="+${productDetails.imageUrl}+" alt="product image"></div><div class="big-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div><div class="big-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div><div class="big-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div></div><div class="slide-img slide-img_qv"> <div class="slide-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div><div class="slide-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div><div class="slide-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div><div class="slide-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div></div></div></div><div class="col-12 col-md-6"> <div class="shop-detail_info"> <h5 class="product-type color-type">${productDetails.type} </h5><a class="product-name" href="shop_detail.html">${productDetails.name}</a> <div class="price-rate"> <h3 class="product-price">${productDetails.name}</h3> </div><p class="product-describe"> ${productDetails.description}</p><div class="quantity-select"> <label for="quantity">Quantity:</label> <input class="no-round-input" id="quantity" type="number" min="0" value="1"> </div><div class="product-select"> <button class="add-to-cart normal-btn outline">Add to Cart</button> <button class="add-to-compare normal-btn outline">+ Add to Compare</button> </div><div class="product-share"> <h5>Share link:</h5><a href=""><i class="fab fa-facebook-f"> </i></a><a href=""><i class="fab fa-twitter"></i></a><a href=""><i class="fab fa-invision"> </i></a><a href=""><i class="fab fa-pinterest-p"></i></a> </div></div></div></div></div></div>'`
+          );
+
+          $("#quickview .big-img_qv").slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            asNavFor: ".slide-img_qv",
+            swipe: false,
+            infinite: false,
+          });
+          $("#quickview .slide-img_qv").slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            asNavFor: ".big-img",
+            focusOnSelect: true,
+            appendArrows: $(".slide-img_qv"),
+            adaptiveHeight: false,
+            infinite: false,
+            prevArrow:
+              '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+            nextArrow:
+              '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+          });
+          $("#quickview-close-btn").on("click", function (event) {
+            $("#quickview").remove();
+          });
 
       });
     };
@@ -606,30 +631,7 @@ window.onload = function () {
       //   `'<div id="quickview"> <div class="quickview-box"> <button class="round-icon-btn" id="quickview-close-btn"><i class="fas fa-times"></i></button> <div class="row"> <div class="col-12 col-md-6"> <div class="shop-detail_img"> <button class="round-icon-btn" id="zoom-btn"> <i class="icon_zoom-in_alt"></i></button> <div class="big-img big-img_qv"> <div class="big-img_block"><img src="+${productDetails.imageUrl}+" alt="product image"></div><div class="big-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div><div class="big-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div><div class="big-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div></div><div class="slide-img slide-img_qv"> <div class="slide-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div><div class="slide-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div><div class="slide-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div><div class="slide-img_block"><img src="${productDetails.imageUrl}" alt="product image"></div></div></div></div><div class="col-12 col-md-6"> <div class="shop-detail_info"> <h5 class="product-type color-type">${productDetails.type} </h5><a class="product-name" href="shop_detail.html">${productDetails.name}</a> <div class="price-rate"> <h3 class="product-price">${productDetails.name}</h3> </div><p class="product-describe"> ${productDetails.description}</p><div class="quantity-select"> <label for="quantity">Quantity:</label> <input class="no-round-input" id="quantity" type="number" min="0" value="1"> </div><div class="product-select"> <button class="add-to-cart normal-btn outline">Add to Cart</button> <button class="add-to-compare normal-btn outline">+ Add to Compare</button> </div><div class="product-share"> <h5>Share link:</h5><a href=""><i class="fab fa-facebook-f"> </i></a><a href=""><i class="fab fa-twitter"></i></a><a href=""><i class="fab fa-invision"> </i></a><a href=""><i class="fab fa-pinterest-p"></i></a> </div></div></div></div></div></div>'`
       // );
 
-      $("#quickview .big-img_qv").slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        asNavFor: ".slide-img_qv",
-        swipe: false,
-        infinite: false,
-      });
-      $("#quickview .slide-img_qv").slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        asNavFor: ".big-img",
-        focusOnSelect: true,
-        appendArrows: $(".slide-img_qv"),
-        adaptiveHeight: false,
-        infinite: false,
-        prevArrow:
-          '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
-        nextArrow:
-          '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
-      });
-      $("#quickview-close-btn").on("click", function (event) {
-        $("#quickview").remove();
-      });
+
     });
   });
 };
