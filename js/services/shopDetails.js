@@ -2,7 +2,7 @@ const featuredProductDOM = document.getElementById("shopDetails");
 
 const featuredProductItemTemplate = (productDetails) => {
   return `
-        <div class="description-item_block">
+        <div class="description-item_block" id="${productDetails.id}">
             <div class="row align-items-center justify-content-around">
                 <div class="col-12 col-md-4">
                     <div class="description-item_img"><img class="img-fluid" src="${productDetails.imageUrl}" alt="description image"></div>
