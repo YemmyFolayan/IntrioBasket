@@ -44,7 +44,7 @@ const fetchFoodList = async () => {
     console.log(product.length);
     console.log("hi lenght");
 
-    let htmlString = featuredProductItemTemplate(productDetails);
+    let htmlString = featuredProductItemTemplate(product);
     let htmlFragment = document.createElement("div");
     htmlFragment.innerHTML = htmlString;
     featuredProductDOM.appendChild(htmlFragment);
