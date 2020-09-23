@@ -32,7 +32,7 @@ const featuredProductItemTemplate = (userDetails) => {
 
 
 const fetchFoodList = async () => {
-  const endpoint = "/user/"; // THOUGHTS: There should be an endpoint for featured products...
+  const endpoint = "/user"; // THOUGHTS: There should be an endpoint for featured products...
 
   const res = await api.request(endpoint); // TODO: handle errors..
 
