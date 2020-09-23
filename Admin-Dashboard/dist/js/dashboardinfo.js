@@ -39,8 +39,8 @@ const fetchFoodList = async () => {
   const res = await api.request(endpoint); // TODO: handle errors..
 
 
-  res.payload.forEach((product) => {
-    let productDetails = product.length;
+  res.forEach((payload) => {
+    let productDetails = payload.length;
     console.log(payload.length);
     console.log("hi lenght");
 
