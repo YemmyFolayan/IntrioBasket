@@ -5,7 +5,7 @@ const featuredProductItemTemplate = (product) => {
     <!-- small box -->
       <div class="small-box bg-warning">
         <div class="inner">
-          <h3>44 ${product.length}</h3>
+          <h3>44 ${res.payload.length}</h3>
 
           <p>User Registrations</p>
         </div>
@@ -39,16 +39,16 @@ const fetchFoodList = async () => {
   const res = await api.request(endpoint); // TODO: handle errors..
 
 
-  res.payload.forEach((product) => {
+  const count = res.payload.length;
     
-    console.log(product.length);
+    console.log(res.payload.length);
     console.log("hi length");
 
     let htmlString = featuredProductItemTemplate(product);
     let htmlFragment = document.createElement("div");
     htmlFragment.innerHTML = htmlString;
     featuredProductDOM.appendChild(htmlFragment);
-  });
+  
 };
 
 fetchFoodList();
