@@ -7,7 +7,7 @@ const featuredProductItemTemplate = (count) => {
         <div class="inner">
           <h3>${count}</h3>
 
-          <p>User Registrations</p>
+          <p>Registered Users</p>
         </div>
         <div class="icon">
           <i class="ion ion-person-add"></i>
