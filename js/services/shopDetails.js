@@ -1,5 +1,5 @@
 
-const featuredProductDOM = document.getElementById("featuredProducts");
+const featuredProductDOM = document.getElementById("shopDetails");
 
 const featuredProductItemTemplate = (productDetails) => {
     return `
@@ -20,16 +20,6 @@ const featuredProductItemTemplate = (productDetails) => {
     
 };
 
-      
-
-
-
-
-
-
-
-
-
 
 const fetchFoodList = async () => {
     const endpoint = '/food'; // THOUGHTS: There should be an endpoint for featured products...
@@ -40,24 +30,23 @@ const fetchFoodList = async () => {
 
 
 
-    const productDetails = (id, name, description, imageUrl, price) => {
+    res.payload.forEach((product) => {
+        let productDetails = {
+            id: product._id,
+            name: product.food_product_name,
+            type: product.product_type,
+            imageUrl: product.image_link,
+            price: product.cost,
+            description: product.long_description,
+            // TODO: there should also be a product url...
+        };
 
-  
-        // let productDetails = {
-        //     id: product._id,
-        //     name: product.food_product_name,
-        //     type: product.product_type,
-        //     imageUrl: product.image_link,
-        //     price: product.cost,
-        //     description: product.long_description
-        //     // TODO: there should also be a product url...
-        // };
 
         let htmlString = featuredProductItemTemplate(productDetails);
         let htmlFragment = document.createElement('div');
         htmlFragment.innerHTML = htmlString;
         featuredProductDOM.appendChild(htmlFragment);
-    };
+    });
 
     
 };
