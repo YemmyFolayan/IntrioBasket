@@ -39,8 +39,10 @@ const fetchFoodList = async () => {
   const res = await api.request(endpoint); // TODO: handle errors..
 
 
-  res.payload.forEach(() => {
-    let productDetails = payload.length;
+  res.payload.forEach((product) => {
+    let productDetails = product.length;
+    console.log(product.length);
+    console.log("hi lenght");
 
     let htmlString = featuredProductItemTemplate(productDetails);
     let htmlFragment = document.createElement("div");
