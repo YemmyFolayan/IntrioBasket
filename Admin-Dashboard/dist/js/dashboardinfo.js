@@ -5,7 +5,7 @@ const featuredProductItemTemplate = (count) => {
     <!-- small box -->
       <div class="small-box bg-warning">
         <div class="inner">
-          <h3>44 ${count}</h3>
+          <h3>${count}</h3>
 
           <p>User Registrations</p>
         </div>
@@ -42,7 +42,7 @@ const fetchFoodList = async () => {
   const count = res.payload.length;
     
     console.log(res.payload.length);
-    console.log("hi length");
+    console.log("hi count");
 
     let htmlString = featuredProductItemTemplate(count);
     let htmlFragment = document.createElement("div");
