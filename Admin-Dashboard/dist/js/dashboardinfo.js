@@ -77,7 +77,7 @@ const featuredProductItemTemplates = (checks) => {
 // http://intriobasket.pexceptos.com/api/user/
 
 const fetchFoodLists = async () => {
-  const endpoint = "checkout/get-all"; // ADD CHECKOUTS ENDPOINT HERE // http://intriobasket.pexceptos.com/api/checkout/get-all
+  const endpoint = "/checkout/get-all"; // ADD CHECKOUTS ENDPOINT HERE // http://intriobasket.pexceptos.com/api/checkout/get-all
   const res = await api.request(endpoint); // TODO: handle errors..
 
   const checks = res.payload.length;
