@@ -37,6 +37,7 @@ const fetchFoodList = async () => {
 
     let htmlString = featuredProductItemTemplate(productDetails);
     let htmlFragment = document.createElement("div");
+    htmlFragment.setAttribute("id", product.id);
     htmlFragment.innerHTML = htmlString;
     featuredProductDOM.appendChild(htmlFragment);
   });
