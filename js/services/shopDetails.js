@@ -40,7 +40,7 @@ const lookUpCartStore = () => {
 }
 
 lookUpCartStore();
-
+console.log("shop-detail");
 
 
 // // Returned first 9 products so as to make the design balance on the homepage
