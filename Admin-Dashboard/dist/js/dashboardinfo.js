@@ -55,7 +55,7 @@ const featuredProductItemTemplates = (checks) => {
       <div class="inner">
         <h3>${checks}</h3>
 
-        <p>Bounce Rate</p>
+        <p>All checkouts</p>
       </div>
       <div class="icon">
         <i class="ion ion-stats-bars"></i>
@@ -93,13 +93,6 @@ const fetchFoodLists = async () => {
 
 fetchFoodLists();
 
-
-
-
-
-
-
-
 const featuredProductsSDOM = document.getElementById("totalProducts");
 
 const featuredProductItemTemplatesS = (totals) => {
@@ -109,7 +102,7 @@ const featuredProductItemTemplatesS = (totals) => {
       <div class="inner">
         <h3>${totals}</h3>
 
-        <p>All checkouts</p>
+        <p>Products Available</p>
       </div>
       <div class="icon">
         <i class="ion ion-pie-graph"></i>
@@ -147,15 +140,6 @@ const fetchFoodListsS = async () => {
 
 fetchFoodListsS();
 
-
-
-
 //CHECKOUT HISTORY FUNCTION
-
-
-
-
-
-
 
 //USER REGISTRATION HISTORY FUCNTION : onclick =>more info
