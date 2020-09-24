@@ -1,5 +1,7 @@
 const featuredProductDOM = document.getElementById("shopDetails");
 
+console.log("shop-detail");
+
 const featuredProductItemTemplate = (productDetails) => {
   return `
         <div class="description-item_block" id="${productDetails.id}">
