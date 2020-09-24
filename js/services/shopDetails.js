@@ -35,6 +35,7 @@ const lookUpCartStore = () => {
     htmlFragment.setAttribute("id", product.id);
     htmlFragment.innerHTML = htmlString;
     featuredProductDOM.appendChild(htmlFragment);
+    console.log("shop-detail");
   });
 }
 
