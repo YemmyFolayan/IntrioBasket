@@ -4689,6 +4689,7 @@ product-img {
 
 @media (min-width: 1200px) and (max-width: 1399px) {
   #quickview .quickview-box {
+    height: 60%;
     width: 60%;
     padding: 30px;
     overflow-y: auto;
