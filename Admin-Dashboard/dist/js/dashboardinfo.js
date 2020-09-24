@@ -51,14 +51,14 @@ const featuredProductsDOM = document.getElementById("allCheckout");
 const featuredProductItemTemplates = (checks) => {
   return `
     <!-- small box -->
-    <div class="small-box bg-danger">
+    <div class="small-box bg-success">
       <div class="inner">
         <h3>${checks}</h3>
 
-        <p>All checkouts</p>
+        <p>Bounce Rate</p>
       </div>
       <div class="icon">
-        <i class="ion ion-pie-graph"></i>
+        <i class="ion ion-stats-bars"></i>
       </div>
       <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
     </div>
@@ -93,6 +93,59 @@ const fetchFoodLists = async () => {
 
 fetchFoodLists();
 
+
+
+
+
+
+
+
+const featuredProductsSDOM = document.getElementById("totalProducts");
+
+const featuredProductItemTemplatesS = (totals) => {
+  return `
+    <!-- small box -->
+    <div class="small-box bg-danger">
+      <div class="inner">
+        <h3>${totals}</h3>
+
+        <p>All checkouts</p>
+      </div>
+      <div class="icon">
+        <i class="ion ion-pie-graph"></i>
+      </div>
+      <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+    </div>
+
+    `;
+};
+
+// GET
+
+// Get All Checkouts
+// http://intriobasket.pexceptos.com/api/checkout/get-all
+
+// GET
+
+// Get All Users
+// http://intriobasket.pexceptos.com/api/user/
+
+const fetchFoodListsS = async () => {
+  const endpoint = "/food"; // ADD CHECKOUTS ENDPOINT HERE // http://intriobasket.pexceptos.com/api/checkout/get-all
+  const res = await api.request(endpoint); // TODO: handle errors..
+
+  const totals = res.payload.length;
+
+  console.log(res.payload.length);
+  console.log("hi count");
+
+  let htmlString = featuredProductItemTemplatesS(totals);
+  let htmlFragment = document.createElement("div");
+  htmlFragment.innerHTML = htmlString;
+  featuredProductsSDOM.appendChild(htmlFragment);
+};
+
+fetchFoodListsS();
 
 
 
