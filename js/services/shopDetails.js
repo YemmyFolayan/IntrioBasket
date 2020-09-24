@@ -28,7 +28,9 @@ const featuredProductItemTemplate = (productDetails) => {
 // };
 
 const display = () => {
- 
+  //PLAY AROUND LOCAL STORAGE HERE.... SET , GET ITEMS
+  //localStorage.setItem
+  //localStorage.getItem
 
   let htmlString = featuredProductItemTemplate(productDetails);
   let htmlFragment = document.createElement("div");
@@ -40,7 +42,6 @@ const display = () => {
 
 display();
 console.log("shop-detail");
-
 
 // // Returned first 9 products so as to make the design balance on the homepage
 // const getFirst9 = (foodList) => {
