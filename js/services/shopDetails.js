@@ -27,21 +27,18 @@ const featuredProductItemTemplate = (productDetails) => {
 //   return foodList.slice(0, 9);
 // };
 
-const lookUpCartStore = () => {
-  const cartStore = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+const display = () => {
+ 
 
-  cartStore.forEach((product) => {
-  
-    let htmlString = featuredProductItemTemplate(product);
-    let htmlFragment = document.createElement("div");
-    htmlFragment.setAttribute("id", product.id);
-    htmlFragment.innerHTML = htmlString;
-    featuredProductDOM.appendChild(htmlFragment);
-    console.log("shop-detail");
-  });
-}
+  let htmlString = featuredProductItemTemplate(productDetails);
+  let htmlFragment = document.createElement("div");
+  htmlFragment.setAttribute("id", product.id);
+  htmlFragment.innerHTML = htmlString;
+  featuredProductDOM.appendChild(htmlFragment);
+  console.log("shop-detail");
+};
 
-lookUpCartStore();
+display();
 console.log("shop-detail");
 
 
