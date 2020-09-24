@@ -30,7 +30,7 @@ const lookUpCartStore = () => {
 
   cartStore.forEach((product) => {
   
-    let htmlString = featuredProductItemTemplate(productDetails);
+    let htmlString = featuredProductItemTemplate(product);
     let htmlFragment = document.createElement("div");
     htmlFragment.setAttribute("id", product.id);
     htmlFragment.innerHTML = htmlString;
