@@ -10,7 +10,7 @@ document.addEventListener(
 
 
 /**
-* addToCart: This function adds products to user cart.
+* display product details: This function adds products to user cart.
 * - Cart is persistent
 * 
 * Hook this  endpoint up with addtocart function to allow processing at the backend 
@@ -26,7 +26,7 @@ document.addEventListener(
 * @param {String} price 
 */
 
-const featuredProductDOM = document.getElementById("shopDetails");
+const featuredProductdDOM = document.getElementById("shopDetails");
 
 console.log("shopDetail");
 
@@ -81,7 +81,7 @@ const display = (productDetails) => {
   let htmlFragment = document.createElement("div");
   htmlFragment.setAttribute("id", product.id);
   htmlFragment.innerHTML = htmlString;
-  featuredProductDOM.appendChild(htmlFragment);
+  featuredProductdDOM.appendChild(htmlFragment);
   console.log("Display");
 };
 
