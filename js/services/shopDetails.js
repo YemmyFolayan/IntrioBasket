@@ -2,12 +2,11 @@ document.addEventListener(
   "DOMContentLoaded",
   () => {
     // display
-      display();
-      featuredProductItemTemplate();
+    display();
+    featuredProductItemTemplate();
   },
   false
 );
-
 
 /**
 * display product details: This function adds products to user cart.
@@ -30,23 +29,22 @@ const featuredProductdDOM = document.getElementById("shopDetails");
 
 console.log("shopDetail");
 
-
 const featuredProductItemTemplate = (productDetails) => {
-//   sessionStorage.setItem("id", productDetails.id);
-//   sessionStorage.setItem("image", productDetails.imageUrl);
-//   sessionStorage.setItem("type", productDetails.type);
-//   sessionStorage.setItem("name", productDetails.name);
-//   sessionStorage.setItem("price", productDetails.price);
-//   sessionStorage.setItem("description", productDetails.description);
+  //   sessionStorage.setItem("id", productDetails.id);
+  //   sessionStorage.setItem("image", productDetails.imageUrl);
+  //   sessionStorage.setItem("type", productDetails.type);
+  //   sessionStorage.setItem("name", productDetails.name);
+  //   sessionStorage.setItem("price", productDetails.price);
+  //   sessionStorage.setItem("description", productDetails.description);
 
-//   sessionStorage.getItem("id", productDetails.id);
-//   sessionStorage.getItem("image", productDetails.imageUrl);
-//   sessionStorage.getItem("type", productDetails.type);
-//   sessionStorage.getItem("name", productDetails.name);
-//   sessionStorage.getItem("price", productDetails.price);
-//   sessionStorage.getItem("description", productDetails.description);
+  //   sessionStorage.getItem("id", productDetails.id);
+  //   sessionStorage.getItem("image", productDetails.imageUrl);
+  //   sessionStorage.getItem("type", productDetails.type);
+  //   sessionStorage.getItem("name", productDetails.name);
+  //   sessionStorage.getItem("price", productDetails.price);
+  //   sessionStorage.getItem("description", productDetails.description);
 
-//   console.log("storage");
+  //   console.log("storage");
 
   return `
         <div class="description-item_block" id="${productDetails.id}">
@@ -68,9 +66,9 @@ const featuredProductItemTemplate = (productDetails) => {
 
 //write function to get element by ID or pass parameter via onclick to achieve displaying each product details
 
-// const getFirst9 = (foodList) => {
-//   return foodList.slice(0, 9);
-// };
+const getFirst9 = (foodList) => {
+  return foodList.slice(0, 9);
+};
 
 const fetchFoodList = async () => {
   const endpoint = "/food"; // THOUGHTS: There should be an endpoint for featured products...
@@ -98,26 +96,6 @@ const fetchFoodList = async () => {
 };
 
 fetchFoodList();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // const display = () => {
 //   //PLAY AROUND LOCAL STORAGE HERE.... SET , GET ITEMS
