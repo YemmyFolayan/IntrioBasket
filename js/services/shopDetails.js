@@ -46,7 +46,7 @@ const featuredProductItemTemplate = (productDetails) => {
 //   sessionStorage.getItem("price", productDetails.price);
 //   sessionStorage.getItem("description", productDetails.description);
 
-  console.log("storage");
+//   console.log("storage");
 
   return `
         <div class="description-item_block" id="${productDetails.id}">
@@ -72,7 +72,7 @@ const featuredProductItemTemplate = (productDetails) => {
 //   return foodList.slice(0, 9);
 // };
 
-const display = (productDetails) => {
+const display = () => {
   //PLAY AROUND LOCAL STORAGE HERE.... SET , GET ITEMS
   //sessionStorage.getItem
   //sessionStorage.getItem
@@ -85,7 +85,7 @@ const display = (productDetails) => {
   console.log("Display");
 };
 
-display();
+display(productDetails.id,productDetails.name,productDetails.description,productDetails.description,productDetails.imageUrl,productDetails.price);
 console.log("Hiiiiiiiiiii");
 
 // // Returned first 9 products so as to make the design balance on the homepage

@@ -58,6 +58,7 @@ const fetchFoodList = async () => {
     let htmlFragment = document.createElement("div");
     htmlFragment.innerHTML = htmlString;
     featuredProductDOM.appendChild(htmlFragment);
+    console.log("display");
   });
 };
 

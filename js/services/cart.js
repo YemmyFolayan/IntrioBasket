@@ -104,10 +104,6 @@ const shopDetailTemplate = (productDetails) => {
             `;
 };
 
-
-
-
-
 //delete each Item
 
 const deleteItem = (id) => {
@@ -125,6 +121,21 @@ const deleteItem = (id) => {
   // update Cart
   shopCartTBodyDOM.innerHTML = "";
   lookUpCartStore();
- 
 };
 
+//TODO
+
+// POST
+
+// Create User Cart
+// http://intriobasket.pexceptos.com/api/user/create-cart/5f4d0fd68cc9aa11e6151b88
+
+// PUT
+
+// Update User Checkout History
+// http://intriobasket.pexceptos.com/api/checkout/user/5f4d0fd68cc9aa11e6151b88
+
+// PUT
+
+// Update User Cart
+// http://intriobasket.pexceptos.com/api/user/update-cart/5f4d0fd68cc9aa11e6151b88
