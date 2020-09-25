@@ -42,7 +42,7 @@ const cartTotalTemplate = (totalPriceToPay, totalPriceToTax) => {
 const handleNoItemsInCart = () => {
   updateCartButton.style.display = "none";
   emptyCartButton.style.display = "none";
-  cartTotalTable.style.display = "none";
+  // cartTotalTable.style.display = "none";
 };
 
 const renderCartTotalTable = () => {
