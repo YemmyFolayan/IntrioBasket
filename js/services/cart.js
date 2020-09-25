@@ -124,11 +124,14 @@ const deleteItem = (id) => {
 };
 
 //TODO
+// GET user id dynamically to here to append to creat user cart url
 
+//    http://intriobasket.pexceptos.com/api/user/
 // POST
 
 // Create User Cart
 // http://intriobasket.pexceptos.com/api/user/create-cart/5f4d0fd68cc9aa11e6151b88
+
 
 // PUT
 
