@@ -2,7 +2,7 @@ const shopDetailsDOM = document.getElementById("shopDetails");
 const shopDOM = document.getElementById("shopDOM");
 
 const productDetailsTemplate = (productDetails) => {
-  return `<div ">
+  return `
   <div class="col-12">
     <div class="shop-detail_more-info">
       <div id="tab-so3">
@@ -62,8 +62,7 @@ const productDetailsTemplate = (productDetails) => {
       </div>
     </div>
   </div>
-  </div>
-</div>`;
+  </div>`;
 };
 
 const getProduct = (foodList, productId) => {
