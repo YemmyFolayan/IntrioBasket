@@ -19,7 +19,7 @@ const featuredProductItemTemplate = (productDetails) => {
                 <button class="add-to-compare round-icon-btn">
                     <i class="fas fa-random"></i>
                 </button>
-                <button onclick="featuredProductItemTemplate('${productDetails.id}','${productDetails.name}','${productDetails.description}','${productDetails.description}','${productDetails.imageUrl}','${productDetails.price}')" class="quickview round-icon-btn">
+                <button class="quickview round-icon-btn">
                     <i class="far fa-eye"></i>
                 </button>
             </div>
