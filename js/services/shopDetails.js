@@ -25,7 +25,7 @@ document.addEventListener(
 * @param {String} price 
 */
 
-const featuredProductdDOM = document.getElementById("shopDetails");
+const featuredProductDOM = document.getElementById("shopDetails");
 
 console.log("shopDetail");
 
