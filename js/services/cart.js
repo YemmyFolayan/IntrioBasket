@@ -69,6 +69,7 @@ const lookUpCartStore = () => {
   const cartStore = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
 
   if (cartStore === null || cartStore.length === 0)
+    //// Create User Cart here from back end http://intriobasket.pexceptos.com/api/user/create-cart/5f4d0fd68cc9aa11e6151b88
     return handleNoItemsInCart();
 
   cartStore.forEach((product) => {
@@ -124,14 +125,13 @@ const deleteItem = (id) => {
 };
 
 //TODO
-// GET user id dynamically to here to append to creat user cart url
+// GET user id dynamically here to append to creat user cart url
 
 //    http://intriobasket.pexceptos.com/api/user/
 // POST
 
 // Create User Cart
 // http://intriobasket.pexceptos.com/api/user/create-cart/5f4d0fd68cc9aa11e6151b88
-
 
 // PUT
 
