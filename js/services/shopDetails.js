@@ -2,44 +2,64 @@ document.addEventListener(
   "DOMContentLoaded",
   () => {
     // display
-    display();
+      display();
+      featuredProductItemTemplate();
   },
   false
 );
 
+
+/**
+* addToCart: This function adds products to user cart.
+* - Cart is persistent
+* 
+* Hook this  endpoint up with addtocart function to allow processing at the backend 
+* http://intriobasket.pexceptos.com/api/user/create-cart
+* 
+* Param purchase id = 5f4d0fd68cc9aa11e6151b88
+
+
+* @param {String} id 
+* @param {String} name 
+* @param {String} type 
+* @param {String} imageUrl 
+* @param {String} price 
+*/
+
 const featuredProductDOM = document.getElementById("shopDetails");
 
-console.log("shop-detail");
+console.log("shopDetail");
+
 
 const featuredProductItemTemplate = (productDetails) => {
-  sessionStorage.setItem("id", productDetails.id);
-  sessionStorage.setItem("image", productDetails.imageUrl);
-  sessionStorage.setItem("type", productDetails.type);
-  sessionStorage.setItem("name", productDetails.name);
-  sessionStorage.setItem("price", productDetails.price);
-  sessionStorage.setItem("description", productDetails.description);
+//   sessionStorage.setItem("id", productDetails.id);
+//   sessionStorage.setItem("image", productDetails.imageUrl);
+//   sessionStorage.setItem("type", productDetails.type);
+//   sessionStorage.setItem("name", productDetails.name);
+//   sessionStorage.setItem("price", productDetails.price);
+//   sessionStorage.setItem("description", productDetails.description);
 
-  sessionStorage.getItem("id", productDetails.id);
-  sessionStorage.getItem("image", productDetails.imageUrl);
-  sessionStorage.getItem("type", productDetails.type);
-  sessionStorage.getItem("name", productDetails.name);
-  sessionStorage.getItem("price", productDetails.price);
-  sessionStorage.getItem("description", productDetails.description);
+//   sessionStorage.getItem("id", productDetails.id);
+//   sessionStorage.getItem("image", productDetails.imageUrl);
+//   sessionStorage.getItem("type", productDetails.type);
+//   sessionStorage.getItem("name", productDetails.name);
+//   sessionStorage.getItem("price", productDetails.price);
+//   sessionStorage.getItem("description", productDetails.description);
 
   console.log("storage");
 
   return `
-        <div class="description-item_block" id="${id}">
+        <div class="description-item_block" id="${productDetails.id}">
             <div class="row align-items-center justify-content-around">
                 <div class="col-12 col-md-4">
-                    <div class="description-item_img"><img class="img-fluid" src="${imageUrl}" alt="description image"></div>
+                    <div class="description-item_img"><img class="img-fluid" src="${productDetails.imageUrl}" alt="description image"></div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="description-item_text">
-                        <h2>${type}</h2>
-                        <h2>${name}</h2>
-                        <h2>NGN ${price}</h2>
-                        <p>${description}</p>
+                        <h2>${productDetails.type}</h2>
+                        <h2>${productDetails.name}</h2>
+                        <h2>NGN ${productDetails.price}</h2>
+                        <p>${productDetails.description}</p>
                     </div>
                 </div>
             </div>
@@ -52,7 +72,7 @@ const featuredProductItemTemplate = (productDetails) => {
 //   return foodList.slice(0, 9);
 // };
 
-const display = () => {
+const display = (productDetails) => {
   //PLAY AROUND LOCAL STORAGE HERE.... SET , GET ITEMS
   //sessionStorage.getItem
   //sessionStorage.getItem
