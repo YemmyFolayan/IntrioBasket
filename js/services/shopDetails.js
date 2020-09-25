@@ -82,7 +82,7 @@ const display = (productDetails) => {
   htmlFragment.setAttribute("id", product.id);
   htmlFragment.innerHTML = htmlString;
   featuredProductDOM.appendChild(htmlFragment);
-  console.log("Howdy");
+  console.log("Display");
 };
 
 display();
