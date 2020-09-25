@@ -72,21 +72,68 @@ const featuredProductItemTemplate = (productDetails) => {
 //   return foodList.slice(0, 9);
 // };
 
-const display = () => {
-  //PLAY AROUND LOCAL STORAGE HERE.... SET , GET ITEMS
-  //sessionStorage.getItem
-  //sessionStorage.getItem
+const fetchFoodList = async () => {
+  const endpoint = "/food"; // THOUGHTS: There should be an endpoint for featured products...
 
-  let htmlString = featuredProductItemTemplate(productDetails);
-  let htmlFragment = document.createElement("div");
-  htmlFragment.setAttribute("id", product.id);
-  htmlFragment.innerHTML = htmlString;
-  featuredProductdDOM.appendChild(htmlFragment);
-  console.log("Display");
+  const res = await api.request(endpoint); // TODO: handle errors..
+
+  const featuredProducts = getFirst9(res.payload);
+  featuredProducts.forEach((product) => {
+    let productDetails = {
+      id: product._id,
+      name: product.food_product_name,
+      type: product.product_type,
+      imageUrl: product.image_link,
+      price: product.cost,
+      description: product.long_description,
+      // TODO: there should also be a product url...
+    };
+
+    let htmlString = featuredProductItemTemplate(productDetails);
+    let htmlFragment = document.createElement("div");
+    htmlFragment.innerHTML = htmlString;
+    featuredProductDOM.appendChild(htmlFragment);
+    console.log("display");
+  });
 };
 
-display(productDetails.id,productDetails.name,productDetails.description,productDetails.description,productDetails.imageUrl,productDetails.price);
-console.log("Hiiiiiiiiiii");
+fetchFoodList();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const display = () => {
+//   //PLAY AROUND LOCAL STORAGE HERE.... SET , GET ITEMS
+//   //sessionStorage.getItem
+//   //sessionStorage.getItem
+
+//   let htmlString = featuredProductItemTemplate(productDetails);
+//   let htmlFragment = document.createElement("div");
+//   htmlFragment.setAttribute("id", product.id);
+//   htmlFragment.innerHTML = htmlString;
+//   featuredProductdDOM.appendChild(htmlFragment);
+//   console.log("Display");
+// };
+
+// display(productDetails.id,productDetails.name,productDetails.description,productDetails.description,productDetails.imageUrl,productDetails.price);
+// console.log("Hiiiiiiiiiii");
 
 // // Returned first 9 products so as to make the design balance on the homepage
 // const getFirst9 = (foodList) => {
