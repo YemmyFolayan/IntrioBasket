@@ -3,18 +3,25 @@ const featuredProductDOM = document.getElementById("shopDetails");
 console.log("shop-detail");
 
 const featuredProductItemTemplate = (productDetails) => {
+  localStorage.setItem("id", productDetails.id);
+  localStorage.setItem("image", productDetails.imageUrl);
+  localStorage.setItem("type", productDetails.type);
+  localStorage.setItem("name", productDetails.name);
+  localStorage.setItem("price", productDetails.price);
+  localStorage.setItem("description", productDetails.description);
+
   return `
-        <div class="description-item_block" id="${productDetails.id}">
+        <div class="description-item_block" id="${id}">
             <div class="row align-items-center justify-content-around">
                 <div class="col-12 col-md-4">
-                    <div class="description-item_img"><img class="img-fluid" src="${productDetails.imageUrl}" alt="description image"></div>
+                    <div class="description-item_img"><img class="img-fluid" src="${imageUrl}" alt="description image"></div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="description-item_text">
-                        <h2>${productDetails.type}</h2>
-                        <h2>${productDetails.name}</h2>
-                        <h2>NGN ${productDetails.price}</h2>
-                        <p>${productDetails.description}</p>
+                        <h2>${type}</h2>
+                        <h2>${name}</h2>
+                        <h2>NGN ${price}</h2>
+                        <p>${description}</p>
                     </div>
                 </div>
             </div>
@@ -29,8 +36,14 @@ const featuredProductItemTemplate = (productDetails) => {
 
 const display = () => {
   //PLAY AROUND LOCAL STORAGE HERE.... SET , GET ITEMS
-  //localStorage.setItem
   //localStorage.getItem
+  //localStorage.getItem
+  localStorage.getItem("id", productDetails.id);
+  localStorage.getItem("image", productDetails.imageUrl);
+  localStorage.getItem("type", productDetails.type);
+  localStorage.getItem("name", productDetails.name);
+  localStorage.getItem("price", productDetails.price);
+  localStorage.getItem("description", productDetails.description);
 
   let htmlString = featuredProductItemTemplate(productDetails);
   let htmlFragment = document.createElement("div");
