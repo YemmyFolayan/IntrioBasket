@@ -26,6 +26,8 @@ const featuredProductItemTemplate = (productDetails) => {
   sessionStorage.getItem("price", productDetails.price);
   sessionStorage.getItem("description", productDetails.description);
 
+  console.log("storage");
+
   return `
         <div class="description-item_block" id="${id}">
             <div class="row align-items-center justify-content-around">
