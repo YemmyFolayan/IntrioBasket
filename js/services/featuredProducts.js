@@ -3,8 +3,8 @@ const featuredProductDOM = document.getElementById("featuredProducts");
 const featuredProductItemTemplate = (productDetails) => {
   return `
         <div class="product">
-            <a class="product-img" href="shop_detail_fullwidth.html">
-                <img alt="product" src="${productDetails.imageUrl}" height="200" width="250" onclick="featuredProductItemTemplate('${productDetails.id}','${productDetails.name}','${productDetails.description}','${productDetails.description}','${productDetails.imageUrl}','${productDetails.price}')">
+            <a class="product-img" href="shop_detail_fullwidth.html?product=${productDetails.id}">
+                <img alt="product" src="${productDetails.imageUrl}" height="200" width="250">
             </a>
             <h5 class="product-type">${productDetails.type}</h5>
             <h3 class="product-name">${productDetails.name}</h3>
@@ -45,15 +45,13 @@ const fetchFoodList = async () => {
       type: product.product_type,
       imageUrl: product.image_link,
       price: product.cost,
-      description: product.long_description,
-      // TODO: there should also be a product url...
+      description: product.long_description
     };
 
     let htmlString = featuredProductItemTemplate(productDetails);
     let htmlFragment = document.createElement("div");
     htmlFragment.innerHTML = htmlString;
     featuredProductDOM.appendChild(htmlFragment);
-    console.log("display");
   });
 };
 
