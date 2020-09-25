@@ -60,11 +60,11 @@ const display = () => {
   htmlFragment.setAttribute("id", product.id);
   htmlFragment.innerHTML = htmlString;
   featuredProductDOM.appendChild(htmlFragment);
-  console.log("shop-detail");
+  console.log("Howdy");
 };
 
 display();
-console.log("shop-detail");
+console.log("Hiiiiiiiiiii");
 
 // // Returned first 9 products so as to make the design balance on the homepage
 // const getFirst9 = (foodList) => {
