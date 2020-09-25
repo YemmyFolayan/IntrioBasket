@@ -10915,7 +10915,7 @@ footer.coffee .newletter .newletter_input button:focus {
   display: none;
 }
 .shop-detail-fullwidth .shop-detail_info-full {
-  padding-left: 50px;
+  padding-left: 0;
   padding-right: 0;
   margin-bottom: 0;
   border-left: 1px solid #ebebeb;
