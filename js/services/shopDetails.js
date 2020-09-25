@@ -3,12 +3,12 @@ const featuredProductDOM = document.getElementById("shopDetails");
 console.log("shop-detail");
 
 const featuredProductItemTemplate = (productDetails) => {
-  localStorage.setItem("id", productDetails.id);
-  localStorage.setItem("image", productDetails.imageUrl);
-  localStorage.setItem("type", productDetails.type);
-  localStorage.setItem("name", productDetails.name);
-  localStorage.setItem("price", productDetails.price);
-  localStorage.setItem("description", productDetails.description);
+  sessionStorage.setItem("id", productDetails.id);
+  sessionStorage.setItem("image", productDetails.imageUrl);
+  sessionStorage.setItem("type", productDetails.type);
+  sessionStorage.setItem("name", productDetails.name);
+  sessionStorage.setItem("price", productDetails.price);
+  sessionStorage.setItem("description", productDetails.description);
 
   return `
         <div class="description-item_block" id="${id}">
@@ -36,14 +36,14 @@ const featuredProductItemTemplate = (productDetails) => {
 
 const display = () => {
   //PLAY AROUND LOCAL STORAGE HERE.... SET , GET ITEMS
-  //localStorage.getItem
-  //localStorage.getItem
-  localStorage.getItem("id", productDetails.id);
-  localStorage.getItem("image", productDetails.imageUrl);
-  localStorage.getItem("type", productDetails.type);
-  localStorage.getItem("name", productDetails.name);
-  localStorage.getItem("price", productDetails.price);
-  localStorage.getItem("description", productDetails.description);
+  //sessionStorage.getItem
+  //sessionStorage.getItem
+  sessionStorage.getItem("id", productDetails.id);
+  sessionStorage.getItem("image", productDetails.imageUrl);
+  sessionStorage.getItem("type", productDetails.type);
+  sessionStorage.getItem("name", productDetails.name);
+  sessionStorage.getItem("price", productDetails.price);
+  sessionStorage.getItem("description", productDetails.description);
 
   let htmlString = featuredProductItemTemplate(productDetails);
   let htmlFragment = document.createElement("div");
