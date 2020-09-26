@@ -13,7 +13,6 @@ const cartTotalTBodyDOMCheckout = document.getElementById(
   "cartTotalTBodyCheckout"
 );
 
-
 //cart
 const cartItemTemplate = (productDetails) => {
   return `
@@ -114,23 +113,15 @@ const lookUpCartStore = () => {
   cartStore.forEach((product) => {
     let htmlString = cartItemTemplate(product);
     //checkout
-    let htmlStrings = cartItemTemplateCheckout(product);
 
     let htmlFragment = document.createElement("tr");
-
-    //
-    let htmlFragments = document.createElement("tr");
 
     htmlFragment.setAttribute("id", product.id);
     htmlFragment.innerHTML = htmlString;
 
-    //
-    htmlFragments.setAttribute("id", product.id);
-    htmlFragments.innerHTML = htmlStrings;
-
     shopCartTBodyDOM.appendChild(htmlFragment);
 
-    shopCartTBodyDOMCheckout.appendChild(htmlFragments);
+    shopCartTBodyDOMCheckout.appendChild(htmlFragment);
   });
 
   // call renderCartTotalTable
