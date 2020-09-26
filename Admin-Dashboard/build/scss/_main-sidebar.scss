@@ -86,8 +86,7 @@
 
     i,
     span {
-      margin-left: .5rem;
-    }
+      margin-left: }
 
     &:nth-child(2) {
       right: 2.2rem;
@@ -111,8 +110,7 @@
     margin-bottom: 0;
 
     .nav-icon {
-      margin-left: .05rem;
-      font-size: 1.2rem;
+      margin-left:    font-size: 1.2rem;
       margin-right: .2rem;
       text-align: center;
       width: $sidebar-nav-icon-width;
@@ -161,12 +159,9 @@
       .nav-treeview {      
         .nav-treeview {
           padding-left: 2rem;
-          margin-left: -1rem;
-
-          .text-sm & {          
+          margin-left:        .text-sm & {          
             padding-left: 1rem;
-            margin-left: -.5rem;
-          }
+            margin-left:        }
         }
       }
     }
@@ -480,11 +475,7 @@
 .sidebar-mini-md .main-sidebar.sidebar-focused {
  .nav-compact.nav-sidebar.nav-child-indent:not(.nav-flat) .nav-treeview {
     padding-left: 1rem;
-    margin-left: 0;
-  }
-}
-
-// Nav Flat
+    margin-left: / Nav Flat
 .nav-flat {
   margin: (-$sidebar-padding-x/2) (-$sidebar-padding-x) 0;
 
@@ -494,8 +485,7 @@
       margin-bottom: 0;
 
       > .nav-icon {
-        margin-left: .55rem;
-      }
+        margin-left:    }
     }
   }
 
@@ -504,8 +494,7 @@
       .nav-item {
         > .nav-link {
           > .nav-icon {
-            margin-left: .4rem;
-          }
+            margin-left:       }
         }
       }
     }
@@ -516,30 +505,25 @@
       padding-left: 0;
 
       .nav-icon {
-        margin-left: .85rem;
-      }
+        margin-left:    }
 
       .nav-treeview {
         border-left: .2rem solid;
 
         .nav-icon {
-          margin-left: 1.15rem;
-        }
+          margin-left:       }
 
         .nav-treeview {
           .nav-icon {
-            margin-left: 1.45rem;
-          }
+            margin-left:         }
 
           .nav-treeview {
             .nav-icon {
-              margin-left: 1.75rem;
-            }
+              margin-left:           }
 
             .nav-treeview {
               .nav-icon {
-                margin-left: 2.05rem;
-              }
+                margin-left:             }
             }
           }
         }
@@ -550,8 +534,7 @@
   .sidebar-collapse &.nav-child-indent {
     .nav-treeview {
       .nav-icon {
-        margin-left: .55rem;
-      }
+        margin-left:    }
 
       .nav-link {
         padding-left: calc(#{$nav-link-padding-x} - .2rem);
@@ -559,23 +542,19 @@
 
       .nav-treeview {
         .nav-icon {
-          margin-left: .35rem;
-        }
+          margin-left:      }
 
         .nav-treeview {
           .nav-icon {
-            margin-left: .15rem;
-          }
+            margin-left:        }
 
           .nav-treeview {
             .nav-icon {
-              margin-left: -.15rem;
-            }
+              margin-left:           }
 
             .nav-treeview {
               .nav-icon {
-                margin-left: -.35rem;
-              }
+                margin-left:             }
             }
           }
         }
@@ -589,34 +568,26 @@
   .sidebar-mini-md .main-sidebar.sidebar-focused & {
     &.nav-compact.nav-sidebar .nav-treeview {
       .nav-icon {
-        margin-left: .4rem;
-      }
-    }
+        margin-left:     }
 
     &.nav-sidebar.nav-child-indent .nav-treeview {
       .nav-icon {
-        margin-left: .85rem;
-      }
-
+        margin-left: 
       .nav-treeview {
         .nav-icon {
-          margin-left: 1.15rem;
-        }
+          margin-left: }
 
         .nav-treeview {
           .nav-icon {
-            margin-left: 1.45rem;
-          }
+            margin-left:   }
 
           .nav-treeview {
             .nav-icon {
-              margin-left: 1.75rem;
-            }
+              margin-left:     }
 
             .nav-treeview {
               .nav-icon {
-                margin-left: 2.05rem;
-              }
+                margin-left:       }
             }
           }
         }
@@ -625,13 +596,12 @@
   }
 
   .nav-icon {
-    @include transition(margin-left $transition-fn $transition-speed);
+    @include transition(margin-left $fn $transition-speed);
   }
 
   .nav-treeview {
     .nav-icon {
-      margin-left: -.2rem;
-    }
+      margin-left:  }
   }
 
   &.nav-sidebar > .nav-item {
@@ -657,11 +627,8 @@
       margin-bottom: 0;
 
       > .nav-icon {
-        margin-left: .55rem;
-
-        .text-sm & {
-          margin-left: .75rem;
-        }
+        margin-left:       .text-sm & {
+          margin-left:      }
       }
     }
   }
@@ -674,10 +641,10 @@
         box-shadow: none;
 
         > .nav-icon {
-          margin-left: calc(.55rem - 3px);
+          margin-left:  - 3px);
           
           .text-sm & {
-            margin-left: calc(.75rem - 3px);
+            margin-left:  - 3px);
           }
         }
       }
@@ -688,7 +655,7 @@
     .nav-item {
       > .nav-link {
         > .nav-icon {
-          margin-left: calc(.75rem - 3px);
+          margin-left:  - 3px);
         }
       }
     }
@@ -698,10 +665,8 @@
   .sidebar-mini-md & {
     > .nav-item .nav-link {
       .nav-icon {
-        @include transition(margin-left $transition-fn $transition-speed);
-        margin-left: .75rem;
-      }
-    }
+        @include transition(margin-left $fn $transition-speed);
+        margin-left:     }
   }
 
   .sidebar-mini.sidebar-collapse .main-sidebar.sidebar-focused &.nav-child-indent,
@@ -713,9 +678,7 @@
 
       .nav-treeview {
         padding-left: 2rem;
-        margin-left: -1rem;
-      }
-    }
+        margin-left:     }
   }
 
   .sidebar-mini.sidebar-collapse.text-sm .main-sidebar.sidebar-focused &.nav-child-indent,
@@ -727,22 +690,18 @@
 
       .nav-treeview {
         padding-left: 1rem;
-        margin-left: -.5rem;
-      }
-    }
+        margin-left:     }
   }
 
   .sidebar-mini.sidebar-collapse &,
   .sidebar-mini-md.sidebar-collapse & {
     > .nav-item > .nav-link {
       .nav-icon {
-        margin-left: .55rem;
-      }
+        margin-left:    }
 
       &.active {
         > .nav-icon{
-          margin-left: .36rem;
-        }
+          margin-left:      }
       }
     }
 
@@ -750,8 +709,7 @@
       .nav-treeview {
         .nav-treeview {
           padding-left: 0;
-          margin-left: 0;
-        }
+          margin-left: }
       }
       }
     }
@@ -761,12 +719,11 @@
   .sidebar-mini-md.sidebar-collapse.text-sm & {
     > .nav-item > .nav-link {
       .nav-icon {
-        margin-left: .75rem;
-      }
+        margin-left:    }
 
       &.active {
         > .nav-icon{
-          margin-left: calc(.75rem - 3px);
+          margin-left:  - 3px);
         }
       }
     }
@@ -931,9 +888,7 @@
 
 .layout-boxed {
   &.sidebar-collapse .main-sidebar {
-    margin-left: 0;
-  }
-  .content-wrapper, 
+    margin-left: ontent-wrapper, 
   .main-header,
   .main-footer {
     z-index: 9999;

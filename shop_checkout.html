@@ -37,8 +37,8 @@
                    
                     <li class="toggleable"> <a class="menu-item" href="javascript:void()">Pages</a>
                       <ul class="sub-menu">
-                        <li><a href="login.html">login</a></li>
-                        <li><a href="register.html">register</a></li>
+                        <li><a href="login.html">logout</a></li>
+
                         <li><a href="FAQ.html">FAQ</a></li>
                        
                         <li><a href="contact_us.html">contact us</a></li>
@@ -80,8 +80,8 @@
                        
                         <li class="toggleable"><a class="menu-item" href="javascript:void()">Pages</a><span class="sub-menu--expander"><i class="icon_plus"></i></span>
                           <ul class="sub-menu">
-                            <li><a href="login.html">login</a></li>
-                            <li><a href="register.html">register</a></li>
+                            <li><a href="login.html">logout</a></li>
+
                             <li><a href="FAQ.html">FAQ</a></li>
                            
                             <li><a href="about_us.html">about us</a></li>
@@ -92,7 +92,7 @@
                       </ul>
                     </div>
                     <div class="mobile-login">
-                      <h2>My account</h2><a href="login.html">Login</a><a href="register.html">Register</a>
+                      <h2>My account</h2><a href="login.html">Logout</a>
                     </div>
                     <div class="mobile-social"><a href=""><i class="fab fa-facebook-f"> </i></a><a href=""><i class="fab fa-twitter"></i></a><a href=""><i class="fab fa-invision"> </i></a><a href=""><i class="fab fa-pinterest-p"> </i></a></div>
                   </div>
@@ -187,12 +187,16 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="inputStreet">Street address*</label>
+                  <label for="inputStreet"><h2 class="form-title">Shipping Address*</h2></label>
                   <input class="no-round-input-bg" id="inputStreet" type="text" required>
                 </div>
                 <div class="form-group">
                   <label for="inputZip">Postcode / ZIP (optional)</label>
                   <input class="no-round-input-bg" id="inputZip" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="inputCity">State*</label>
+                  <input class="no-round-input-bg" id="inputCity" type="text" required>
                 </div>
                 <div class="form-group">
                   <label for="inputCity">Town / City*</label>
@@ -206,11 +210,7 @@
                   <label for="inputEmail">Email address *</label>
                   <input class="no-round-input-bg" id="inputEmail" type="email" required>
                 </div>
-                <h2 class="form-title">Shipping Address</h2>
-                <div class="form-group">
-                  <input id="differentAddress" type="checkbox">
-                  <label for="differentAddress">Ship to a different address?</label>
-                </div>
+                
                 <div class="form-group">
                   <label for="inputNote">Order notes (optional)</label>
                   <textarea class="textarea-form-bg" id="inputNote" name="" cols="30" rows="7"></textarea>
@@ -227,12 +227,12 @@
                       </colgroup>
                       <tbody>
                         <tr>
-                          <th class="name">Australian Kiwi × <span>1</span></th>
-                          <td class="price black" style="border-top: 0">#169.00</td>
+                          <th class="name"> FLOOR </th>
+                          <td class="price black" style="border-top: 0">NGR 169.00</td>
                         </tr>
                         <tr>
                           <th>SUBTOTAL</th>
-                          <td class="price">#169.00</td>
+                          <td class="price"> NNGR 169.00</td>
                         </tr>
                         <tr>
                           <th>SHIPPING</th>
@@ -243,7 +243,7 @@
                         </tr>
                         <tr>
                           <th>TOTAL</th>
-                          <td class="total">#169.00</td>
+                          <td class="total">NGR 169.00</td>
                         </tr>
                       </tbody>
                     </table>
@@ -254,7 +254,7 @@
                   </div>
                   <div class="form-group">
                     <input type="radio" name="paymethod" id="paypal" value="option2">
-                    <label for="paypal">Paypal</label>
+                    <label for="paypal">PayStack</label>
                   </div>
                   <button class="no-round-btn submit-btn">Place order</button>
                 </div>
