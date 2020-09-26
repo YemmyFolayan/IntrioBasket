@@ -153,7 +153,7 @@ const deleteItem = (id) => {
 
   // update Cart
   shopCartTBodyDOM.innerHTML = "";
-  shopCartTBodyDOMCheckout.innerHTML = "";
+
   lookUpCartStore();
 };
 
