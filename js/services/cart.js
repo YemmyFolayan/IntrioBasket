@@ -12,10 +12,12 @@ const shopCartTBodyDOMCheckout = document.getElementById(
 const cartTotalTBodyDOMCheckout = document.getElementById(
   "cartTotalTBodyCheckout"
 );
+//meant for displaying/ hidden the total table
 const cartTotalTableCheckout = document.getElementById(
   "cartTotalTableCheckout"
 );
 
+//cart
 const cartItemTemplate = (productDetails) => {
   return `
         <tr id="${productDetails.id}">
@@ -60,24 +62,24 @@ const cartItemTemplateCheckout = (productDetails) => {
     `;
 };
 
-
-
 const cartTotalTemplateCheckout = (totalPriceToPay, totalPriceToTax) => {
   return `
-        <tr>
-            <th>TOTAL:</th>
-            <td>NGN ${totalPriceToPay}</td>
-            <th>TOTAL with 7.5% Tax Rate:</th>
-            <td>NGN ${totalPriceToTax}</td>
-        </tr>
+  <tr>
+    <th>TOTAL</th>
+    <td class="total">NGN ${totalPriceToPay}</td>
+  </tr>
+
+  <tr>
+    <th>TOTAL with 7.5% Tax Rate:</th>
+    <td class="total">NGN ${totalPriceToTax}</td>
+  </tr>
     `;
 };
-
 
 const handleNoItemsInCart = () => {
   updateCartButton.style.display = "none";
   emptyCartButton.style.display = "none";
-  // cartTotalTable.style.display = "none";
+  cartTotalTable.style.display = "none";
 };
 
 const renderCartTotalTable = () => {
@@ -96,8 +98,13 @@ const renderCartTotalTable = () => {
   });
 
   let htmlString = cartTotalTemplate(totalPriceToPay, totalPriceToTax);
+  //cart
+  let htmlStrings = cartTotalTemplateCheckout(totalPriceToPay, totalPriceToTax);
 
   cartTotalTBodyDOM.innerHTML = htmlString;
+
+  //
+  cartTotalTBodyDOMCheckout.innerHTML = htmlStrings;
 };
 
 const lookUpCartStore = () => {
@@ -109,10 +116,24 @@ const lookUpCartStore = () => {
 
   cartStore.forEach((product) => {
     let htmlString = cartItemTemplate(product);
+    //checkout
+    let htmlStrings = cartItemTemplateCheckout(product);
+
     let htmlFragment = document.createElement("tr");
+
+    //
+    let htmlFragments = document.createElement("tr");
+
     htmlFragment.setAttribute("id", product.id);
     htmlFragment.innerHTML = htmlString;
+
+    //
+    htmlFragments.setAttribute("id", product.id);
+    htmlFragments.innerHTML = htmlStrings;
+
     shopCartTBodyDOM.appendChild(htmlFragment);
+
+    shopCartTBodyDOMCheckout.appendChild(htmlFragments);
   });
 
   // call renderCartTotalTable
@@ -120,25 +141,6 @@ const lookUpCartStore = () => {
 };
 
 lookUpCartStore();
-
-//productdetails template for shop_detail_fullwidth page
-const shopDetailTemplate = (productDetails) => {
-  return `
-            <div class="description-item_block">
-                <div class="row align-items-center justify-content-around">
-                    <div class="col-12 col-md-4">
-                        <div class="description-item_img"><img class="img-fluid" src="${productDetails.imageUrl}" alt="description image"></div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="description-item_text">
-                            <h2>${productDetails.name}</h2>
-                            <p>${productDetails.description}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            `;
-};
 
 //delete each Item
 
