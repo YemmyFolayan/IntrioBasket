@@ -120,18 +120,16 @@ const lookUpCartStore = () => {
     htmlFragment.innerHTML = htmlString;
 
     shopCartTBodyDOM.appendChild(htmlFragment);
-
-
-    let htmlStrings = cartItemTemplateCheckout(product);
-    //checkout
-
-    let htmlFragments = document.createElement("div");
-
-    htmlFragments.setAttribute("id", product.id);
-    htmlFragments.innerHTML = htmlStrings;
-
-    //shopCartTBodyDOMCheckout.appendChild(htmlFragments);
   });
+  let htmlStrings = cartItemTemplateCheckout(product);
+  //checkout
+
+  let htmlFragments = document.createElement("div");
+
+  htmlFragments.setAttribute("id", product.id);
+  htmlFragments.innerHTML = htmlStrings;
+
+  shopCartTBodyDOMCheckout.appendChild(htmlFragments);
 
   // call renderCartTotalTable
   renderCartTotalTable();
