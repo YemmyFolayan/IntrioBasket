@@ -75,7 +75,7 @@ const cartTotalTemplateCheckout = (totalPriceToPay, totalPriceToTax) => {
 const handleNoItemsInCart = () => {
   updateCartButton.style.display = "none";
   emptyCartButton.style.display = "none";
-  cartTotalTable.style.display = "none";
+  //cartTotalTable.style.display = "none";
 };
 
 const renderCartTotalTable = () => {
@@ -121,7 +121,7 @@ const lookUpCartStore = () => {
 
     shopCartTBodyDOM.appendChild(htmlFragment);
 
-    shopCartTBodyDOMCheckout.appendChild(htmlFragment);
+    //shopCartTBodyDOMCheckout.appendChild(htmlFragment);
   });
 
   // call renderCartTotalTable
