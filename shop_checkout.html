@@ -225,22 +225,18 @@
                         <col span="1" style="width: 50%">
                         <col span="1" style="width: 50%">
                       </colgroup>
-                      <tbody>
+                      <tbody id="shopCartTBodyCheckout">
                         <tr>
                           <th class="name"> FLOOR </th>
                           <td class="price black" style="border-top: 0">NGR 169.00</td>
                         </tr>
-                        <tr>
-                          <th>SUBTOTAL</th>
-                          <td class="price"> NNGR 169.00</td>
-                        </tr>
-                        <tr>
-                          <th>SHIPPING</th>
-                          <td>
-                            <p>Free shipping</p>
-                            <p>Calculate shipping</p>
-                          </td>
-                        </tr>
+
+                      </tbody>
+
+
+                      <tbody id="cartTotalTableCheckout">
+                        
+                        
                         <tr>
                           <th>TOTAL</th>
                           <td class="total">NGR 169.00</td>
@@ -343,6 +339,19 @@
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.shop.js"></script>
-    <script></script>
+
+
+    <!--Config -->
+    <script src="config/constants.js"></script>
+
+    <!-- Utils -->
+    <script src="js/utils/api-request.js"></script>
+
+    <!-- App Logic -->
+    <script src="js/app.js"></script>
+
+    <!-- Services -->
+    <script src="js/services/cart.js"></script>
+  
   </body>
 </html>

@@ -6,12 +6,15 @@ const emptyCartButton = document.getElementById("emptyCartButton");
 const cartTotalTable = document.getElementById("cartTotalTable");
 const cartTotalTBodyDOM = document.getElementById("cartTotalTBody");
 
-
-const shopCartTBodyDOMCheckout = document.getElementById("shopCartTBodyCheckout");
-const cartTotalTBodyDOMCheckout = document.getElementById("cartTotalTBodyCheckout");
-const cartTotalTableCheckout = document.getElementById("cartTotalTableCheckout");
-
-
+const shopCartTBodyDOMCheckout = document.getElementById(
+  "shopCartTBodyCheckout"
+);
+const cartTotalTBodyDOMCheckout = document.getElementById(
+  "cartTotalTBodyCheckout"
+);
+const cartTotalTableCheckout = document.getElementById(
+  "cartTotalTableCheckout"
+);
 
 const cartItemTemplate = (productDetails) => {
   return `
@@ -42,6 +45,36 @@ const cartTotalTemplate = (totalPriceToPay, totalPriceToTax) => {
             <td>NGN ${totalPriceToPay}</td>
             <th>TOTAL with 7.5% Tax Rate:</th>
             <td>NGN ${totalPriceToTax}</td>
+        </tr>
+    `;
+};
+
+//checkout page
+
+const cartItemTemplateCheckout = (productDetails) => {
+  return `
+  <tr id="${productDetails.id}">
+    <th class="name">${productDetails.name}</th>
+    <td class="price black" style="border-top: 0">NGN ${productDetails.price}</td>
+  </tr>
+
+
+  <tr id="${productDetails.id}">
+            <td class="product-name">${productDetails.name}</td>
+            <td class="product-price">NGN ${productDetails.price}</td>
+            <td class="product-quantity">
+            <input class="quantity no-round-input" type="number" min="1" value="${
+              productDetails.qty
+            }">
+            </td>
+            <td class="product-total">NGN ${
+              productDetails.price * productDetails.qty
+            }</td>
+            <td class="product-clear">
+            <button class="no-round-btn" onclick="deleteItem('${
+              productDetails.id
+            }')"><i class="icon_close"></i></button>
+            </td>
         </tr>
     `;
 };
