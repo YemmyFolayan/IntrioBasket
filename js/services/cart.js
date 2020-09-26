@@ -6,6 +6,13 @@ const emptyCartButton = document.getElementById("emptyCartButton");
 const cartTotalTable = document.getElementById("cartTotalTable");
 const cartTotalTBodyDOM = document.getElementById("cartTotalTBody");
 
+
+const shopCartTBodyDOMCheckout = document.getElementById("shopCartTBodyCheckout");
+const cartTotalTBodyDOMCheckout = document.getElementById("cartTotalTBodyCheckout");
+const cartTotalTableCheckout = document.getElementById("cartTotalTableCheckout");
+
+
+
 const cartItemTemplate = (productDetails) => {
   return `
         <tr id="${productDetails.id}">
