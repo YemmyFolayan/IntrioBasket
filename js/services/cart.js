@@ -121,7 +121,16 @@ const lookUpCartStore = () => {
 
     shopCartTBodyDOM.appendChild(htmlFragment);
 
-    //shopCartTBodyDOMCheckout.appendChild(htmlFragment);
+
+    let htmlStrings = cartItemTemplateCheckout(product);
+    //checkout
+
+    let htmlFragments = document.createElement("tr");
+
+    htmlFragments.setAttribute("id", product.id);
+    htmlFragments.innerHTML = htmlStrings;
+
+    shopCartTBodyDOMCheckout.appendChild(htmlFragments);
   });
 
   // call renderCartTotalTable
