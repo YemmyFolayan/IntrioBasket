@@ -130,7 +130,7 @@ const lookUpCartStore = () => {
     htmlFragments.setAttribute("id", product.id);
     htmlFragments.innerHTML = htmlStrings;
 
-    shopCartTBodyDOMCheckout.appendChild(htmlFragments);
+    //shopCartTBodyDOMCheckout.appendChild(htmlFragments);
   });
 
   // call renderCartTotalTable
