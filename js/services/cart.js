@@ -57,27 +57,22 @@ const cartItemTemplateCheckout = (productDetails) => {
     <th class="name">${productDetails.name}</th>
     <td class="price black" style="border-top: 0">NGN ${productDetails.price}</td>
   </tr>
+    `;
+};
 
 
-  <tr id="${productDetails.id}">
-            <td class="product-name">${productDetails.name}</td>
-            <td class="product-price">NGN ${productDetails.price}</td>
-            <td class="product-quantity">
-            <input class="quantity no-round-input" type="number" min="1" value="${
-              productDetails.qty
-            }">
-            </td>
-            <td class="product-total">NGN ${
-              productDetails.price * productDetails.qty
-            }</td>
-            <td class="product-clear">
-            <button class="no-round-btn" onclick="deleteItem('${
-              productDetails.id
-            }')"><i class="icon_close"></i></button>
-            </td>
+
+const cartTotalTemplateCheckout = (totalPriceToPay, totalPriceToTax) => {
+  return `
+        <tr>
+            <th>TOTAL:</th>
+            <td>NGN ${totalPriceToPay}</td>
+            <th>TOTAL with 7.5% Tax Rate:</th>
+            <td>NGN ${totalPriceToTax}</td>
         </tr>
     `;
 };
+
 
 const handleNoItemsInCart = () => {
   updateCartButton.style.display = "none";
