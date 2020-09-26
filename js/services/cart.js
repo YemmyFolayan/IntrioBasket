@@ -125,7 +125,7 @@ const lookUpCartStore = () => {
     let htmlStrings = cartItemTemplateCheckout(product);
     //checkout
 
-    let htmlFragments = document.createElement("tr");
+    let htmlFragments = document.createElement("div");
 
     htmlFragments.setAttribute("id", product.id);
     htmlFragments.innerHTML = htmlStrings;
