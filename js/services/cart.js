@@ -97,9 +97,7 @@ const renderCartTotalTable = () => {
   // //cart
   // let htmlStrings = cartTotalTemplateCheckout(totalPriceToPay, totalPriceToTax);
 
-     cartTotalTBodyDOM.innerHTML = htmlString;
-
-
+  cartTotalTBodyDOM.innerHTML = htmlString;
 };
 
 const lookUpCartStore = () => {
@@ -129,7 +127,6 @@ const lookUpCartStore = () => {
     // htmlFragments.innerHTML = htmlStrings;
 
     // shopCartTBodyDOMCheckout.appendChild(htmlFragments);
-
   });
 
   // call renderCartTotalTable
