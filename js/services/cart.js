@@ -130,7 +130,7 @@ const lookUpCartStore = () => {
 
     shopCartTBodyDOM.appendChild(htmlFragment);
 
-    shopCartTBodyDOMCheckout.appendChild(htmlFragments);
+    // shopCartTBodyDOMCheckout.appendChild(htmlFragments);
   });
 
   // call renderCartTotalTable
