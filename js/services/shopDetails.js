@@ -51,7 +51,7 @@ const productDetailsTemplate = (productDetails) => {
         <!-- WRITE JAVASCRIPT FOR ADD TO CART FUNCTION-->
 
         <div class="product-select">
-          <button class="add-to-cart normal-btn outline">Add to Cart</button>
+          <button class="add-to-cart normal-btn outline" onclick="addToCart('${productDetails.id}','${productDetails.name}','${productDetails.type}','${productDetails.imageUrl}','${productDetails.price}')">Add to Cart</button>
           
         </div>
         <div class="product-guarante">
