@@ -12,10 +12,7 @@ const shopCartTBodyDOMCheckout = document.getElementById(
 const cartTotalTBodyDOMCheckout = document.getElementById(
   "cartTotalTBodyCheckout"
 );
-//meant for displaying/ hidden the total table
-const cartTotalTableCheckout = document.getElementById(
-  "cartTotalTableCheckout"
-);
+
 
 //cart
 const cartItemTemplate = (productDetails) => {
@@ -158,6 +155,7 @@ const deleteItem = (id) => {
 
   // update Cart
   shopCartTBodyDOM.innerHTML = "";
+  shopCartTBodyDOMCheckout.innerHTML = "";
   lookUpCartStore();
 };
 
