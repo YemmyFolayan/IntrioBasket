@@ -6,12 +6,12 @@ const emptyCartButton = document.getElementById("emptyCartButton");
 const cartTotalTable = document.getElementById("cartTotalTable");
 const cartTotalTBodyDOM = document.getElementById("cartTotalTBody");
 
-const shopCartTBodyDOMCheckout = document.getElementById(
-  "shopCartTBodyCheckout"
-);
-const cartTotalTBodyDOMCheckout = document.getElementById(
-  "cartTotalTBodyCheckout"
-);
+// const shopCartTBodyDOMCheckout = document.getElementById(
+//   "shopCartTBodyCheckout"
+// );
+// const cartTotalTBodyDOMCheckout = document.getElementById(
+//   "cartTotalTBodyCheckout"
+// );
 
 //cart
 const cartItemTemplate = (productDetails) => {
@@ -47,30 +47,30 @@ const cartTotalTemplate = (totalPriceToPay, totalPriceToTax) => {
     `;
 };
 
-//checkout page
+// //checkout page
 
-const cartItemTemplateCheckout = (productDetails) => {
-  return `
-  <tr id="${productDetails.id}">
-    <th class="name">${productDetails.name}</th>
-    <td class="price black" style="border-top: 0">NGN ${productDetails.price}</td>
-  </tr>
-    `;
-};
+// const cartItemTemplateCheckout = (productDetails) => {
+//   return `
+//   <tr id="${productDetails.id}">
+//     <th class="name">${productDetails.name}</th>
+//     <td class="price black" style="border-top: 0">NGN ${productDetails.price}</td>
+//   </tr>
+//     `;
+// };
 
-const cartTotalTemplateCheckout = (totalPriceToPay, totalPriceToTax) => {
-  return `
-  <tr>
-    <th>TOTAL</th>
-    <td class="total">NGN ${totalPriceToPay}</td>
-  </tr>
+// const cartTotalTemplateCheckout = (totalPriceToPay, totalPriceToTax) => {
+//   return `
+//   <tr>
+//     <th>TOTAL</th>
+//     <td class="total">NGN ${totalPriceToPay}</td>
+//   </tr>
 
-  <tr>
-    <th>TOTAL with 7.5% Tax Rate:</th>
-    <td class="total">NGN ${totalPriceToTax}</td>
-  </tr>
-    `;
-};
+//   <tr>
+//     <th>TOTAL with 7.5% Tax Rate:</th>
+//     <td class="total">NGN ${totalPriceToTax}</td>
+//   </tr>
+//     `;
+// };
 
 const handleNoItemsInCart = () => {
   updateCartButton.style.display = "none";
@@ -94,13 +94,12 @@ const renderCartTotalTable = () => {
   });
 
   let htmlString = cartTotalTemplate(totalPriceToPay, totalPriceToTax);
-  //cart
-  let htmlStrings = cartTotalTemplateCheckout(totalPriceToPay, totalPriceToTax);
+  // //cart
+  // let htmlStrings = cartTotalTemplateCheckout(totalPriceToPay, totalPriceToTax);
 
-  cartTotalTBodyDOM.innerHTML = htmlString;
+     cartTotalTBodyDOM.innerHTML = htmlString;
 
-  //
-  cartTotalTBodyDOMCheckout.innerHTML = htmlStrings;
+
 };
 
 const lookUpCartStore = () => {
@@ -120,16 +119,18 @@ const lookUpCartStore = () => {
     htmlFragment.innerHTML = htmlString;
 
     shopCartTBodyDOM.appendChild(htmlFragment);
+
+    // let htmlStrings = cartItemTemplateCheckout(product);
+    // //checkout
+
+    // let htmlFragments = document.createElement("div");
+
+    // htmlFragments.setAttribute("id", product.id);
+    // htmlFragments.innerHTML = htmlStrings;
+
+    // shopCartTBodyDOMCheckout.appendChild(htmlFragments);
+
   });
-  let htmlStrings = cartItemTemplateCheckout(product);
-  //checkout
-
-  let htmlFragments = document.createElement("div");
-
-  htmlFragments.setAttribute("id", product.id);
-  htmlFragments.innerHTML = htmlStrings;
-
-  //shopCartTBodyDOMCheckout.appendChild(htmlFragments);
 
   // call renderCartTotalTable
   renderCartTotalTable();
