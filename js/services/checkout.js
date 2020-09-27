@@ -27,11 +27,7 @@ const cartItemTemplate = (productDetails) => {
             <td class="product-total">NGN ${
               productDetails.price * productDetails.qty
             }</td>
-            <td class="product-clear">
-            <button class="no-round-btn" onclick="deleteItem('${
-              productDetails.id
-            }')"><i class="icon_close"></i></button>
-            </td>
+            
         </tr>
     `;
 };
@@ -137,23 +133,7 @@ lookUpCartStore();
 
 //delete each Item
 
-const deleteItem = (id) => {
-  if (localStorage.getItem(CONFIG.CART_STORE) === null) {
-    //something is wrong
-    return false;
-  } else {
-    const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
 
-    let newCartList = cartList.filter((item, index) => item.id !== id);
-
-    localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(newCartList));
-  }
-
-  // update Cart
-  shopCartTBodyDOM.innerHTML = "";
-
-  lookUpCartStore();
-};
 
 //TODO
 // GET user id dynamically here to append to creat user cart url

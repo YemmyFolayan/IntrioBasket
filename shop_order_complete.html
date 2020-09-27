@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Index</title>
+    <title>Order Completed</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <meta name="keywords" content="blog, business, clean, clear, cooporate, creative, design web, flat, marketing, minimal, portfolio, shop, shopping, unique">
@@ -126,27 +126,24 @@
           <div class="row">
             <div class="col-12">
               <div class="order-step_block">
-                <div class="row no-gutters">
-                  <div class="col-12 col-md-4">
-                    <div class="step-block step-block--1">
-                      <div class="step">
-                        <h2>Shopping Cart</h2><span>01</span>
+                  <div class="row no-gutters">
+                    <div class="col-12 col-md-4">
+                      <div class="step-block">
+                        <div class="step">
+                          
+                          <h2>Shopping Cart</h2><span>01</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-12 col-md-4">
-                    <div class="step-block">
-                      <div class="step">
-                        <h2>Check Out</h2><span>02</span>
+                    <div class="col-12 col-md-4">
+                      <div class="step-block active">
+                        <div class="step">
+                          <div id="content"> </div>
+                          <h2>Order Completed</h2><span>02</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-12 col-md-4">
-                    <div class="step-block active">
-                      <div class="step">
-                        <h2>Order Completed</h2><span>03</span>
-                      </div>
-                    </div>
+                
                   </div>
                 </div>
               </div>
@@ -155,12 +152,155 @@
         </div>
       </div>
       <!-- End order step-->
+
+      <div class="shopping-cart">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center">
+              <h1 class="title mx-auto">Your Shopping Cart</h1>
+            </div>
+            <div class="col-12">
+              <div class="product-table">
+                <table class="table table-responsive">
+                  <colgroup>
+                    <col span="1" style="width: 15%">
+                    <col span="1" style="width: 30%">
+                    <col span="1" style="width: 15%">
+                    <col span="1" style="width: 15%">
+                    <col span="1" style="width: 15%">
+                    <col span="1" style="width: 10%">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th class="product-name" scope="col">Product name</th>
+                      <th class="product-price" scope="col">Price</th>
+                      <th class="product-quantity" scope="col">Quantity</th>
+                      <th class="product-total" scope="col" id="sub-total">Total</th>
+                      <th class="product-clear" scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="shopCartTBody"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-12 text-center">
+                <button onclick="router('Homepage')" class="no-round-btn black cart-update">Continue Shoping</button>
+            </div>
+          </div>
+          <div class="row justify-content-end">
+            <div class="col-12 col-md-6 col-lg-4">
+              <div id="cartTotalTable" class="cart-total_block">
+                <h2>Cart total</h2>
+                <table class="table">
+                  <colgroup>
+                    <col span="1" style="width: 50%">
+                    <col span="1" style="width: 50%">
+                  </colgroup>
+                  <tbody id="cartTotalTBody"></tbody>
+                </table>
+                <div class="checkout-method">
+                  <button class="no-round-btn black cart-update" onclick="router('shop_checkout')">Print Reciept</button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End shopping cart-->
+
+      <div class="shop-checkout">
+        <div class="container">
+          <form action="" method="post">
+            <div class="row">
+              <div class="col-12 col-md-6 mx-auto">
+                <h2 class="form-title">Billing details</h2>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputFirstName">First Name*</label>
+                    <input class="no-round-input-bg" id="inputFirstName" type="text" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputLastName">Last Name*</label>
+                    <input class="no-round-input-bg" id="inputLastName" type="text" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputCompanyName">Company name (optional)</label>
+                  <input class="no-round-input-bg" id="inputCompanyName" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="inputCountry">Country*</label>
+                  <select class="no-round-input-bg" id="inputContry">
+                    <option value="1">Nigeria</option>
+                    <option value="2">USA</option>
+                    <option value="3">Italy</option>
+                    <option value="4">South Africa</option>
+                    <option value="5">Japan</option>
+                    <option value="6">Ghana</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="inputStreet"><h2 class="form-title">Shipping Address*</h2></label>
+                  <input class="no-round-input-bg" id="inputStreet" type="text" required>
+                </div>
+                <div class="form-group">
+                  <label for="inputZip">Postcode / ZIP (optional)</label>
+                  <input class="no-round-input-bg" id="inputZip" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="inputCity">State*</label>
+                  <input class="no-round-input-bg" id="inputCity" type="text" required>
+                </div>
+                <div class="form-group">
+                  <label for="inputCity">Town / City*</label>
+                  <input class="no-round-input-bg" id="inputCity" type="text" required>
+                </div>
+                <div class="form-group">
+                  <label for="inputPhone">Phone*</label>
+                  <input class="no-round-input-bg" id="inputPhone" type="text" required>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail">Email address *</label>
+                  <input class="no-round-input-bg" id="inputEmail" type="email" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="inputNote">Order notes (optional)</label>
+                  <textarea class="textarea-form-bg" id="inputNote" name="" cols="30" rows="7"></textarea>
+                </div>
+              </div>
+
+            </div>
+          </form>
+
+          <div id="cartTotalTable" class="cart-total_block shopping-cart col-12 col-md-6 mx-auto">
+            <h2>CART TOTAL</h2>
+            <table class="table">
+              <colgroup>
+                <col span="1" style="width: 50%">
+                <col span="1" style="width: 50%">
+              </colgroup>
+              <tbody id="cartTotalTBody"></tbody>
+            </table>
+            <div class="checkout-method">
+              <button class="no-round-btn black cart-update" onclick="router('shop_checkout')">Proceed to Checkout</button>
+            
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="order-complete">
         <div class="container">
           <div class="row">
             <div class="col-12 justify-content-center align-items-center text-center">
-              <h1>Congratulation! You’ve <span>completed </span>payment</h1>
+              <h4>Congratulation! You’ve <span>completed </span>payment</h4>
             </div>
+
+
+
+
             <div class="col-12">
               <div class="benefit-block">
                 <div class="our-benefits shadowless benefit-border">
