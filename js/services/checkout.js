@@ -43,31 +43,6 @@ const cartTotalTemplate = (totalPriceToPay, totalPriceToTax) => {
     `;
 };
 
-// //checkout page
-
-// const cartItemTemplateCheckout = (productDetails) => {
-//   return `
-//   <tr id="${productDetails.id}">
-//     <th class="name">${productDetails.name}</th>
-//     <td class="price black" style="border-top: 0">NGN ${productDetails.price}</td>
-//   </tr>
-//     `;
-// };
-
-// const cartTotalTemplateCheckout = (totalPriceToPay, totalPriceToTax) => {
-//   return `
-//   <tr>
-//     <th>TOTAL</th>
-//     <td class="total">NGN ${totalPriceToPay}</td>
-//   </tr>
-
-//   <tr>
-//     <th>TOTAL with 7.5% Tax Rate:</th>
-//     <td class="total">NGN ${totalPriceToTax}</td>
-//   </tr>
-//     `;
-// };
-
 const handleNoItemsInCart = () => {
   updateCartButton.style.display = "none";
   emptyCartButton.style.display = "none";
@@ -114,15 +89,7 @@ const lookUpCartStore = () => {
 
     shopCartTBodyDOM.appendChild(htmlFragment);
 
-    // let htmlStrings = cartItemTemplateCheckout(product);
-    // //checkout
-
-    // let htmlFragments = document.createElement("div");
-
-    // htmlFragments.setAttribute("id", product.id);
-    // htmlFragments.innerHTML = htmlStrings;
-
-    // shopCartTBodyDOMCheckout.appendChild(htmlFragments);
+  
   });
 
   // call renderCartTotalTable
