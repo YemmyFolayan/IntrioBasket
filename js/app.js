@@ -5,8 +5,7 @@ document.addEventListener(
   "DOMContentLoaded",
   () => {
     // updateCartButtonBadge
-	  updateCartButtonBadge();
-	  
+    updateCartButtonBadge();
   },
   false
 );
@@ -50,7 +49,6 @@ const addToCart = (id, name, type, imageUrl, price) => {
   // updateCartButtonBadge
   updateCartButtonBadge();
   window.location.assign("/shop_cart.html");
-  
 };
 
 //deleteCartItem (slice)
