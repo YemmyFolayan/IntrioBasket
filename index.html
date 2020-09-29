@@ -154,10 +154,17 @@
                 <a href=""><img src="assets/images/logo.png" alt=""></a></div>
             </div>
             <div class="col-3">
-              <div class="mobile-product_function d-flex align-items-center justify-content-end"><a
-                  class="function-icon icon_heart_alt" href="javascript:void()"></a><a
-                  class="function-icon fa fa-shopping-cart" href="javascript:void()"></a></div>
-              <!--shop_shop_cart.html-->
+              <div class="mobile-product_function d-flex align-items-center justify-content-end">
+          
+                <div onclick="router('shop_cart')" id="cartButton" class="function-icon hover">
+                  <i class="fa fa fa-shopping-cart"></i>
+                  <sup style="top: -.5em">
+                    <span id="cartButtonBadge" class="my-badge badge-success">0</span>
+                  </sup>
+                </div>
+                <!--shop_shop_cart.html-->
+              </div>
+   
             </div>
           </div>
         </div>
