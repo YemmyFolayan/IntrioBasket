@@ -85,6 +85,12 @@
   border-radius: 50% !important;
 }
 
+img.playStore{
+  width: 40% !important;
+  height: 60 !important;
+  margin: 30px;
+}
+
 @font-face {
   font-family: "Cera Pro Thin";
   src: url("../fonts/Cera Pro Thin.otf");
