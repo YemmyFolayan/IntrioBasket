@@ -80,6 +80,11 @@
     		2.14. Tab template
     		2.15. Typography template
 *************************************/
+
+.img .rad img{
+  border-radius: 50% !important;
+}
+
 @font-face {
   font-family: "Cera Pro Thin";
   src: url("../fonts/Cera Pro Thin.otf");
@@ -8420,8 +8425,14 @@ footer.coffee .newletter .newletter_input button:focus {
 }
 
 /************************************
+
+
+
 	Quick banner block
 *************************************/
+
+
+
 .quick-banner_block {
   margin: 30px 0 60px 0;
 }
