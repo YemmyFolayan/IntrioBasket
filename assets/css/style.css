@@ -85,8 +85,19 @@
   border-radius: 50% !important;
 }
 
+
+
+@media (min-width: 1000px) and (max-width: 1344px) {
+  img.playStore{
+    width: 20%;
+    height: 40;
+    margin: 30px;
+  }
+}
+
+
 img.playStore{
-  width: 40% !important;
+  width: 35% !important;
   height: 60 !important;
   margin: 30px;
 }
