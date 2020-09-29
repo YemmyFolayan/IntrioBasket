@@ -16,9 +16,6 @@ const featuredProductItemTemplate = (productDetails) => {
                 <button onclick="addToCart('${productDetails.id}','${productDetails.name}','${productDetails.type}','${productDetails.imageUrl}','${productDetails.price}')" class="add-to-cart round-icon-btn">
                     <i class="fa fa-shopping-cart"></i>
                 </button>
-                <button class="add-to-compare round-icon-btn">
-                    <i class="fas fa-random"></i>
-                </button>
                 <button class="quickview round-icon-btn">
                     <i class="far fa-eye"></i>
                 </button>
@@ -45,7 +42,7 @@ const fetchFoodList = async () => {
       type: product.product_type,
       imageUrl: product.image_link,
       price: product.cost,
-      description: product.long_description
+      description: product.long_description,
     };
 
     let htmlString = featuredProductItemTemplate(productDetails);
