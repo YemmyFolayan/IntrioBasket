@@ -6,7 +6,7 @@ const app = document.getElementById("root13");
 // container.appendChild(subcontainer);
 
 const url =
-"https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food/get?category_type=MEAT%20AND%20FISH%2FFISH";
+"https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food/get?category_type=BEVERAGES%20AND%20TEA";
 console.log("foodlists");
 
 fetch(url)
