@@ -35,44 +35,44 @@ document.addEventListener(
       const cartList = [];
       cartList.push(productDetails);
       localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
-    //call create user cart api here
+      //call create user cart api here
       //create user cart 
       
-      const createUserCart = {
-        fetch(
-          "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/5f6b26f9d41c5b00246e3f26",
-          {
-            method: "POST",
-            body: JSON.stringify({
-              "cart_details": [{
-                "item_name": name,
-                "number": qty,
-                "initial_cost": price,
-                "item_image": imageUrl,
+      // const createUserCart = {
+      //   fetch(
+      //     "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/5f6b26f9d41c5b00246e3f26",
+      //     {
+      //       method: "POST",
+      //       body: JSON.stringify({
+      //         "cart_details": [{
+      //           "item_name": name,
+      //           "number": qty,
+      //           "initial_cost": price,
+      //           "item_image": imageUrl,
                 
-              }]
-            }),
+      //         }]
+      //       }),
       
                
             
-            headers: {
-              "Content-Type": "application/json; charset= UTF-8",
-              "Cookie": "access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWN2b25kZWU1QGdtYWlsLmNvbSIsImlhdCI6MTYwMTU0NTU5OCwiZXhwIjoxNjAyODQxNTk4fQ.-ciTacOQl3d2Zgxmvqd_l59-wXV6GBXuCCTdAsmIs2M",
-            },
-          }
-        )
-        .then(async response => {
-          try {
-            const json = await response.clone().json()
-            return json
-          } catch (e) {
-            console.log(e);
-            return await response.text()
-          }
-        });
+      //       headers: {
+      //         "Content-Type": "application/json; charset= UTF-8",
+      //         "Cookie": "access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWN2b25kZWU1QGdtYWlsLmNvbSIsImlhdCI6MTYwMTU0NTU5OCwiZXhwIjoxNjAyODQxNTk4fQ.-ciTacOQl3d2Zgxmvqd_l59-wXV6GBXuCCTdAsmIs2M",
+      //       },
+      //     }
+      //   )
+      //   .then(async response => {
+      //     try {
+      //       const json = await response.clone().json()
+      //       return json
+      //     } catch (e) {
+      //       console.log(e);
+      //       return await response.text()
+      //     }
+      //   });
   
       
-      createUserCart();
+      // createUserCart();
       
 
   } else {
