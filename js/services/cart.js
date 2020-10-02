@@ -5,7 +5,7 @@ const updateCartButton = document.getElementById("updateCartButton");
 const emptyCartButton = document.getElementById("emptyCartButton");
 const cartTotalTable = document.getElementById("cartTotalTable");
 const cartTotalTBodyDOM = document.getElementById("cartTotalTBody");
-const cartTotalPaystackDOM = document.getElementById("cartTotalPaystack");
+//const cartTotalPaystackDOM = document.getElementById("cartTotalPaystack");
 
 // const shopCartTBodyDOMCheckout = document.getElementById(
 //   "shopCartTBodyCheckout"
@@ -48,14 +48,16 @@ const cartTotalTemplate = (totalPriceToPay, totalPriceToTax) => {
     `;
 };
 
+/**
 const cartTotalPaystack = (totalPriceToTax) => {
   return `
-  <p class="text-center" id="static-amount">You are paying: <span id="amountinngn">NGN ${totalPriceToTax}</span></p>
-
-
-  `;
+        <p class="text-center" id="static-amount">You are paying: <span id="amountinngn">NGN ${totalPriceToTax}</span></p>
+    `;
 };
+**/
 
+
+/**
 // //checkout page
 
 // const cartItemTemplateCheckout = (productDetails) => {
@@ -81,6 +83,8 @@ const cartTotalPaystack = (totalPriceToTax) => {
 //     `;
 // };
 
+**/
+
 const handleNoItemsInCart = () => {
   updateCartButton.style.display = "none";
   emptyCartButton.style.display = "none";
@@ -105,10 +109,10 @@ const renderCartTotalTable = () => {
   let htmlString = cartTotalTemplate(totalPriceToPay, totalPriceToTax);
   // //cart
   // let htmlStrings = cartTotalTemplateCheckout(totalPriceToPay, totalPriceToTax);
-  let htmlPay = cartTotalPaystack(totalPriceToTax);
+  // let htmlPay = cartTotalPaystack(totalPriceToTax);
 
   cartTotalTBodyDOM.innerHTML = htmlString;
-  cartTotalPaystackDOM.innerHTML = htmlPay;
+  // cartTotalPaystackDOM.innerHTML = htmlPay;
 };
 
 const lookUpCartStore = () => {
@@ -166,21 +170,24 @@ const deleteItem = (id) => {
   lookUpCartStore();
 };
 
-//TODO
-// GET user id dynamically here to append to creat user cart url
+/**
+TODO
+GET user id dynamically here to append to creat user cart url
 
-//    http://intriobasket.pexceptos.com/api/user/
-// POST
+   http://intriobasket.pexceptos.com/api/user/
+ POST
 
-// Create User Cart
-// http://intriobasket.pexceptos.com/api/user/create-cart/5f4d0fd68cc9aa11e6151b88
+ Create User Cart
+ http://intriobasket.pexceptos.com/api/user/create-cart/5f4d0fd68cc9aa11e6151b88
 
-// PUT
+ PUT
 
-// Update User Checkout History
-// http://intriobasket.pexceptos.com/api/checkout/user/5f4d0fd68cc9aa11e6151b88
+ Update User Checkout History
+ http://intriobasket.pexceptos.com/api/checkout/user/5f4d0fd68cc9aa11e6151b88
 
-// PUT
+ PUT
 
-// Update User Cart
-// http://intriobasket.pexceptos.com/api/user/update-cart/5f4d0fd68cc9aa11e6151b88
+ Update User Cart
+ http://intriobasket.pexceptos.com/api/user/update-cart/5f4d0fd68cc9aa11e6151b88
+
+ **/
