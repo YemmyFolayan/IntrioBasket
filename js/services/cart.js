@@ -5,6 +5,7 @@ const updateCartButton = document.getElementById("updateCartButton");
 const emptyCartButton = document.getElementById("emptyCartButton");
 const cartTotalTable = document.getElementById("cartTotalTable");
 const cartTotalTBodyDOM = document.getElementById("cartTotalTBody");
+const cartTotalPaystackDOM = document.getElementById("cartTotalPaystack");
 
 // const shopCartTBodyDOMCheckout = document.getElementById(
 //   "shopCartTBodyCheckout"
@@ -45,6 +46,14 @@ const cartTotalTemplate = (totalPriceToPay, totalPriceToTax) => {
             <td>NGN ${totalPriceToTax}</td>
         </tr>
     `;
+};
+
+const cartTotalPaystack = (totalPriceToTax) => {
+  return `
+  <p class="text-center" id="static-amount">You are paying: <span id="amountinngn">NGN ${totalPriceToTax}</span></p>
+
+
+  `;
 };
 
 // //checkout page
@@ -96,8 +105,10 @@ const renderCartTotalTable = () => {
   let htmlString = cartTotalTemplate(totalPriceToPay, totalPriceToTax);
   // //cart
   // let htmlStrings = cartTotalTemplateCheckout(totalPriceToPay, totalPriceToTax);
+  let htmlPay = cartTotalPaystack(totalPriceToTax);
 
   cartTotalTBodyDOM.innerHTML = htmlString;
+  cartTotalPaystackDOM.innerHTML = htmlPay;
 };
 
 const lookUpCartStore = () => {
