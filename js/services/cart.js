@@ -7,14 +7,6 @@ const cartTotalTable = document.getElementById("cartTotalTable");
 const cartTotalTBodyDOM = document.getElementById("cartTotalTBody");
 //const cartTotalPaystackDOM = document.getElementById("cartTotalPaystack");
 
-// const shopCartTBodyDOMCheckout = document.getElementById(
-//   "shopCartTBodyCheckout"
-// );
-// const cartTotalTBodyDOMCheckout = document.getElementById(
-//   "cartTotalTBodyCheckout"
-// );
-
-//cart
 const cartItemTemplate = (productDetails) => {
   return `
         <tr id="${productDetails.id}">
@@ -55,7 +47,6 @@ const cartTotalPaystack = (totalPriceToTax) => {
     `;
 };
 **/
-
 
 /**
 // //checkout page
