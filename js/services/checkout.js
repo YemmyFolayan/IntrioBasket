@@ -6,13 +6,6 @@ const emptyCartButton = document.getElementById("emptyCartButton");
 const cartTotalTable = document.getElementById("cartTotalTable");
 const cartTotalTBodyDOM = document.getElementById("cartTotalTBody");
 
-// const shopCartTBodyDOMCheckout = document.getElementById(
-//   "shopCartTBodyCheckout"
-// );
-// const cartTotalTBodyDOMCheckout = document.getElementById(
-//   "cartTotalTBodyCheckout"
-// );
-
 //cart
 const cartItemTemplate = (productDetails) => {
   return `
@@ -65,8 +58,6 @@ const renderCartTotalTable = () => {
   });
 
   let htmlString = cartTotalTemplate(totalPriceToPay, totalPriceToTax);
-  // //cart
-  // let htmlStrings = cartTotalTemplateCheckout(totalPriceToPay, totalPriceToTax);
 
   cartTotalTBodyDOM.innerHTML = htmlString;
 };
@@ -88,8 +79,6 @@ const lookUpCartStore = () => {
     htmlFragment.innerHTML = htmlString;
 
     shopCartTBodyDOM.appendChild(htmlFragment);
-
-  
   });
 
   // call renderCartTotalTable
@@ -100,9 +89,9 @@ lookUpCartStore();
 
 //delete each Item
 
-
-
 //TODO
+
+//AFTER LOGIN get user id and append it to the endpoint
 // GET user id dynamically here to append to creat user cart url
 
 //    http://intriobasket.pexceptos.com/api/user/
