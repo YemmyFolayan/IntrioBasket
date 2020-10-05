@@ -78,6 +78,21 @@
                   </ul>
                 </div>
               </div>
+
+              <div class="col-2">
+                <div class="product-function d-flex align-items-center justify-content-end">
+                  <div id="wishlist">
+                    <a class="function-icon icon_heart_alt" href="javascript:void()"></a>
+                  </div>
+                  <div onclick="router('shop_cart')" id="cartButton" class="function-icon hover">
+                    <i class="fa fa fa-shopping-cart"></i>
+                    <sup style="top: -.5em">
+                      <span id="cartButtonBadge" class="my-badge badge-success">0</span>
+                    </sup>
+                  </div>
+                </div>
+              </div>
+
              
             </div>
           </div>
@@ -123,7 +138,17 @@
                 <div class="mobile-menu_logo text-center d-flex justify-content-center align-items-center"><a href=""><img src="assets/images/logo.png" alt=""></a></div>
               </div>
               <div class="col-3">
-                <div class="mobile-product_function d-flex align-items-center justify-content-end"><a class="function-icon icon_heart_alt" href="shop_wishlist.html"></a><a class="function-icon fa fa-shopping-cart" href="shop_cart.html"></a></div>
+                <div class="mobile-product_function d-flex align-items-center justify-content-end">
+          
+                  <div onclick="router('shop_cart')" id="cartButton" class="function-icon hover">
+                    <i class="fa fa fa-shopping-cart"></i>
+                    <sup style="top: -.5em">
+                      <span id="cartButtonBadge" class="my-badge badge-success">0</span>
+                    </sup>
+                  </div>
+                  <!--shop_shop_cart.html-->
+                </div>
+   
               </div>
             </div>
           </div>
