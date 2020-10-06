@@ -182,3 +182,10 @@ GET user id dynamically here to append to creat user cart url
  http://intriobasket.pexceptos.com/api/user/update-cart/5f4d0fd68cc9aa11e6151b88
 
  **/
+
+/**
+ *after login grab user id: 
+ append the user id to the API
+ *
+ *
+ */
