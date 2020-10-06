@@ -38,6 +38,21 @@ Form.addEventListener("submit", function (e) {
       console.log("this is : ", name, id);
       console.log(id);
 
+      const userNameDOM = document.getElementById("user");
+
+      const userNameTemplate = (data) => {
+        return `
+        <div class="login d-flex" id="loginflex">      
+        ${data.payload.fullname}
+        </div>
+          `;
+      };
+
+      let htmlString = userNameTemplate(data);
+      let htmlFragment = document.createElement("div");
+      htmlFragment.innerHTML = htmlString;
+      userNameDOM.appendChild(htmlFragment);
+
       if (msg == "Log in Successful") {
         const name = data.payload.fullname;
         const container = document.getElementById("containerr");
