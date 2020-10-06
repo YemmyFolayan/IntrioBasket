@@ -1,7 +1,7 @@
 //session management implemented and check out
 
 var Form = document.getElementById("form");
-var userNameDOM = document.getElementById("user");
+const userNameDOM = document.getElementById("user");
 
 Form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -47,7 +47,7 @@ Form.addEventListener("submit", function (e) {
           `;
       };
 
-      let htmlString = userNameTemplate(data);
+      let htmlString = userNameTemplate(data.payload.fullname);
       let htmlFragment = document.createElement("div");
       htmlFragment.innerHTML = htmlString;
       userNameDOM.appendChild(htmlFragment);
