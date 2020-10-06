@@ -30,6 +30,8 @@ Form.addEventListener("submit", function (e) {
     .then(function (data) {
       var msg = data.message;
 
+      //this is user id;
+
       var id = data.payload.id;
 
       var name = data.payload.fullname;
@@ -37,7 +39,7 @@ Form.addEventListener("submit", function (e) {
       console.log(id);
 
       if (msg == "Log in Successful") {
-        const name = email;
+        const name = data.payload.fullname;
         const container = document.getElementById("containerr");
         const loader = document.createElement("div");
         loader.className = "progress";
@@ -62,7 +64,7 @@ Form.addEventListener("submit", function (e) {
 
         setTimeout(function loggedin() {
           window.location.assign("/Homepage.html");
-        }, 22200);
+        }, 2200);
 
         localStorage.setItem("login", true);
         console.log("logged in");
