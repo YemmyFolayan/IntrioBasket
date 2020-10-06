@@ -47,7 +47,9 @@ Form.addEventListener("submit", function (e) {
           `;
       };
 
-      let htmlString = userNameTemplate(data.payload.fullname);
+      let data = data.payload.fullname;
+
+      let htmlString = userNameTemplate(data);
       let htmlFragment = document.createElement("div");
       htmlFragment.innerHTML = htmlString;
       userNameDOM.appendChild(htmlFragment);
