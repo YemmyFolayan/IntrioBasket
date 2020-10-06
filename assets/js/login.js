@@ -1,7 +1,7 @@
 //session management implemented and check out
 
 var Form = document.getElementById("form");
-const userNameDOM = document.getElementById("user");
+var userNameDOM = document.getElementById("user");
 
 Form.addEventListener("submit", function (e) {
   e.preventDefault();
