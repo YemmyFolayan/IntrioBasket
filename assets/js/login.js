@@ -1,6 +1,7 @@
 //session management implemented and check out
 
 var Form = document.getElementById("form");
+const userNameDOM = document.getElementById("user");
 
 Form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -37,8 +38,6 @@ Form.addEventListener("submit", function (e) {
       var name = data.payload.fullname;
       console.log("this is : ", name, id);
       console.log(id);
-
-      const userNameDOM = document.getElementById("user");
 
       const userNameTemplate = (data) => {
         return `
