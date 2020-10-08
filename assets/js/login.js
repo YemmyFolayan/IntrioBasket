@@ -3,8 +3,8 @@
 var Form = document.getElementById("form");
 const userNameDOM = document.getElementById("user");
 
-//Form.addEventListener("submit", function (e) {
-//  e.preventDefault();
+Form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
 var email = document.getElementById("email").value;
 var password = document.getElementById("password").value;
@@ -155,9 +155,12 @@ fetch(
       console.log("An error occurred, Try Again!");
     }
   });
-//});
+});
 
 console.log("hi");
+
+
+
 
 /**
 var email = document.getElementById("email").value;
