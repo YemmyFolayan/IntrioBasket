@@ -41,7 +41,7 @@ Form.addEventListener("submit", function (e) {
 
       const userNameTemplate = (data) => {
         return `
-        <div class="login d-flex" id="loginflex">      
+        <div class="login d-flex" id="loginflex">
         ${data.payload.fullname}
         </div>
           `;
