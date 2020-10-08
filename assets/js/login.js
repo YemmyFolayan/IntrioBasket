@@ -39,18 +39,7 @@ Form.addEventListener("submit", function (e) {
       console.log("this is : ", name, id);
       console.log(id);
 
-      const userNameTemplate = (data) => {
-        return `
-        <div class="login d-flex" id="loginflex">
-        ${data.payload.fullname}
-        </div>
-          `;
-      };
 
-      let htmlString = userNameTemplate(data);
-      let htmlFragment = document.createElement("div");
-      htmlFragment.innerHTML = htmlString;
-      userNameDOM.appendChild(htmlFragment);
 
       const url = `http://intriobasket.pexceptos.com/api/user/${id}`;
 
@@ -82,7 +71,7 @@ Form.addEventListener("submit", function (e) {
 
         setTimeout(function loggedin() {
           window.location.assign("/Homepage.html");
-        }, 22222200);
+        }, 2200);
 
         localStorage.setItem("login", true);
         console.log("logged in");
