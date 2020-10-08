@@ -82,7 +82,7 @@ Form.addEventListener("submit", function (e) {
 
         setTimeout(function loggedin() {
           window.location.assign("/Homepage.html");
-        }, 2200);
+        }, 22222200);
 
         localStorage.setItem("login", true);
         console.log("logged in");
