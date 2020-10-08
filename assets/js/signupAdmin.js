@@ -52,7 +52,7 @@ Form.addEventListener("submit", function (e) {
     .then(function (data) {
       var msg = data.message;
 
-      if (msg == "User Created Successfully") {
+      if (msg == "Admin Created Succesfully") {
         setTimeout(function () {
           text.className = "white-text";
           text.appendChild(
