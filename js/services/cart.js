@@ -128,8 +128,9 @@ const deleteItem = (id) => {
 let userId = localStorage.getItem("id");
 console.log({ userId });
 
+const url = `http://intriobasket.pexceptos.com/api/user/${userId}`;
 
-
+console.log(url);
 
 /**
 TODO
