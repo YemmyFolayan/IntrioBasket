@@ -93,6 +93,8 @@ const addToCart = (id, name, type, imageUrl, price) => {
 
   // updateCartButtonBadge
   updateCartButtonBadge();
+
+  //LATER YOU CAN INCLUDE GOTO CART HERE OR CONTINUE SHOPPING
   window.location.assign("/shop_cart.html");
 };
 
