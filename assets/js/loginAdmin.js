@@ -55,7 +55,7 @@ Form.addEventListener("submit", function (e) {
         }, 1000);
 
         setTimeout(function loggedin() {
-          window.location.assign("../dashboard.html");
+          window.location.assign("/admindashboard/dashboard.html");
         }, 2200);
 
         localStorage.setItem("login", true);
