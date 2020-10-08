@@ -173,18 +173,18 @@ const updateCheckoutHistory = () => {
         order_delivery_type: "pick it up",
         items: [
           {
-            item_name: "fish",
-            number: 4,
-            initial_cost: 600,
-            item_image: "teaaqweddd",
+            item_name: name,
+            number: qty,
+            initial_cost: price,
+            item_image: imageUrl,
           },
         ],
-        number_of_items: 1,
+        number_of_items: qty,
         total_cost: 2425,
         address_name: "Eric house",
         phonenumber: "903456434345",
         zip_code: "55643434",
-        purchaser_name: "Eric",
+        purchaser_name: name,
       }),
 
       headers: {
