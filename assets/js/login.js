@@ -39,7 +39,18 @@ Form.addEventListener("submit", function (e) {
       console.log("this is : ", name, id);
       console.log(id);
 
+      const userNameTemplate = (data) => {
+        return `
+        <div class="login d-flex" id="loginflex">
+        ${data.payload.fullname}
+        </div>
+          `;
+      };
 
+      let htmlString = userNameTemplate(data);
+      let htmlFragment = document.createElement("div");
+      htmlFragment.innerHTML = htmlString;
+      userNameDOM.appendChild(htmlFragment);
 
       const url = `http://intriobasket.pexceptos.com/api/user/${id}`;
 
@@ -75,23 +86,6 @@ Form.addEventListener("submit", function (e) {
 
         localStorage.setItem("login", true);
         console.log("logged in");
-
-        const userNameTemplate = (data) => {
-          return `
-          <div class="login d-flex" id="loginflex">
-          ${data.payload.fullname}
-          </div>
-            `;
-        };
-
-        let htmlString = userNameTemplate(data);
-        let htmlFragment = document.createElement("div");
-        htmlFragment.innerHTML = htmlString;
-        userNameDOM.appendChild(htmlFragment);
-
-
-
-
       } else if (msg == "Incorrect Email or Password") {
         const name = email;
         const container = document.getElementById("containerr");
@@ -164,6 +158,54 @@ Form.addEventListener("submit", function (e) {
 });
 
 console.log("hi");
+
+var email = document.getElementById("email").value;
+var password = document.getElementById("password").value;
+
+console.log(email);
+console.log(password);
+
+fetch(
+  "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/login",
+  {
+    method: "POST",
+    body: JSON.stringify({
+      email: email,
+      password: password,
+    }),
+    headers: {
+      "Content-Type": "application/json; charset= UTF-8",
+    },
+  }
+)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    var msg = data.message;
+
+    //this is user id;
+
+    var id = data.payload.id;
+
+    var name = data.payload.fullname;
+    console.log("this is : ", name, id);
+    console.log(id);
+
+    const userNameTemplate = (data) => {
+      return `
+      <div class="login d-flex" id="loginflex">
+      ${data.payload.fullname}
+      </div>
+        `;
+    };
+
+    let htmlString = userNameTemplate(data);
+    let htmlFragment = document.createElement("div");
+    htmlFragment.innerHTML = htmlString;
+    userNameDOM.appendChild(htmlFragment);
+    
+  });
 
 /**
  * {
