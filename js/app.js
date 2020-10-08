@@ -30,6 +30,7 @@ document.addEventListener(
 //userId is GLOBAL across the site
 let userId = localStorage.getItem("id");
 console.log({ userId });
+let qty;
 
 const url = `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
 
@@ -164,7 +165,6 @@ const router = (url) => {
 };
 
 //Update User Checkout History
-
 const updateCheckoutHistory = () => {
   fetch(
     "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout/user/5f6b26f9d41c5b00246e3f26",
