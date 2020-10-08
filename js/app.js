@@ -25,12 +25,14 @@ document.addEventListener(
  * @param {String} price
  */
 
+//userId is GLOBAL across the site
 let userId = localStorage.getItem("id");
 console.log({ userId });
 
-const url = `http://intriobasket.pexceptos.com/api/user/create-cart${userId}`;
+const url = `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
 
 console.log(url);
+
 
 const addToCart = (id, name, type, imageUrl, price) => {
   const productDetails = { id, name, type, imageUrl, price, qty: 1 };
@@ -41,7 +43,6 @@ const addToCart = (id, name, type, imageUrl, price) => {
     localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
     //call create user cart api here
     //create user cart
-    /**
 
     const createUserCart = () => {
       fetch(
@@ -76,9 +77,6 @@ const addToCart = (id, name, type, imageUrl, price) => {
       });
     };
     createUserCart();
-
-
-    */
   } else {
     const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
     let index = cartList.findIndex(
@@ -164,7 +162,7 @@ const router = (url) => {
   window.location.assign(pageUrl);
 };
 
-/**
+
 //Update User Checkout History
 
 const updateCheckoutHistory = () => {
@@ -173,13 +171,13 @@ const updateCheckoutHistory = () => {
     {
       method: "POST",
       body: JSON.stringify({
-        "order_delivery_type" : "pick it up", 
-        "items": [{"item_name": "fish", "number": 4,  "initial_cost": 600, "item_image":"teaaqweddd"}],
+        "order_delivery_type": "pick it up",
+        "items": [{ "item_name": "fish", "number": 4, "initial_cost": 600, "item_image": "teaaqweddd" }],
         "number_of_items": 1,
         "total_cost": 2425,
-          "address_name" : "Eric house",
-          "phonenumber" : "903456434345",
-          "zip_code" : "55643434",
+        "address_name": "Eric house",
+        "phonenumber": "903456434345",
+        "zip_code": "55643434",
         "purchaser_name": "Eric"
       }),
       
@@ -187,18 +185,19 @@ const updateCheckoutHistory = () => {
             
       headers: {
         "Content-Type": "application/json; charset= UTF-8",
-        },
+      },
     }
   )
-  .then(async response => {
-    try {
-      const json = await response.clone().json()
-      return json
-    } catch (e) {
-      console.log(e);
-      return await response.text()
-    }
-  });
+    .then(async response => {
+      try {
+        const json = await response.clone().json()
+        return json
+      } catch (e) {
+        console.log(e);
+        return await response.text()
+      }
+    });
+};
   
       
 updateCheckoutHistory();
@@ -237,21 +236,17 @@ const createUserCart = () => {
       },
     }
   )
-  .then(async response => {
-    try {
-      const json = await response.clone().json()
-      return json
-    } catch (e) {
-      console.log(e);
-      return await response.text()
-    }
-  });
+    .then(async response => {
+      try {
+        const json = await response.clone().json()
+        return json
+      } catch (e) {
+        console.log(e);
+        return await response.text()
+      }
+    });
+
+};
   
       
 createUserCart();
-
-
-  
-
-
-**/

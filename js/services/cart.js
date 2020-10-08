@@ -125,22 +125,13 @@ const deleteItem = (id) => {
   lookUpCartStore();
 };
 
-
-
+//userId is GLOBAL across the site
 //let userId = localStorage.getItem("id");
 console.log({ userId });
 
-//const url = `http://intriobasket.pexceptos.com/api/user/create-cart${userId}`;
-
+//const url = `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
 
 console.log(url);
-
-
-
-
-
-
-
 
 /**
 TODO
