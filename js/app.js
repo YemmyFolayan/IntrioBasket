@@ -24,7 +24,7 @@ document.addEventListener(
  * @param {String} imageUrl
  * @param {String} price
  * @param {String} qty
- * 
+ *
  */
 
 //userId is GLOBAL across the site
@@ -162,7 +162,7 @@ const router = (url) => {
   window.location.assign(pageUrl);
 };
 
-/**
+
 
 //Update User Checkout History
 
@@ -210,7 +210,7 @@ updateCheckoutHistory();
 
 const updateCart = () => {
   fetch(
-    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/5f6b26f9d41c5b00246e3f26",
+    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/update-cart/5f6b26f9d41c5b00246e3f26",
     {
       method: "POST",
       body: JSON.stringify({
@@ -241,4 +241,3 @@ const updateCart = () => {
 
 updateCart();
 
-**/
