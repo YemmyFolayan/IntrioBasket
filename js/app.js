@@ -64,6 +64,7 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
 
         headers: {
           "Content-Type": "application/json; charset= UTF-8",
+          "Cookie": "access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWN2b25kZWU1QGdtYWlsLmNvbSIsImlhdCI6MTYwMjE4NzI0MSwiZXhwIjoxNjAzNDgzMjQxfQ.12sDZ7U8iVvPTdS0ozqHoWmYPg3ha3ECQMQ0o330Wuk",
         },
       }
     )
