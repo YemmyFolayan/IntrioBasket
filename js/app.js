@@ -107,7 +107,7 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
 const emptyCart = () => {
   // const cartBadge = document.getElementById("emptyCartButton");
   //window.localStorage.clear();
-  localStorage.setItem(CONFIG.CART_STORE, null);
+  localStorage.removeItem(CONFIG.CART_STORE);
 
   const row = document.getElementById("shopCartTBody");
   row.parentNode.removeChild(row);
