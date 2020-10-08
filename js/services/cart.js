@@ -102,7 +102,7 @@ const lookUpCartStore = () => {
   // call renderCartTotalTable
   renderCartTotalTable();
 };
-createUserCart();
+
 lookUpCartStore();
 
 //delete each Item
