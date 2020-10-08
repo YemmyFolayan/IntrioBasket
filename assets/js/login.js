@@ -3,6 +3,11 @@
 var Form = document.getElementById("form");
 const userNameDOM = document.getElementById("user");
 
+let id;
+console.log(id);
+let name;
+console.log(name);
+
 Form.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -33,9 +38,9 @@ fetch(
 
     //this is user id;
 
-    var id = data.payload.id;
+    id = data.payload.id;
 
-    var name = data.payload.fullname;
+    name = data.payload.fullname;
     console.log("this is : ", name, id);
     console.log(id);
 
