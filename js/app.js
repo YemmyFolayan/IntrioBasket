@@ -42,7 +42,7 @@ const addToCart = (id, name, type, imageUrl, price) => {
     localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
     //call create user cart api here
     //create user cart
-
+    console.log("before create user cart");
     const createUserCart = () => {
       fetch(
         "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/5f6b26f9d41c5b00246e3f26",
@@ -63,17 +63,17 @@ const addToCart = (id, name, type, imageUrl, price) => {
             "Content-Type": "application/json; charset= UTF-8",
           },
         }
-      ).then(async (response) => {
-        try {
-          const json = await response.clone().json();
+      )
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          var msg = data.message;
+          console.log(msg);
           console.log("create user cart");
-          return json;
-        } catch (e) {
-          console.log(e);
-          return await response.text();
-        }
-      });
+        });
     };
+    console.log("After create user cart");
     createUserCart();
   } else {
     const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
@@ -160,6 +160,8 @@ const router = (url) => {
   window.location.assign(pageUrl);
 };
 
+/**
+
 //Update User Checkout History
 
 const updateCheckoutHistory = () => {
@@ -204,7 +206,7 @@ updateCheckoutHistory();
 
 //updateCart
 
-const createUserCart = () => {
+const updateCart = () => {
   fetch(
     "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/5f6b26f9d41c5b00246e3f26",
     {
@@ -235,4 +237,6 @@ const createUserCart = () => {
   });
 };
 
-createUserCart();
+updateCart();
+
+**/
