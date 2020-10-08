@@ -41,7 +41,7 @@ const addToCart = (id, name, type, imageUrl, price) => {
     localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
     //call create user cart api here
     //create user cart
-    /** */
+    /**
 
     const createUserCart = () => {
       fetch(
@@ -76,6 +76,9 @@ const addToCart = (id, name, type, imageUrl, price) => {
       });
     };
     createUserCart();
+
+
+    */
   } else {
     const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
     let index = cartList.findIndex(

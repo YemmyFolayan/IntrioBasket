@@ -125,10 +125,13 @@ const deleteItem = (id) => {
   lookUpCartStore();
 };
 
-let userId = localStorage.getItem("id");
+
+
+//let userId = localStorage.getItem("id");
 console.log({ userId });
 
-const url = `http://intriobasket.pexceptos.com/api/user/create-cart${userId}`;
+//const url = `http://intriobasket.pexceptos.com/api/user/create-cart${userId}`;
+
 
 console.log(url);
 
