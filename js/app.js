@@ -25,6 +25,15 @@ document.addEventListener(
  * @param {String} price
  */
 
+
+
+let userId = localStorage.getItem("id");
+console.log({ userId });
+
+const url = `http://intriobasket.pexceptos.com/api/user/create-cart${userId}`;
+
+console.log(url);
+
 const addToCart = (id, name, type, imageUrl, price) => {
   const productDetails = { id, name, type, imageUrl, price, qty: 1 };
 
@@ -33,9 +42,10 @@ const addToCart = (id, name, type, imageUrl, price) => {
     cartList.push(productDetails);
     localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
     //call create user cart api here
-    //create user cart
+    //create user cart    
 
-    /** const createUserCart = {
+
+    const createUserCart = {
         fetch(
           "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/5f6b26f9d41c5b00246e3f26",
           {
@@ -71,7 +81,6 @@ const addToCart = (id, name, type, imageUrl, price) => {
       
       createUserCart();
 
-      **/
   } else {
     const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
     let index = cartList.findIndex(
