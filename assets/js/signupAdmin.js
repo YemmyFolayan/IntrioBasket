@@ -31,7 +31,7 @@ Form.addEventListener("submit", function (e) {
   const text = document.createElement("span");
 
   fetch(
-    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create",
+    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/admin/create",
     {
       method: "POST",
       body: JSON.stringify({
@@ -52,12 +52,12 @@ Form.addEventListener("submit", function (e) {
     .then(function (data) {
       var msg = data.message;
 
-      if (msg == "User Created Succesfully") {
+      if (msg == "User Created Successfully") {
         setTimeout(function () {
           text.className = "white-text";
           text.appendChild(
             document.createTextNode(
-              `User Created Succesfully !, welcome to IntrioBasket ${name}, Proceed to Sign In`
+              `Admin Account Created Successfully !, welcome to IntrioBasket ${name}, Proceed to Sign In`
             )
           );
 
@@ -73,10 +73,10 @@ Form.addEventListener("submit", function (e) {
         //redirect user to homepage after successful login
 
         setTimeout(function () {
-          window.location.assign("/login.html");
+          window.location.assign("/loginadmin.html");
         }, 2200);
 
-        console.log("User Created Succesfully");
+        console.log("Admin Created Successfully");
       } else if (msg == "Email already exists") {
         setTimeout(function () {
           text.className = "white-text";

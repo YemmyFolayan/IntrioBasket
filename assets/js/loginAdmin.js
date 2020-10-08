@@ -3,34 +3,34 @@
 var Form = document.getElementById("form");
 
 Form.addEventListener("submit", function (e) {
-e.preventDefault();
+  e.preventDefault();
 
-var email = document.getElementById("email").value;
-var password = document.getElementById("password").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
 
-console.log(email);
-console.log(password);
+  console.log(email);
+  console.log(password);
 
-fetch(
-    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/login",
+  fetch(
+    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/admin/login",
     {
-    method: "POST",
-    body: JSON.stringify({
+      method: "POST",
+      body: JSON.stringify({
         email: email,
         password: password,
-    }),
-    headers: {
+      }),
+      headers: {
         "Content-Type": "application/json; charset= UTF-8",
-    },
+      },
     }
-)
+  )
     .then(function (response) {
-    return response.json();
+      return response.json();
     })
     .then(function (data) {
-    var msg = data.message;
+      var msg = data.message;
 
-    if (msg == "Log in Successful") {
+      if (msg == "Log in Successful") {
         const name = email;
         const container = document.getElementById("containerr");
         const loader = document.createElement("div");
@@ -40,29 +40,27 @@ fetch(
         loader.appendChild(loadingBar);
         container.appendChild(loader);
         setTimeout(function () {
-        const loaderDiv = document.querySelector("div.progress");
-        const panel = document.createElement("div");
-        panel.className = "card-panel green";
-        const text = document.createElement("span");
-        text.className = "white-text";
-        text.appendChild(
+          const loaderDiv = document.querySelector("div.progress");
+          const panel = document.createElement("div");
+          panel.className = "card-panel green";
+          const text = document.createElement("span");
+          text.className = "white-text";
+          text.appendChild(
             document.createTextNode(
-            `Log in Succesfully !, welcome to IntrioBasket ${name}`
+              `Log in Successfully, welcome Admin! ${name}`
             )
-        );
-        panel.appendChild(text);
-        container.replaceChild(panel, loaderDiv);
+          );
+          panel.appendChild(text);
+          container.replaceChild(panel, loaderDiv);
         }, 1000);
 
         setTimeout(function loggedin() {
-        window.location.assign("/Homepage.html");
-
-        
+          window.location.assign("../dashboard.html");
         }, 2200);
 
         localStorage.setItem("login", true);
         console.log("logged in");
-    } else if (msg == "Incorrect Email or Password") {
+      } else if (msg == "Incorrect Email or Password") {
         const name = email;
         const container = document.getElementById("containerr");
         const loader = document.createElement("div");
@@ -72,20 +70,20 @@ fetch(
         loader.appendChild(loadingBar);
         container.appendChild(loader);
         setTimeout(function () {
-        const loaderDiv = document.querySelector("div.progress");
-        const panel = document.createElement("div");
-        panel.className = "card-panel green";
-        const text = document.createElement("span");
-        text.className = "white-text";
-        text.appendChild(
+          const loaderDiv = document.querySelector("div.progress");
+          const panel = document.createElement("div");
+          panel.className = "card-panel green";
+          const text = document.createElement("span");
+          text.className = "white-text";
+          text.appendChild(
             document.createTextNode(`Incorrect Email or Password!`)
-        );
-        panel.appendChild(text);
-        container.replaceChild(panel, loaderDiv);
+          );
+          panel.appendChild(text);
+          container.replaceChild(panel, loaderDiv);
         }, 1000);
 
         console.log("Incorrect Email or Password");
-    } else if (msg == "Email not found") {
+      } else if (msg == "Email not found") {
         const name = email;
         const container = document.getElementById("containerr");
         const loader = document.createElement("div");
@@ -95,18 +93,18 @@ fetch(
         loader.appendChild(loadingBar);
         container.appendChild(loader);
         setTimeout(function () {
-        const loaderDiv = document.querySelector("div.progress");
-        const panel = document.createElement("div");
-        panel.className = "card-panel green";
-        const text = document.createElement("span");
-        text.className = "white-text";
-        text.appendChild(document.createTextNode(`Email not found!`));
-        panel.appendChild(text);
-        container.replaceChild(panel, loaderDiv);
+          const loaderDiv = document.querySelector("div.progress");
+          const panel = document.createElement("div");
+          panel.className = "card-panel green";
+          const text = document.createElement("span");
+          text.className = "white-text";
+          text.appendChild(document.createTextNode(`Email not found!`));
+          panel.appendChild(text);
+          container.replaceChild(panel, loaderDiv);
         }, 1000);
 
         console.log("Email not found");
-    } else {
+      } else {
         const name = email;
         const container = document.getElementById("containerr");
         const loader = document.createElement("div");
@@ -116,20 +114,20 @@ fetch(
         loader.appendChild(loadingBar);
         container.appendChild(loader);
         setTimeout(function () {
-        const loaderDiv = document.querySelector("div.progress");
-        const panel = document.createElement("div");
-        panel.className = "card-panel green";
-        const text = document.createElement("span");
-        text.className = "white-text";
-        text.appendChild(
+          const loaderDiv = document.querySelector("div.progress");
+          const panel = document.createElement("div");
+          panel.className = "card-panel green";
+          const text = document.createElement("span");
+          text.className = "white-text";
+          text.appendChild(
             document.createTextNode(`An error occurred, Try Again!`)
-        );
-        panel.appendChild(text);
-        container.replaceChild(panel, loaderDiv);
+          );
+          panel.appendChild(text);
+          container.replaceChild(panel, loaderDiv);
         }, 1000);
 
         console.log("An error occurred, Try Again!");
-    }
+      }
     });
 });
 
