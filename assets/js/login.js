@@ -52,7 +52,7 @@ Form.addEventListener("submit", function (e) {
       htmlFragment.innerHTML = htmlString;
       userNameDOM.appendChild(htmlFragment);
 
-      const url = "http://intriobasket.pexceptos.com/api/user/" + id;
+      const url = `http://intriobasket.pexceptos.com/api/user/${id}`;
 
       console.log(url);
 
