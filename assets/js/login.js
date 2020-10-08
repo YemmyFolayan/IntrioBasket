@@ -47,12 +47,14 @@ Form.addEventListener("submit", function (e) {
           `;
       };
 
-      
-
       let htmlString = userNameTemplate(data);
       let htmlFragment = document.createElement("div");
       htmlFragment.innerHTML = htmlString;
       userNameDOM.appendChild(htmlFragment);
+
+      const url = "http://intriobasket.pexceptos.com/api/user/" + id;
+
+      console.log(url);
 
       if (msg == "Log in Successful") {
         const name = data.payload.fullname;
