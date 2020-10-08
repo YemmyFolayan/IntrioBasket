@@ -33,7 +33,6 @@ const url = `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
 
 console.log(url);
 
-
 const addToCart = (id, name, type, imageUrl, price) => {
   const productDetails = { id, name, type, imageUrl, price, qty: 1 };
 
@@ -62,13 +61,12 @@ const addToCart = (id, name, type, imageUrl, price) => {
 
           headers: {
             "Content-Type": "application/json; charset= UTF-8",
-            Cookie:
-              "access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWN2b25kZWU1QGdtYWlsLmNvbSIsImlhdCI6MTYwMTU0NTU5OCwiZXhwIjoxNjAyODQxNTk4fQ.-ciTacOQl3d2Zgxmvqd_l59-wXV6GBXuCCTdAsmIs2M",
           },
         }
       ).then(async (response) => {
         try {
           const json = await response.clone().json();
+          console.log("create user cart");
           return json;
         } catch (e) {
           console.log(e);
@@ -162,54 +160,47 @@ const router = (url) => {
   window.location.assign(pageUrl);
 };
 
-
 //Update User Checkout History
 
 const updateCheckoutHistory = () => {
   fetch(
-    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout/user/5f4d0fd68cc9aa11e6151b88",
+    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout/user/5f6b26f9d41c5b00246e3f26",
     {
       method: "POST",
       body: JSON.stringify({
-        "order_delivery_type": "pick it up",
-        "items": [{ "item_name": "fish", "number": 4, "initial_cost": 600, "item_image": "teaaqweddd" }],
-        "number_of_items": 1,
-        "total_cost": 2425,
-        "address_name": "Eric house",
-        "phonenumber": "903456434345",
-        "zip_code": "55643434",
-        "purchaser_name": "Eric"
+        order_delivery_type: "pick it up",
+        items: [
+          {
+            item_name: "fish",
+            number: 4,
+            initial_cost: 600,
+            item_image: "teaaqweddd",
+          },
+        ],
+        number_of_items: 1,
+        total_cost: 2425,
+        address_name: "Eric house",
+        phonenumber: "903456434345",
+        zip_code: "55643434",
+        purchaser_name: "Eric",
       }),
-      
-               
-            
+
       headers: {
         "Content-Type": "application/json; charset= UTF-8",
       },
     }
-  )
-    .then(async response => {
-      try {
-        const json = await response.clone().json()
-        return json
-      } catch (e) {
-        console.log(e);
-        return await response.text()
-      }
-    });
+  ).then(async (response) => {
+    try {
+      const json = await response.clone().json();
+      return json;
+    } catch (e) {
+      console.log(e);
+      return await response.text();
+    }
+  });
 };
-  
-      
+
 updateCheckoutHistory();
-
-
-
-
-
-
-
-
-
 
 //updateCart
 
@@ -219,34 +210,29 @@ const createUserCart = () => {
     {
       method: "POST",
       body: JSON.stringify({
-        "cart_details": [{
-          "item_name": name,
-          "number": qty,
-          "initial_cost": price,
-          "item_image": imageUrl,
-                
-        }]
+        cart_details: [
+          {
+            item_name: name,
+            number: qty,
+            initial_cost: price,
+            item_image: imageUrl,
+          },
+        ],
       }),
-      
-               
-            
+
       headers: {
         "Content-Type": "application/json; charset= UTF-8",
-        "Cookie": "access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWN2b25kZWU1QGdtYWlsLmNvbSIsImlhdCI6MTYwMTU0NTU5OCwiZXhwIjoxNjAyODQxNTk4fQ.-ciTacOQl3d2Zgxmvqd_l59-wXV6GBXuCCTdAsmIs2M",
       },
     }
-  )
-    .then(async response => {
-      try {
-        const json = await response.clone().json()
-        return json
-      } catch (e) {
-        console.log(e);
-        return await response.text()
-      }
-    });
-
+  ).then(async (response) => {
+    try {
+      const json = await response.clone().json();
+      return json;
+    } catch (e) {
+      console.log(e);
+      return await response.text();
+    }
+  });
 };
-  
-      
+
 createUserCart();
