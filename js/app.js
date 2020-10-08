@@ -127,7 +127,7 @@ http://intriobasket.pexceptos.com/api/user/update-cart/id
 
  */
 const updateCartButtonBadge = () => {
-  const cartBadge = document.querySelectorAll("cartButtonBadge");
+  const cartBadge = document.getElementById("cartButtonBadge");
 
   //todo get this by querySelector
   const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
