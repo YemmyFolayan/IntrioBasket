@@ -81,7 +81,7 @@ Form.addEventListener("submit", function (e) {
           text.className = "white-text";
           text.appendChild(
             document.createTextNode(
-              `Log in Succesfully !, welcome to IntrioBasket ${name}`
+              `Log in Successfully !, welcome to IntrioBasket ${name}`
             )
           );
           panel.appendChild(text);
