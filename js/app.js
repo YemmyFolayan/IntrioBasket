@@ -46,6 +46,7 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
     //create user cart
     console.log("before create user cart");
     const createUserCart = () => {
+      console.log("got here");
       fetch(
         "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/5f6b26f9d41c5b00246e3f26",
         {
