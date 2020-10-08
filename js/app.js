@@ -25,8 +25,6 @@ document.addEventListener(
  * @param {String} price
  */
 
-
-
 let userId = localStorage.getItem("id");
 console.log({ userId });
 
@@ -42,45 +40,42 @@ const addToCart = (id, name, type, imageUrl, price) => {
     cartList.push(productDetails);
     localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
     //call create user cart api here
-    //create user cart    
+    //create user cart
+    /** */
 
+    const createUserCart = () => {
+      fetch(
+        "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/5f6b26f9d41c5b00246e3f26",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            cart_details: [
+              {
+                item_name: name,
+                number: qty,
+                initial_cost: price,
+                item_image: imageUrl,
+              },
+            ],
+          }),
 
-    const createUserCart = {
-        fetch(
-          "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/5f6b26f9d41c5b00246e3f26",
-          {
-            method: "POST",
-            body: JSON.stringify({
-              "cart_details": [{
-                "item_name": name,
-                "number": qty,
-                "initial_cost": price,
-                "item_image": imageUrl,
-                
-              }]
-            }),
-      
-               
-            
-            headers: {
-              "Content-Type": "application/json; charset= UTF-8",
-              "Cookie": "access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWN2b25kZWU1QGdtYWlsLmNvbSIsImlhdCI6MTYwMTU0NTU5OCwiZXhwIjoxNjAyODQxNTk4fQ.-ciTacOQl3d2Zgxmvqd_l59-wXV6GBXuCCTdAsmIs2M",
-            },
-          }
-        )
-        .then(async response => {
-          try {
-            const json = await response.clone().json()
-            return json
-          } catch (e) {
-            console.log(e);
-            return await response.text()
-          }
-        });
-  
-      
-      createUserCart();
-
+          headers: {
+            "Content-Type": "application/json; charset= UTF-8",
+            Cookie:
+              "access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWN2b25kZWU1QGdtYWlsLmNvbSIsImlhdCI6MTYwMTU0NTU5OCwiZXhwIjoxNjAyODQxNTk4fQ.-ciTacOQl3d2Zgxmvqd_l59-wXV6GBXuCCTdAsmIs2M",
+          },
+        }
+      ).then(async (response) => {
+        try {
+          const json = await response.clone().json();
+          return json;
+        } catch (e) {
+          console.log(e);
+          return await response.text();
+        }
+      });
+    };
+    createUserCart();
   } else {
     const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
     let index = cartList.findIndex(
@@ -167,7 +162,7 @@ const router = (url) => {
 /**
 //Update User Checkout History
 
-const updateCheckoutHistory = {
+const updateCheckoutHistory = () => {
   fetch(
     "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout/user/5f4d0fd68cc9aa11e6151b88",
     {
@@ -214,7 +209,7 @@ updateCheckoutHistory();
 
 //updateCart
 
-const createUserCart = {
+const createUserCart = () => {
   fetch(
     "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/5f6b26f9d41c5b00246e3f26",
     {
