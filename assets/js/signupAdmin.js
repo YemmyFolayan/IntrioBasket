@@ -11,12 +11,12 @@ Form.addEventListener("submit", function (e) {
   var gender = document.getElementById("gender").value;
 
   console.log(fullname);
-  console.log(password);
+  console.log(password); const name = email;
   console.log(email);
   console.log(phonenumber);
   console.log(gender);
 
-  const name = email;
+ 
   const container = document.getElementById("containerr");
   const loader = document.createElement("div");
   loader.className = "progress";
@@ -53,6 +53,7 @@ Form.addEventListener("submit", function (e) {
       var msg = data.message;
 
       if (msg == "Admin Created Succesfully") {
+        const name = data.payload.fullname;
         setTimeout(function () {
           text.className = "white-text";
           text.appendChild(

@@ -31,7 +31,7 @@ Form.addEventListener("submit", function (e) {
       var msg = data.message;
 
       if (msg == "Log in Successful") {
-        const name = email;
+        const name = data.payload.fullname;
         const container = document.getElementById("containerr");
         const loader = document.createElement("div");
         loader.className = "progress";
