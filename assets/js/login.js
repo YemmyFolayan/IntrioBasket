@@ -3,8 +3,6 @@
 var Form = document.getElementById("form");
 const userNameDOM = document.getElementById("user");
 
-let id;
-console.log(id);
 let name;
 console.log(name);
 
@@ -38,7 +36,10 @@ Form.addEventListener("submit", function (e) {
 
       //this is user id;
 
-      id = data.payload.id;
+      let id = data.payload.id;
+
+      //SAVE this ID to session storage to re-use it in cart
+      sessionStorage.setItem("id", id);
 
       name = data.payload.fullname;
       console.log("this is : ", name, id);
@@ -57,7 +58,7 @@ Form.addEventListener("submit", function (e) {
       htmlFragment.innerHTML = htmlString;
       userNameDOM.appendChild(htmlFragment);
 
-      //AT this block, i want to
+      //AT this block, i want to compare the id with the one in user also use the id for cart logic
 
       const url = `http://intriobasket.pexceptos.com/api/user/${id}`;
 
@@ -165,56 +166,6 @@ Form.addEventListener("submit", function (e) {
 });
 
 console.log("hi");
-
-/**
-var email = document.getElementById("email").value;
-var password = document.getElementById("password").value;
-
-console.log(email);
-console.log(password);
-
-fetch(
-  "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/login",
-  {
-    method: "POST",
-    body: JSON.stringify({
-      email: email,
-      password: password,
-    }),
-    headers: {
-      "Content-Type": "application/json; charset= UTF-8",
-    },
-  }
-)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    var msg = data.message;
-
-    //this is user id;
-
-    var id = data.payload.id;
-
-    var name = data.payload.fullname;
-    console.log("this is : ", name, id);
-    console.log(id);
-
-    const userNameTemplate = (data) => {
-      return `
-      <div class="login d-flex" id="loginflex">
-      ${data.payload.fullname}
-      </div>
-        `;
-    };
-
-    let htmlString = userNameTemplate(data);
-    let htmlFragment = document.createElement("div");
-    htmlFragment.innerHTML = htmlString;
-    userNameDOM.appendChild(htmlFragment);
-  });
-
-  **/
 
 /**
  * {

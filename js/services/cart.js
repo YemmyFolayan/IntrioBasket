@@ -40,42 +40,6 @@ const cartTotalTemplate = (totalPriceToPay, totalPriceToTax) => {
     `;
 };
 
-/**
-const cartTotalPaystack = (totalPriceToTax) => {
-  return `
-        <p class="text-center" id="static-amount">You are paying: <span id="amountinngn">NGN ${totalPriceToTax}</span></p>
-    `;
-};
-**/
-
-/**
-// //checkout page
-
-// const cartItemTemplateCheckout = (productDetails) => {
-//   return `
-//   <tr id="${productDetails.id}">
-//     <th class="name">${productDetails.name}</th>
-//     <td class="price black" style="border-top: 0">NGN ${productDetails.price}</td>
-//   </tr>
-//     `;
-// };
-
-// const cartTotalTemplateCheckout = (totalPriceToPay, totalPriceToTax) => {
-//   return `
-//   <tr>
-//     <th>TOTAL</th>
-//     <td class="total">NGN ${totalPriceToPay}</td>
-//   </tr>
-
-//   <tr>
-//     <th>TOTAL with 7.5% Tax Rate:</th>
-//     <td class="total">NGN ${totalPriceToTax}</td>
-//   </tr>
-//     `;
-// };
-
-**/
-
 const handleNoItemsInCart = () => {
   updateCartButton.style.display = "none";
   emptyCartButton.style.display = "none";
@@ -161,9 +125,8 @@ const deleteItem = (id) => {
   lookUpCartStore();
 };
 
-
-
-
+let id = sessionStorage.getItem("id");
+console.log({ id });
 
 /**
 TODO
