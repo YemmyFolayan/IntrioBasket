@@ -128,6 +128,9 @@ const deleteItem = (id) => {
 let userId = localStorage.getItem("id");
 console.log({ userId });
 
+
+
+
 /**
 TODO
 GET user id dynamically here to append to creat user cart url
