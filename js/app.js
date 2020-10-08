@@ -45,39 +45,38 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
     //call create user cart api here
     //create user cart
     console.log("before create user cart");
-    const createUserCart = () => {
-      console.log("got here");
-      fetch(
-        "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/5f6b26f9d41c5b00246e3f26",
-        {
-          method: "POST",
-          body: JSON.stringify({
-            cart_details: [
-              {
-                item_name: name,
-                number: qty,
-                initial_cost: price,
-                item_image: imageUrl,
-              },
-            ],
-          }),
 
-          headers: {
-            "Content-Type": "application/json; charset= UTF-8",
-          },
-        }
-      )
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          var msg = data.message;
-          console.log(msg);
-          console.log("create user cart");
-        });
-    };
+    console.log("got here");
+    fetch(
+      "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/5f6b26f9d41c5b00246e3f26",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          cart_details: [
+            {
+              item_name: name,
+              number: qty,
+              initial_cost: price,
+              item_image: imageUrl,
+            },
+          ],
+        }),
+
+        headers: {
+          "Content-Type": "application/json; charset= UTF-8",
+        },
+      }
+    )
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        var msg = data.message;
+        console.log(msg);
+        console.log("create user cart");
+      });
+
     console.log("After create user cart");
-    createUserCart();
   } else {
     const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
     let index = cartList.findIndex(
