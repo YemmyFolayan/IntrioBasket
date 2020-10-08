@@ -35,7 +35,7 @@ const url = `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
 
 console.log(url);
 
-const addToCart = (id, name, type, imageUrl, price) => {
+const addToCart = (id, name, type, imageUrl, price, qty) => {
   const productDetails = { id, name, type, imageUrl, price, qty: 1 };
 
   if (localStorage.getItem(CONFIG.CART_STORE) === null) {
