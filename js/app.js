@@ -97,7 +97,7 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
   updateCartButtonBadge();
 
   //LATER YOU CAN INCLUDE GOTO CART HERE OR CONTINUE SHOPPING
-  window.location.assign("/shop_cart.html");
+  // window.location.assign("/shop_cart.html");
 };
 
 // const raw = JSON.stringify({ "cart_details": [{ "item_name": "hello", "number": 50, "initial_cost": 60, "item_image": "teaaqweddd" }, { "item_name": "hello", "number": 50, "initial_cost": 60, "item_image": "teaaqweddd" }] })
