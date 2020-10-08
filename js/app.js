@@ -162,15 +162,13 @@ const router = (url) => {
   window.location.assign(pageUrl);
 };
 
-
-
 //Update User Checkout History
 
 const updateCheckoutHistory = () => {
   fetch(
     "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout/user/5f6b26f9d41c5b00246e3f26",
     {
-      method: "POST",
+      method: "PUT",
       body: JSON.stringify({
         order_delivery_type: "pick it up",
         items: [
@@ -240,4 +238,3 @@ const updateCart = () => {
 };
 
 updateCart();
-
