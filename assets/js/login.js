@@ -86,6 +86,23 @@ Form.addEventListener("submit", function (e) {
 
         localStorage.setItem("login", true);
         console.log("logged in");
+
+        const userNameTemplate = (data) => {
+          return `
+          <div class="login d-flex" id="loginflex">
+          ${data.payload.fullname}
+          </div>
+            `;
+        };
+
+        let htmlString = userNameTemplate(data);
+        let htmlFragment = document.createElement("div");
+        htmlFragment.innerHTML = htmlString;
+        userNameDOM.appendChild(htmlFragment);
+
+
+
+
       } else if (msg == "Incorrect Email or Password") {
         const name = email;
         const container = document.getElementById("containerr");
