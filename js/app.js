@@ -23,6 +23,8 @@ document.addEventListener(
  * @param {String} type
  * @param {String} imageUrl
  * @param {String} price
+ * @param {String} qty
+ * 
  */
 
 //userId is GLOBAL across the site
@@ -33,7 +35,7 @@ const url = `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
 
 console.log(url);
 
-const addToCart = (id, name, type, imageUrl, price, qty) => {
+const addToCart = (id, name, type, imageUrl, price) => {
   const productDetails = { id, name, type, imageUrl, price, qty: 1 };
 
   if (localStorage.getItem(CONFIG.CART_STORE) === null) {
