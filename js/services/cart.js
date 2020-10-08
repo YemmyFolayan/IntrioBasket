@@ -125,7 +125,7 @@ const deleteItem = (id) => {
   lookUpCartStore();
 };
 
-let userId = sessionStorage.getItem("id");
+let userId = localStorage.getItem("id");
 console.log({ userId });
 
 /**
