@@ -78,7 +78,7 @@ const addToCart = (id, name, type, imageUrl, price) => {
     };
 
     fetch(
-      "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/5f4d0fd68cc9aa11e6151b88",
+      "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/5f6b26f9d41c5b00246e3f26",
       requestOptions
     )
       .then((response) => response.text())
