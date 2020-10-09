@@ -1,4 +1,4 @@
-const featuredProductDOM = document.getElementById("userList");
+const featuredProductDOM = document.getElementById("checkoutList");
 
 const featuredProductItemTemplate = (checkoutsDetails) => {
   return `
@@ -22,15 +22,6 @@ const featuredProductItemTemplate = (checkoutsDetails) => {
     `;
 };
 
-// GET
-
-// Get All Checkouts
-// http://intriobasket.pexceptos.com/api/checkout/get-all
-
-// GET
-
-// Get All checkouts
-// http://intriobasket.pexceptos.com/api/user/
 
 const fetchFoodList = async () => {
   const endpoint = "/checkout/get-all"; // THOUGHTS: There should be an endpoint for featured products...
