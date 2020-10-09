@@ -107,7 +107,7 @@ const featuredProductItemTemplatesS = (totals) => {
       <div class="icon">
         <i class="ion ion-pie-graph"></i>
       </div>
-      <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+      <a href="../shop.html" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
     </div>
 
     `;
@@ -141,8 +141,5 @@ const fetchFoodListsS = async () => {
 fetchFoodListsS();
 
 //CHECKOUT HISTORY FUNCTION
-
-
-
 
 //USER REGISTRATION HISTORY FUCNTION : onclick =>more info
