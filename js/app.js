@@ -31,6 +31,9 @@ document.addEventListener(
 let userId = localStorage.getItem("id");
 console.log({ userId });
 
+let userToken = localStorage.getItem("token");
+console.log({ userToken });
+
 const url = `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
 
 console.log(url);
@@ -64,8 +67,8 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
 
         headers: {
           "Content-Type": "application/json; charset= UTF-8",
-          Cookie:
-            "access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZveWVtY0BnbWFpbC5jb20iLCJpYXQiOjE2MDIxOTc5ODYsImV4cCI6MTYwMzQ5Mzk4Nn0.RyMl3rl03LuBjya1_7mS4ejy4u9QpRMPJHw2PN8fEOM",
+          "Cookie": `access_token=${userToken}`;
+    
         },
       }
     )
@@ -137,7 +140,8 @@ http://intriobasket.pexceptos.com/api/user/update-cart/id
 
  */
 const updateCartButtonBadge = () => {
-  const cartBadge = document.getElementById("cartButtonBadge");
+  const cartBadge = document.querySelectorAll("span.cartButtonBadge");
+  console.log(cartBadge);
 
   //todo get this by querySelector
   const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
@@ -163,6 +167,7 @@ const router = (url) => {
   }
 
   window.location.assign(pageUrl);
+  updateCartButtonBadge();
 };
 
 /**

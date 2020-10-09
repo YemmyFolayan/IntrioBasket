@@ -38,8 +38,14 @@ Form.addEventListener("submit", function (e) {
 
       const id = data.payload.id;
 
+      const token = data.payload.token;
+
       //SAVE this ID to session storage to re-use it in cart
       localStorage.setItem("id", id);
+
+      localStorage.setItem("token", token);
+
+      console.log(token);
 
       name = data.payload.fullname;
       console.log("this is : ", name, id);

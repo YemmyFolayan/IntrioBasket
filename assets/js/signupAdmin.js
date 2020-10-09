@@ -11,12 +11,12 @@ Form.addEventListener("submit", function (e) {
   var gender = document.getElementById("gender").value;
 
   console.log(fullname);
-  console.log(password); const name = email;
+  console.log(password);
+  const name = email;
   console.log(email);
   console.log(phonenumber);
   console.log(gender);
 
- 
   const container = document.getElementById("containerr");
   const loader = document.createElement("div");
   loader.className = "progress";
