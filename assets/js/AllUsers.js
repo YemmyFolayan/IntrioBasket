@@ -3,15 +3,15 @@ const featuredProductDOM = document.getElementById("userList");
 const featuredProductItemTemplate = (userDetails) => {
   return `
   <div class="product">
-  <h5 class="product-type">${userDetails.fullname}</h5>
-  <h3 class="product-name">${userDetails.email}</h3>
+  <h3 class="product-price">${userDetails.fullname}</h3>
+  <h3 class="product-type">${userDetails.email}</h3>
   <h3 class="product-price">${userDetails.phonenumber}</h3>
-  <h3 class="product-price">${userDetails.gender}</h3>
+  <h3 class="product-type">${userDetails.gender}</h3>
   <div class="product-select">
       <button class="add-to-wishlist round-icon-btn">
           <i class="icon_heart_alt"></i>
       </button>
-      <button onclick="addToCart('${userDetails.id}','${userDetails.name}','${userDetails.type}','${userDetails.imageUrl}','${userDetails.price}')" class="add-to-cart round-icon-btn">
+      <button class="add-to-cart round-icon-btn">
           <i class="fa fa-shopping-cart"></i>
       </button>
       <button class="quickview round-icon-btn">
