@@ -33,7 +33,7 @@ const fetchFoodList = async () => {
 
   const res = await api.request(endpoint); // TODO: handle errors..
 
-  const count = res.payload.length;
+  const count = res.payload;
 
   console.log(res.payload);
   console.log("Hi");
