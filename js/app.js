@@ -50,7 +50,42 @@ const addToCart = (id, name, type, imageUrl, price) => {
     console.log("before create user cart");
 
     console.log("got here");
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append(
+      "Cookie",
+      "access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZveWVtY0BnbWFpbC5jb20iLCJpYXQiOjE2MDIxOTc5ODYsImV4cCI6MTYwMzQ5Mzk4Nn0.RyMl3rl03LuBjya1_7mS4ejy4u9QpRMPJHw2PN8fEOM; admin_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pY2hhZWxmb2xheWFuQG91dGxvb2suY29tIiwiaWF0IjoxNjAyMjAwODU0LCJleHAiOjE2MDQ3OTI4NTR9.22XPv2EaSYeWqdjStgwyig08xCqg_aOAnvLWfCEj0IE"
+    );
+
+    var raw = JSON.stringify({
+      cart_details: [
+        {
+          item_name: "Cocoa powder",
+          number: 3,
+          initial_cost: 230,
+          item_image:
+            "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FCocoa%20powder.jpg?alt=media&token=d2ab9232-5451-449f-b3e8-2b60be576f34",
+        },
+      ],
+    });
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
     fetch(
+      "http://intriobasket.pexceptos.com/api/user/create-cart/5f4d0fd68cc9aa11e6151b88",
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+
+    /**fetch(
       `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`,
       {
         method: "POST",
@@ -79,6 +114,7 @@ const addToCart = (id, name, type, imageUrl, price) => {
         console.log(msg);
         console.log("create user cart");
       });
+      **/
 
     console.log("After create user cart");
   } else {
