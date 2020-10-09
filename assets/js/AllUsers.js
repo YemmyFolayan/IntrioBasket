@@ -1,7 +1,7 @@
-const featuredProductDOM = document.getElementById("userReg");
+const featuredProductDOM = document.getElementById("userList");
 
 const featuredProductItemTemplate = (count) => {
-return `
+  return `
     <!-- small box -->
     <div class="small-box bg-warning">
         <div class="inner">
@@ -29,19 +29,19 @@ return `
 // http://intriobasket.pexceptos.com/api/user/
 
 const fetchFoodList = async () => {
-const endpoint = "/user/"; // THOUGHTS: There should be an endpoint for featured products...
+  const endpoint = "/user/"; // THOUGHTS: There should be an endpoint for featured products...
 
-const res = await api.request(endpoint); // TODO: handle errors..
+  const res = await api.request(endpoint); // TODO: handle errors..
 
-const count = res.payload.length;
+  const count = res.payload.length;
 
-console.log(res.payload.length);
-console.log("hi count");
+  console.log(res.payload);
+  console.log("Hi");
 
-let htmlString = featuredProductItemTemplate(count);
-let htmlFragment = document.createElement("div");
-htmlFragment.innerHTML = htmlString;
-featuredProductDOM.appendChild(htmlFragment);
+  let htmlString = featuredProductItemTemplate(count);
+  let htmlFragment = document.createElement("div");
+  htmlFragment.innerHTML = htmlString;
+  featuredProductDOM.appendChild(htmlFragment);
 };
 
 fetchFoodList();
