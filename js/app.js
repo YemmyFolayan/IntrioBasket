@@ -57,10 +57,10 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
         body: JSON.stringify({
           cart_details: [
             {
-              item_name: name,
-              number: qty,
-              initial_cost: price,
-              item_image: imageUrl,
+              "item_name": name,
+              "number": qty,
+              "initial_cost": price,
+              "item_image": imageUrl,
             },
           ],
         }),
