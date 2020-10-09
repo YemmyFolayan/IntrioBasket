@@ -69,8 +69,8 @@ const addToCart = (id, name, type, imageUrl, price) => {
           "Content-Type": "application/json; charset= UTF-8",
           "Cookie": `access_token=${userToken}`,
         },
-      }
-    )
+      
+      })
       .then(function (response) {
         return response.json();
       })
