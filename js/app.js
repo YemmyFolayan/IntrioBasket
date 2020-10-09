@@ -51,16 +51,16 @@ const addToCart = (id, name, type, imageUrl, price) => {
 
     console.log("got here");
     fetch(
-      `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`,
+    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`",
       {
         method: "POST",
         body: JSON.stringify({
-          "cart_details": [
+          cart_details: [
             {
-              "item_name": name,
-              "number": qty,
-              "initial_cost": price,
-              "item_image": imageUrl,
+              item_name: name,
+              number: 60,
+              initial_cost: price,
+              item_image: imageUrl,
             },
           ],
         }),
@@ -82,6 +82,11 @@ const addToCart = (id, name, type, imageUrl, price) => {
       });
 
     console.log("After create user cart");
+
+
+
+
+
   } else {
     const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
     let index = cartList.findIndex(
