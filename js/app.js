@@ -51,7 +51,7 @@ const addToCart = (id, name, type, imageUrl, price) => {
 
     console.log("got here");
     fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`",
+    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`,
       {
         method: "POST",
         body: JSON.stringify({
