@@ -67,8 +67,7 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
 
         headers: {
           "Content-Type": "application/json; charset= UTF-8",
-          "Cookie": `access_token=${userToken}`,
-    
+          Cookie: `access_token=${userToken}`,
         },
       }
     )
@@ -77,6 +76,7 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
       })
       .then(function (data) {
         var msg = data.message;
+        console.log(data.status);
         console.log(msg);
         console.log("create user cart");
       });
