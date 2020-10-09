@@ -67,7 +67,7 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
 
         headers: {
           "Content-Type": "application/json; charset= UTF-8",
-          Cookie: `access_token=${userToken}`,
+          "Cookie": `access_token=${userToken}`,
         },
       }
     )
