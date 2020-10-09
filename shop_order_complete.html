@@ -483,11 +483,11 @@
           <form action="" method="post">
             <div class="row">
               <div class="col-12 col-md-6 mx-auto">
-                <h2 class="form-title">Delivery details</h2>
+               <h2 class="form-title">Delivery details</h2>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputFirstName">First Name*</label>
-                    <input class="no-round-input-bg" id="inputFirstName" type="text" required>
+                    <input class="no-round-input-bg" id="purchaser_name" type="text" required>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputLastName">Last Name*</label>
@@ -511,11 +511,11 @@
                 </div>
                 <div class="form-group">
                   <label for="inputStreet"><h2 class="form-title">Delivery Address*</h2></label>
-                  <input class="no-round-input-bg" id="inputStreet" type="text" required>
+                  <input class="no-round-input-bg" id="address_name" type="text" required>
                 </div>
                 <div class="form-group">
-                  <label for="inputZip">Postcode / ZIP (optional)</label>
-                  <input class="no-round-input-bg" id="inputZip" type="text">
+                  <label for="inputZip">Postcode / ZIP</label>
+                  <input class="no-round-input-bg" id="zip_code" type="text">
                 </div>
                 <div class="form-group">
                   <label for="inputCity">State*</label>
@@ -535,8 +535,10 @@
                 </div>
                 
                 <div class="form-group">
+
+                <!--order deleivery note-->
                   <label for="inputNote">Order notes (optional)</label>
-                  <textarea class="textarea-form-bg" id="inputNote" name="" cols="30" rows="7"></textarea>
+                  <textarea class="textarea-form-bg" id="order_delivery_type" name="" cols="30" rows="7"></textarea>
                 </div>
               </div>
 
