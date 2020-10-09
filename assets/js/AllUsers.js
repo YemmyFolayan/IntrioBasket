@@ -3,10 +3,10 @@ const featuredProductDOM = document.getElementById("userList");
 const featuredProductItemTemplate = (userDetails) => {
   return `
   <div class="product">
-  <h3 class="product-price">${userDetails.fullname}</h3>
-  <h3 class="product-price">${userDetails.email}</h3>
-  <h3 class="product-price">${userDetails.phonenumber}</h3>
-  <h3 class="product-price">${userDetails.gender}</h3>
+  <h3 class="product-price">NAME: ${userDetails.fullname}</h3>
+  <h3 class="product-price">E-MAIL: ${userDetails.email}</h3>
+  <h3 class="product-price">PHONE NO: ${userDetails.phonenumber}</h3>
+  <h3 class="product-price">GENDER: ${userDetails.gender}</h3>
   <div class="product-select">
       <button class="quickview round-icon-btn">
           <i class="far fa-eye"></i>
