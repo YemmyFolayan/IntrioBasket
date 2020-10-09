@@ -70,7 +70,7 @@ Form.addEventListener("submit", function (e) {
 
       console.log(url);
 
-      if (msg == "Log in Successful") {
+      if (msg == "Log in Succesful") {
         const name = data.payload.fullname;
         const container = document.getElementById("containerr");
         const loader = document.createElement("div");
