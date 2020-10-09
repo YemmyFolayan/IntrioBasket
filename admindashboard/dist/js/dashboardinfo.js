@@ -12,7 +12,7 @@ const featuredProductItemTemplate = (count) => {
         <div class="icon">
           <i class="ion ion-person-add"></i>
         </div>
-        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="/AllUsers.html" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
        </div>
 
     `;
@@ -83,7 +83,9 @@ const fetchFoodLists = async () => {
   const checks = res.payload.length;
 
   console.log(res.payload.length);
-  console.log("hi count");
+  console.log("checkouts");
+  console.log(res.payload);
+  console.log(res.payload);
 
   let htmlString = featuredProductItemTemplates(checks);
   let htmlFragment = document.createElement("div");
