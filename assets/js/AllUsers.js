@@ -1,19 +1,24 @@
 const featuredProductDOM = document.getElementById("userList");
 
-const featuredProductItemTemplate = (count) => {
+const featuredProductItemTemplate = (userDetails) => {
   return `
-    <!-- small box -->
-    <div class="small-box bg-warning">
-        <div class="inner">
-        <h3>${count}</h3>
-
-        <p>Registered Users</p>
-        </div>
-        <div class="icon">
-        <i class="ion ion-person-add"></i>
-        </div>
-        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-    </div>
+  <div class="product">
+  <h5 class="product-type">${userDetails.fullname}</h5>
+  <h3 class="product-name">${userDetails.email}</h3>
+  <h3 class="product-price">${userDetails.phonenumber}</h3>
+  <h3 class="product-price">${userDetails.gender}</h3>
+  <div class="product-select">
+      <button class="add-to-wishlist round-icon-btn">
+          <i class="icon_heart_alt"></i>
+      </button>
+      <button onclick="addToCart('${userDetails.id}','${userDetails.name}','${userDetails.type}','${userDetails.imageUrl}','${userDetails.price}')" class="add-to-cart round-icon-btn">
+          <i class="fa fa-shopping-cart"></i>
+      </button>
+      <button class="quickview round-icon-btn">
+          <i class="far fa-eye"></i>
+      </button>
+  </div>
+</div>
 
     `;
 };
@@ -33,15 +38,23 @@ const fetchFoodList = async () => {
 
   const res = await api.request(endpoint); // TODO: handle errors..
 
-  const count = res.payload;
+  const users = res.payload;
 
   console.log(res.payload);
   console.log("Hi");
+  users.forEach((user) => {
+    let userDetails = {
+      fullname: user.fullname,
+      email: user.email,
+      phonenumber: user.phonenumber,
+      gender: user.gender,
+    };
 
-  let htmlString = featuredProductItemTemplate(count);
-  let htmlFragment = document.createElement("div");
-  htmlFragment.innerHTML = htmlString;
-  featuredProductDOM.appendChild(htmlFragment);
+    let htmlString = featuredProductItemTemplate(userDetails);
+    let htmlFragment = document.createElement("div");
+    htmlFragment.innerHTML = htmlString;
+    featuredProductDOM.appendChild(htmlFragment);
+  });
 };
 
 fetchFoodList();
