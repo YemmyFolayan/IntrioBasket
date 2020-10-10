@@ -43,6 +43,7 @@ const fetchFoodList = async () => {
       imageUrl: product.image_link,
       price: product.cost,
       description: product.long_description,
+      qty: 1,
     };
 
     let htmlString = featuredProductItemTemplate(productDetails);
