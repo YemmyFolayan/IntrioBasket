@@ -291,19 +291,19 @@ const checkOutHistoryItemTemplate = (historyDetails) => {
         <div class="col-12 col-md-6 col-lg-3">
           <div class="benefit-detail d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon4.png" alt="">
             <h5 class="benefit-title">Purchaser Name</h5>
-            <p class="benefit-describle">For all order over 99#</p>
+            <p class="benefit-describle">${historyDetails.purchaserName}</p>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-3">
           <div class="benefit-detail d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon3.png" alt="">
             <h5 class="benefit-title">Checkout Address</h5>
-            <p class="benefit-describle">If good have problems</p>
+            <p class="benefit-describle">${historyDetails.checkoutAddress}</p>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-3">
           <div class="benefit-detail d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon3.png" alt="">
             <h5 class="benefit-title">Phone Number</h5>
-            <p class="benefit-describle">100% secure payment</p>
+            <p class="benefit-describle">${historyDetails.phoneNumber}</p>
           </div>
         </div>
                      
@@ -313,7 +313,7 @@ const checkOutHistoryItemTemplate = (historyDetails) => {
         <div class="col-12 col-md-6 col-lg-3">
           <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon4.png" alt="">
             <h5 class="benefit-title">delivery Status</h5>
-            <p class="benefit-describle">Dedicated support </p>
+            <p class="benefit-describle">${historyDetails.deliveryStatus} </p>
           </div>
         </div>
 
@@ -327,14 +327,14 @@ const checkOutHistoryItemTemplate = (historyDetails) => {
       <div class="col-12 col-md-6 col-lg-3">
         <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon4.png" alt="">
           <h5 class="benefit-title">Items Name</h5>
-          <p class="benefit-describle">Dedicated support </p>
+          <p class="benefit-describle">${historyDetails.itemsName} </p>
         </div>
       </div>
 
       <div class="col-12 col-md-6 col-lg-3">
         <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon4.png" alt="">
           <h5 class="benefit-title">Item Image</h5>
-          <p class="benefit-describle">Dedicated support </p>
+          <p class="benefit-describle">${historyDetails.itemImage}</p>
         </div>
       </div>
 
@@ -342,7 +342,7 @@ const checkOutHistoryItemTemplate = (historyDetails) => {
       <div class="col-12 col-md-6 col-lg-3">
         <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon1.png" alt="">
           <h5 class="benefit-title">Order Delivery Type</h5>
-          <p class="benefit-describle">Dedicated support</p>
+          <p class="benefit-describle">${historyDetails.orderDeliveryType}</p>
         </div>
       </div>
 
@@ -350,7 +350,7 @@ const checkOutHistoryItemTemplate = (historyDetails) => {
       <div class="col-12 col-md-6 col-lg-3">
         <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon3.png" alt="">
           <h5 class="benefit-title">Total Cost</h5>
-          <p class="benefit-describle">Dedicated support </p>
+          <p class="benefit-describle">${historyDetails.totalCost}</p>
         </div>
       </div>
 
@@ -358,7 +358,7 @@ const checkOutHistoryItemTemplate = (historyDetails) => {
       <div class="col-12 col-md-6 col-lg-3">
         <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon3.png" alt="">
           <h5 class="benefit-title">Zip Code</h5>
-          <p class="benefit-describle">Dedicated support </p>
+          <p class="benefit-describle">${historyDetails.zipCode}</p>
         </div>
       </div>
 
@@ -366,7 +366,15 @@ const checkOutHistoryItemTemplate = (historyDetails) => {
       <div class="col-12 col-md-6 col-lg-3">
         <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon2.png" alt="">
           <h5 class="benefit-title">Date</h5>
-          <p class="benefit-describle">Dedicated support </p>
+          <p class="benefit-describle">${historyDetails.Date} </p>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon2.png" alt="">
+          <h5 class="benefit-title">Item Number</h5>
+          <p class="benefit-describle">${historyDetails.itemsNumber} </p>
         </div>
       </div>
 
