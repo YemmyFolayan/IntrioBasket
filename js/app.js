@@ -275,6 +275,109 @@ const updateCheckout = (name, imageUrl, price, qty) => {
 };
 
 // checkout details page after checkout
+
+const featuredProductDOM = document.getElementById("checkoutHistory");
+
+const checkOutHistoryItemTemplate = (historyDetails) => {
+  return `
+  <div class="col-12 text-center">
+  <h2 class="title mx-auto">CheckOut Details</h2>
+</div>
+
+        
+  <div class="benefit-block">
+    <div class="our-benefits shadowless benefit-border">
+      <div class="row no-gutters">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="benefit-detail d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon4.png" alt="">
+            <h5 class="benefit-title">Purchaser Name</h5>
+            <p class="benefit-describle">For all order over 99#</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="benefit-detail d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon3.png" alt="">
+            <h5 class="benefit-title">Checkout Address</h5>
+            <p class="benefit-describle">If good have problems</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="benefit-detail d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon3.png" alt="">
+            <h5 class="benefit-title">Phone Number</h5>
+            <p class="benefit-describle">100% secure payment</p>
+          </div>
+        </div>
+                     
+                     
+
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon4.png" alt="">
+            <h5 class="benefit-title">delivery Status</h5>
+            <p class="benefit-describle">Dedicated support </p>
+          </div>
+        </div>
+
+                      
+      </div>
+
+
+
+
+      <div class="row no-gutters">
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon4.png" alt="">
+          <h5 class="benefit-title">Items Name</h5>
+          <p class="benefit-describle">Dedicated support </p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon4.png" alt="">
+          <h5 class="benefit-title">Item Image</h5>
+          <p class="benefit-describle">Dedicated support </p>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon1.png" alt="">
+          <h5 class="benefit-title">Order Delivery Type</h5>
+          <p class="benefit-describle">Dedicated support</p>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon3.png" alt="">
+          <h5 class="benefit-title">Total Cost</h5>
+          <p class="benefit-describle">Dedicated support </p>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon3.png" alt="">
+          <h5 class="benefit-title">Zip Code</h5>
+          <p class="benefit-describle">Dedicated support </p>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon2.png" alt="">
+          <h5 class="benefit-title">Date</h5>
+          <p class="benefit-describle">Dedicated support </p>
+        </div>
+      </div>
+
+       
+
+    </div>
+  </div>
+</div>
+    `;
+};
+
 const QueryCheckout = () => {
   console.log("updateCheckout function");
 
@@ -307,19 +410,22 @@ const QueryCheckout = () => {
 
       res.payload.forEach((checkout) => {
         let historyDetails = {
-          purchaserName: product.cost,
-          checkoutAddress: product._id,
-          phoneNumber: product.food_product_name,
-          zipCode: product.product_type,
-          deliveryStatus: product.image_link,
-          itemsName: product.cost,
-          itemsNumber: product.cost,
-          itemImage: product.cost,
-          orderDeliveryType: product.long_description,
-          totalCost: product.cost,
+          purchaserName: checkout.purchaser_name,
+          checkoutAddress: checkout.checkout_address.address_name,
+          phoneNumber: checkout.checkout_address.phonenumber,
+          zipCode: checkout.checkout_address.zip_code,
+          deliveryStatus: checkout.delivery_status,
+          //how to access object inside array ?
+
+          itemsName: checkout.items.item_name,
+          itemsNumber: checkout.items.number,
+          itemImage: checkout.items.item_image,
+          orderDeliveryType: checkout.order_delivery_type,
+          totalCost: checkout.total_cost,
+          Date: checkout.Date,
         };
 
-        let htmlString = featuredProductItemTemplate(historyDetails);
+        let htmlString = checkOutHistoryItemTemplate(historyDetails);
         let htmlFragment = document.createElement("div");
         htmlFragment.innerHTML = htmlString;
         featuredProductDOM.appendChild(htmlFragment);
@@ -331,6 +437,8 @@ const QueryCheckout = () => {
   //window.location.assign("/shop_cart.html");
   console.log("UPDATECHECKOUT");
 };
+
+QueryCheckout();
 
 /**
 {
@@ -362,7 +470,7 @@ const QueryCheckout = () => {
         },
         "purchaser_name": "Folayan Iluyemi Michael",
         "Date": "2020-10-08T21:10:43.909Z",
-        "__v": 0
+         "__v": 0
     },
   ]
 }
