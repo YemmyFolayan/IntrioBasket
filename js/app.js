@@ -58,11 +58,10 @@ const addToCart = (id, name, type, imageUrl, price) => {
     var raw = JSON.stringify({
       cart_details: [
         {
-          item_name: "Cocoa powder",
-          number: 3,
-          initial_cost: 230,
-          item_image:
-            "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FCocoa%20powder.jpg?alt=media&token=d2ab9232-5451-449f-b3e8-2b60be576f34",
+          item_name: name,
+          number: 2,
+          initial_cost: price,
+          item_image: imageUrl,
         },
       ],
     });
