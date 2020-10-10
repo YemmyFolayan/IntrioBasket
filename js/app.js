@@ -276,7 +276,7 @@ const updateCheckout = (name, imageUrl, price, qty) => {
 
 // checkout details page after checkout
 
-const featuredProductDOM = document.getElementById("checkoutHistory");
+const checkoutHistoryDOM = document.getElementById("checkoutHistory");
 
 const checkOutHistoryItemTemplate = (historyDetails) => {
   return `
@@ -436,7 +436,7 @@ const QueryCheckout = () => {
         let htmlString = checkOutHistoryItemTemplate(historyDetails);
         let htmlFragment = document.createElement("div");
         htmlFragment.innerHTML = htmlString;
-        featuredProductDOM.appendChild(htmlFragment);
+        checkoutHistoryDOM.appendChild(htmlFragment);
       });
     })
 
