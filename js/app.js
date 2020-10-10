@@ -442,7 +442,6 @@ const QueryCheckout = () => {
 
     .catch((error) => console.log("error", error));
 
-  //window.location.assign("/shop_checkoutHistory.html");
   console.log("UPDATECHECKOUT");
 };
 
