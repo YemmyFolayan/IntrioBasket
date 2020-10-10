@@ -182,7 +182,7 @@ const updateCartButtonBadge = () => {
 };
 
 //update cart button function
-const updateCart = () => {
+const updateCart = (name, imageUrl, price, qty) => {
   console.log("updatecart function");
   var numbers = 1;
 
@@ -217,7 +217,7 @@ const updateCart = () => {
     .catch((error) => console.log("error", error));
 
   updateCartButtonBadge();
-  window.location.assign("/shop_cart.html");
+  //window.location.assign("/shop_cart.html");
   console.log("UPDATE");
 };
 
