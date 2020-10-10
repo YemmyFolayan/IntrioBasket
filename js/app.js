@@ -50,6 +50,7 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
     console.log("before create user cart");
 
     console.log("got here");
+    var numbers = 10;
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -59,7 +60,7 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
       cart_details: [
         {
           item_name: name,
-          number: qty,
+          number: numbers,
           initial_cost: price,
           item_image: imageUrl,
         },
