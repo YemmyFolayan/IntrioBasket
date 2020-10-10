@@ -223,14 +223,22 @@ const updateCart = (name, imageUrl, price, qty) => {
 
 const updateCheckout = (name, imageUrl, price, qty) => {
   console.log("updateCheckout function");
+
   var numbers = 1;
+  //from delivery form details
+  var address = "yemi house";
+  var totalCost = 2500;
+  var phoneNumber = "08103817187";
+  var purchaserName = "yemi";
+  var zipCode = "54321";
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append("x-access-token", `${userToken}`);
 
   var raw = JSON.stringify({
-    cart_details: [
+    order_delivery_type: "pick it up",
+    items: [
       {
         item_name: name,
         number: numbers,
@@ -238,6 +246,12 @@ const updateCheckout = (name, imageUrl, price, qty) => {
         item_image: imageUrl,
       },
     ],
+    number_of_items: numbers,
+    total_cost: totalCost,
+    address_name: address,
+    phonenumber: phoneNumber,
+    zip_code: zipCode,
+    purchaser_name: purchaserName,
   });
 
   var requestOptions = {
@@ -256,6 +270,32 @@ const updateCheckout = (name, imageUrl, price, qty) => {
     .catch((error) => console.log("error", error));
 
   updateCartButtonBadge();
+  //window.location.assign("/shop_cart.html");
+  console.log("UPDATECHECKOUT");
+};
+
+// checkout details page after checkout
+const QueryCheckout = () => {
+  console.log("updateCheckout function");
+
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  myHeaders.append("x-access-token", `${userToken}`);
+
+  var requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow",
+  };
+
+  fetch(
+    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout?purchaser_id=${userId}`,
+    requestOptions
+  )
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.log("error", error));
+  
   //window.location.assign("/shop_cart.html");
   console.log("UPDATECHECKOUT");
 };
@@ -318,40 +358,5 @@ const updateCheckoutHistory = () => {
 };
 
 updateCheckoutHistory();
-
-//updateCart
-
-const updateCart = () => {
-  fetch(
-    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/update-cart/5f6b26f9d41c5b00246e3f26",
-    {
-      method: "POST",
-      body: JSON.stringify({
-        cart_details: [
-          {
-            item_name: name,
-            number: qty,
-            initial_cost: price,
-            item_image: imageUrl,
-          },
-        ],
-      }),
-
-      headers: {
-        "Content-Type": "application/json; charset= UTF-8",
-      },
-    }
-  ).then(async (response) => {
-    try {
-      const json = await response.clone().json();
-      return json;
-    } catch (e) {
-      console.log(e);
-      return await response.text();
-    }
-  });
-};
-
-updateCart();
 
 */

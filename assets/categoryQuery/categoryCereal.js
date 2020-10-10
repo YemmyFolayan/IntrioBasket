@@ -54,9 +54,6 @@ const fetchFoodList = async () => {
 
 fetchFoodList();
 
-
-
-
 /* const app = document.getElementById("root12");
 
 // const subcontainer = document.createElement("div");
