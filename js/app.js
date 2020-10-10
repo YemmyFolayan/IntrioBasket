@@ -221,6 +221,45 @@ const updateCart = (name, imageUrl, price, qty) => {
   console.log("UPDATE");
 };
 
+const updateCheckout = (name, imageUrl, price, qty) => {
+  console.log("updateCheckout function");
+  var numbers = 1;
+
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  myHeaders.append("x-access-token", `${userToken}`);
+
+  var raw = JSON.stringify({
+    cart_details: [
+      {
+        item_name: name,
+        number: numbers,
+        initial_cost: price,
+        item_image: imageUrl,
+      },
+    ],
+  });
+
+  var requestOptions = {
+    method: "PUT",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow",
+  };
+
+  fetch(
+    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout/user/${userId}`,
+    requestOptions
+  )
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.log("error", error));
+
+  updateCartButtonBadge();
+  //window.location.assign("/shop_cart.html");
+  console.log("UPDATECHECKOUT");
+};
+
 // Mini Router (refreshes the page)
 //ROUTER for page redirect
 const router = (url) => {
