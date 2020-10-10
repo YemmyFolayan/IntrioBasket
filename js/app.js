@@ -202,7 +202,7 @@ const updateCart = (name, imageUrl, price, qty) => {
   });
 
   var requestOptions = {
-    method: "POST",
+    method: "PUT",
     headers: myHeaders,
     body: raw,
     redirect: "follow",
