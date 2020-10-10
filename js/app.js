@@ -292,10 +292,22 @@ const QueryCheckout = () => {
     `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout?purchaser_id=${userId}`,
     requestOptions
   )
+    /**
     .then((response) => response.text())
     .then((result) => console.log(result))
+    */
+
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      const res = data;
+      console.log("this DATA");
+      console.log(res);
+    })
+
     .catch((error) => console.log("error", error));
-  
+
   //window.location.assign("/shop_cart.html");
   console.log("UPDATECHECKOUT");
 };
