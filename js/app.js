@@ -53,10 +53,11 @@ const addToCart = (id, name, type, imageUrl, price) => {
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    myHeaders.append(
+    /* myHeaders.append(
       "Cookie",
       "x-access-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZveWVtY0BnbWFpbC5jb20iLCJpYXQiOjE2MDIxOTc5ODYsImV4cCI6MTYwMzQ5Mzk4Nn0.RyMl3rl03LuBjya1_7mS4ejy4u9QpRMPJHw2PN8fEOM"
     );
+    */
 
     var raw = JSON.stringify({
       cart_details: [
