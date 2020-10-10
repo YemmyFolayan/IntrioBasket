@@ -39,11 +39,11 @@ const url = `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
 console.log(url);
 
 const addToCart = (id, name, type, imageUrl, price, qty) => {
-  const productDetails = { id, name, type, imageUrl, price, qty: 1 };
+  const historyDetails = { id, name, type, imageUrl, price, qty: 1 };
 
   if (localStorage.getItem(CONFIG.CART_STORE) === null) {
     const cartList = [];
-    cartList.push(productDetails);
+    cartList.push(historyDetails);
     localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
     //call create user cart api here
     //create user cart
@@ -117,13 +117,13 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
   } else {
     const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
     let index = cartList.findIndex(
-      (cartItem) => cartItem.id === productDetails.id
+      (cartItem) => cartItem.id === historyDetails.id
     );
     if (index === -1) {
-      cartList.push(productDetails);
+      cartList.push(historyDetails);
     } else {
       cartList[index].qty =
-        Number(cartList[index].qty) + Number(productDetails.qty);
+        Number(cartList[index].qty) + Number(historyDetails.qty);
     }
 
     localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
@@ -304,6 +304,26 @@ const QueryCheckout = () => {
       const res = data;
       console.log("this DATA");
       console.log(res);
+
+      res.payload.forEach((checkout) => {
+        let historyDetails = {
+          purchaserName: product.cost,
+          checkoutAddress: product._id,
+          phoneNumber: product.food_product_name,
+          zipCode: product.product_type,
+          deliveryStatus: product.image_link,
+          itemsName: product.cost,
+          itemsNumber: product.cost,
+          itemImage: product.cost,
+          orderDeliveryType: product.long_description,
+          totalCost: product.cost,
+        };
+
+        let htmlString = featuredProductItemTemplate(historyDetails);
+        let htmlFragment = document.createElement("div");
+        htmlFragment.innerHTML = htmlString;
+        featuredProductDOM.appendChild(htmlFragment);
+      });
     })
 
     .catch((error) => console.log("error", error));
@@ -311,6 +331,42 @@ const QueryCheckout = () => {
   //window.location.assign("/shop_cart.html");
   console.log("UPDATECHECKOUT");
 };
+
+/**
+{
+  "status": "OK",
+  "message": "Checkout history fetched successfully",
+  "payload": [
+    {
+        "checkout_address": {
+            "address_name": "Eric house",
+            "phonenumber": "903456434345",
+            "zip_code": "55643434"
+        },
+        "delivery_status": "Pending",
+        "_id": "5f7f8053adc48200244cb0db",
+        "items": [
+            {
+                "item_name": "fish",
+                "number": 4,
+                "initial_cost": 600,
+                "item_image": "teaaqweddd"
+            }
+        ],
+        "order_delivery_type": "pick it up",
+        "number_of_items": 1,
+        "total_cost": 2425,
+        "purchaser_id": {
+            "_id": "5f6b26f9d41c5b00246e3f26",
+            "fullname": "Folayan Iluyemi Michael"
+        },
+        "purchaser_name": "Folayan Iluyemi Michael",
+        "Date": "2020-10-08T21:10:43.909Z",
+        "__v": 0
+    },
+  ]
+}
+*/
 
 // Mini Router (refreshes the page)
 //ROUTER for page redirect
