@@ -125,6 +125,7 @@ const deleteItem = (id) => {
   lookUpCartStore();
 };
 
+
 //userId is GLOBAL across the site
 //let userId = localStorage.getItem("id");
 console.log({ userId });

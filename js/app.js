@@ -136,10 +136,6 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
   // window.location.assign("/shop_cart.html");
 };
 
-// const raw = JSON.stringify({ "cart_details": [{ "item_name": "hello", "number": 50, "initial_cost": 60, "item_image": "teaaqweddd" }, { "item_name": "hello", "number": 50, "initial_cost": 60, "item_image": "teaaqweddd" }] })
-
-//deleteCartItem (slice)
-
 //Empty cart
 const emptyCart = () => {
   // const cartBadge = document.getElementById("emptyCartButton");
@@ -183,6 +179,46 @@ const updateCartButtonBadge = () => {
   } else {
     cartBadge.innerText = cartList.length;
   }
+};
+
+//update cart button function
+const updateCart = () => {
+  console.log("updatecart function");
+  var numbers = 1;
+
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  myHeaders.append("x-access-token", `${userToken}`);
+
+  var raw = JSON.stringify({
+    cart_details: [
+      {
+        item_name: name,
+        number: numbers,
+        initial_cost: price,
+        item_image: imageUrl,
+      },
+    ],
+  });
+
+  var requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow",
+  };
+
+  fetch(
+    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/update-cart/${userId}`,
+    requestOptions
+  )
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.log("error", error));
+
+  updateCartButtonBadge();
+  window.location.assign("/shop_cart.html");
+  console.log("UPDATE");
 };
 
 // Mini Router (refreshes the page)
