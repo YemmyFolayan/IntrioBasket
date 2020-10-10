@@ -53,11 +53,7 @@ const addToCart = (id, name, type, imageUrl, price) => {
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    myHeaders.append(
-      "x-access-token",
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWN2b25kZWU1QGdtYWlsLmNvbSIsImlhdCI6MTYwMjMxNzY1OCwiZXhwIjoxNjAzNjEzNjU4fQ.4A_ewxZD2yGgsOxQns74GL-cPSKtVhpiMAkAEssszLc"
-    );
-  
+    myHeaders.append("x-access-token", `${userToken}`);
 
     var raw = JSON.stringify({
       cart_details: [
@@ -79,7 +75,7 @@ const addToCart = (id, name, type, imageUrl, price) => {
     };
 
     fetch(
-      "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/5f4d0fd68cc9aa11e6151b88",
+      `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`,
       requestOptions
     )
       .then((response) => response.text())
