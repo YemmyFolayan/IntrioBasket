@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Order Complete</title>
+    <title>Checkout History</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <meta name="keywords" content="blog, business, clean, clear, cooporate, creative, design web, flat, marketing, minimal, portfolio, shop, shopping, unique">
@@ -24,7 +24,7 @@
 
   </head>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <body onload="startUp()">
+  <body>
 
 
   
@@ -141,7 +141,7 @@
           <ul>
             <li> <a class="breadcrumb-link" href="index.html"> <i class="fas fa-home"></i>Home</a></li>
             <li> <a class="breadcrumb-link" href="index.html">Shop</a></li>
-            <li> <a class="breadcrumb-link active" href="index.html">Order Complete</a></li>
+            <li> <a class="breadcrumb-link active" href="index.html">Checkout History</a></li>
           </ul>
         </div>
       </div>
@@ -162,14 +162,7 @@
                       </div>
                       </a>
                     </div>
-                    <div class="col-12 col-md-4">
-                      <div class="step-block active">
-                        <div class="step">
-                          <div id="content"> </div>
-                          <h2>Order Completed</h2><span>02</span>
-                        </div>
-                      </div>
-                    </div>
+                   
                 
                   </div>
                 </div>
@@ -209,253 +202,93 @@
                   </thead>
                   <tbody id="shopCartTBody"></tbody>
                 </table>
-              </div>
-            </div>
 
-            <div class="col-12 col-sm-12 text-center">
-                <button onclick="router('Homepage')" class="no-round-btn black cart-update">Continue Shoping</button>
-            </div>
+                <div id="checkoutHistory">
 
-
-
-            <div class="container">
-              <div class="jumbotron">
-                <h4 class="text-center title mx-auto">Make payment with Paystack <img src="/assets/images/paystack.png" height="25%" width="45"></h4>
-                <form class="form" id="pay-form">
-                  <div id="alert-holder"></div>
-                  <div class="text-center">
-                    <p>Please provide your details and click "Pay" to make your payment.</p>
+                  <div class="col-12 text-center">
+                    <h2 class="title mx-auto">CheckOut Details</h2>
                   </div>
-                  <fieldset class="form-group row">
-                    <label class="col-sm-3" for="firstname">First Name</label>
-                    <div class=" col-sm-9">
-                      <input class="form-control no-round-input-bg" id="firstname" type="text" placeholder="Your First name (optional)" />
-                    </div>
-                  </fieldset>
-                  <fieldset class="form-group row">
-                    <label class="col-sm-3" for="lastname">Last Name *</label>
-                    <div class=" col-sm-9">
-                      <input class="form-control no-round-input-bg" id="lastname" type="text" placeholder="Your Last name (optional)" />
-                    </div>
-                  </fieldset>
-                  <fieldset class="form-group row">
-                    <label class="col-sm-3" for="email">Email Address *</label>
-                    <div class=" col-sm-9">
-                      <input class="form-control no-round-input-bg" id="email" required="required" type="email" placeholder="Your Email Address" />
-                    </div>
-                    <small class="text-muted col-sm-9 col-sm-offset-3">We'll never share your email with anyone else.</small>
-                  </fieldset>
-                  <!-- The amount box is not displayed by default. Will stay so unless the GET parameter amountinkobo is a valid integer -->
-                  <fieldset class="form-group row" id="amountinnaira" style="display:none">
-                    <label class="col-sm-3" for="amount-in-naira">Amount (in Naira)</label>
-                    <div class="col-sm-9">
-                      <div class="input-group">
-                        <div class="input-group-addon">&#x20a6;</div>
-                        <input class="form-control no-round-input-bg" id="amount-in-naira" required="required" type="number" step="100" placeholder="Amount" />
-                        <div class="input-group-addon">.00</div>
+
+            
+                    <div class="benefit-block">
+                      <div class="our-benefits shadowless benefit-border">
+                        <div class="row no-gutters">
+                          <div class="col-12 col-md-6 col-lg-3">
+                            <div class="benefit-detail d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon1.png" alt="">
+                              <h5 class="benefit-title">Free Shipping</h5>
+                              <p class="benefit-describle">For all order over 99#</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-3">
+                            <div class="benefit-detail d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon2.png" alt="">
+                              <h5 class="benefit-title">Delivery On Time</h5>
+                              <p class="benefit-describle">If good have prolems</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-3">
+                            <div class="benefit-detail d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon3.png" alt="">
+                              <h5 class="benefit-title">Secure Payment</h5>
+                              <p class="benefit-describle">100% secure payment</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-3">
+                            <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon4.png" alt="">
+                              <h5 class="benefit-title">24/7 Support</h5>
+                              <p class="benefit-describle">Dedicated support </p>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="row no-gutters">
+                          <div class="col-12 col-md-6 col-lg-3">
+                            <div class="benefit-detail d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon1.png" alt="">
+                              <h5 class="benefit-title">Free Shipping</h5>
+                              <p class="benefit-describle">For all order over 99#</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-3">
+                            <div class="benefit-detail d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon2.png" alt="">
+                              <h5 class="benefit-title">Delivery On Time</h5>
+                              <p class="benefit-describle">If good have prolems</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-3">
+                            <div class="benefit-detail d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon3.png" alt="">
+                              <h5 class="benefit-title">Secure Payment</h5>
+                              <p class="benefit-describle">100% secure payment</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-3">
+                            <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon4.png" alt="">
+                              <h5 class="benefit-title">24/7 Support</h5>
+                              <p class="benefit-describle">Dedicated support </p>
+                            </div>
+                          </div>
+                        </div>
+
                       </div>
                     </div>
-                  </fieldset>
-                  <div id="cartTotalPaystack">
-                    <!--<p class="text-center" id="static-amount">You are paying: <span id="amountinngn">0</span> naira</p>-->
                   </div>
-                  <fieldset class="form-group row text-center">
-                    <div class="col-sm-offset-3 col-sm-9">
-                      <button class="no-round-btn black cart-update" type="button" onclick="validateAndPay()"> Pay </button>
-                    </div>
-                  </fieldset>
- 
-                </form>
+                </div>
+
+
+
+
+
+
               </div>
             </div>
-            <script src="https://js.paystack.co/v1/inline.js"></script>
-            <script>
-              // change this to your public key so you 
-              // will no more be prompted
-              var public_key = 'pk_test_88aa3e8f7eee3667872bc7c24d40f470ce40cf9e';
-    
-              /*
-              * Start up
-              */
-              function startUp(){
-                checkAmountInKobo();
-                promptForPublicKey();
-              }
-    
-              /*
-              * check if the public key set is valid
-              * 
-              * @return bool
-              */
-              function isValidPublicKey(){
-                var publicKeyPattern = new RegExp('^pk_(?:test|live)_','i');
-                return publicKeyPattern.test(public_key);
-              }
-    
-              /*
-              * Prompt for and set public key to use
-              * If public key set is not valid
-              */
-              function promptForPublicKey(){
-                if(!isValidPublicKey()){
-                  // get a public key to use
-                  public_key = prompt("To run this sample, you need to provide a public key.\n"+
-                                      "Please visit https://dashboard.paystack.co/#/settings/developer to get your "+
-                                      "public key and enter in the box below:", "pk_xxxx_");
-                  // check that we got a valid public key 
-                  // (starts with pk_live_ or pk_test_)
-                  if (!isValidPublicKey()) {
-                    var error_msg = "You didn't provide a public key. This page will not load.";
-                    alert(error_msg);
-                    document.getElementById('pay-form').innerHTML = error_msg;
-                  }
-                }
-              }
-              /* 
-              * Validate before opening Paystack popup
-              */
-              function validateAndPay(){
-                var email = document.getElementById('email').value;
-                if(!simpleValidEmail(email)){
-                  alert("Please provide a valid email");
-                  return;
-                }
-      
-                var amountinkobo = getAmountInKobo();
-                if(!amountinkobo){
-                  alert("Please provide a valid amount");
-                  document.getElementById('amountinnaira').style.display="block";
-                  document.getElementById('static-amount').style.display="none";
-                  return;
-                }
-      
-                // We are not validating firstname and lastname
-                var firstname = document.getElementById('firstname').value;
-                var lastname  = document.getElementById('lastname').value;
-      
-                payWithPaystack(email, amountinkobo, firstname, lastname);
-              }
-  
-              /* Get the query parameters for this window
-              * 
-              * source: http://stackoverflow.com/a/21210643/671568
-              */
-              function getParams(){
-                var queryDict = {};
-                location.search
-                  .substr(1)
-                  .split("&")
-                  .forEach(function(item) {
-                    queryDict[item.split("=")[0]] = item.split("=")[1];
-                  });
-                return queryDict;
-              }
-    
-              /* Check amount sent by get if it's a valid integer
-              * show the amount input box if not
-              */
-              function checkAmountInKobo(){
-                amountinkobo = getParams().amountinkobo;
-      
-                if(!simpleValidInt(amountinkobo)){
-                  // show the amount box since an amount was not specified by GET
-                  document.getElementById('amountinnaira').style.display="block";
-                  document.getElementById('static-amount').style.display="none";
-                } else {
-                  document.getElementById('amountinngn').innerHTML = amountinkobo / 100;
-                }
-              }
-  
-              /* Get amount sent by get if it's a valid integer
-              * Get the amount entered in input box  multiplied
-              *  by 100. Show alert if no valid amountinkobo can be found
-              */
-              function getAmountInKobo(){
-                amountinkobo = getParams().amountinkobo;
-      
-                if(!amountinkobo){
-                  amountinkobo = 100 * +document.getElementById('amount-in-naira').value;
-                }
-      
-                if(!simpleValidInt(amountinkobo)){
-                  alert("Please provide an amount to pay");
-                }
-      
-                return amountinkobo;
-              }
-  
-              /* Get a random reference number based on the current time
-              * 
-              * gotten from http://stackoverflow.com/a/2117523/671568
-              * replaced UUID with REF
-              */
-              function generateREF(){
-                var d = new Date().getTime();
-                if(window.performance && typeof window.performance.now === "function"){
-                  d += performance.now(); //use high-precision timer if available
-                }
-                var ref = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-                  var r = (d + Math.random()*16)%16 | 0;
-                  d = Math.floor(d/16);
-                  return (c=='x' ? r : (r&0x3|0x8)).toString(16);
-                });
-                return ref;
-              }
-    
-              /* Validate integer
-              *
-              * gotten from http://stackoverflow.com/a/25016143/671568
-              */
-              function simpleValidInt( data ) {
-                if (+data===parseInt(data)) {
-                  return true;
-                } else {
-                  return false;
-                }
-              };
 
-    
-              /* Validate email address 
-              * not meant for really secure email validation
-              *
-              * gotten from http://stackoverflow.com/a/28633540/671568
-              * Had to correct Regex, allowing A-Za-z0-9 to repeat
-              */
-              function simpleValidEmail( email ) {
-                return email.length < 256 && /^[^@]+@[^@]+[A-Za-z0-9]{2,}\.[^@]+[A-Za-z0-9]{2,}$/.test(email);
-              };
 
-              /* Show the paystack payment popup
-              * 
-              * source: https://developers.paystack.co/docs/paystack-inline
-              */
-              function payWithPaystack(validatedemail, amountinkobo, firstname, lastname){
-                var handler = PaystackPop.setup({
-                  key:       public_key,
-                  email:     validatedemail,
-                  firstname: firstname,
-                  lastname:  lastname,
-                  amount:    amountinkobo,
-                  ref:       generateREF(), // This uses a random transaction reference based 
-                                            // on the time the "Pay" button was clicked.
-                  callback:  function(response){
-                    // payment was received
-                    // clear away the form, show success message
-                    var msg = 'Success. The transaction reference is <b>"' + response.trxref + '"</b>';
-                    document.getElementById('alert-holder').innerHTML = '<div class="alert alert-success">' + msg + '</div>';
-                    document.getElementById("pay-form").reset();
-                  },
-                  onClose:  function(){
-                    // Visitor cancelled payment
-                    var msg = 'Cancelled. Please click the \'Pay\' button to try again';
-                    document.getElementById('alert-holder').innerHTML = '<div class="alert alert-danger">' + msg + '</div>';
-                  }
-                });
-                handler.openIframe();
-              }
-            </script>
+            
 
-          </div>
+           
+
+
+        <div class="container">
+
+          
           <div class="row justify-content-end">
             <div class="col-12 col-md-6 col-lg-4">
               <div id="cartTotalTable" class="cart-total_block">
@@ -467,12 +300,15 @@
                   </colgroup>
                   <tbody id="cartTotalTBody"></tbody>
                 </table>
-                <div class="checkout-method">
+              <div class="row">
+                <div class="col-12 col-sm-12 text-center">
                   <button class="no-round-btn black cart-update" onclick="window.print()">Print Reciept</button>
-                  <button class="no-round-btn black cart-update" onclick="updateCheckout();QueryCheckout()">Checkout</button>
+                  
+                </div>
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </div>
@@ -482,7 +318,10 @@
       <div class="order-complete">
         <div class="container">
           <div class="row">
-           
+            <div class="col-12 justify-content-center align-items-center text-center">
+              <h4>Congratulation! You’ve <span>completed </span>payment</h4>
+            </div>
+
 
 
 
