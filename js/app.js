@@ -281,7 +281,7 @@ const checkoutHistoryDOM = document.getElementById("checkoutHistory");
 const checkOutHistoryItemTemplate = (historyDetails) => {
   return `
   <div class="col-12 text-center">
-  <h2 class="title mx-auto">CheckOut Details</h2>
+  <h2 class="title mx-auto">Date: ${historyDetails.Date} </h2>
 </div>
 
         
@@ -425,9 +425,9 @@ const QueryCheckout = () => {
           deliveryStatus: checkout.delivery_status,
           //how to access object inside array ?
 
-          itemsName: checkout.items.item_name,
-          itemsNumber: checkout.items.number,
-          itemImage: checkout.items.item_image,
+          itemsName: checkout.items[0].item_name,
+          itemsNumber: checkout.items[0].number,
+          itemImage: checkout.items[0].item_image,
           orderDeliveryType: checkout.order_delivery_type,
           totalCost: checkout.total_cost,
           Date: checkout.Date,
