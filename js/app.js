@@ -133,7 +133,7 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
   updateCartButtonBadge();
 
   //LATER YOU CAN INCLUDE GOTO CART HERE OR CONTINUE SHOPPING
-  // window.location.assign("/shop_cart.html");
+  window.location.assign("/shop_cart.html");
 };
 
 //Empty cart
@@ -221,6 +221,7 @@ const updateCart = (name, imageUrl, price, qty) => {
   console.log("UPDATE");
 };
 
+/*
 
 (function() {
   var button = document.getElementsByTagName("button");
@@ -243,6 +244,9 @@ var city = document.getElementById("city").value;
 var phoneNumber = document.getElementById("zipCode").value;
 console.log(city);
 var email = document.getElementById("email").value;
+
+
+*/
 
 const updateCheckout = (name, imageUrl, price, qty) => {
   console.log("updateCheckout function");
