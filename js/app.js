@@ -232,6 +232,19 @@ const updateCheckout = (name, imageUrl, price, qty) => {
   var purchaserName = "yemi";
   var zipCode = "54321";
 
+  var Form = document.getElementById("form");
+  var numbers = document.getElementById("email").value;
+  var address = document.getElementById("password").value;
+  var totalCost = document.getElementById("password").value;
+
+  console.log("form value");
+  var purchaserName = document.getElementById("password").value;
+  var zipCode = document.getElementById("password").value;
+
+
+
+  //this from form value and display it on the screen
+
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append("x-access-token", `${userToken}`);
