@@ -3,8 +3,6 @@
 var Form = document.getElementById("form");
 const userNameDOM = document.getElementById("user");
 
-
-
 Form.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -51,24 +49,7 @@ Form.addEventListener("submit", function (e) {
 
       localStorage.setItem("name", name);
 
-      const userNameTemplate = (data) => {
-        return `
-        <div class="login d-flex" id="loginflex">
-        ${data.payload.fullname}
-        </div>
-          `;
-      };
-
-      let htmlString = userNameTemplate(data);
-      let htmlFragment = document.createElement("div");
-      htmlFragment.innerHTML = htmlString;
-      userNameDOM.appendChild(htmlFragment);
-
       //AT this block, i want to compare the id with the one in user also use the id for cart logic
-
-      const url = `http://intriobasket.pexceptos.com/api/user/${id}`;
-
-      console.log(url);
 
       if (msg == "Log in Successful") {
         const name = data.payload.fullname;
