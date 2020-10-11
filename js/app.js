@@ -533,6 +533,7 @@ const CLIENTNameDOM = document.getElementById("userName");
 console.log("USERNAMEEEEEEE");
 
 let clientName = localStorage.getItem("name");
+
 console.log(clientName);
 const userNameTemplate = (clientName) => {
   return `

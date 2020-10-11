@@ -3,8 +3,7 @@
 var Form = document.getElementById("form");
 const userNameDOM = document.getElementById("user");
 
-let name;
-console.log(name);
+
 
 Form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -47,7 +46,7 @@ Form.addEventListener("submit", function (e) {
 
       console.log(token);
 
-      name = data.payload.fullname;
+      const name = data.payload.fullname;
       console.log("this is : ", name, id);
 
       localStorage.setItem("name", name);
