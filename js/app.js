@@ -417,6 +417,116 @@ const checkOutHistoryItemTemplate = (historyDetails) => {
 
 //GET ALL checkout
 
+const GetAllCheckoutDOM = document.getElementById("GetAllCheckout");
+
+const GetAllCheckoutItemTemplate = (historyDetails) => {
+  return `
+  <div class="col-12 text-center">
+  <h2 class="title mx-auto">Date: ${historyDetails.Date} </h2>
+</div>
+
+        
+  <div class="benefit-block">
+    <div class="our-benefits shadowless benefit-border">
+      <div class="row no-gutters">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="benefit-detail d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon4.png" alt="">
+            <h5 class="benefit-title">Purchaser Name</h5>
+            <p class="benefit-describle">${historyDetails.purchaserName}</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="benefit-detail d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon3.png" alt="">
+            <h5 class="benefit-title">Checkout Address</h5>
+            <p class="benefit-describle">${historyDetails.checkoutAddress}</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="benefit-detail d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon3.png" alt="">
+            <h5 class="benefit-title">Phone Number</h5>
+            <p class="benefit-describle">${historyDetails.phoneNumber}</p>
+          </div>
+        </div>
+                     
+                     
+
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon4.png" alt="">
+            <h5 class="benefit-title">delivery Status</h5>
+            <p class="benefit-describle">${historyDetails.deliveryStatus} </p>
+          </div>
+        </div>
+
+                      
+      </div>
+
+
+
+
+      <div class="row no-gutters">
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon4.png" alt="">
+          <h5 class="benefit-title">Items Name</h5>
+          <p class="benefit-describle">${historyDetails.itemsName} </p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon4.png" alt="">
+          <h5 class="benefit-title">Item Image</h5>
+          <p class="benefit-describle">${historyDetails.itemImage}</p>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon1.png" alt="">
+          <h5 class="benefit-title">Order Delivery Type</h5>
+          <p class="benefit-describle">${historyDetails.orderDeliveryType}</p>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon3.png" alt="">
+          <h5 class="benefit-title">Total Cost</h5>
+          <p class="benefit-describle">${historyDetails.totalCost}</p>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon3.png" alt="">
+          <h5 class="benefit-title">Zip Code</h5>
+          <p class="benefit-describle">${historyDetails.zipCode}</p>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon2.png" alt="">
+          <h5 class="benefit-title">Date</h5>
+          <p class="benefit-describle">${historyDetails.Date} </p>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon2.png" alt="">
+          <h5 class="benefit-title">Item Number</h5>
+          <p class="benefit-describle">${historyDetails.itemsNumber} </p>
+        </div>
+      </div>
+
+       
+
+    </div>
+  </div>
+</div>
+    `;
+};
+
 const GetAllCheckout = () => {
   console.log("GetAllCheckout function");
 
@@ -458,10 +568,10 @@ const GetAllCheckout = () => {
           Date: checkout.Date,
         };
 
-        let htmlString = checkOutHistoryItemTemplate(historyDetails);
+        let htmlString = GetAllCheckoutItemTemplate(historyDetails);
         let htmlFragment = document.createElement("div");
         htmlFragment.innerHTML = htmlString;
-        checkoutHistoryDOM.appendChild(htmlFragment);
+        GetAllCheckoutDOM.appendChild(htmlFragment);
       });
     })
 
@@ -535,8 +645,6 @@ console.log("USERNAMEEEEEEE");
 let clientName = localStorage.getItem("name");
 console.log({ clientName });
 
-
-
 const userNameTemplate = (clientName) => {
   return `
   <a href="login.html">Welcome ! ${clientName}<i class="fas fa-user"></i>Logout</a>
@@ -554,7 +662,6 @@ const DisplayUserNameTemplate = () => {
 };
 
 DisplayUserNameTemplate();
-
 
 /**
 {
