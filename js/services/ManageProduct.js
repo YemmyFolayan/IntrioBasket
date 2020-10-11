@@ -1,4 +1,4 @@
-const manageProductDOM = document.getElementById("manageProducts");
+const manageProductDOM = document.getElementById("ManageProducts");
 
 const manageProductItemTemplate = (productDetails) => {
   return `
@@ -12,19 +12,14 @@ const manageProductItemTemplate = (productDetails) => {
             <div class="product-select">
                 
                 <button class="add-to-cart round-icon-btn">
-                    <i class="fa fa-shopping-cart"></i>
+                    <i class="fa fa-plus"></i>
                 </button>
                 <button class="quickview round-icon-btn">
-                    <i class="far fa-eye"></i>
+                    <i class="fa fa-minus"></i>
                 </button>
             </div>
         </div>
     `;
-};
-
-// Returned first 9 products so as to make the design balance on the homepage
-const getFirst9 = (foodList) => {
-  return foodList.slice(0, 9);
 };
 
 const fetchFoodList = async () => {
@@ -32,8 +27,8 @@ const fetchFoodList = async () => {
 
   const res = await api.request(endpoint); // TODO: handle errors..
 
-  const featuredProducts = getFirst9(res.payload);
-  featuredProducts.forEach((product) => {
+ 
+  res.payload.forEach((product) => {
     let productDetails = {
       id: product._id,
       name: product.food_product_name,
