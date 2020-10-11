@@ -221,6 +221,29 @@ const updateCart = (name, imageUrl, price, qty) => {
   console.log("UPDATE");
 };
 
+
+(function() {
+  var button = document.getElementsByTagName("button");
+  var userInput = document.getElementById("user_input"); // Get only the element.
+
+  button[0].addEventListener("click", function() {
+    console.log(userInput.value); // Get the value here.
+  }, false);
+})();
+
+var Form = document.getElementById("form");
+console.log("form value");
+var numbers = document.getElementById("numbers").value;
+var address = document.getElementById("address").value;
+var totalCost = document.getElementById("password").value;
+var purchaserName = document.getElementById("purchaserName").value;
+var zipCode = document.getElementById("zipCode").value;
+var state = document.getElementById("state").value;
+var city = document.getElementById("city").value;
+var phoneNumber = document.getElementById("zipCode").value;
+console.log(city);
+var email = document.getElementById("email").value;
+
 const updateCheckout = (name, imageUrl, price, qty) => {
   console.log("updateCheckout function");
 
@@ -231,17 +254,6 @@ const updateCheckout = (name, imageUrl, price, qty) => {
   var phoneNumber = "08103817187";
   var purchaserName = "yemi";
   var zipCode = "54321";
-
-  var Form = document.getElementById("form");
-  var numbers = document.getElementById("email").value;
-  var address = document.getElementById("password").value;
-  var totalCost = document.getElementById("password").value;
-
-  console.log("form value");
-  var purchaserName = document.getElementById("password").value;
-  var zipCode = document.getElementById("password").value;
-
-
 
   //this from form value and display it on the screen
 
