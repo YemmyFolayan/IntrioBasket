@@ -532,9 +532,11 @@ QueryCheckout();
 const CLIENTNameDOM = document.getElementById("userName");
 console.log("USERNAMEEEEEEE");
 
-const clientName = localStorage.getItem("name");
+let clientName = localStorage.getItem("name");
+console.log({ clientName });
 
-console.log(clientName);
+
+
 const userNameTemplate = (clientName) => {
   return `
   <a href="login.html">Welcome ! ${clientName}<i class="fas fa-user"></i>Logout</a>

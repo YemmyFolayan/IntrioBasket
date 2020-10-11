@@ -42,8 +42,6 @@ Form.addEventListener("submit", function (e) {
 
       localStorage.setItem("token", token);
 
-      console.log(token);
-
       const name = data.payload.fullname;
       console.log("this is : ", name, id);
 
