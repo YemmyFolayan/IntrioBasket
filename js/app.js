@@ -415,6 +415,63 @@ const checkOutHistoryItemTemplate = (historyDetails) => {
     `;
 };
 
+//GET ALL checkout
+
+const GetAllCheckout = () => {
+  console.log("GetAllCheckout function");
+
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow",
+  };
+
+  fetch(
+    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout/get-all",
+    requestOptions
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      const res = data;
+      console.log("this DATA");
+      console.log(res);
+
+      res.payload.forEach((checkout) => {
+        let historyDetails = {
+          purchaserName: checkout.purchaser_name,
+          checkoutAddress: checkout.checkout_address.address_name,
+          phoneNumber: checkout.checkout_address.phonenumber,
+          zipCode: checkout.checkout_address.zip_code,
+          deliveryStatus: checkout.delivery_status,
+          //how to access object inside array ?
+
+          itemsName: checkout.items[0].item_name,
+          itemsNumber: checkout.items[0].number,
+          itemImage: checkout.items[0].item_image,
+          orderDeliveryType: checkout.order_delivery_type,
+          totalCost: checkout.total_cost,
+          Date: checkout.Date,
+        };
+
+        let htmlString = checkOutHistoryItemTemplate(historyDetails);
+        let htmlFragment = document.createElement("div");
+        htmlFragment.innerHTML = htmlString;
+        checkoutHistoryDOM.appendChild(htmlFragment);
+      });
+    })
+
+    .catch((error) => console.log("error", error));
+
+  console.log("GET ALL CHECKOUT");
+};
+
+GetAllCheckout();
+
 const QueryCheckout = () => {
   console.log("updateCheckout function");
 
@@ -432,11 +489,6 @@ const QueryCheckout = () => {
     `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout?purchaser_id=${userId}`,
     requestOptions
   )
-    /**
-    .then((response) => response.text())
-    .then((result) => console.log(result))
-    */
-
     .then(function (response) {
       return response.json();
     })

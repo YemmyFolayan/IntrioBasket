@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>All Clients Checkout History</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <meta name="keywords" content="blog, business, clean, clear, cooporate, creative, design web, flat, marketing, minimal, portfolio, shop, shopping, unique">
+    <meta name="author" content="MARTECH | Deer Creative Theme">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom_bootstrap.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/elegant.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/scroll.css">
+    <link rel="stylesheet" href="assets/css/icomoon.css">
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+    <link rel="shortcut icon" href="assets/images/shortcut_logo.png">
+
+
+    <link href="https://www.filepicker.io/api/file/Lh5PgMCTrKBCvUNRhSKy" rel="shortcut icon" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet" />
+
+  </head>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <body>
+
+
+  
+    <div id="main">
+      <header>
+
+        <nav class="navigation d-flex align-items-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-2"><a class="logo" href="index.html"><img src="assets/images/logo.png" alt=""></a></div>
+              <div class="col-8">
+                <div class="navgition-menu d-flex align-items-center justify-content-center">
+                  <ul class="mb-0">
+                    <li class="toggleable"> <a class="menu-item" href="index.html">Home</a>
+                      
+                    </li>
+                    <li class="toggleable"> <a class="menu-item active" href="shop.html">Shop</a>
+                     
+                    </li>
+                    
+                    <li class="toggleable"> <a class="menu-item" href="javascript:void()">Pages</a>
+                      <ul class="sub-menu">
+                        <li><a href="login.html">logout</a></li>
+                       
+                        <li><a href="FAQ.html">FAQ</a></li>
+                     
+                        <li><a href="contact_us.html">contact us</a></li>
+                       
+                      </ul>
+                    </li>
+                    <li class="toggleable"><a class="menu-item" href="about_us.html">About us</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="product-function d-flex align-items-center justify-content-end">
+                  <div id="wishlist">
+                    <a class="function-icon icon_heart_alt" href="javascript:void()"></a>
+                  </div>
+                  <div onclick="router('shop_cart')" id="cartButton" class="function-icon hover">
+                    <i class="fa fa fa-shopping-cart"></i>
+                    <sup style="top: -.5em">
+                      <span id="cartButtonBadge" class="my-badge badge-success">0</span>
+                    </sup>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div id="mobile-menu">
+          <div class="container">
+            <div class="row">
+              <div class="col-3">
+                <div class="mobile-menu_block d-flex align-items-center"><a class="mobile-menu--control" href="javascript:void()"><i class="fas fa-bars"></i></a>
+                  <div id="ogami-mobile-menu">
+                    <button class="no-round-btn" id="mobile-menu--closebtn">Close menu</button>
+                    <div class="mobile-menu_items">
+                      <ul class="mb-0 d-flex flex-column">
+                        <li class="toggleable"> <a class="menu-item active" href="index.html">Home</a><span class="sub-menu--expander"><i class="icon_plus"></i></span>
+                          <ul class="sub-menu">
+                                        </ul>
+                        </li>
+                        <li class="toggleable"><a class="menu-item" href="shop.html">Shop</a><span class="sub-menu--expander"><i class="icon_plus"></i></span>
+                          <ul class="sub-menu">
+                                                    </ul>
+                        </li>
+                        
+                        <li class="toggleable"><a class="menu-item" href="javascript:void()">Pages</a><span class="sub-menu--expander"><i class="icon_plus"></i></span>
+                          <ul class="sub-menu">
+                            <li><a href="login.html">logout</a></li>
+                          
+                            <li><a href="FAQ.html">FAQ</a></li>
+                          
+                            <li><a href="about_us.html">about us</a></li>
+                            <li><a href="contact_us.html">contact us</a></li>
+                            
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mobile-login">
+                      <h2>My account</h2><a href="login.html">Logout</a>
+                    </div>
+                    <div class="mobile-social"><a href=""><i class="fab fa-facebook-f"> </i></a><a href=""><i class="fab fa-twitter"></i></a><a href=""><i class="fab fa-invision"> </i></a><a href=""><i class="fab fa-instagram"> </i></a></div>
+                  </div>
+                  <div class="ogamin-mobile-menu_bg"></div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="mobile-menu_logo text-center d-flex justify-content-center align-items-center"><a href=""><img src="assets/images/logo.png" alt=""></a></div>
+              </div>
+              <div class="col-3">
+                <div class="mobile-product_function d-flex align-items-center justify-content-end">
+          
+                  <div onclick="router('shop_cart')" id="cartButton" class="function-icon hover">
+                    <i class="fa fa fa-shopping-cart"></i>
+                    <sup style="top: -.5em">
+                      <span id="cartButtonBadge" class="my-badge badge-success">0</span>
+                    </sup>
+                  </div>
+                  <!--shop_shop_cart.html-->
+                </div>
+   
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </header>
+      <!-- End header-->
+      <div class="ogami-breadcrumb">
+        <div class="container">
+          <ul>
+            <li> <a class="breadcrumb-link" href="index.html"> <i class="fas fa-home"></i>Home</a></li>
+            <li> <a class="breadcrumb-link" href="../admindashboard/dashboard.html">Dashboard</a></li>
+            <li> <a class="breadcrumb-link active" href="javascript:void()">All Clients Checkout History</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- End breadcrumb-->
+      
+      <div class="shopping-cart">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center">
+              <h1 class="title mx-auto">All Clients Checkout History</h1>
+            </div>
+            <div class="col-12">
+              <div class="product-table">
+                
+               
+                <div id="checkoutHistory">
+
+                </div>
+
+
+
+
+
+
+              </div>
+            </div>
+
+
+            
+
+           
+
+
+        <div class="container">
+
+          
+          <div class="row justify-content-end">
+            <div class="col-12 col-md-6 col-lg-4">
+              <div id="cartTotalTable" class="cart-total_block">
+                <h2>Cart total</h2>
+                <table class="table">
+                  <colgroup>
+                    <col span="1" style="width: 50%">
+                    <col span="1" style="width: 50%">
+                  </colgroup>
+                  <tbody id="cartTotalTBody"></tbody>
+                </table>
+              <div class="row">
+                <div class="col-12 col-sm-12 text-center">
+                  <button class="no-round-btn black cart-update" onclick="window.print()">PRINT ALL CHECKOUTS</button>
+                  
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <!-- End shopping cart-->
+
+
+      <!-- End order complete-->
+     
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 text-sm-center text-md-left">
+              <div class="footer-logo"><img src="assets/images/logo.png" alt=""></div>
+              <div class="footer-contact">
+                <p>Address: S01, Pathfield mall, Beside Rainoil Filling Station, 4th Avenue,Gwarimpa, Abuja, F.C.T</p>
+                <p>Phone: +234456789999</p>
+                <p>Email: info@intriosynergy.com/p>
+              </div>
+              <div class="footer-social"><a class="round-icon-btn" href=""><i class="fab fa-facebook-f"> </i></a><a
+                  class="round-icon-btn" href=""><i class="fab fa-twitter"></i></a><a class="round-icon-btn" href=""><i
+                    class="fab fa-invision"> </i></a><a class="round-icon-btn" href=""><i
+                    class="fab fa-instagram"></i></a></div>
+            </div>
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-12 col-sm-6 text-sm-center text-md-left">
+                  <div class="footer-quicklink">
+                    <h5>Infomation</h5><a href="about_us.html">About us</a><a href="checkout.html">Check out</a><a
+                      href="contact_us.html">Contact</a><a href="about_us.html">Service</a>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 text-sm-center text-md-left">
+                  <div class="footer-quicklink">
+                    <h5>My Account</h5><a href="contact_us.html">Contact</a><a
+                      href="shop_cart.html">Shopping cart</a><a href="shop.html">Shop</a>
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="newletter">
+          <div class="container">
+            <div class="row justify-content-between align-items-center">
+              <div class="col-12 col-md-7">
+                <div class="newletter_text text-center text-md-left">
+                  <h5>Join Our Newsletter Now</h5>
+                  <p>Get E-mail updates about our latest shop and special offers.</p>
+                </div>
+              </div>
+              <div class="col-12 col-md-5">
+                <div class="newletter_input">
+                  <input class="round-input" type="text" placeholder="Enter your email">
+                  <button>Subcribe</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-credit">
+          <div class="container">
+            <div class="footer-creadit_block d-flex flex-column flex-md-row justify-content-start justify-content-md-between align-items-baseline align-items-md-center">
+              <p class="author">Copyright © 2020 Intrio Basket- All Rights Reserved.</p><img class="payment-method" src="assets/images/payment.png" alt="">
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End footer-->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/jquery.easing.js"></script>
+    <script src="assets/js/jquery.scrollUp.min.js"></script>
+    <script src="assets/js/jquery.zoom.min.js"></script>
+    <script src="assets/js/parallax.js"></script>
+    <script src="assets/js/jquery.fancybox.js"></script>
+    <script src="assets/js/numscroller-1.0.js"></script>
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.shop.js"></script>
+
+
+    <!--Config -->
+    <script src="config/constants.js"></script>
+
+    <!-- Utils -->
+    <script src="js/utils/api-request.js"></script>
+
+    <!-- App Logic -->
+    <script src="js/app.js"></script>
+
+
+    <!-- Services -->
+    <script src="js/services/checkout.js"></script>
+
+  </body>
+</html>
