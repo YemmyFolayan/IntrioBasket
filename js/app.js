@@ -537,7 +537,7 @@ const clientName = localStorage.getItem("name");
 console.log(clientName);
 const userNameTemplate = (clientName) => {
   return `
-  <a href="login.html">Welcome ! clientName<i class="fas fa-user"></i>Logout</a>
+  <a href="login.html">Welcome ! ${clientName}<i class="fas fa-user"></i>Logout</a>
     `;
 };
 
