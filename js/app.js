@@ -10,7 +10,6 @@ document.addEventListener(
   false
 );
 
-
 // Mini Router (refreshes the page)
 //ROUTER for page redirect
 const router = (url) => {
@@ -98,38 +97,6 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
-
-    /**fetch(
-      `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`,
-      {
-        method: "POST",
-        body: JSON.stringify({
-          cart_details: [
-            {
-              item_name: name,
-              number: 20,
-              initial_cost: price,
-              item_image: imageUrl,
-            },
-          ],
-        }),
-
-        headers: {
-          "Content-Type": "application/json; charset= UTF-8",
-          "Cookie": `access_token=${userToken}`,
-        },
-      }
-    )
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        var msg = data.message;
-        console.log(msg);
-        console.log("create user cart");
-      });
-      **/
-
     console.log("After create user cart");
   } else {
     const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
@@ -165,25 +132,6 @@ const emptyCart = () => {
   updateCartButtonBadge();
 };
 
-/**
- * Update Cart Badge Function - Updates the Cart Button on the header section
- */
-/**
- * 
-PUT
-Hook this  endpoint up with update cart function to allow processing at the backend 
-
-Update User Checkout History
-http://intriobasket.pexceptos.com/api/checkout/user/id
-
-
-
-PUT
-
-Update User Cart
-http://intriobasket.pexceptos.com/api/user/update-cart/id
-
- */
 const updateCartButtonBadge = () => {
   const cartBadge = document.getElementById("cartButtonBadge");
   console.log(cartBadge);
@@ -237,33 +185,6 @@ const updateCart = (name, imageUrl, price, qty) => {
   //window.location.assign("/shop_cart.html");
   console.log("UPDATE");
 };
-
-/*
-
-(function() {
-  var button = document.getElementsByTagName("button");
-  var userInput = document.getElementById("user_input"); // Get only the element.
-
-  button[0].addEventListener("click", function() {
-    console.log(userInput.value); // Get the value here.
-  }, false);
-})();
-
-var Form = document.getElementById("form");
-console.log("form value");
-var numbers = document.getElementById("numbers").value;
-var address = document.getElementById("address").value;
-var totalCost = document.getElementById("password").value;
-var purchaserName = document.getElementById("purchaserName").value;
-var zipCode = document.getElementById("zipCode").value;
-var state = document.getElementById("state").value;
-var city = document.getElementById("city").value;
-var phoneNumber = document.getElementById("zipCode").value;
-console.log(city);
-var email = document.getElementById("email").value;
-
-
-*/
 
 const updateCheckout = (name, imageUrl, price, qty) => {
   console.log("updateCheckout function");
@@ -431,7 +352,6 @@ const checkOutHistoryItemTemplate = (historyDetails) => {
 </div>
     `;
 };
-
 
 const QueryCheckout = () => {
   console.log("updateCheckout function");
@@ -601,7 +521,6 @@ const GetAllCheckoutItemTemplate = (historyDetails) => {
     `;
 };
 
-
 const GetAllCheckout = () => {
   console.log("GetAllCheckout function");
 
@@ -656,8 +575,6 @@ const GetAllCheckout = () => {
 };
 
 GetAllCheckout();
-
-
 
 //USER NAME ON HOMEPAGE TEMPLATE
 const CLIENTNameDOM = document.getElementById("userName");
@@ -718,49 +635,4 @@ DisplayUserNameTemplate();
     },
   ]
 }
-*/
-
-
-/**
-//Update User Checkout History
-const updateCheckoutHistory = () => {
-  fetch(
-    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout/user/5f6b26f9d41c5b00246e3f26",
-    {
-      method: "PUT",
-      body: JSON.stringify({
-        order_delivery_type: "pick it up",
-        items: [
-          {
-            item_name: name,
-            number: qty,
-            initial_cost: price,
-            item_image: imageUrl,
-          },
-        ],
-        number_of_items: qty,
-        total_cost: 2425,
-        address_name: "Eric house",
-        phonenumber: "903456434345",
-        zip_code: "55643434",
-        purchaser_name: name,
-      }),
-
-      headers: {
-        "Content-Type": "application/json; charset= UTF-8",
-      },
-    }
-  ).then(async (response) => {
-    try {
-      const json = await response.clone().json();
-      return json;
-    } catch (e) {
-      console.log(e);
-      return await response.text();
-    }
-  });
-};
-
-updateCheckoutHistory();
-
 */
