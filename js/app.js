@@ -528,6 +528,31 @@ const QueryCheckout = () => {
 
 QueryCheckout();
 
+//USER NAME ON HOMEPAGE TEMPLATE
+const CLIENTNameDOM = document.getElementById("userName");
+console.log("USERNAMEEEEEEE");
+
+let clientName = localStorage.getItem("name");
+console.log(clientName);
+const userNameTemplate = (clientName) => {
+  return `
+  <a href="login.html">Welcome ! ${clientName}<i class="fas fa-user"></i>Logout</a>
+    `;
+};
+
+const DisplayUserNameTemplate = () => {
+  let htmlString = userNameTemplate(clientName);
+  let htmlFragment = document.createElement("div");
+  htmlFragment.innerHTML = htmlString;
+  CLIENTNameDOM.appendChild(htmlFragment);
+
+  console.log("USERNAMEEEEEEE");
+  console.log(name);
+};
+
+DisplayUserNameTemplate();
+
+
 /**
 {
   "status": "OK",

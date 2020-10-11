@@ -49,7 +49,8 @@ Form.addEventListener("submit", function (e) {
 
       name = data.payload.fullname;
       console.log("this is : ", name, id);
-      console.log(id);
+
+      localStorage.setItem("name", name);
 
       const userNameTemplate = (data) => {
         return `
