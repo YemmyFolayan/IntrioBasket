@@ -10,6 +10,23 @@ document.addEventListener(
   false
 );
 
+
+// Mini Router (refreshes the page)
+//ROUTER for page redirect
+const router = (url) => {
+  // Check for url
+  if (typeof url === "undefined") throw new Error("Invalid URL!");
+
+  let pageUrl = "";
+  if (url.includes(".html")) {
+    pageUrl = url;
+  } else {
+    pageUrl = url.concat(".html");
+  }
+
+  window.location.assign(pageUrl);
+  updateCartButtonBadge();
+};
 /**
  * addToCart: This function adds products to user cart.
  * - Cart is persistent
@@ -703,22 +720,6 @@ DisplayUserNameTemplate();
 }
 */
 
-// Mini Router (refreshes the page)
-//ROUTER for page redirect
-const router = (url) => {
-  // Check for url
-  if (typeof url === "undefined") throw new Error("Invalid URL!");
-
-  let pageUrl = "";
-  if (url.includes(".html")) {
-    pageUrl = url;
-  } else {
-    pageUrl = url.concat(".html");
-  }
-
-  window.location.assign(pageUrl);
-  updateCartButtonBadge();
-};
 
 /**
 //Update User Checkout History
