@@ -68,9 +68,9 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
     console.log("got here");
     ///ERROR HERE
     var numbers = 2;
-    var name = name;
-    var price = price;
-    var imageUrl = imageUrl;
+    var name = folayan yemi;
+    var price = 2300;
+    var imageUrl = "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FBaking%20powder.jpg?alt=media&token=713ea73d-a563-45af-ba4f-a9bf6a60f08c";
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
