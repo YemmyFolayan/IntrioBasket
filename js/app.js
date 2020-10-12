@@ -10,6 +10,30 @@ document.addEventListener(
   false
 );
 
+
+const updateCartButtonBadge = () => {
+  //todo get this by querySelector
+  var cartBadges = document.querySelectorAll(".cartButtonBadge");
+
+  console.log(cartBadges);
+
+  const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+  cartBadges.forEach(function (cartBadge) {
+    if (cartList === null) {
+      cartBadge.innerText = 0;
+      console.log("cartBadge");
+      console.log(cartBadge);
+    } else {
+      cartBadge.innerText = cartList.length;
+
+      console.log(cartBadges);
+      console.log(cartBadge);
+    }
+  });
+};
+
+
+
 // Mini Router (refreshes the page)
 //ROUTER for page redirect
 const router = (url) => {
@@ -132,28 +156,6 @@ const emptyCart = () => {
 
   updateCartButtonBadge();
 };
-
-const updateCartButtonBadge = () => {
-  //todo get this by querySelector
-  var cartBadges = document.querySelectorAll(".cartButtonBadge");
-
-  console.log(cartBadges);
-
-  const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
-  cartBadges.forEach(function (cartBadge) {
-    if (cartList === null) {
-      cartBadge.innerText = 0;
-      console.log("cartBadge");
-      console.log(cartBadge);
-    } else {
-      cartBadge.innerText = cartList.length;
-
-      console.log(cartBadges);
-      console.log(cartBadge);
-    }
-  });
-};
-
 //update cart button function
 const updateCart = (name, imageUrl, price) => {
   console.log("updatecart function");
