@@ -68,6 +68,9 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
     console.log("got here");
     ///ERROR HERE
     var numbers = 2;
+    var name = name;
+    var price = price;
+    var imageUrl = imageUrl;
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
