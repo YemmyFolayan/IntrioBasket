@@ -614,10 +614,10 @@ console.log("CART DATA");
 const GetUserCart = () => {
   console.log("updateCheckout function");
 
-  const cartList = [];
+  /** const cartList = [];
   cartList.push(cartDetails);
   localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
-
+**/
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append("x-access-token", `${userToken}`);
