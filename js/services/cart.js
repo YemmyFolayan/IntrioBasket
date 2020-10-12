@@ -125,7 +125,6 @@ const deleteItem = (id) => {
   lookUpCartStore();
 };
 
-
 console.log("CART DATA");
 const GetUserCart = () => {
   console.log("updateCheckout function");
@@ -150,7 +149,7 @@ const GetUserCart = () => {
     .then(function (data) {
       const res = data;
       console.log("CART FETCH");
-      console.log(res.payload);
+      console.log(res.payload.cart);
       console.log(cartDetails);
 
       res.payload.cart.forEach((cart) => {
@@ -171,7 +170,6 @@ const GetUserCart = () => {
 };
 
 GetUserCart();
-
 
 //SYNCHRONIZE CART WITH THIS http://intriobasket.pexceptos.com/api/user/5f68560661c7d8002478bfed
 //ACCESS
