@@ -1,5 +1,15 @@
 const featuredProductDOM = document.getElementById("featuredProducts");
 
+const PopUP = () => {
+  var txt;
+  if (confirm("Press a button!")) {
+    txt = "You pressed OK!";
+  } else {
+    txt = "You pressed Cancel!";
+  }
+  document.getElementById("demopopup").innerHTML = txt;
+};
+
 const featuredProductItemTemplate = (productDetails) => {
   return `
         <div class="product">
@@ -13,7 +23,7 @@ const featuredProductItemTemplate = (productDetails) => {
                 <button class="add-to-wishlist round-icon-btn">
                     <i class="icon_heart_alt"></i>
                 </button>
-                <button onclick="addToCart('${productDetails.id}','${productDetails.name}','${productDetails.type}','${productDetails.imageUrl}','${productDetails.price}')" class="add-to-cart round-icon-btn">
+                <button onclick="addToCart('${productDetails.id}','${productDetails.name}','${productDetails.type}','${productDetails.imageUrl}','${productDetails.price}');PopUP()" class="add-to-cart round-icon-btn">
                     <i class="fa fa-shopping-cart"></i>
                 </button>
                 <button class="quickview round-icon-btn">
