@@ -16,6 +16,8 @@ const PopUP = () => {
   
 };
 
+
+
 const featuredProductItemTemplate = (productDetails) => {
   return `
         <div class="product">
