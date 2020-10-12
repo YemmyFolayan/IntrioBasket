@@ -68,7 +68,7 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
     console.log("got here");
 
     var numbers = 1;
-   
+
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("x-access-token", `${userToken}`);
@@ -139,9 +139,6 @@ const updateCartButtonBadge = () => {
 
   console.log(cartBadges);
 
-
-  
-
   const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
   cartBadges.forEach(function (cartBadge) {
     if (cartList === null) {
@@ -164,7 +161,6 @@ const updateCart = (name, imageUrl, price) => {
   var name = name;
   var price = price;
   var imageUrl = imageUrl;
-
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -616,6 +612,29 @@ const DisplayUserNameTemplate = () => {
 
 DisplayUserNameTemplate();
 
+/*
+//username Mobile
+const CLIENTNameMobileDOM = document.getElementById("userNameMobile");
+
+const userNameMobileTemplate = (clientName) => {
+  return `
+  <a href="login.html">Welcome ! ${clientName}<i class="fas fa-user"></i>Logout</a>
+    `;
+};
+
+const DisplayUserNameMobileTemplate = () => {
+  let htmlString = userNameMobileTemplate(clientName);
+  let htmlFragment = document.createElement("div");
+  htmlFragment.innerHTML = htmlString;
+  CLIENTNameMobileDOM.appendChild(htmlFragment);
+
+  console.log("USERNAMEEEEEEE mobile");
+  console.log(name);
+};
+
+DisplayUserNameMobileTemplate();
+
+*/
 /**
 {
   "status": "OK",
