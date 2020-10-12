@@ -55,11 +55,64 @@ const url = `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
 console.log(url);
 
 const addToCart = (id, name, type, imageUrl, price, qty) => {
-  const historyDetails = { id, name, type, imageUrl, price, qty: 1 };
+  const productDetails = { id, name, type, imageUrl, price, qty: 1 };
+
+  const GetUserCart = (name, imageUrl, price) => {
+    console.log("updateCheckout function");
+    if (localStorage.getItem(CONFIG.CART_STORE) === null) {
+      const cartList = [];
+      cartList.push(cartDetails);
+      localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
+    
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("x-access-token", `${userToken}`);
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+
+    fetch(
+      `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/${userId}`,
+      requestOptions
+    )
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        const res = data;
+        console.log("this DATA");
+        console.log(res);
+        console.log(cartDetails);
+
+        res.payload.cart.forEach((cart) => {
+          let cartDetails = {
+            name: cart.item_name,
+            qty: cart.number,
+            price: cart.initial_cost,
+            imageUrl: cart.item_image,
+          };
+          console.log(cartDetails);
+          console.log("carttyyyyyyy");
+        });
+      })
+
+      .catch((error) => console.log("error", error));
+
+    console.log("GetUserCart");
+  };
+
+  GetUserCart();
+
+
+
 
   if (localStorage.getItem(CONFIG.CART_STORE) === null) {
     const cartList = [];
-    cartList.push(historyDetails);
+    cartList.push(productDetails);
     localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
     //call create user cart api here
     //create user cart
@@ -102,13 +155,13 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
   } else {
     const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
     let index = cartList.findIndex(
-      (cartItem) => cartItem.id === historyDetails.id
+      (cartItem) => cartItem.id === productDetails.id
     );
     if (index === -1) {
-      cartList.push(historyDetails);
+      cartList.push(productDetails);
     } else {
       cartList[index].qty =
-        Number(cartList[index].qty) + Number(historyDetails.qty);
+        Number(cartList[index].qty) + Number(productDetails.qty);
     }
 
     localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
