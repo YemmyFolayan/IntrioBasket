@@ -10,6 +10,9 @@ const PopUP = () => {
     txt = "Continue shopping";
     window.location.assign("/Homepage.html");
   }
+
+  $.alerts.okButton = ' Yes ';
+  $.alerts.cancelButton = ' No ';
   
 };
 
