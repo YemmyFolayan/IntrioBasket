@@ -150,7 +150,7 @@ const GetUserCart = () => {
       const res = data;
       console.log("CART FETCH");
       console.log(res.payload.cart);
-      console.log(cartDetails);
+    
 
       res.payload.cart.forEach((cart) => {
         let cartDetails = {
@@ -158,6 +158,7 @@ const GetUserCart = () => {
           qty: cart.number,
           price: cart.initial_cost,
           imageUrl: cart.item_image,
+          
         };
         console.log(cartDetails);
         console.log("carttyyyyyyy");
