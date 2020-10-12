@@ -59,12 +59,12 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
 
   const GetUserCart = (name, imageUrl, price) => {
     console.log("updateCheckout function");
-    if (localStorage.getItem(CONFIG.CART_STORE) === null) {
+ 
       const cartList = [];
       cartList.push(cartDetails);
       localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
 
-    };
+
     
 
       var myHeaders = new Headers();
