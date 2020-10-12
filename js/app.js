@@ -66,7 +66,8 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
     console.log("before create user cart");
 
     console.log("got here");
-    var numbers = 1;
+    ///ERROR HERE
+    var numbers = 2;
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
