@@ -63,46 +63,49 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
       const cartList = [];
       cartList.push(cartDetails);
       localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
+
+    };
     
 
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("x-access-token", `${userToken}`);
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+      myHeaders.append("x-access-token", `${userToken}`);
 
-    var requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      redirect: "follow",
-    };
+      var requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow",
+      };
 
-    fetch(
-      `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/${userId}`,
-      requestOptions
-    )
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        const res = data;
-        console.log("this DATA");
-        console.log(res);
-        console.log(cartDetails);
-
-        res.payload.cart.forEach((cart) => {
-          let cartDetails = {
-            name: cart.item_name,
-            qty: cart.number,
-            price: cart.initial_cost,
-            imageUrl: cart.item_image,
-          };
+      fetch(
+        `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/${userId}`,
+        requestOptions
+      )
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          const res = data;
+          console.log("this DATA");
+          console.log(res);
           console.log(cartDetails);
-          console.log("carttyyyyyyy");
-        });
-      })
 
-      .catch((error) => console.log("error", error));
+          res.payload.cart.forEach((cart) => {
+            let cartDetails = {
+              name: cart.item_name,
+              qty: cart.number,
+              price: cart.initial_cost,
+              imageUrl: cart.item_image,
+            };
+            console.log(cartDetails);
+            console.log("carttyyyyyyy");
+          });
+        })
 
-    console.log("GetUserCart");
+        .catch((error) => console.log("error", error));
+
+      console.log("GetUserCart");
+    
   };
 
   GetUserCart();
@@ -660,7 +663,7 @@ const DisplayUserNameTemplate = () => {
   CLIENTNameDOM.appendChild(htmlFragment);
 
   console.log("USERNAMEEEEEEE");
-  console.log(name);
+ 
 };
 
   DisplayUserNameTemplate();
