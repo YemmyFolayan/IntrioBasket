@@ -158,7 +158,7 @@ const updateCartButtonBadge = () => {
 };
 
 //update cart button function
-const updateCart = (name, imageUrl, price) => {
+const updateCart = (name, imageUrl, price, cartList) => {
   console.log("updatecart function");
   var numbers = cartList.length;
   var name = name;
