@@ -57,61 +57,6 @@ console.log(url);
 const addToCart = (id, name, type, imageUrl, price, qty) => {
   const productDetails = { id, name, type, imageUrl, price, qty: 1 };
 
-  const GetUserCart = (name, imageUrl, price) => {
-    console.log("updateCheckout function");
- 
-      const cartList = [];
-      cartList.push(cartDetails);
-      localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
-
-
-    
-
-      var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
-      myHeaders.append("x-access-token", `${userToken}`);
-
-      var requestOptions = {
-        method: "GET",
-        headers: myHeaders,
-        redirect: "follow",
-      };
-
-      fetch(
-        `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/${userId}`,
-        requestOptions
-      )
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          const res = data;
-          console.log("this DATA");
-          console.log(res);
-          console.log(cartDetails);
-
-          res.payload.cart.forEach((cart) => {
-            let cartDetails = {
-              name: cart.item_name,
-              qty: cart.number,
-              price: cart.initial_cost,
-              imageUrl: cart.item_image,
-            };
-            console.log(cartDetails);
-            console.log("carttyyyyyyy");
-          });
-        })
-
-        .catch((error) => console.log("error", error));
-
-      console.log("GetUserCart");
-    
-  };
-
-  GetUserCart();
-
-
-
 
   if (localStorage.getItem(CONFIG.CART_STORE) === null) {
     const cartList = [];
@@ -168,7 +113,10 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
     }
 
     localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
+
   }
+
+
 
   // updateCartButtonBadge
   updateCartButtonBadge();
@@ -176,6 +124,61 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
   //LATER YOU CAN INCLUDE GOTO CART HERE OR CONTINUE SHOPPING
   window.location.assign("/shop_cart.html");
 };
+
+const GetUserCart = () => {
+  console.log("updateCheckout function");
+ 
+    const cartList = [];
+    cartList.push(cartDetails);
+    localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
+
+
+    
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("x-access-token", `${userToken}`);
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+
+    fetch(
+      `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/${userId}`,
+      requestOptions
+    )
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        const res = data;
+        console.log("this DATA");
+        console.log(res.payload.cart);
+        console.log(cartDetails);
+
+        res.payload.cart.forEach((cart) => {
+          let cartDetails = {
+            name: cart.item_name,
+            qty: cart.number,
+            price: cart.initial_cost,
+            imageUrl: cart.item_image,
+          };
+          console.log(cartDetails);
+          console.log("carttyyyyyyy");
+        });
+      })
+
+      .catch((error) => console.log("error", error));
+
+    console.log("GetUserCart");
+    
+};
+
+GetUserCart();
+
+
 
 //Empty cart
 const emptyCart = () => {
