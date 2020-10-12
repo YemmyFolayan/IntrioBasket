@@ -2,7 +2,7 @@ const featuredProductDOM = document.getElementById("featuredProducts");
 
 const PopUP = () => {
   var txt;
-  if (confirm("Press a button!")) {
+  if (confirm("Continue Shopping or Goto Cart")) {
     txt = "Goto Cart";
     window.location.assign("/shop_cart.html");
   } else {
