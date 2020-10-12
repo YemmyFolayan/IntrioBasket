@@ -150,7 +150,7 @@ const GetUserCart = () => {
     .then(function (data) {
       const res = data;
       console.log("CART FETCH");
-      console.log(res.payload.cart);
+      console.log(res.payload);
       console.log(cartDetails);
 
       res.payload.cart.forEach((cart) => {
