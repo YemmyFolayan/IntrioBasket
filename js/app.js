@@ -10,7 +10,6 @@ document.addEventListener(
   false
 );
 
-
 const updateCartButtonBadge = () => {
   //todo get this by querySelector
   var cartBadges = document.querySelectorAll(".cartButtonBadge");
@@ -31,8 +30,6 @@ const updateCartButtonBadge = () => {
     }
   });
 };
-
-
 
 // Mini Router (refreshes the page)
 //ROUTER for page redirect
@@ -613,6 +610,7 @@ const DisplayUserNameTemplate = () => {
 
 DisplayUserNameTemplate();
 
+console.log("CART DATA");
 const GetUserCart = () => {
   console.log("updateCheckout function");
 
@@ -639,7 +637,7 @@ const GetUserCart = () => {
     })
     .then(function (data) {
       const res = data;
-      console.log("this DATA");
+      console.log("CART DATA");
       console.log(res.payload.cart);
       console.log(cartDetails);
 
