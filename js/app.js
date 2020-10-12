@@ -133,17 +133,27 @@ const emptyCart = () => {
 };
 
 const updateCartButtonBadge = () => {
-  const cartBadge = document.getElementById("cartButtonBadge");
-  console.log(cartBadge);
-
   //todo get this by querySelector
-  const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+  var cartBadges = document.querySelectorAll(".cartButtonBadge");
 
-  if (cartList === null) {
-    cartBadge.innerText = 0;
-  } else {
-    cartBadge.innerText = cartList.length;
-  }
+  console.log(cartBadges);
+
+
+  
+
+  const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+  cartBadges.forEach(function (cartBadge) {
+    if (cartList === null) {
+      cartBadge.innerText = 0;
+      console.log("cartBadge");
+      console.log(cartBadge);
+    } else {
+      cartBadge.innerText = cartList.length;
+
+      console.log(cartBadges);
+      console.log(cartBadge);
+    }
+  });
 };
 
 //update cart button function
