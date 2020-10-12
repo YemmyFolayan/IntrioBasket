@@ -614,10 +614,6 @@ console.log("CART DATA");
 const GetUserCart = () => {
   console.log("updateCheckout function");
 
-  /** const cartList = [];
-  cartList.push(cartDetails);
-  localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
-**/
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append("x-access-token", `${userToken}`);
@@ -637,7 +633,7 @@ const GetUserCart = () => {
     })
     .then(function (data) {
       const res = data;
-      console.log("CART DATA");
+      console.log("CART FETCH");
       console.log(res.payload.cart);
       console.log(cartDetails);
 
