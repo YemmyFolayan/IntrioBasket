@@ -150,9 +150,15 @@ const GetUserCart = () => {
       const res = data;
       console.log("CART FETCH");
       console.log(res.payload.cart);
+      const cartDetails = res.payload.cart;
+
+      const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+      cartList.push(cartDetails);
+
     
 
       res.payload.cart.forEach((cart) => {
+
         let cartDetails = {
           name: cart.item_name,
           qty: cart.number,
