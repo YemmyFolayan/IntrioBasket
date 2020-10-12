@@ -126,6 +126,52 @@ const deleteItem = (id) => {
 };
 
 
+console.log("CART DATA");
+const GetUserCart = () => {
+  console.log("updateCheckout function");
+
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  myHeaders.append("x-access-token", `${userToken}`);
+
+  var requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow",
+  };
+
+  fetch(
+    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/${userId}`,
+    requestOptions
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      const res = data;
+      console.log("CART FETCH");
+      console.log(res.payload.cart);
+      console.log(cartDetails);
+
+      res.payload.cart.forEach((cart) => {
+        let cartDetails = {
+          name: cart.item_name,
+          qty: cart.number,
+          price: cart.initial_cost,
+          imageUrl: cart.item_image,
+        };
+        console.log(cartDetails);
+        console.log("carttyyyyyyy");
+      });
+    })
+
+    .catch((error) => console.log("error", error));
+
+  console.log("GetUserCart");
+};
+
+GetUserCart();
+
 
 //SYNCHRONIZE CART WITH THIS http://intriobasket.pexceptos.com/api/user/5f68560661c7d8002478bfed
 //ACCESS
