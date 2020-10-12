@@ -158,12 +158,12 @@ const updateCartButtonBadge = () => {
 };
 
 //update cart button function
-const updateCart = (name, imageUrl, price, qty) => {
+const updateCart = (name, imageUrl, price) => {
   console.log("updatecart function");
-  var numbers = 2;
-  var name = "folayan yemi";
-  var price = 2300;
-  var imageUrl = "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FBaking%20powder.jpg?alt=media&token=713ea73d-a563-45af-ba4f-a9bf6a60f08c";
+  var numbers = cartList.length;
+  var name = name;
+  var price = price;
+  var imageUrl = imageUrl;
 
 
   var myHeaders = new Headers();
