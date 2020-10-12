@@ -663,10 +663,10 @@ const DisplayUserNameTemplate = () => {
   console.log(name);
 };
 
-DisplayUserNameTemplate();
+  DisplayUserNameTemplate();
+  
 
-/*
-//username Mobile
+  /**username Mobile
 const CLIENTNameMobileDOM = document.getElementById("userNameMobile");
 
 const userNameMobileTemplate = (clientName) => {
@@ -687,8 +687,8 @@ const DisplayUserNameMobileTemplate = () => {
 
 DisplayUserNameMobileTemplate();
 
-*/
-/**
+
+
 {
   "status": "OK",
   "message": "Checkout history fetched successfully",
@@ -718,8 +718,13 @@ DisplayUserNameMobileTemplate();
         },
         "purchaser_name": "Folayan Iluyemi Michael",
         "Date": "2020-10-08T21:10:43.909Z",
-         "__v": 0
+        "__v": 0
     },
   ]
-}
-*/
+} */
+  
+  
+
+
+
+
