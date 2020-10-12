@@ -3,11 +3,14 @@ const featuredProductDOM = document.getElementById("featuredProducts");
 const PopUP = () => {
   var txt;
   if (confirm("Press a button!")) {
-    txt = "You pressed OK!";
+    txt = "Goto Cart";
+    window.location.assign("/shop_cart.html");
   } else {
-    txt = "You pressed Cancel!";
+
+    txt = "Continue shopping";
+    window.location.assign("/Homepage.html");
   }
-  document.getElementById("demopopup").innerHTML = txt;
+  
 };
 
 const featuredProductItemTemplate = (productDetails) => {
