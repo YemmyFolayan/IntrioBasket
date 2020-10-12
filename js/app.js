@@ -66,12 +66,9 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
     console.log("before create user cart");
 
     console.log("got here");
-    ///ERROR HERE
-    var numbers = 2;
-    var name = folayan yemi;
-    var price = 2300;
-    var imageUrl = "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FBaking%20powder.jpg?alt=media&token=713ea73d-a563-45af-ba4f-a9bf6a60f08c";
 
+    var numbers = 1;
+   
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("x-access-token", `${userToken}`);
@@ -163,7 +160,11 @@ const updateCartButtonBadge = () => {
 //update cart button function
 const updateCart = (name, imageUrl, price, qty) => {
   console.log("updatecart function");
-  var numbers = 1;
+  var numbers = 2;
+  var name = folayan yemi;
+  var price = 2300;
+  var imageUrl = "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FBaking%20powder.jpg?alt=media&token=713ea73d-a563-45af-ba4f-a9bf6a60f08c";
+
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
