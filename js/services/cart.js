@@ -125,9 +125,6 @@ const deleteItem = (id) => {
   lookUpCartStore();
 };
 
-
-
-
 const GetUserCart = () => {
   console.log("updateCheckout function");
 
@@ -152,6 +149,7 @@ const GetUserCart = () => {
       const res = data;
       console.log("this DATA");
       console.log(res);
+      console.log(cartDetails);
 
       res.payload.forEach((cart) => {
         let cartDetails = {
@@ -159,9 +157,9 @@ const GetUserCart = () => {
           qty: cart.number,
           price: cart.initial_cost,
           imageUrl: cart.item_image,
-
-          
         };
+        console.log(cartDetails);
+        console.log("carttyyyyyyy");
       });
     })
 
@@ -172,9 +170,8 @@ const GetUserCart = () => {
 
 GetUserCart();
 
-
 //SYNCHRONIZE CART WITH THIS http://intriobasket.pexceptos.com/api/user/5f68560661c7d8002478bfed
-//ACCESS 
+//ACCESS
 /**
  *  "cart": [
     {
