@@ -111,6 +111,11 @@ const lookUpCartStore = () => {
 
           console.log(cartDetails);
 
+          cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE) || "[]");
+          cartList.push(productDetails);
+          localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
+
+
           console.log("carttyy cartlist");
 
 
