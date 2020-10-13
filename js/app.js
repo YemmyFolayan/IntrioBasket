@@ -157,11 +157,13 @@ const emptyCart = () => {
 //update cart button function
 //update from localstorage
 
-const cartStore = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
-console.log(cartStore);
+
+
+const cartStores = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+console.log(cartStores);
   
 
-cartStore.forEach((cartItem) => {
+cartStores.forEach((cartItem) => {
   let cartDetail = {
     name = cartItem.name,
     price = cartItem.price,
