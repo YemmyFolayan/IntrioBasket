@@ -172,7 +172,7 @@ const updateCart = (name, imageUrl, price) => {
         initial_cost: price,
         item_image: imageUrl,
       },
-    ],
+    ]
   });
   console.log("RAW");
   console.log(raw);
