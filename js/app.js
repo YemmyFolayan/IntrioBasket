@@ -312,9 +312,11 @@ const GetUserCart = () => {
         console.log("carttyyyyyyy");
 
         //I'll use cartDetails here
+        console.log("cartpush");
         var cartList = [];
         cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE)) || [];
         cartList.push(cartDetails);
+        
 
         console.log(cartList);
         console.log("cartStorage");
