@@ -302,12 +302,12 @@ const GetUserCart = () => {
       const cartDetails = res.payload.cart;
 
       res.payload.cart.forEach((cart) => {
-        let cartDetails = [{
+        let cartDetails = {
           name: cart.item_name,
           qty: cart.number,
           price: cart.initial_cost,
           imageUrl: cart.item_image,
-        }];
+        };
         console.log(cartDetails);
         console.log("carttyyyyyyy");
 
@@ -315,7 +315,9 @@ const GetUserCart = () => {
         console.log("cartpush");
         var cartList = [];
         cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE)) || [];
-        cartList.push(cartDetails);
+        cartList.push(JSON.stringify(cartDetails));
+        localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
+
         
 
         console.log(cartList);
