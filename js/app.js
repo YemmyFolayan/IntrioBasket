@@ -155,9 +155,11 @@ const emptyCart = () => {
   updateCartButtonBadge();
 };
 //update cart button function
+//update from localstorage
 const updateCart = (name, imageUrl, price) => {
   console.log("updatecart function");
-
+  const cartStore = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+  console.log(cartStore);
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -172,7 +174,7 @@ const updateCart = (name, imageUrl, price) => {
         initial_cost: price,
         item_image: imageUrl,
       },
-    ]
+    ],
   });
   console.log("RAW");
   console.log(raw);
