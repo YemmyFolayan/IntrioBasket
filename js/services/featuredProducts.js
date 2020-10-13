@@ -1,4 +1,4 @@
-ocument.addEventListener(
+document.addEventListener(
   "DOMContentLoaded",
   () => {
     // updateCartButtonBadge
@@ -93,7 +93,7 @@ const PopUP = () => {
 const popupTemplate = () => {
   return `<p>
   <span
-    class="ui-icon ui-icon-alert"
+    class="fas fa-shopping-cart"
     style="float:left; margin:12px 12px 20px 0;"
   ></span>
   Continue shopping or Goto Cart
