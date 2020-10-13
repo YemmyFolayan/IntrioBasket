@@ -140,7 +140,7 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
   updateCartButtonBadge();
 
   //LATER YOU CAN INCLUDE GOTO CART HERE OR CONTINUE SHOPPING
-  window.location.assign("/shop_cart.html");
+  //window.location.assign("/shop_cart.html");
 };
 
 //Empty cart
