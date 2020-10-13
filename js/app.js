@@ -302,22 +302,21 @@ const GetUserCart = () => {
       const cartArray = res.payload.cart;
 
       cartArray.forEach((cart) => {
-        let cartDetails = 
-          {
-            name: cart.item_name,
-            qty: cart.number,
-            price: cart.initial_cost,
-            imageUrl: cart.item_image,
-          },
-        ;
+        let cartDetails = {
+          name: cart.item_name,
+          qty: cart.number,
+          price: cart.initial_cost,
+          imageUrl: cart.item_image,
+        };
+
         console.log(cartDetails);
         console.log("carttyy cartlist");
-        
+
         //I'll use cartDetails here
         console.log("cartpush");
         var cartList = [];
         cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE)) || [];
-        cartList.push('cartDetails');
+        cartList.push("cartDetails");
         localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
 
         console.log(cartList);
