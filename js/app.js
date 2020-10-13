@@ -303,13 +303,13 @@ const GetUserCart = () => {
 
       cartArray.forEach((cart) => {
         let cartDetails = {
-          name: cart.item_name,
+          namee: cart.item_name,
           imageUrl: cart.item_image,
           qty: cart.number,
           price: cart.initial_cost,
         };
 
-        const productDetails = { name, imageUrl, price, qty: 1 };
+        const productDetails = { namee, imageUrl, price, qty: 1 };
 
         console.log(cartDetails);
         console.log(productDetails);
