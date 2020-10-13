@@ -72,6 +72,75 @@ const renderCartTotalTable = () => {
 
 const lookUpCartStore = () => {
   const cartStore = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+  console.log("CART DATA");
+  const GetUserCart = () => {
+    console.log("updateCheckout function");
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("x-access-token", `${userToken}`);
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+
+    fetch(
+      `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/${userId}`,
+      requestOptions
+    )
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        const res = data;
+        console.log("CART FETCH");
+        console.log(res.payload.cart);
+        const cartArray = res.payload.cart;
+
+        cartArray.forEach((cart) => {
+          let cartDetails = {
+            name: cart.item_name,
+            imageUrl: cart.item_image,
+            qty: cart.number,
+            price: cart.initial_cost,
+          };
+
+          console.log(cartDetails);
+
+          console.log("carttyy cartlist");
+
+          //PUSH THESE OBJECTS TO cartStore
+
+          /*
+
+
+
+          cart_store: "[{"id":"5f4385e106c5350024edc172","name":"Ayoola Poundo yam","type":"FLOURS","imageUrl":"https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FAyoola%20Poundo%20yam%20.jpg?alt=media&token=0ed5878b-a26c-4166-a0ab-fd4dfd7f54f5","price":"900","qty":2},
+          {"id":"5f4385e106c5350024edc171","name":"Baking powder","type":"BAKING INGREDIENTS","imageUrl":"https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FBaking%20powder.jpg?alt=media&token=713ea73d-a563-45af-ba4f-a9bf6a60f08c","price":"500","qty":1}]"
+
+          //I'll use cartDetails here
+          console.log("cartpush");
+          var cartList = [];
+          cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE)) || [];
+          cartList.push(productDetails);
+          localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
+
+          console.log(cartList);
+          console.log("cartStorage test run");*/
+        });
+      })
+
+      .catch((error) => console.log("error", error));
+
+    console.log("GetUserCart");
+    updateCartButtonBadge();
+  };
+
+  GetUserCart();
+
+
 
   if (cartStore === null || cartStore.length === 0)
     //// Create User Cart here from back end http://intriobasket.pexceptos.com/api/user/create-cart/5f4d0fd68cc9aa11e6151b88
