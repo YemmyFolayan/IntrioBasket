@@ -219,6 +219,9 @@ const updateCart = (name, imageUrl, price) => {
   console.log("UPDATE");
 };
 
+
+
+
 const updateCheckout = (name, imageUrl, price, qty) => {
   console.log("updateCheckout function");
 
@@ -312,6 +315,8 @@ const GetUserCart = () => {
         console.log(cartDetails);
 
         console.log("carttyy cartlist");
+
+        //PUSH THESE OBJECTS TO cartStore
 
         /*
 
