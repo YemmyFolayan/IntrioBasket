@@ -317,7 +317,7 @@ const GetUserCart = () => {
         console.log("cartpush");
         var cartList = [];
         cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE)) || [];
-        cartList.push({"country": "IN"});
+        cartList.push('cartDetails');
         localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
 
         console.log(cartList);
