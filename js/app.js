@@ -321,7 +321,7 @@ const GetUserCart = () => {
         localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
 
         console.log(cartList);
-        console.log("cartStorage");
+        console.log("cartStorage test run");
       });
     })
 
