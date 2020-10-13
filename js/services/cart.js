@@ -107,14 +107,14 @@ lookUpCartStore();
 
 //delete each Item
 
-const deleteItem = (id) => {
+const deleteItem = (name) => {
   if (localStorage.getItem(CONFIG.CART_STORE) === null) {
     //something is wrong
     return false;
   } else {
     const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
 
-    let newCartList = cartList.filter((item, index) => item.id !== id);
+    let newCartList = cartList.filter((item, index) => item.name !== name);
 
     localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(newCartList));
   }
