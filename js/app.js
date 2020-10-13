@@ -311,7 +311,7 @@ const GetUserCart = () => {
           },
         ];
         console.log(cartDetails);
-        console.log("carttyyyyyyy");
+        console.log("carttyy cartlist");
 
         //I'll use cartDetails here
         console.log("cartpush");
