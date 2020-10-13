@@ -32,7 +32,6 @@ const updateCartButtonBadge = () => {
   });
 };
 
-
 // Mini Router (refreshes the page)
 //ROUTER for page redirect
 const router = (url) => {
@@ -169,30 +168,34 @@ const updateCart = (name, imageUrl, price) => {
 
   var raw = JSON.stringify({
     cart_details: [
-        {
-            "item_name": "Bitter leaf",
-            "number": 3,
-            "initial_cost": 420,
-            "item_image": "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FBitter%20leaf.jpg?alt=media&token=e2a0f4d9-f66a-416e-bb51-8487de6d57cc"
-        },
-        {
-            "item_name": "Chicken3",
-            "number": 1,
-            "initial_cost": 1500,
-            "item_image": "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FChicken3.jpg?alt=media&token=aba72a85-a01f-4541-abab-84b52e78b000"
-        },
-        {
-            "item_name": "Baking powder",
-            "number": 3,
-            "initial_cost": 500,
-            "item_image": "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FBaking%20powder.jpg?alt=media&token=713ea73d-a563-45af-ba4f-a9bf6a60f08c"
-        },
-        {
-            "item_name": "Bitter leaf",
-            "number": 4,
-            "initial_cost": 420,
-            "item_image": "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FBitter%20leaf.jpg?alt=media&token=e2a0f4d9-f66a-416e-bb51-8487de6d57cc"
-        }
+      {
+        item_name: "Bitter leaf",
+        number: 3,
+        initial_cost: 420,
+        item_image:
+          "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FBitter%20leaf.jpg?alt=media&token=e2a0f4d9-f66a-416e-bb51-8487de6d57cc",
+      },
+      {
+        item_name: "Chicken3",
+        number: 1,
+        initial_cost: 1500,
+        item_image:
+          "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FChicken3.jpg?alt=media&token=aba72a85-a01f-4541-abab-84b52e78b000",
+      },
+      {
+        item_name: "Baking powder",
+        number: 3,
+        initial_cost: 500,
+        item_image:
+          "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FBaking%20powder.jpg?alt=media&token=713ea73d-a563-45af-ba4f-a9bf6a60f08c",
+      },
+      {
+        item_name: "Bitter leaf",
+        number: 4,
+        initial_cost: 420,
+        item_image:
+          "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FBitter%20leaf.jpg?alt=media&token=e2a0f4d9-f66a-416e-bb51-8487de6d57cc",
+      },
     ],
   });
 
@@ -271,10 +274,6 @@ const updateCheckout = (name, imageUrl, price, qty) => {
   console.log("UPDATECHECKOUT");
 };
 
-
-
-
-
 console.log("CART DATA");
 const GetUserCart = () => {
   console.log("updateCheckout function");
@@ -313,7 +312,8 @@ const GetUserCart = () => {
         console.log("carttyyyyyyy");
 
         //I'll use cartDetails here
-        localStorage.setItem("cartDetails", cartDetails);
+
+        localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartDetails));
       });
     })
 
@@ -682,11 +682,6 @@ const DisplayUserNameTemplate = () => {
 };
 
 DisplayUserNameTemplate();
-
-
-
-
-
 
 /**username Mobile
 const CLIENTNameMobileDOM = document.getElementById("userNameMobile");
