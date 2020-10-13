@@ -314,13 +314,20 @@ const GetUserCart = () => {
         //I'll use cartDetails here
 
         localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartDetails));
+        const cartStorage = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+        console.log(cartStorage);
+        console.log("cartStorage");
+
       });
     })
 
     .catch((error) => console.log("error", error));
 
   console.log("GetUserCart");
+  updateCartButtonBadge();
+
 };
+
 
 GetUserCart();
 
