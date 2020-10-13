@@ -111,16 +111,25 @@ const lookUpCartStore = () => {
 
           console.log(cartDetails);
 
-          cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE) || "[]");
-          cartList.push(productDetails);
+          cartStore = JSON.parse(
+            localStorage.getItem(CONFIG.CART_STORE) || "[]"
+          );
+          cartStore.push(productDetails);
           localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
 
+          cartStore.forEach((product) => {
+            let htmlString = cartItemTemplate(product);
+            //checkout
+
+            let htmlFragment = document.createElement("tr");
+
+            htmlFragment.setAttribute("id", product.name);
+            htmlFragment.innerHTML = htmlString;
+
+            shopCartTBodyDOM.appendChild(htmlFragment);
+          });
 
           console.log("carttyy cartlist");
-
-
-
-          
 
           //PUSH THESE OBJECTS TO cartStore
 
@@ -150,8 +159,6 @@ const lookUpCartStore = () => {
   };
 
   GetUserCart();
-
-
 
   if (cartStore === null || cartStore.length === 0)
     //// Create User Cart here from back end http://intriobasket.pexceptos.com/api/user/create-cart/5f4d0fd68cc9aa11e6151b88
