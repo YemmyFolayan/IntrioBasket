@@ -157,6 +157,7 @@ const emptyCart = () => {
 //update cart button function
 //update from localstorage
 
+/**
 const cartStores = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
 console.log(cartStores);
   
@@ -172,6 +173,7 @@ cartStores.forEach((cartItem) => {
   console.log(cartDetail);
 
 });
+**/
 
 
 const updateCart = () => {
