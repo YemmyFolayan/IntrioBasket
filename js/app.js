@@ -299,9 +299,9 @@ const GetUserCart = () => {
       const res = data;
       console.log("CART FETCH");
       console.log(res.payload.cart);
-      const cartDetails = res.payload.cart;
+      const cartArray = res.payload.cart;
 
-      res.payload.cart.forEach((cart) => {
+      cartArray.forEach((cart) => {
         let cartDetails = [
           {
             name: cart.item_name,
