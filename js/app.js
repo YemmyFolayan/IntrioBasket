@@ -311,8 +311,7 @@ const GetUserCart = () => {
 
        
         console.log(cartDetails);
-        console.log(productDetails);
-
+      
         console.log("carttyy cartlist");
 /*
         //I'll use cartDetails here
