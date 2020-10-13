@@ -3272,9 +3272,12 @@ product-img {
 @media (max-width: 576px) {
   .product {
     text-align: center;
+    align-self: center;
+    align-items: center;
     padding: 10px 10px 20px;
     margin-bottom: 0;
     height: 100%;
+    width: 80%;
   }
   .product.borderless {
     border: 1px solid #ebebeb;
