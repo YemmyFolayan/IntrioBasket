@@ -168,7 +168,7 @@ const GetUserCart = () => {
 
         let cartDetails = {
           name: cart.item_name,
-          qtyy: cart.number,
+          qty: cart.number,
           price: cart.initial_cost,
           imageUrl: cart.item_image,
           
