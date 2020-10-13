@@ -303,19 +303,18 @@ const GetUserCart = () => {
 
       cartArray.forEach((cart) => {
         let cartDetails = {
-          namee: cart.item_name,
+          name: cart.item_name,
           imageUrl: cart.item_image,
           qty: cart.number,
           price: cart.initial_cost,
         };
 
-        const productDetails = { namee, imageUrl, price, qty: 1 };
-
+       
         console.log(cartDetails);
         console.log(productDetails);
 
         console.log("carttyy cartlist");
-
+/*
         //I'll use cartDetails here
         console.log("cartpush");
         var cartList = [];
@@ -324,7 +323,7 @@ const GetUserCart = () => {
         localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
 
         console.log(cartList);
-        console.log("cartStorage test run");
+        console.log("cartStorage test run");*/
       });
     })
 
