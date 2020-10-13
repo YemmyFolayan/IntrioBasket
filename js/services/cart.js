@@ -72,6 +72,8 @@ const renderCartTotalTable = () => {
 
 const lookUpCartStore = () => {
   const cartStore = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+  console.log(cartStore);
+
   console.log("CART DATA");
   const GetUserCart = () => {
     console.log("updateCheckout function");
@@ -110,6 +112,10 @@ const lookUpCartStore = () => {
           console.log(cartDetails);
 
           console.log("carttyy cartlist");
+
+
+
+          
 
           //PUSH THESE OBJECTS TO cartStore
 
