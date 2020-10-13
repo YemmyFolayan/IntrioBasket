@@ -155,13 +155,14 @@ const emptyCart = () => {
   updateCartButtonBadge();
 };
 //update cart button function
-const updateCart = (name, imageUrl, price, qty: 1) => {
+const updateCart = (name, imageUrl, price) => {
   console.log("updatecart function");
 
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append("x-access-token", `${userToken}`);
+  var qty = 1;
 
   var raw = JSON.stringify({
     cart_details: [
