@@ -9,7 +9,7 @@ const cartTotalTBodyDOM = document.getElementById("cartTotalTBody");
 
 const cartItemTemplate = (productDetails) => {
   return `
-        <tr id="${productDetails.id}">
+        <tr id="${productDetails.name}">
             <td class="product-name">${productDetails.name}</td>
             <td class="product-price">NGN ${productDetails.price}</td>
             <td class="product-quantity">
@@ -83,7 +83,7 @@ const lookUpCartStore = () => {
 
     let htmlFragment = document.createElement("tr");
 
-    htmlFragment.setAttribute("id", product.id);
+    htmlFragment.setAttribute("id", product.name);
     htmlFragment.innerHTML = htmlString;
 
     shopCartTBodyDOM.appendChild(htmlFragment);
