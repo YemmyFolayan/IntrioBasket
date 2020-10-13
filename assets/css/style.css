@@ -3278,6 +3278,10 @@ product-img {
     margin-bottom: 0;
     height: 100%;
     width: 80%;
+    
+  }
+  .nomarg{
+    margin-left: 22px !important;
   }
   .product.borderless {
     border: 1px solid #ebebeb;
