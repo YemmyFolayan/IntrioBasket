@@ -302,12 +302,12 @@ const GetUserCart = () => {
       const cartDetails = res.payload.cart;
 
       res.payload.cart.forEach((cart) => {
-        let cartDetails = {
+        let cartDetails = [{
           name: cart.item_name,
           qty: cart.number,
           price: cart.initial_cost,
           imageUrl: cart.item_image,
-        };
+        }];
         console.log(cartDetails);
         console.log("carttyyyyyyy");
 
