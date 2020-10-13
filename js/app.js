@@ -156,21 +156,23 @@ const emptyCart = () => {
 };
 //update cart button function
 //update from localstorage
-const updateCart = (name, imageUrl, price) => {
-  console.log("updatecart function");
-  const cartStore = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
-  console.log(cartStore);
+
+const cartStore = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+console.log(cartStore);
   
 
-  cartStore.forEach((cartItem) => {
-    let cartDetail = {
-      name = cartItem.name,
-      price = cartItem.price,
-      qty = cartItem.qty,
-      imageUrl = cartItem.imageUrl
+cartStore.forEach((cartItem) => {
+  let cartDetail = {
+    name = cartItem.name,
+    price = cartItem.price,
+    qty = cartItem.qty,
+    imageUrl = cartItem.imageUrl
 
-    };
-    console.log(cartDetail);
+  };
+  console.log(cartDetail);
+const updateCart = (name, imageUrl, price) => {
+  console.log("updatecart function");
+
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
