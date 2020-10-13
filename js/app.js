@@ -312,12 +312,12 @@ const GetUserCart = () => {
         console.log("carttyyyyyyy");
 
         //I'll use cartDetails here
+        var cartList = [];
+        cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE)) || [];
+        cartList.push(cartDetails);
 
-        localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartDetails));
-        const cartStorage = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
-        console.log(cartStorage);
+        console.log(cartList);
         console.log("cartStorage");
-
       });
     })
 
@@ -325,9 +325,7 @@ const GetUserCart = () => {
 
   console.log("GetUserCart");
   updateCartButtonBadge();
-
 };
-
 
 GetUserCart();
 
