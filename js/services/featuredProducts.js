@@ -1,3 +1,14 @@
+ocument.addEventListener(
+  "DOMContentLoaded",
+  () => {
+    // updateCartButtonBadge
+    fetchFoodList();
+  },
+  false
+);
+
+
+
 const featuredProductDOM = document.getElementById("featuredProducts");
 
 const featuredProductItemTemplate = (productDetails) => {
