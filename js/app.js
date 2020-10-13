@@ -159,21 +159,24 @@ const emptyCart = () => {
 
 
 
-const cartStores = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
-console.log(cartStores);
+const updateCart = () => {
+  console.log("updatecart function");
+  const cartStores = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+  console.log(cartStores);
   
 
-cartStores.forEach((cartItem) => {
-  let cartDetail = {
-    name = cartItem.name,
-    price = cartItem.price,
-    qty = cartItem.qty,
-    imageUrl = cartItem.imageUrl
+  cartStores.forEach((cartItem) => {
+    let cartDetail = {
+      name = cartItem.name,
+      price = cartItem.price,
+      qty = cartItem.qty,
+      imageUrl = cartItem.imageUrl
 
-  };
-  console.log(cartDetail);
-const updateCart = (name, imageUrl, price) => {
-  console.log("updatecart function");
+    };
+    console.log(cartDetail);
+
+  });
+
 
 
   var myHeaders = new Headers();
