@@ -13,7 +13,7 @@ const featuredProductItemTemplate = (productDetails) => {
                 <button class="add-to-wishlist round-icon-btn">
                     <i class="icon_heart_alt"></i>
                 </button>
-                <button onclick="addToCart('${productDetails.id}','${productDetails.name}','${productDetails.type}','${productDetails.imageUrl}','${productDetails.price}')" class="add-to-cart round-icon-btn">
+                <button onclick="addToCart('${productDetails.id}','${productDetails.name}','${productDetails.type}','${productDetails.imageUrl}','${productDetails.price}'); PopUP()" class="add-to-cart round-icon-btn">
                     <i class="fa fa-shopping-cart"></i>
                 </button>
                 <button class="quickview round-icon-btn">
@@ -54,7 +54,7 @@ const fetchFoodList = async () => {
 
 fetchFoodList();
 
-/**
+const popupTemplateDOM = document.getElementById("dialog-confirm");
 const PopUP = () => {
   $(function () {
     $("#dialog-confirm").dialog({
@@ -73,27 +73,10 @@ const PopUP = () => {
     });
   });
 
-
-
-
-
-  <div id="dialog-confirm" title="Intriobasket says">
-    
-  </div>
-
-  /**var txt;
-  if (confirm("Continue Shopping or Goto Cart")) {
-    txt = "Goto Cart";
-    window.location.assign("/shop_cart.html");
-  } else {
-
-    txt = "Continue shopping";
-    window.location.assign("/Homepage.html");
-  }
-
-  $.alerts.okButton = ' Yes ';
-  $.alerts.cancelButton = ' No ';
-  
+  let htmlString = popupTemplate();
+  let htmlFragment = document.createElement("div");
+  htmlFragment.innerHTML = htmlString;
+  popupTemplateDOM.appendChild(htmlFragment);
 };
 
 const popupTemplate = () => {
@@ -105,5 +88,3 @@ const popupTemplate = () => {
   Continue shopping or Goto Cart
 </p>`;
 };
-
-*/

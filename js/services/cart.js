@@ -113,7 +113,7 @@ const lookUpCartStore = () => {
 
           //
 
-        /*
+          /*
 
           cartStore = localStorage.getItem(CONFIG.CART_STORE) || "[]";
           cartStore.push(productDetails);
