@@ -174,6 +174,8 @@ const updateCart = (name, imageUrl, price) => {
       },
     ],
   });
+  console.log("RAW");
+  console.log(raw);
 
   var requestOptions = {
     method: "PUT",
