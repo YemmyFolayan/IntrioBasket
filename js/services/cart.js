@@ -151,10 +151,17 @@ const GetUserCart = () => {
       console.log("CART FETCH");
       console.log(res.payload.cart);
       const cartDetails = res.payload.cart;
+      if (localStorage.getItem(CONFIG.CART_STORE) === null) {
+        const cartList = [];
+        cartList.push(productDetails);
+        localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
+      }
+      else {
 
-      const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
-      cartList.push(cartDetails);
-
+        const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+        cartList.push(cartDetails);
+      }
+      
     
 
       res.payload.cart.forEach((cart) => {

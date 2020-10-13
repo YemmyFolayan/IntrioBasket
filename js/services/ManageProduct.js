@@ -17,6 +17,9 @@ const manageProductItemTemplate = (productDetails) => {
                 <button class="quickview round-icon-btn">
                     <i class="fa fa-minus"></i>
                 </button>
+                <button class="add-to-cart round-icon-btn">
+                <i class="fas fa-edit"></i>
+            </button>
             </div>
         </div>
     `;
