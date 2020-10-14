@@ -72,7 +72,7 @@ const PopUP = () => {
     $("#dialog-confirm").dialog({
       resizable: false,
       height: "auto",
-      width: 300,
+      width: 360,
       modal: true,
       buttons: {
         "Continue Shopping": function () {
