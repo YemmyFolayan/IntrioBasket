@@ -6,6 +6,7 @@ document.addEventListener(
   () => {
     // updateCartButtonBadge
     updateCartButtonBadge();
+
   
   },
   false
@@ -118,7 +119,7 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
     };
 
     fetch(
-      `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`,
+      `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`,
       requestOptions
     )
       .then((response) => response.text())
@@ -161,23 +162,7 @@ const emptyCart = () => {
 //update cart button function
 //update from localstorage
 
-/**
-const cartStores = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
-console.log(cartStores);
-  
 
-cartStores.forEach((cartItem) => {
-  let cartDetail = {
-    name = cartItem.name,
-    price = cartItem.price,
-    qty = cartItem.qty,
-    imageUrl = cartItem.imageUrl
-
-  };
-  console.log(cartDetail);
-
-});
-**/
 
 const updateCart = () => {
   console.log("updatecart function");
@@ -208,7 +193,7 @@ const updateCart = () => {
   };
 
   fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/update-cart/${userId}`,
+    `http://intriobasket.pexceptos.com/api/user/update-cart/${userId}`,
     requestOptions
   )
     .then((response) => response.text())
@@ -263,7 +248,7 @@ const updateCheckout = (name, imageUrl, price, qty) => {
   };
 
   fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout/user/${userId}`,
+    `http://intriobasket.pexceptos.com/api/checkout/user/${userId}`,
     requestOptions
   )
     .then((response) => response.text())
@@ -401,7 +386,7 @@ const QueryCheckout = () => {
   };
 
   fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout?purchaser_id=${userId}`,
+    `http://intriobasket.pexceptos.com/api/checkout?purchaser_id=${userId}`,
     requestOptions
   )
     .then(function (response) {
@@ -568,7 +553,7 @@ const GetAllCheckout = () => {
   };
 
   fetch(
-    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout/get-all",
+    "http://intriobasket.pexceptos.com/api/checkout/get-all",
     requestOptions
   )
     .then(function (response) {
@@ -655,6 +640,33 @@ const DisplayUserNameMobileTemplate = () => {
 };
 
 DisplayUserNameMobileTemplate();
+
+
+
+
+//delete each Item
+
+const deleteItem = (id) => {
+  // console.log(id)
+
+  if (localStorage.getItem(CONFIG.CART_STORE) === null) {
+    //something is wrong
+    return false;
+  } else {
+    const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+    console.log(cartList, id);
+
+    let newCartList = cartList.filter((item, index) => item.id !== id);
+
+    localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(newCartList));
+  }
+
+  // update Cart
+  shopCartTBodyDOM.innerHTML = "";
+
+  lookUpCartStore();
+};
+
 
 /*
 

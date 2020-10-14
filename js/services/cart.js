@@ -3,7 +3,7 @@ document.addEventListener(
   "DOMContentLoaded",
   () => {
     // updateCartButtonBadge
-    lookUpCartStore();
+    updateCartButtonBadge();
   },
   false
 );
@@ -17,7 +17,7 @@ const cartTotalTBodyDOM = document.getElementById("cartTotalTBody");
 
 const cartItemTemplate = (productDetails) => {
   return `
-        <tr id="${productDetails.name}">
+        <tr id="${productDetails.id}">
             <td class="product-name">${productDetails.name}</td>
             <td class="product-price">NGN ${productDetails.price}</td>
             <td class="product-quantity">
@@ -78,85 +78,72 @@ const renderCartTotalTable = () => {
   // cartTotalPaystackDOM.innerHTML = htmlPay;
 };
 
+console.log("CART DATA");
+
+// const GetUserCart = () => {
+//   console.log("updateCheckout function");
+
+//   var myHeaders = new Headers();
+//   myHeaders.append("Content-Type", "application/json");
+//   myHeaders.append("x-access-token", `${userToken}`);
+
+//   var requestOptions = {
+//     method: "GET",
+//     headers: myHeaders,
+
+//   };
+
+//   fetch(`http://intriobasket.pexceptos.com/api/user/${userId}`, requestOptions)
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       const res = data;
+//       console.log("CART FETCH");
+//       console.log(res.payload.cart);
+//       let temp = JSON.parse(localStorage.getItem(CONFIG.CART_STORE) || "[]");
+
+//       res.payload.cart.forEach((cart) => {
+//         let cartDetails = {
+//           id: Number((Math.random() * 23544444444444).toFixed(0)),
+//           name: cart.item_name,
+//           imageUrl: cart.item_image,
+//           qty: cart.number,
+//           price: cart.initial_cost,
+
+//         };
+//         temp.push(cartDetails);
+
+//         //PUSH THESE OBJECTS TO cartStore
+//       });
+//       console.log("the temp array", temp);
+//       localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(temp));
+//     })
+
+//     .catch((error) => console.log("error", error));
+
+//   console.log("GetUserCart");
+// };
+// GetUserCart();
+
+//export {GetUserCart};
+
 const lookUpCartStore = () => {
   let cartStore = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
   console.log(cartStore);
 
-  console.log("CART DATA");
-  const GetUserCart = () => {
-    console.log("updateCheckout function");
-
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("x-access-token", `${userToken}`);
-
-    var requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      redirect: "follow",
-    };
-
-    fetch(
-      `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/${userId}`,
-      requestOptions
-    )
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        const res = data;
-        console.log("CART FETCH");
-        console.log(res.payload.cart);
-        let temp = JSON.parse(localStorage.getItem(CONFIG.CART_STORE) || "[]");
-
-        res.payload.cart.forEach((cart) => {
-          let cartDetails = {
-            name: cart.item_name,
-            imageUrl: cart.item_image,
-            qty: cart.number,
-            price: cart.initial_cost,
-            id: Number((Math.random() * 235).toFixed(0)),
-          };
-          temp.push(cartDetails);
-
-          /*
-
-          cartStore = localStorage.getItem(CONFIG.CART_STORE) || "[]";
-          cartStore = JSON.parse(cartStore);
-          cartStore.push(cartDetails);
-          localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartStore));
-
-
-          //REMOVE IT OUT OF LOOP BECAUSE OF REPEATED ITEMS    or MAP IT
-
-          //ASSIGN ID TO BE ABLE TO DELETE IT
-
-**/
-          //PUSH THESE OBJECTS TO cartStore
-        });
-        console.log("the temp array", temp);
-        localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(temp));
-      })
-
-      .catch((error) => console.log("error", error));
-
-    console.log("GetUserCart");
-    updateCartButtonBadge();
-  };
-
-  GetUserCart();
-
   if (cartStore === null || cartStore.length === 0)
-    //// Create User Cart here from back end http://intriobasket.pexceptos.com/api/user/create-cart/5f4d0fd68cc9aa11e6151b88
     return handleNoItemsInCart();
 
   cartStore.forEach((product) => {
     let htmlString = cartItemTemplate(product);
     //checkout
 
+    console.log("for each");
+
     let htmlFragment = document.createElement("tr");
 
-    htmlFragment.setAttribute("id", product.name);
+    htmlFragment.setAttribute("id", product.id);
     htmlFragment.innerHTML = htmlString;
 
     shopCartTBodyDOM.appendChild(htmlFragment);
@@ -165,17 +152,19 @@ const lookUpCartStore = () => {
   // call renderCartTotalTable
   renderCartTotalTable();
 };
-
 lookUpCartStore();
 
 //delete each Item
 
 const deleteItem = (id) => {
+  // console.log(id)
+
   if (localStorage.getItem(CONFIG.CART_STORE) === null) {
     //something is wrong
     return false;
   } else {
     const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+    console.log(cartList, id);
 
     let newCartList = cartList.filter((item, index) => item.id !== id);
 

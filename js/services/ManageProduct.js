@@ -90,7 +90,7 @@ const createFoodListing = (name, imageUrl, price) => {
   };
 
   fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food/create`,
+    `http://intriobasket.pexceptos.com/api/food/create`,
     requestOptions
   )
     .then((response) => response.text())
@@ -136,7 +136,7 @@ const updateFoodListing = (name, imageUrl, price) => {
   };
 
   fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food/update/${AdminId}`,
+    `http://intriobasket.pexceptos.com/api/food/update/${AdminId}`,
     requestOptions
   )
     .then((response) => response.text())
@@ -167,7 +167,7 @@ const updateCart = (name, imageUrl, price) => {
   };
 
   fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food/${AdminId}`,
+    `http://intriobasket.pexceptos.com/api/food/${AdminId}`,
     requestOptions
   )
     .then((response) => response.text())
