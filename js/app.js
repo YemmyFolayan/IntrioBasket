@@ -630,13 +630,13 @@ const DisplayUserNameTemplate = () => {
 
 DisplayUserNameTemplate();
 
-//form
-/**username Mobile
+
+//sername Mobile
 const CLIENTNameMobileDOM = document.getElementById("userNameMobile");
 
 const userNameMobileTemplate = (clientName) => {
   return `
-  <a href="login.html">Welcome ! ${clientName}<i class="fas fa-user"></i>Logout</a>
+  <a href="login.html">Welcome ! ${clientName } <i class="fas fa-user"></i>Logout</a>
     `;
 };
 
@@ -652,7 +652,7 @@ const DisplayUserNameMobileTemplate = () => {
 
 DisplayUserNameMobileTemplate();
 
-
+/*
 
 {
   "status": "OK",
