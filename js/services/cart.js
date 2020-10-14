@@ -110,9 +110,9 @@ const lookUpCartStore = () => {
         const res = data;
         console.log("CART FETCH");
         console.log(res.payload.cart);
-        const cartArray = res.payload.cart;
+        
 
-        cartArray.forEach((cart) => {
+        res.payload.cart.forEach((cart) => {
           let cartDetails = {
             name: cart.item_name,
             imageUrl: cart.item_image,
