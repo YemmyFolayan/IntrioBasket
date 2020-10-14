@@ -123,6 +123,11 @@ const lookUpCartStore = () => {
           cartStore.push(cartDetails);
           localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartStore));
 
+
+          //REMOVE IT OUT OF LOOP BECAUSE OF REPEATED ITEMS    or MAP IT
+
+          //ASSIGN ID TO BE ABLE TO DELETE IT
+
           /**cartStore.forEach((product) => {
             let htmlString = cartItemTemplate(product);
             //checkout

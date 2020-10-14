@@ -89,6 +89,10 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
 
     console.log("got here");
 
+
+
+    //I WANT TO PASS PARAMETER HERE TO THE TO THE CART DETAILS
+
     var numbers = 1;
 
     var myHeaders = new Headers();
