@@ -115,6 +115,7 @@ const lookUpCartStore = () => {
             imageUrl: cart.item_image,
             qty: cart.number,
             price: cart.initial_cost,
+            id: Number((Math.random() * 235).toFixed(0)),
           };
           temp.push(cartDetails);
 
@@ -135,8 +136,6 @@ const lookUpCartStore = () => {
         });
         console.log("the temp array", temp);
         localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(temp));
-
-
       })
 
       .catch((error) => console.log("error", error));
