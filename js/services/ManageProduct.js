@@ -49,7 +49,15 @@ const fetchFoodList = async () => {
 
 fetchFoodList();
 
-//FROM FETCH FOODLISTING 
+
+
+let AdminId = localStorage.getItem("AdminId");
+console.log({ AdminId });
+
+let adminToken = localStorage.getItem("adminToken");
+console.log({ adminToken });
+
+//FROM FETCH FOOD ENDPOINT
 //POST Create Food Listing http://intriobasket.pexceptos.com/api/food/create
 const createFoodListing = (name, imageUrl, price) => {
   console.log("updatecart function");
@@ -60,6 +68,7 @@ const createFoodListing = (name, imageUrl, price) => {
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
+
 
   var raw = JSON.stringify({
     food_product_name: "hh",
@@ -96,7 +105,7 @@ const createFoodListing = (name, imageUrl, price) => {
 //GET Get All Food Listing http://intriobasket.pexceptos.com/api/food
 
 //PUT Update Food Listing[Admin] http://intriobasket.pexceptos.com/api/food/update/5f838f85fef8090024a53638
-const updateCart = (name, imageUrl, price) => {
+const updateFoodListing = (name, imageUrl, price) => {
   console.log("updatecart function");
   var numbers = 1;
   var name = name;
@@ -105,7 +114,7 @@ const updateCart = (name, imageUrl, price) => {
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("x-admin-token", `${userToken}`);
+  myHeaders.append("x-admin-token", `${adminToken}`);
 
   var raw = JSON.stringify({
     food_product_name: "hh",
@@ -126,7 +135,7 @@ const updateCart = (name, imageUrl, price) => {
   };
 
   fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food/update/${userId}`,
+    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food/update/${AdminId}`,
     requestOptions
   )
     .then((response) => response.text())
@@ -148,7 +157,7 @@ const updateCart = (name, imageUrl, price) => {
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("x-admin-token", `${userToken}`);
+  myHeaders.append("x-admin-token", `${adminToken}`);
 
   var requestOptions = {
     method: "DELETE",
@@ -157,7 +166,7 @@ const updateCart = (name, imageUrl, price) => {
   };
 
   fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food/${userId}`,
+    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food/${AdminId}`,
     requestOptions
   )
     .then((response) => response.text())
