@@ -198,7 +198,6 @@ const deleteItem = (id) => {
 
 
 
-*/
 //userId is GLOBAL across the site
 //let userId = localStorage.getItem("id");
 console.log({ userId });
