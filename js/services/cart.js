@@ -125,7 +125,7 @@ const lookUpCartStore = () => {
           cartStore = localStorage.getItem(CONFIG.CART_STORE) || "[]";
           cartStore = JSON.parse(cartStore);
           cartStore.push(cartDetails);
-          localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
+          localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartStore));
 
           /**cartStore.forEach((product) => {
             let htmlString = cartItemTemplate(product);
