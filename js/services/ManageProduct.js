@@ -49,9 +49,9 @@ const fetchFoodList = async () => {
 
 fetchFoodList();
 
-/**
- * POST Create Food Listing http://intriobasket.pexceptos.com/api/food/create
-const updateCart = (name, imageUrl, price) => {
+//FROM FETCH FOODLISTING 
+//POST Create Food Listing http://intriobasket.pexceptos.com/api/food/create
+const createFoodListing = (name, imageUrl, price) => {
   console.log("updatecart function");
   var numbers = 1;
   var name = name;
