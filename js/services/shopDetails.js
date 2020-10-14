@@ -34,7 +34,7 @@ const productDetailsTemplate = (productDetails) => {
     </div>
   </div>
 
-  <div class="col-14 col-md-12">
+  <div class="col-8 col-md-4">
     <div class="shop-detail_info shop-detail_info-full">
       <p class="delivery-status">Free delivery</p>
       <div style="padding: 10px 30px 10px 30px;">

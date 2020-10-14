@@ -4,6 +4,7 @@ document.addEventListener(
   () => {
     // updateCartButtonBadge
     updateCartButtonBadge();
+    
   },
   false
 );
@@ -36,6 +37,8 @@ const cartItemTemplate = (productDetails) => {
         </tr>
     `;
 };
+
+
 
 const cartTotalTemplate = (totalPriceToPay, totalPriceToTax) => {
   return `
@@ -80,54 +83,6 @@ const renderCartTotalTable = () => {
 
 console.log("CART DATA");
 
-// const GetUserCart = () => {
-//   console.log("updateCheckout function");
-
-//   var myHeaders = new Headers();
-//   myHeaders.append("Content-Type", "application/json");
-//   myHeaders.append("x-access-token", `${userToken}`);
-
-//   var requestOptions = {
-//     method: "GET",
-//     headers: myHeaders,
-
-//   };
-
-//   fetch(`http://intriobasket.pexceptos.com/api/user/${userId}`, requestOptions)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       const res = data;
-//       console.log("CART FETCH");
-//       console.log(res.payload.cart);
-//       let temp = JSON.parse(localStorage.getItem(CONFIG.CART_STORE) || "[]");
-
-//       res.payload.cart.forEach((cart) => {
-//         let cartDetails = {
-//           id: Number((Math.random() * 23544444444444).toFixed(0)),
-//           name: cart.item_name,
-//           imageUrl: cart.item_image,
-//           qty: cart.number,
-//           price: cart.initial_cost,
-
-//         };
-//         temp.push(cartDetails);
-
-//         //PUSH THESE OBJECTS TO cartStore
-//       });
-//       console.log("the temp array", temp);
-//       localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(temp));
-//     })
-
-//     .catch((error) => console.log("error", error));
-
-//   console.log("GetUserCart");
-// };
-// GetUserCart();
-
-//export {GetUserCart};
-
 const lookUpCartStore = () => {
   let cartStore = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
   console.log(cartStore);
@@ -154,6 +109,8 @@ const lookUpCartStore = () => {
 };
 lookUpCartStore();
 
+
+/*
 //delete each Item
 
 const deleteItem = (id) => {
@@ -176,6 +133,8 @@ const deleteItem = (id) => {
 
   lookUpCartStore();
 };
+
+*/
 
 //userId is GLOBAL across the site
 //let userId = localStorage.getItem("id");

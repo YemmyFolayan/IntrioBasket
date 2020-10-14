@@ -6,8 +6,6 @@ document.addEventListener(
   () => {
     // updateCartButtonBadge
     updateCartButtonBadge();
-
-  
   },
   false
 );
@@ -90,8 +88,6 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
 
     console.log("got here");
 
-
-
     //I WANT TO PASS PARAMETER HERE TO THE TO THE CART DETAILS
 
     var numbers = 1;
@@ -161,8 +157,6 @@ const emptyCart = () => {
 };
 //update cart button function
 //update from localstorage
-
-
 
 const updateCart = () => {
   console.log("updatecart function");
@@ -510,34 +504,57 @@ const GetAllCheckoutItemTemplate = (historyDetails) => {
 
 
       <div class="col-12 col-md-6 col-lg-3">
-        <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon3.png" alt="">
-          <h5 class="benefit-title">Zip Code</h5>
-          <p class="benefit-describle">${historyDetails.zipCode}</p>
-        </div>
+      <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon3.png" alt="">
+      <h5 class="benefit-title">Zip Code</h5>
+      <p class="benefit-describle">${historyDetails.zipCode}</p>
       </div>
-
-
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon2.png" alt="">
-          <h5 class="benefit-title">Date</h5>
-          <p class="benefit-describle">${historyDetails.Date} </p>
-        </div>
       </div>
-
-
+      
+      
       <div class="col-12 col-md-6 col-lg-3">
-        <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon2.png" alt="">
-          <h5 class="benefit-title">Item Number</h5>
+      <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon2.png" alt="">
+      <h5 class="benefit-title">Date</h5>
+      <p class="benefit-describle">${historyDetails.Date} </p>
+      </div>
+      </div>
+      
+      
+      <div class="col-12 col-md-6 col-lg-3">
+      <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon2.png" alt="">
+      <h5 class="benefit-title">Item Number</h5>
           <p class="benefit-describle">${historyDetails.itemsNumber} </p>
+          </div>
         </div>
-      </div>
-
-       
-
-    </div>
-  </div>
-</div>
+        
+        
+        
+        </div>
+        </div>
+        </div>
     `;
+};
+
+//delete each Item
+const shopCartTBodyDOM = document.getElementById("shopCartTBody");
+const deleteItem = (id) => {
+  // console.log(id)
+
+  if (localStorage.getItem(CONFIG.CART_STORE) === null) {
+    //something is wrong
+    return false;
+  } else {
+    const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+    console.log(cartList, id);
+
+    let newCartList = cartList.filter((item, index) => item.id !== id);
+
+    localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(newCartList));
+  }
+
+  // update Cart
+  //shopCartTBodyDOM.innerHTML = "";
+
+  lookUpCartStore();
 };
 
 const GetAllCheckout = () => {
@@ -619,13 +636,12 @@ const DisplayUserNameTemplate = () => {
 
 DisplayUserNameTemplate();
 
-
 //sername Mobile
 const CLIENTNameMobileDOM = document.getElementById("userNameMobile");
 
 const userNameMobileTemplate = (clientName) => {
   return `
-  <a href="login.html">Welcome ! ${clientName } <i class="fas fa-user"></i>Logout</a>
+  <a href="login.html">Welcome ! ${clientName} <i class="fas fa-user"></i>Logout</a>
     `;
 };
 
@@ -640,33 +656,6 @@ const DisplayUserNameMobileTemplate = () => {
 };
 
 DisplayUserNameMobileTemplate();
-
-
-
-
-//delete each Item
-
-const deleteItem = (id) => {
-  // console.log(id)
-
-  if (localStorage.getItem(CONFIG.CART_STORE) === null) {
-    //something is wrong
-    return false;
-  } else {
-    const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
-    console.log(cartList, id);
-
-    let newCartList = cartList.filter((item, index) => item.id !== id);
-
-    localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(newCartList));
-  }
-
-  // update Cart
-  shopCartTBodyDOM.innerHTML = "";
-
-  lookUpCartStore();
-};
-
 
 /*
 
