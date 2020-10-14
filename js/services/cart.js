@@ -114,7 +114,7 @@ const lookUpCartStore = () => {
 
           cartStore = localStorage.getItem(CONFIG.CART_STORE) || "[]";
           cartStore = JSON.parse(cartStore);
-          cartStore.push(productDetails);
+          cartStore.push(cartDetails);
           localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
 
           cartStore.forEach((product) => {
@@ -137,18 +137,6 @@ const lookUpCartStore = () => {
 
 
 
-          cart_store: "[{"id":"5f4385e106c5350024edc172","name":"Ayoola Poundo yam","type":"FLOURS","imageUrl":"https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FAyoola%20Poundo%20yam%20.jpg?alt=media&token=0ed5878b-a26c-4166-a0ab-fd4dfd7f54f5","price":"900","qty":2},
-          {"id":"5f4385e106c5350024edc171","name":"Baking powder","type":"BAKING INGREDIENTS","imageUrl":"https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FBaking%20powder.jpg?alt=media&token=713ea73d-a563-45af-ba4f-a9bf6a60f08c","price":"500","qty":1}]"
-
-          //I'll use cartDetails here
-          console.log("cartpush");
-          var cartList = [];
-          cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE)) || [];
-          cartList.push(productDetails);
-          localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
-
-          console.log(cartList);
-          console.log("cartStorage test run");*/
         });
       })
 
@@ -323,6 +311,24 @@ POST
 /**
  *after login grab user id: 
  append the user id to the API
+
+
+
+
+
+
+cart_store: "[{"id":"5f4385e106c5350024edc172","name":"Ayoola Poundo yam","type":"FLOURS","imageUrl":"https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FAyoola%20Poundo%20yam%20.jpg?alt=media&token=0ed5878b-a26c-4166-a0ab-fd4dfd7f54f5","price":"900","qty":2},
+{"id":"5f4385e106c5350024edc171","name":"Baking powder","type":"BAKING INGREDIENTS","imageUrl":"https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FBaking%20powder.jpg?alt=media&token=713ea73d-a563-45af-ba4f-a9bf6a60f08c","price":"500","qty":1}]"
+
+//I'll use cartDetails here
+console.log("cartpush");
+var cartList = [];
+cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE)) || [];
+cartList.push(productDetails);
+localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
+
+console.log(cartList);
+console.log("cartStorage test run");*/
  *
  *
  */
