@@ -87,6 +87,9 @@ const lookUpCartStore = () => {
 
 lookUpCartStore();
 
+
+
+var password = document.getElementById("password").value;
 //delete each Item
 
 //TODO

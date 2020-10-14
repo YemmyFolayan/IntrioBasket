@@ -175,11 +175,8 @@ cartStores.forEach((cartItem) => {
 });
 **/
 
-
 const updateCart = () => {
   console.log("updatecart function");
- 
-
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -222,15 +219,15 @@ const updateCart = () => {
 const updateCheckout = (name, imageUrl, price, qty) => {
   console.log("updateCheckout function");
 
-  var numbers = 1;
   //from delivery form details
-  var address = "yemi house";
-  var totalCost = 2500;
-  var phoneNumber = "08103817187";
-  var purchaserName = "yemi";
-  var zipCode = "54321";
 
   //this from form value and display it on the screen
+  var purchaserName = document.getElementById("purchaserName").value;
+  var numbers = document.getElementById("numbers").value;
+  var phoneNumber = document.getElementById("phoneNumber").value;
+  var zipCode = document.getElementById("zipCode").value;
+  var address = document.getElementById("address").value;
+  var totalCost = 2500;
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -633,6 +630,7 @@ const DisplayUserNameTemplate = () => {
 
 DisplayUserNameTemplate();
 
+//form
 /**username Mobile
 const CLIENTNameMobileDOM = document.getElementById("userNameMobile");
 
