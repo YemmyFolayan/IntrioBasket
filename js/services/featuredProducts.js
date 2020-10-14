@@ -65,6 +65,7 @@ const fetchFoodList = async () => {
 
 fetchFoodList();
 
+
 const popupTemplateDOM = document.getElementById("dialog-confirm");
 const PopUP = () => {
   $(function () {
