@@ -107,6 +107,7 @@ const lookUpCartStore = () => {
         const res = data;
         console.log("CART FETCH");
         console.log(res.payload.cart);
+        let temp = [];
 
         res.payload.cart.forEach((cart) => {
           let cartDetails = {
@@ -115,8 +116,9 @@ const lookUpCartStore = () => {
             qty: cart.number,
             price: cart.initial_cost,
           };
+          temp.push(cartDetails);
 
-          console.log(cartDetails);
+          /*
 
           cartStore = localStorage.getItem(CONFIG.CART_STORE) || "[]";
           cartStore = JSON.parse(cartStore);
@@ -128,22 +130,10 @@ const lookUpCartStore = () => {
 
           //ASSIGN ID TO BE ABLE TO DELETE IT
 
-          /**cartStore.forEach((product) => {
-            let htmlString = cartItemTemplate(product);
-            //checkout
-
-            let htmlFragment = document.createElement("tr");
-
-            htmlFragment.setAttribute("id", product.name);
-            htmlFragment.innerHTML = htmlString;
-
-            shopCartTBodyDOM.appendChild(htmlFragment);
-          });**/
-
-          console.log("carttyy cartlist");
-
+**/
           //PUSH THESE OBJECTS TO cartStore
         });
+        console.log("the temp array", temp);
       })
 
       .catch((error) => console.log("error", error));
