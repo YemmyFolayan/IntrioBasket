@@ -107,7 +107,7 @@ const lookUpCartStore = () => {
         const res = data;
         console.log("CART FETCH");
         console.log(res.payload.cart);
-        let temp = [];
+        let temp = JSON.parse(localStorage.getItem(CONFIG.CART_STORE) || "[]");
 
         res.payload.cart.forEach((cart) => {
           let cartDetails = {
@@ -134,6 +134,9 @@ const lookUpCartStore = () => {
           //PUSH THESE OBJECTS TO cartStore
         });
         console.log("the temp array", temp);
+        localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(temp));
+
+
       })
 
       .catch((error) => console.log("error", error));
