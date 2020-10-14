@@ -42,7 +42,7 @@ Form.addEventListener("submit", function (e) {
       localStorage.setItem("adminToken", adminToken);
 
       const name = data.payload.fullname;
-      console.log("this is : ", name, id);
+      console.log("this is : ", name, AdminId);
 
       localStorage.setItem("name", name);
 
