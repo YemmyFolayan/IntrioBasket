@@ -1,8 +1,5 @@
 //TODO : IMPLEMENT 7.5%tax on any purchase
 
-
-
-
 const shopCartTBodyDOM = document.getElementById("shopCartTBody");
 const updateCartButton = document.getElementById("updateCartButton");
 const emptyCartButton = document.getElementById("emptyCartButton");
@@ -114,7 +111,6 @@ const lookUpCartStore = () => {
 
           console.log(cartDetails);
 
-
           cartStore = localStorage.getItem(CONFIG.CART_STORE) || "[]";
           cartStore = JSON.parse(cartStore);
           cartStore.push(cartDetails);
@@ -135,11 +131,6 @@ const lookUpCartStore = () => {
           console.log("carttyy cartlist");
 
           //PUSH THESE OBJECTS TO cartStore
-
-          
-
-
-
         });
       })
 
@@ -203,53 +194,18 @@ const deleteItem = (id) => {
   lookUpCartStore();
 };
 
+
+
+*/
+//userId is GLOBAL across the site
+//let userId = localStorage.getItem("id");
+console.log({ userId });
+
+//const url = `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
+
+console.log(url);
 /*
-console.log("CART DATA");
-const GetUserCart = () => {
-  console.log("updateCheckout function");
 
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("x-access-token", `${userToken}`);
-
-  var requestOptions = {
-    method: "GET",
-    headers: myHeaders,
-    redirect: "follow",
-  };
-
-  fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/${userId}`,
-    requestOptions
-  )
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      const res = data;
-      console.log("CART FETCH");
-      console.log(res.payload.cart);
-      const cartDetails = res.payload.cart;
-
-      res.payload.cart.forEach((cart) => {
-        let cartDetails = {
-          name: cart.item_name,
-          qty: cart.number,
-          price: cart.initial_cost,
-          imageUrl: cart.item_image,
-        };
-        console.log(cartDetails);
-        console.log("carttyyyyyyy");
-
-        //I'll use cartDetails here
-        localStorage.setItem("cartDetails", cartDetails);
-      });
-    })
-
-    .catch((error) => console.log("error", error));
-
-  console.log("GetUserCart");
-};
 
 GetUserCart();
 */
@@ -282,16 +238,7 @@ GetUserCart();
         "item_image": "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FBitter%20leaf.jpg?alt=media&token=e2a0f4d9-f66a-416e-bb51-8487de6d57cc"
     }
 ],
- */
-//userId is GLOBAL across the site
-//let userId = localStorage.getItem("id");
-console.log({ userId });
 
-//const url = `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
-
-console.log(url);
-
-/**
 TODO
 
 POST
@@ -332,6 +279,3 @@ localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
 
 console.log(cartList);
 console.log("cartStorage test run");*/
- *
- *
- */
