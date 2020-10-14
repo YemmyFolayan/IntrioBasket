@@ -117,7 +117,7 @@ const lookUpCartStore = () => {
           cartStore.push(cartDetails);
           localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
 
-          cartStore.forEach((product) => {
+          /**cartStore.forEach((product) => {
             let htmlString = cartItemTemplate(product);
             //checkout
 
@@ -127,7 +127,7 @@ const lookUpCartStore = () => {
             htmlFragment.innerHTML = htmlString;
 
             shopCartTBodyDOM.appendChild(htmlFragment);
-          });
+          });**/
 
           console.log("carttyy cartlist");
 
