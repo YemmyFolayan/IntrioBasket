@@ -1,4 +1,15 @@
 //TODO : IMPLEMENT 7.5%tax on any purchase
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+    // updateCartButtonBadge
+    lookUpCartStore();
+  
+  },
+  false
+);
+
+
 
 const shopCartTBodyDOM = document.getElementById("shopCartTBody");
 const updateCartButton = document.getElementById("updateCartButton");
@@ -157,15 +168,6 @@ const lookUpCartStore = () => {
 
     shopCartTBodyDOM.appendChild(htmlFragment);
 
-    // let htmlStrings = cartItemTemplateCheckout(product);
-    // //checkout
-
-    // let htmlFragments = document.createElement("div");
-
-    // htmlFragments.setAttribute("id", product.id);
-    // htmlFragments.innerHTML = htmlStrings;
-
-    // shopCartTBodyDOMCheckout.appendChild(htmlFragments);
   });
 
   // call renderCartTotalTable
