@@ -93,10 +93,5 @@ const PopUP = () => {
 
 const popupTemplate = () => {
   return `<p>
-  <span
-    class="fas fa-shopping-cart"
-    style="float:left; margin:12px 12px 20px 0;"
-  ></span>
-  Continue shopping or Goto Cart
-</p>`;
+  `;
 };
