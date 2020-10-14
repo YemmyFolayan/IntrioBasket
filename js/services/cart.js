@@ -4,12 +4,9 @@ document.addEventListener(
   () => {
     // updateCartButtonBadge
     lookUpCartStore();
-  
   },
   false
 );
-
-
 
 const shopCartTBodyDOM = document.getElementById("shopCartTBody");
 const updateCartButton = document.getElementById("updateCartButton");
@@ -110,7 +107,6 @@ const lookUpCartStore = () => {
         const res = data;
         console.log("CART FETCH");
         console.log(res.payload.cart);
-        
 
         res.payload.cart.forEach((cart) => {
           let cartDetails = {
@@ -122,7 +118,11 @@ const lookUpCartStore = () => {
 
           console.log(cartDetails);
 
-          
+          cartStore = localStorage.getItem(CONFIG.CART_STORE) || "[]";
+          cartStore = JSON.parse(cartStore);
+          cartStore.push(cartDetails);
+          localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartStore));
+
           /**cartStore.forEach((product) => {
             let htmlString = cartItemTemplate(product);
             //checkout
@@ -163,7 +163,6 @@ const lookUpCartStore = () => {
     htmlFragment.innerHTML = htmlString;
 
     shopCartTBodyDOM.appendChild(htmlFragment);
-
   });
 
   // call renderCartTotalTable
@@ -191,8 +190,6 @@ const deleteItem = (id) => {
 
   lookUpCartStore();
 };
-
-
 
 //userId is GLOBAL across the site
 //let userId = localStorage.getItem("id");
