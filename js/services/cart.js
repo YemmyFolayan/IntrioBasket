@@ -82,7 +82,7 @@ const renderCartTotalTable = () => {
 };
 
 const lookUpCartStore = () => {
-  const cartStore = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+  let cartStore = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
   console.log(cartStore);
 
   console.log("CART DATA");
