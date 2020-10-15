@@ -57,11 +57,7 @@ Form.addEventListener("submit", function (e) {
         console.log("the temp array", temp);
         localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(temp));
 
-        setTimeout(function loggedin() {
-          localStorage.setItem("login", true);
-          console.log("logged in");
-          window.location.assign("/Homepage.html");
-        }, 2200);
+
       })
 
       .catch((error) => {
@@ -137,6 +133,12 @@ Form.addEventListener("submit", function (e) {
         }, 1000);
 
         GetUserCart();
+        setTimeout(function loggedin() {
+          localStorage.setItem("login", true);
+          console.log("logged in");
+          window.location.assign("/Homepage.html");
+        }, 2200);
+        
       } else if (msg == "Incorrect Email or Password") {
         const name = email;
         const container = document.getElementById("containerr");
