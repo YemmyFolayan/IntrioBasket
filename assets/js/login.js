@@ -133,7 +133,7 @@ Form.addEventListener("submit", function (e) {
           container.replaceChild(panel, loaderDiv);
         }, 1000);
 
-        GetUserCart();
+        
 
         //this.data = GetUserCart();
       } else if (msg == "Incorrect Email or Password") {
