@@ -24,10 +24,7 @@ const GetUserCart = () => {
     headers: myHeaders,
   };
 
-  fetch(
-    `http://intriobasket.pexceptos.com/api/user/${userId}`,
-    requestOptions
-  )
+  fetch(`http://intriobasket.pexceptos.com/api/user/${userId}`, requestOptions)
     .then(function (response) {
       return response.json();
     })
@@ -51,8 +48,6 @@ const GetUserCart = () => {
       });
       console.log("the temp array", temp);
       localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(temp));
-
-
     })
 
     .catch((error) => {
@@ -65,8 +60,6 @@ const GetUserCart = () => {
 ///////////////////
 Form.addEventListener("submit", function (e) {
   e.preventDefault();
-
-
 
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
@@ -133,12 +126,10 @@ Form.addEventListener("submit", function (e) {
         }, 1000);
 
         GetUserCart();
-        setTimeout(function loggedin() {
-          localStorage.setItem("login", true);
-          console.log("logged in");
-          window.location.assign("/Homepage.html");
-        }, 2200);
 
+        localStorage.setItem("login", true);
+        console.log("logged in");
+        window.location.assign("/Homepage.html");
       } else if (msg == "Incorrect Email or Password") {
         const name = email;
         const container = document.getElementById("containerr");

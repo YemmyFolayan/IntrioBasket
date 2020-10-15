@@ -11,7 +11,7 @@ const manageProductItemTemplate = (productDetails) => {
             <h3 class="product-price">NGN ${productDetails.price}</h3>
             <div class="product-select">
                 
-                <button onclick="addToCart('${productDetails.id}','${productDetails.name}','${productDetails.type}','${productDetails.imageUrl}','${productDetails.price}')class="add-to-cart round-icon-btn">
+                <button class="add-to-cart round-icon-btn">
                     <i class="fa fa-plus"></i>
                 </button>
                 <button class="quickview round-icon-btn">
@@ -24,6 +24,8 @@ const manageProductItemTemplate = (productDetails) => {
         </div>
     `;
 };
+
+////////onclick="addToCart('${productDetails.id}','${productDetails.name}','${productDetails.type}','${productDetails.imageUrl}','${productDetails.price}')
 
 const fetchFoodList = async () => {
   const endpoint = "/food"; // THOUGHTS: There should be an endpoint for featured products...

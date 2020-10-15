@@ -66,7 +66,6 @@ const featuredProductItemTemplate = (productDetails) => {
 
 
 
-
 const popupTemplateDOM = document.getElementById("dialog-confirm");
 const PopUP = () => {
   $(function () {

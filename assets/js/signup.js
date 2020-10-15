@@ -65,16 +65,8 @@ Form.addEventListener("submit", function (e) {
           container.replaceChild(panel, loaderDiv);
           $(".card-panel green").remove();
         }, 1000);
-        // setTimeout(function () {
-        //   // Removes an element from the document
-        //   $(".card-panel green").remove();
-        // }, 1009);
 
-        //redirect user to homepage after successful login
-
-        setTimeout(function () {
-          window.location.assign("/login.html");
-        }, 2200);
+        window.location.assign("/login.html");
 
         console.log("User Created Succesfully");
       } else if (msg == "Email already exists") {
