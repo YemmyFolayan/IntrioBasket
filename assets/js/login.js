@@ -10,7 +10,6 @@ const userNameDOM = document.getElementById("user");
 Form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-
   const GetUserCart = () => {
     console.log("updateCheckout function");
 
@@ -30,7 +29,10 @@ Form.addEventListener("submit", function (e) {
       headers: myHeaders,
     };
 
-    fetch(`http://intriobasket.pexceptos.com/api/user/${userId}`, requestOptions)
+    fetch(
+      `http://intriobasket.pexceptos.com/api/user/${userId}`,
+      requestOptions
+    )
       .then(function (response) {
         return response.json();
       })
@@ -69,7 +71,6 @@ Form.addEventListener("submit", function (e) {
 
     console.log("GetUserCart");
   };
-
 
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
@@ -136,7 +137,6 @@ Form.addEventListener("submit", function (e) {
         }, 1000);
 
         GetUserCart();
-
       } else if (msg == "Incorrect Email or Password") {
         const name = email;
         const container = document.getElementById("containerr");
