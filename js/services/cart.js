@@ -4,7 +4,7 @@ document.addEventListener(
   () => {
     // updateCartButtonBadge
     updateCartButtonBadge();
-    lookUpCartStore();
+
     
   },
   false
