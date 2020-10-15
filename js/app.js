@@ -69,7 +69,7 @@ console.log({ userId });
 let userToken = localStorage.getItem("token");
 console.log({ userToken });
 
-const url = `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
+const url = `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
 
 console.log(url);
 
@@ -116,7 +116,7 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
     };
 
     fetch(
-      `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`,
+      `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`,
       requestOptions
     )
       .then((response) => response.text())
@@ -198,7 +198,7 @@ const updateCart = () => {
   };
 
   fetch(
-    `http://intriobasket.pexceptos.com/api/user/update-cart/${userId}`,
+    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/update-cart/${userId}`,
     requestOptions
   )
     .then((response) => response.text())
@@ -260,7 +260,7 @@ const updateCheckout = (name, imageUrl, price, qty) => {
   };
 
   fetch(
-    `http://intriobasket.pexceptos.com/api/checkout/user/${userId}`,
+    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout/user/${userId}`,
     requestOptions
   )
     .then((response) => response.text())
@@ -398,7 +398,7 @@ const QueryCheckout = () => {
   };
 
   fetch(
-    `http://intriobasket.pexceptos.com/api/checkout?purchaser_id=${userId}`,
+    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout?purchaser_id=${userId}`,
     requestOptions
   )
     .then(function (response) {
@@ -589,7 +589,7 @@ const GetAllCheckout = () => {
   };
 
   fetch(
-    "http://intriobasket.pexceptos.com/api/checkout/get-all",
+    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout/get-all",
     requestOptions
   )
     .then(function (response) {
