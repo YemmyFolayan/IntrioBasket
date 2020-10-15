@@ -3,7 +3,7 @@ const shopDOM = document.getElementById("shopDOM");
 
 const productDetailsTemplate = (productDetails) => {
   return `
-  <div class="col-12">
+  <div class="col-10">
     <div class="shop-detail_more-info">
       <div id="tab-so3">
         <ul class="mb-0">
