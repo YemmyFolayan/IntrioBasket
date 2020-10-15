@@ -80,7 +80,10 @@
     		2.14. Tab template
     		2.15. Typography template
 *************************************/
-
+.warning{
+  color : maroon;
+  font-family: sans-serif;
+}
 .img .rad img{
   border-radius: 50% !important;
 }

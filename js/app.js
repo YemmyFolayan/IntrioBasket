@@ -84,28 +84,31 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
     localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
     //call create user cart api here
     //create user cart
-    console.log("before create user cart");
 
-    console.log("got here");
+    const cartStore = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+    let raw = [];
 
-    //I WANT TO PASS PARAMETER HERE TO THE TO THE CART DETAILS
+    cartStore.forEach((cart) => {
+      let cartDetails = {
+        item_name: cart.name,
+        number: cart.qty,
+        item_image: cart.imageUrl,
+        initial_cost: cart.price,
+      };
+      raw.push(cartDetails);
+    });
 
-    var numbers = 1;
+    ////////////////////////////////////
+    console.log("updatecart function");
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("x-access-token", `${userToken}`);
 
-    var raw = JSON.stringify({
-      cart_details: [
-        {
-          item_name: name,
-          number: numbers,
-          initial_cost: price,
-          item_image: imageUrl,
-        },
-      ],
-    });
+    raw = { cart_details: raw };
+    raw = JSON.stringify(raw);
+    console.log("RAW");
+    console.log(raw);
 
     var requestOptions = {
       method: "POST",
@@ -158,24 +161,34 @@ const emptyCart = () => {
 //update cart button function
 //update from localstorage
 
+/////////////////////////////////////
+
+///////////////////////////////////////
 const updateCart = () => {
+  ////////////////////////////////////
+
+  const cartStore = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+  let raw = [];
+
+  cartStore.forEach((cart) => {
+    let cartDetails = {
+      item_name: cart.name,
+      number: cart.qty,
+      item_image: cart.imageUrl,
+      initial_cost: cart.price,
+    };
+    raw.push(cartDetails);
+  });
+
+  ////////////////////////////////////
   console.log("updatecart function");
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append("x-access-token", `${userToken}`);
-  var qty = 1;
 
-  var raw = JSON.stringify({
-    cart_details: [
-      {
-        item_name: name,
-        number: qty,
-        initial_cost: price,
-        item_image: imageUrl,
-      },
-    ],
-  });
+  raw = { cart_details: raw };
+  raw = JSON.stringify(raw);
   console.log("RAW");
   console.log(raw);
 

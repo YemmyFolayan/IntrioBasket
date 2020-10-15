@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Index</title>
+    <title>IntrioBasket Payment</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <meta name="keywords" content="blog, business, clean, clear, cooporate, creative, design web, flat, marketing, minimal, portfolio, shop, shopping, unique">
@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="assets/images/shortcut_logo.png">
   </head>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <body>
+  <body onload="startUp()">
     <div id="main">
       <header>
 
@@ -36,14 +36,7 @@
                     </li>
                    
                     <li class="toggleable">   <a class="menu-item" href="login.html">Logout</a>
-                      <ul class="sub-menu">
-                        <li><a href="login.html">logout</a></li>
-
-                        <li><a href="FAQ.html">FAQ</a></li>
-                       
-                        <li><a href="contact_us.html">contact us</a></li>
                      
-                      </ul>
                     </li>
                     <li class="toggleable"><a class="menu-item" href="about_us.html">About us</a></li>
                   </ul>
@@ -51,9 +44,7 @@
               </div>
               <div class="col-2">
                 <div class="product-function d-flex align-items-center justify-content-end">
-                  <div id="wishlist"><a class="function-icon icon_heart_alt" href=""></a></div>
-                  <div id="cart"><a class="function-icon fa fa-shopping-cart" href=""><span>NGN 150.00</span></a></div>
-                </div>
+                                 </div>
               </div>
             </div>
           </div>
@@ -78,17 +69,7 @@
                           </ul>
                         </li>
                        
-                        <li class="toggleable"><a class="menu-item" href="javascript:void()">Pages</a><span class="sub-menu--expander"><i class="icon_plus"></i></span>
-                          <ul class="sub-menu">
-                            <li><a href="login.html">logout</a></li>
-
-                            <li><a href="FAQ.html">FAQ</a></li>
-                           
-                            <li><a href="about_us.html">about us</a></li>
-                            <li><a href="contact_us.html">contact us</a></li>
-                           
-                          </ul>
-                        </li>
+                        
                       </ul>
                     </div>
                     <div class="mobile-login">
@@ -137,21 +118,21 @@
                   <div class="col-12 col-md-4">
                     <div class="step-block step-block--1">
                       <div class="step">
-                        <h2>Shopping Cart</h2><span>01</span>
+                        <h2>Shopping Cart</h2><span></span>
                       </div>
                     </div>
                   </div>
                   <div class="col-12 col-md-4">
                     <div class="step-block active">
                       <div class="step">
-                        <h2>Check Out</h2><span>02</span>
+                        <h2>Payment</h2><span></span>
                       </div>
                     </div>
                   </div>
                   <div class="col-12 col-md-4">
                     <div class="step-block">
                       <div class="step">
-                        <h2>Order Completed</h2><span>03</span>
+                        <h2>Order Completed</h2><span></span>
                       </div>
                     </div>
                   </div>
@@ -164,105 +145,70 @@
       <!-- End order step-->
       <div class="shop-checkout">
         <div class="container">
-          <form action="" method="post">
-            <div class="row">
-              <div class="col-12 col-lg-8">
-                <h2 class="form-title">Delivery details</h2>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="inputFirstName">First Name*</label>
-                    <input class="no-round-input-bg" id="inputFirstName" type="text" required>
+          <div class="row">
+            <div class="col-12 text-center">
+              <h1 class="title mx-auto">Payment</h1>
+            </div>
+           
+
+            <div class="container">
+              <div class="col-12 col-md-8 mx-auto">
+              <div class="jumbotron">
+                <h4 class="text-center title mx-auto">Make payment with Paystack <img src="/assets/images/paystack.png" height="25%" width="45"></h4>
+                <form class="form" id="pay-form">
+                  <div id="alert-holder"></div>
+                  <div class="text-center">
+                    <p>Please provide your details and click "Pay" to make your payment.</p>
                   </div>
-                  <div class="form-group col-md-6">
-                    <label for="inputLastName">Last Name*</label>
-                    <input class="no-round-input-bg" id="inputLastName" type="text" required>
+                  <fieldset class="form-group row">
+                    <label class="col-sm-3" for="firstname">Purchaser's Name</label>
+                    <div class=" col-sm-9">
+                      <input class="form-control no-round-input-bg" id="firstname" type="text" placeholder="Your Name (optional)" />
+                    </div>
+                  </fieldset>
+                  <fieldset class="form-group row">
+                    <label class="col-sm-3" for="phoneNumber">Phone No*</label>
+                    <div class=" col-sm-9">
+                      <input class="form-control no-round-input-bg" id="phoneNumber" type="text" placeholder="Your Phone No (optional)" />
+                    </div>
+                  </fieldset>
+                  <fieldset class="form-group row">
+                    <label class="col-sm-3" for="email">Email Address *</label>
+                    <div class=" col-sm-9">
+                      <input class="form-control no-round-input-bg" id="email" required="required" type="email" placeholder="Your Email Address" />
+                    </div>
+                    <small class="text-muted col-sm-9 col-sm-offset-3">We'll never share your email with anyone else.</small>
+                  </fieldset>
+                  <!-- The amount box is not displayed by default. Will stay so unless the GET parameter amountinkobo is a valid integer -->
+                  <fieldset class="form-group row" id="amountinnaira">
+                    <label class="col-sm-3" for="amount-in-naira">Amount (in Naira)</label>
+                    <div class="col-sm-9">
+                      <div class="input-group">
+                        <div class="input-group-addon">&#x20a6;</div>
+                        <input class="form-control no-round-input-bg" id="amount-in-naira" required="required" type="number" step="100" placeholder="Amount" />
+                        <div class="input-group-addon">.00</div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <div id="cartTotalPaystack">
+                  <p class="text-center" id="static-amount">You are paying: <span id="amountinngn">0</span> naira</p>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputCompanyName">Company name (optional)</label>
-                  <input class="no-round-input-bg" id="inputCompanyName" type="text">
-                </div>
-                <div class="form-group">
-                  <label for="inputCountry">Country*</label>
-                  <select class="no-round-input-bg" id="inputContry">
-                    <option value="1">Nigeria</option>
-                    <option value="2">USA</option>
-                    <option value="3">Italy</option>
-                    <option value="4">South Africa</option>
-                    <option value="5">Japan</option>
-                    <option value="6">Ghana</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="inputStreet"><h2 class="form-title">Shipping Address*</h2></label>
-                  <input class="no-round-input-bg" id="inputStreet" type="text" required>
-                </div>
-                <div class="form-group">
-                  <label for="inputZip">Postcode / ZIP (optional)</label>
-                  <input class="no-round-input-bg" id="inputZip" type="text">
-                </div>
-                <div class="form-group">
-                  <label for="inputCity">State*</label>
-                  <input class="no-round-input-bg" id="inputCity" type="text" required>
-                </div>
-                <div class="form-group">
-                  <label for="inputCity">Town / City*</label>
-                  <input class="no-round-input-bg" id="inputCity" type="text" required>
-                </div>
-                <div class="form-group">
-                  <label for="inputPhone">Phone*</label>
-                  <input class="no-round-input-bg" id="inputPhone" type="text" required>
-                </div>
-                <div class="form-group">
-                  <label for="inputEmail">Email address *</label>
-                  <input class="no-round-input-bg" id="inputEmail" type="email" required>
-                </div>
-                
-                <div class="form-group">
-                  <label for="inputNote">Order notes (optional)</label>
-                  <textarea class="textarea-form-bg" id="inputNote" name="" cols="30" rows="7"></textarea>
-                </div>
+                  <fieldset class="form-group row text-center">
+                    <div class="col-sm-offset-3 col-sm-9">
+                      <button class="no-round-btn black cart-update" type="button" onclick="validateAndPay()"> Pay </button>
+                    </div>
+                  </fieldset>
+ 
+                </form>
               </div>
-              <div class="col-12 col-md-6 col-lg-4">
-                <h2 class="form-title">Your order</h2>
-                <div class="shopping-cart">
-                  <div class="cart-total_block">
-                    <table class="table">
-                      <colgroup>
-                        <col span="1" style="width: 50%">
-                        <col span="1" style="width: 50%">
-                      </colgroup>
-                      <tbody id="shopCartTBodyCheckout">
-                       
+              <script src="https://js.paystack.co/v1/inline.js"></script>
 
-                      </tbody>
-
-                    </table>
-
-                    <table class="table">
-                      <colgroup>
-                        <col span="1" style="width: 50%">
-                        <col span="1" style="width: 50%">
-                      </colgroup>
-
-                      <tbody id="cartTotalTBodyCheckout">
-                        
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="form-group">
-                    <input type="radio" name="paymethod" id="shipping" value="option1" checked>
-                    <label for="shipping">Cash on delivery</label>
-                  </div>
-                  <div class="form-group">
-                    <input type="radio" name="paymethod" id="paypal" value="option2">
-                    <label for="paypal">PayStack</label>
-                  </div>
-                  <button class="no-round-btn submit-btn" onclick="router('shop_order_complete')">Place order</button>
-                </div>
               </div>
             </div>
-          </form>
+            
+           
+          </div>
+
         </div>
       </div>
       
@@ -346,15 +292,14 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.shop.js"></script>
 
+   
+    <script type="text/javascript" src="js/services/payment.js"></script>
+
+
 
     <!--Config -->
     <script src="config/constants.js"></script>
 
-    <!-- Utils -->
-    <script src="js/utils/api-request.js"></script>
-
-    <!-- App Logic -->
-    <script src="js/app.js"></script>
 
     <!-- Services -->
     <script src="js/services/checkout.js"></script>
