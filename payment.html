@@ -183,16 +183,12 @@
                   <fieldset class="form-group row" id="amountinnaira">
                     <label class="col-sm-3" for="amount-in-naira">Amount (in Naira)</label>
                     <div class="col-sm-9">
-                      <div class="input-group">
-                        <div class="input-group-addon">&#x20a6;</div>
-                        <input class="form-control no-round-input-bg" id="amount-in-naira" required="required" type="number" step="100" placeholder="Amount" />
-                        <div class="input-group-addon">.00</div>
+                      <div class="input-group" id="paying">
+                       
                       </div>
                     </div>
                   </fieldset>
-                  <div id="cartTotalPaystack">
-                  <p class="text-center" id="static-amount">You are paying: <span id="amountinngn">0</span> naira</p>
-                  </div>
+                
                   <fieldset class="form-group row text-center">
                     <div class="col-sm-offset-3 col-sm-9">
                       <button class="no-round-btn black cart-update" type="button" onclick="validateAndPay()"> Pay </button>
@@ -297,12 +293,6 @@
 
 
 
-    <!--Config -->
-    <script src="config/constants.js"></script>
-
-
-    <!-- Services -->
-    <script src="js/services/checkout.js"></script>
   
   </body>
 </html>
