@@ -31,7 +31,7 @@ Form.addEventListener("submit", function (e) {
   const text = document.createElement("span");
 
   fetch(
-    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/admin/create",
+    "http://intriobasket.pexceptos.com/api/admin/create",
     {
       method: "POST",
       body: JSON.stringify({
