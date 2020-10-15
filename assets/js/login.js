@@ -6,68 +6,70 @@ const userNameDOM = document.getElementById("user");
 
 ///////////////////
 
-const GetUserCart = () => {
-  console.log("updateCheckout function");
-
-  //userId is GLOBAL across the site
-  let userId = localStorage.getItem("id");
-  console.log({ userId });
-
-  let userToken = localStorage.getItem("token");
-  console.log({ userToken });
-
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("x-access-token", `${userToken}`);
-
-  var requestOptions = {
-    method: "GET",
-    headers: myHeaders,
-  };
-
-  fetch(`http://intriobasket.pexceptos.com/api/user/${userId}`, requestOptions)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      const res = data;
-      console.log("CART FETCH");
-      console.log(res.payload.cart);
-      let temp = JSON.parse(localStorage.getItem(CONFIG.CART_STORE) || "[]");
-
-      res.payload.cart.forEach((cart) => {
-        let cartDetails = {
-          id: Number((Math.random() * 23544444444444).toFixed(0)),
-          name: cart.item_name,
-          imageUrl: cart.item_image,
-          qty: cart.number,
-          price: cart.initial_cost,
-        };
-        temp.push(cartDetails);
-
-        //PUSH THESE OBJECTS TO cartStore
-      });
-      console.log("the temp array", temp);
-      localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(temp));
-
-      setTimeout(function loggedin() {
-        localStorage.setItem("login", true);
-        console.log("logged in");
-        window.location.assign("/Homepage.html");
-      }, 2200);
-    })
-
-    .catch((error) => {
-      console.log("error", error);
-      alert("please relogin");
-    });
-
-  console.log("GetUserCart");
-};
-
 ///////////////////
 Form.addEventListener("submit", function (e) {
   e.preventDefault();
+
+
+  const GetUserCart = () => {
+    console.log("updateCheckout function");
+
+    //userId is GLOBAL across the site
+    let userId = localStorage.getItem("id");
+    console.log({ userId });
+
+    let userToken = localStorage.getItem("token");
+    console.log({ userToken });
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("x-access-token", `${userToken}`);
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+    };
+
+    fetch(`http://intriobasket.pexceptos.com/api/user/${userId}`, requestOptions)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        const res = data;
+        console.log("CART FETCH");
+        console.log(res.payload.cart);
+        let temp = JSON.parse(localStorage.getItem(CONFIG.CART_STORE) || "[]");
+
+        res.payload.cart.forEach((cart) => {
+          let cartDetails = {
+            id: Number((Math.random() * 23544444444444).toFixed(0)),
+            name: cart.item_name,
+            imageUrl: cart.item_image,
+            qty: cart.number,
+            price: cart.initial_cost,
+          };
+          temp.push(cartDetails);
+
+          //PUSH THESE OBJECTS TO cartStore
+        });
+        console.log("the temp array", temp);
+        localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(temp));
+
+        setTimeout(function loggedin() {
+          localStorage.setItem("login", true);
+          console.log("logged in");
+          window.location.assign("/Homepage.html");
+        }, 2200);
+      })
+
+      .catch((error) => {
+        console.log("error", error);
+        alert("please relogin");
+      });
+
+    console.log("GetUserCart");
+  };
+
 
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
@@ -135,7 +137,6 @@ Form.addEventListener("submit", function (e) {
 
         GetUserCart();
 
-        //this.data = GetUserCart();
       } else if (msg == "Incorrect Email or Password") {
         const name = email;
         const container = document.getElementById("containerr");
