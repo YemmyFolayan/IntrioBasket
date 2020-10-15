@@ -1,28 +1,14 @@
-const featuredProductDOM = document.getElementById("featuredProducts");
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+    // updateCartButtonBadge
+    fetchFoodList();
+  },
+  false
+);
 
-const featuredProductItemTemplate = (productDetails) => {
-  return `
-        <div class="product">
-            <a class="product-img" href="shop_detail_fullwidth.html?product=${productDetails.id}">
-                <img alt="product" src="${productDetails.imageUrl}" height="200" width="250">
-            </a>
-            <h5 class="product-type">${productDetails.type}</h5>
-            <h3 class="product-name">${productDetails.name}</h3>
-            <h3 class="product-price">NGN ${productDetails.price}</h3>
-            <div class="product-select">
-                <button class="add-to-wishlist round-icon-btn">
-                    <i class="icon_heart_alt"></i>
-                </button>
-                <button onclick="addToCart('${productDetails.id}','${productDetails.name}','${productDetails.type}','${productDetails.imageUrl}','${productDetails.price}'); PopUP()" class="add-to-cart round-icon-btn">
-                    <i class="fa fa-shopping-cart"></i>
-                </button>
-                <button class="quickview round-icon-btn">
-                    <i class="far fa-eye"></i>
-                </button>
-            </div>
-        </div>
-    `;
-};
+
+const featuredProductDOM = document.getElementById("featuredProducts");
 
 // Returned first 9 products so as to make the design balance on the homepage
 const getFirst9 = (foodList) => {
@@ -53,6 +39,32 @@ const fetchFoodList = async () => {
 };
 
 fetchFoodList();
+
+const featuredProductItemTemplate = (productDetails) => {
+  return `
+        <div class="product">
+            <a class="product-img" href="shop_detail_fullwidth.html?product=${productDetails.id}">
+                <img alt="product" src="${productDetails.imageUrl}" height="200" width="250">
+            </a>
+            <h5 class="product-type">${productDetails.type}</h5>
+            <h3 class="product-name">${productDetails.name}</h3>
+            <h3 class="product-price">NGN ${productDetails.price}</h3>
+            <div class="product-select">
+                <button class="add-to-wishlist round-icon-btn">
+                    <i class="icon_heart_alt"></i>
+                </button>
+                <button onclick="addToCart('${productDetails.id}','${productDetails.name}','${productDetails.type}','${productDetails.imageUrl}','${productDetails.price}'); PopUP()" class="add-to-cart round-icon-btn">
+                    <i class="fa fa-shopping-cart"></i>
+                </button>
+                <button class="quickview round-icon-btn">
+                    <i class="far fa-eye"></i>
+                </button>
+            </div>
+        </div>
+    `;
+};
+
+
 
 
 const popupTemplateDOM = document.getElementById("dialog-confirm");
