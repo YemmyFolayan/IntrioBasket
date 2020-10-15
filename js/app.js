@@ -14,19 +14,12 @@ const updateCartButtonBadge = () => {
   //todo get this by querySelector
   var cartBadges = document.querySelectorAll(".cartButtonBadge");
 
-  console.log(cartBadges);
-
   const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
   cartBadges.forEach(function (cartBadge) {
     if (cartList === null) {
       cartBadge.innerText = 0;
-      console.log("cartBadge");
-      console.log(cartBadge);
     } else {
       cartBadge.innerText = cartList.length;
-
-      console.log(cartBadges);
-      console.log(cartBadge);
     }
   });
 };
@@ -48,13 +41,8 @@ const router = (url) => {
   updateCartButtonBadge();
 };
 
-
 //////////////////
 //CREATE AUTHORIZATION MODEL => REDIRECT PAGE
-
-
-
-
 
 //////////////
 /**
@@ -228,10 +216,6 @@ let phoneNumber;
 let zipCode;
 let address;
 let totalCost;
-
-
-
-
 
 const updateCheckout = (name, imageUrl, price, qty) => {
   console.log("updateCheckout function");
@@ -581,14 +565,15 @@ const deleteItem = (id) => {
     console.log(cartList, id);
 
     let newCartList = cartList.filter((item, index) => item.id !== id);
-
+    console.log(newCartList);
     localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(newCartList));
+    window.location.assign("/shop_cart.html");assign
   }
 
   // update Cart
   //shopCartTBodyDOM.innerHTML = "";
 
-  lookUpCartStore();
+  //lookUpCartStore();
 };
 
 const GetAllCheckout = () => {

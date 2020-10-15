@@ -4,8 +4,6 @@ document.addEventListener(
   () => {
     // updateCartButtonBadge
     updateCartButtonBadge();
-
-    
   },
   false
 );
@@ -38,8 +36,6 @@ const cartItemTemplate = (productDetails) => {
         </tr>
     `;
 };
-
-
 
 const cartTotalTemplate = (totalPriceToPay, totalPriceToTax) => {
   return `
@@ -84,6 +80,29 @@ const renderCartTotalTable = () => {
   // cartTotalPaystackDOM.innerHTML = htmlPay;
 };
 
+/*
+const deleteItem = (id) => {
+  // console.log(id)
+
+  if (localStorage.getItem(CONFIG.CART_STORE) === null) {
+    //something is wrong
+    return false;
+  } else {
+    const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+    console.log(cartList, id);
+
+    let newCartList = cartList.filter((item, index) => item.id !== id);
+    console.log(newCartList);
+    localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(newCartList));
+  }
+
+  // update Cart
+  shopCartTBodyDOM.innerHTML = "";
+
+  lookUpCartStore();
+};
+*/
+
 console.log("CART DATA");
 
 const lookUpCartStore = () => {
@@ -111,33 +130,6 @@ const lookUpCartStore = () => {
   renderCartTotalTable();
 };
 lookUpCartStore();
-
-
-/*
-//delete each Item
-
-const deleteItem = (id) => {
-  // console.log(id)
-
-  if (localStorage.getItem(CONFIG.CART_STORE) === null) {
-    //something is wrong
-    return false;
-  } else {
-    const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
-    console.log(cartList, id);
-
-    let newCartList = cartList.filter((item, index) => item.id !== id);
-
-    localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(newCartList));
-  }
-
-  // update Cart
-  shopCartTBodyDOM.innerHTML = "";
-
-  lookUpCartStore();
-};
-
-*/
 
 //userId is GLOBAL across the site
 //let userId = localStorage.getItem("id");
