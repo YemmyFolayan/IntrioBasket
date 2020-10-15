@@ -47,6 +47,16 @@ const router = (url) => {
   window.location.assign(pageUrl);
   updateCartButtonBadge();
 };
+
+
+//////////////////
+//CREATE AUTHORIZATION MODEL => REDIRECT PAGE
+
+
+
+
+
+//////////////
 /**
  * addToCart: This function adds products to user cart.
  * - Cart is persistent
