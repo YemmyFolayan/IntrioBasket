@@ -212,18 +212,29 @@ const updateCart = () => {
   console.log("UPDATE");
 };
 
+let purchaserName;
+let numbers;
+let phoneNumber;
+let zipCode;
+let address;
+let totalCost;
+
+
+
+
+
 const updateCheckout = (name, imageUrl, price, qty) => {
   console.log("updateCheckout function");
 
   //from delivery form details
 
   //this from form value and display it on the screen
-  var purchaserName = document.getElementById("purchaserName").value;
-  var numbers = document.getElementById("numbers").value;
-  var phoneNumber = document.getElementById("phoneNumber").value;
-  var zipCode = document.getElementById("zipCode").value;
-  var address = document.getElementById("address").value;
-  var totalCost = 2500;
+  purchaserName = document.getElementById("purchaserName").value;
+  numbers = document.getElementById("numbers").value;
+  phoneNumber = document.getElementById("phoneNumber").value;
+  zipCode = document.getElementById("zipCode").value;
+  address = document.getElementById("address").value;
+  totalCost = localStorage.getItem("totalPrice");
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
