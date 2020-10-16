@@ -17,15 +17,7 @@ const featuredProductItemTemplate = (userDetails) => {
     `;
 };
 
-// GET
 
-// Get All Checkouts
-// http://intriobasket.pexceptos.com/api/checkout/get-all
-
-// GET
-
-// Get All Users
-// http://intriobasket.pexceptos.com/api/user/
 
 const fetchFoodList = async () => {
   const endpoint = "/user/"; // THOUGHTS: There should be an endpoint for featured products...

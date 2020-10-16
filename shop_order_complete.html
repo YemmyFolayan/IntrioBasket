@@ -211,11 +211,7 @@
               </div>
             </div>
 
-            <div class="col-12 col-sm-12 text-center">
-                <button onclick="router('Homepage')" class="no-round-btn black cart-update">Continue Shoping</button>
-            </div>
-
-
+           
 
             
 
@@ -229,7 +225,7 @@
           </div>
           <div class="row justify-content-end">
             <div class="col-12 col-md-6 col-lg-4">
-              <div id="cartTotalTable" class="cart-total_block">
+              <div id="cartTotalTable" class="cart-total_block shopping-cart col-12 col-md-6 mx-auto">
                 <h2>Cart total</h2>
                 <table class="table">
                   <colgroup>
@@ -421,6 +417,8 @@
       </footer>
       <!-- End footer-->
     </div>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/js/jquery-ui.min.js"></script>
     <script src="assets/js/jquery.countdown.min.js"></script>
@@ -434,8 +432,9 @@
     <script src="assets/js/vanilla-tilt.min.js"></script>
     <script src="assets/js/main.js"></script>
 
-
-
+    <script src="js/services/updateCheckout.js"></script>
+ 
+    
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.shop.js"></script>
 
@@ -449,9 +448,14 @@
 
     <!-- Services -->
     <script src="js/services/checkout.js"></script>
+    <!-- App Logic -->
+    <script src="js/app.js"></script>
+
 
     <!-- App Logic -->
     <script src="js/app.js"></script>
+
+    <script type="text/javascript" src="js/services/validateUser.js"></script>
 
 
 

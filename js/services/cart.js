@@ -15,13 +15,17 @@ const cartTotalTable = document.getElementById("cartTotalTable");
 const cartTotalTBodyDOM = document.getElementById("cartTotalTBody");
 //const cartTotalPaystackDOM = document.getElementById("cartTotalPaystack");
 
+const getQuantity = (e) => {
+  console.log(e.value);
+};
+
 const cartItemTemplate = (productDetails) => {
   return `
         <tr id="${productDetails.id}">
             <td class="product-name">${productDetails.name}</td>
             <td class="product-price">NGN ${productDetails.price}</td>
             <td class="product-quantity">
-            <input class="quantity no-round-input" type="number" min="1" value="${
+            <input class="quantity no-round-input" oninput="getQuantity(this)" type="number" min="1" value="${
               productDetails.qty
             }">
             </td>
@@ -78,6 +82,29 @@ const renderCartTotalTable = () => {
 
   cartTotalTBodyDOM.innerHTML = htmlString;
   // cartTotalPaystackDOM.innerHTML = htmlPay;
+};
+
+//delete each Item
+//const shopCartTBodyDOM = document.getElementById("shopCartTBody");
+const deleteItem = (id) => {
+  // console.log(id)
+
+  if (localStorage.getItem(CONFIG.CART_STORE) === null) {
+    //something is wrong
+    return false;
+  } else {
+    const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+    console.log(cartList, id);
+
+    let newCartList = cartList.filter((item, index) => item.id !== id);
+    console.log(newCartList);
+    localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(newCartList));
+  }
+
+  // update Cart
+  shopCartTBodyDOM.innerHTML = "";
+
+  lookUpCartStore();
 };
 
 /*

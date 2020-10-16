@@ -236,10 +236,7 @@
                 </colgroup>
                 <tbody id="cartTotalTBody"></tbody>
               </table>
-              <div class="checkout-method">
-                <button class="no-round-btn black cart-update" onclick="router('payment')">Proceed to Checkout</button>
-                
-              </div>
+              
             </div>
           </div>
         </div>
@@ -312,28 +309,18 @@
               <!--order deleivery note-->
                 <label for="inputNote">Order notes (optional)</label>
                 <textarea class="textarea-form-bg" id="order_delivery_type" name="" cols="30" rows="7"></textarea>
+                
+                <div class="checkout-method">
+                  <button class="no-round-btn black cart-update" type="submit">Proceed to Checkout</button>
+            
+                </div>
+              
               </div>
             </div>
-
+            
           </div>
         </form>
 
-        <div id="cartTotalTable" class="cart-total_block shopping-cart col-12 col-md-6 mx-auto">
-          <h2>CART TOTAL</h2>
-          <table class="table">
-            <colgroup>
-              <col span="1" style="width: 50%">
-              <col span="1" style="width: 50%">
-            </colgroup>
-            <tbody id="cartTotalTBody"></tbody>
-          </table>
-          <div class="checkout-method">
-            <button class="no-round-btn black cart-update" onclick="router('shop_order_complete')">Proceed to Checkout</button>
-            
-          </div>
-        </div>
-      </div>
-    </div>
     
 
     <footer>
@@ -401,17 +388,26 @@
     <!-- End footer-->
   </div>
 
+
+  <script src="js/services/updateCart.js"></script>
+  
+  <script src="js/services/formValues.js"></script>
+  <!-- App Logic -->
+  <script src="js/app.js"></script>
   <!--Config -->
   <script src="config/constants.js"></script>
 
   <!-- Utils -->
   <script src="js/utils/api-request.js"></script>
 
-  <!-- App Logic -->
-  <script src="js/app.js"></script>
 
   <!-- Services -->
-  <script type="module" src="js/services/cart.js"></script>
+  <script src="js/services/cart.js"></script>
+
+
+
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="assets/js/jquery-ui.min.js"></script>
   <script src="assets/js/jquery.countdown.min.js"></script>
@@ -425,17 +421,8 @@
   <script src="assets/js/vanilla-tilt.min.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <!--Config -->
-  <script src="config/constants.js"></script>
-
-  <!-- Utils -->
-  <script src="js/utils/api-request.js"></script>
-
-  <!-- App Logic -->
-  <script src="js/app.js"></script>
-
-  <!-- Services -->
-  <script type="module" src="js/services/cart.js"></script>
+  
+  <script type="text/javascript" src="js/services/validateUser.js"></script>
 </body>
 
 </html>

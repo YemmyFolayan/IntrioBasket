@@ -6,6 +6,7 @@ document.addEventListener(
   () => {
     // updateCartButtonBadge
     updateCartButtonBadge();
+
   },
   false
 );
@@ -41,10 +42,6 @@ const router = (url) => {
   updateCartButtonBadge();
 };
 
-//////////////////
-//CREATE AUTHORIZATION MODEL => REDIRECT PAGE
-
-//////////////
 /**
  * addToCart: This function adds products to user cart.
  * - Cart is persistent
@@ -161,116 +158,55 @@ const emptyCart = () => {
 
 /////////////////////////////////////
 
-///////////////////////////////////////
-const updateCart = () => {
-  ////////////////////////////////////
 
-  const cartStore = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
-  let raw = [];
 
-  cartStore.forEach((cart) => {
-    let cartDetails = {
-      item_name: cart.name,
-      number: cart.qty,
-      item_image: cart.imageUrl,
-      initial_cost: cart.price,
-    };
-    raw.push(cartDetails);
-  });
+let purchaserName = localStorage.getItem("purchaserName");
+console.log({ purchaserName });
 
-  ////////////////////////////////////
-  console.log("updatecart function");
+let numbers = localStorage.getItem("numbers");
+console.log({ numbers });
 
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("x-access-token", `${userToken}`);
 
-  raw = { cart_details: raw };
-  raw = JSON.stringify(raw);
-  console.log("RAW");
-  console.log(raw);
+let phoneNumber = localStorage.getItem("phoneNumber");
+console.log({ phoneNumber });
 
-  var requestOptions = {
-    method: "PUT",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow",
-  };
 
-  fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/update-cart/${userId}`,
-    requestOptions
-  )
-    .then((response) => response.text())
-    .then((result) => console.log(result))
-    .catch((error) => console.log("error", error));
+let address = localStorage.getItem("address");
+console.log({ address });
 
-  updateCartButtonBadge();
-  //window.location.assign("/shop_cart.html");
-  console.log("UPDATE");
+let zipCode = localStorage.getItem("zipCode");
+console.log({ zipCode });
+
+
+
+///////RENDER purchaser's Details on checkout History Page
+
+const purchaserDOM = document.getElementById("purchaserDOM");
+
+const purchaserDOMTemplate = () => {
+  return `
+  <div class="col-12">
+  <h2 class="mx-auto">Purchaser's name: ${purchaserName} </h2>
+  <h2 class="mx-auto">Numbers of Items: ${numbers} </h2>
+  <h2 class="mx-auto">Delivery Address: ${address} </h2>
+  <h2 class="mx-auto">ZipCode: ${zipCode} </h2>
+  <h2 class="mx-auto">Phone Number: ${phoneNumber} </h2>
+</div>`;
 };
 
-let purchaserName;
-let numbers;
-let phoneNumber;
-let zipCode;
-let address;
-let totalCost;
+const DisplaypurchaserDOM = () => {
+  let htmlString = purchaserDOMTemplate(purchaserName, numbers, address, zipCode);
+  let htmlFragment = document.createElement("div");
+  htmlFragment.innerHTML = htmlString;
+  purchaserDOM.appendChild(htmlFragment);
 
-const updateCheckout = (name, imageUrl, price, qty) => {
-  console.log("updateCheckout function");
-
-  //from delivery form details
-
-  //this from form value and display it on the screen
-  purchaserName = document.getElementById("purchaserName").value;
-  numbers = document.getElementById("numbers").value;
-  phoneNumber = document.getElementById("phoneNumber").value;
-  zipCode = document.getElementById("zipCode").value;
-  address = document.getElementById("address").value;
-  totalCost = localStorage.getItem("totalPrice");
-
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("x-access-token", `${userToken}`);
-
-  var raw = JSON.stringify({
-    order_delivery_type: "pick it up",
-    items: [
-      {
-        item_name: name,
-        number: numbers,
-        initial_cost: price,
-        item_image: imageUrl,
-      },
-    ],
-    number_of_items: numbers,
-    total_cost: totalCost,
-    address_name: address,
-    phonenumber: phoneNumber,
-    zip_code: zipCode,
-    purchaser_name: purchaserName,
-  });
-
-  var requestOptions = {
-    method: "PUT",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow",
-  };
-
-  fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout/user/${userId}`,
-    requestOptions
-  )
-    .then((response) => response.text())
-    .then((result) => console.log(result))
-    .catch((error) => console.log("error", error));
-
-  updateCartButtonBadge();
-  //window.location.assign("/shop_cart.html");
-  console.log("UPDATECHECKOUT");
+  console.log(purchaserName);
 };
+
+DisplaypurchaserDOM();
+
+
+/////////
 
 // checkout details page after checkout
 
@@ -552,30 +488,6 @@ const GetAllCheckoutItemTemplate = (historyDetails) => {
     `;
 };
 
-//delete each Item
-const shopCartTBodyDOM = document.getElementById("shopCartTBody");
-const deleteItem = (id) => {
-  // console.log(id)
-
-  if (localStorage.getItem(CONFIG.CART_STORE) === null) {
-    //something is wrong
-    return false;
-  } else {
-    const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
-    console.log(cartList, id);
-
-    let newCartList = cartList.filter((item, index) => item.id !== id);
-    console.log(newCartList);
-    localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(newCartList));
-    window.location.assign("/shop_cart.html");assign
-  }
-
-  // update Cart
-  //shopCartTBodyDOM.innerHTML = "";
-
-  //lookUpCartStore();
-};
-
 const GetAllCheckout = () => {
   console.log("GetAllCheckout function");
 
@@ -675,6 +587,8 @@ const DisplayUserNameMobileTemplate = () => {
 };
 
 DisplayUserNameMobileTemplate();
+
+/////////////////////
 
 /*
 

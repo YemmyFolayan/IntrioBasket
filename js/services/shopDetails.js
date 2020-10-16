@@ -3,12 +3,12 @@ const shopDOM = document.getElementById("shopDOM");
 
 const productDetailsTemplate = (productDetails) => {
   return `
-  <div class="col-10">
+  <div class="col-8 col-sm-10" >
     <div class="shop-detail_more-info">
       <div id="tab-so3">
         <ul class="mb-0">
           <li class="active"><a href="#tab-1">DESCRIPTION</a></li>
-          <li><a href="#tab-2">SPECIFICATIONS</a></li>
+         
         </ul>
         <div id="tab-1">
           <div class="description-block">
@@ -103,19 +103,3 @@ const initProductDetails = async () => {
 };
 
 initProductDetails();
-
-/* <div class="description-item_block" id="${productDetails.id}">
-    <div class="row align-items-center justify-content-around">
-        <div class="col-12 col-md-4">
-            <div class="description-item_img"><img class="img-fluid" src="${productDetails.imageUrl}" alt="description image"></div>
-        </div>
-        <div class="col-12 col-md-6">
-            <div class="description-item_text">
-                <h2>${productDetails.type}</h2>
-                <h2>${productDetails.name}</h2>
-                <h2>NGN ${productDetails.price}</h2>
-                <p>${productDetails.description}</p>
-            </div>
-        </div>
-    </div>
-</div> */

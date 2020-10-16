@@ -11,19 +11,18 @@ Form.addEventListener("submit", function (e) {
   console.log(email);
   console.log(password);
 
-  fetch(
-    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/admin/login",
-    {
-      method: "POST",
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-      headers: {
-        "Content-Type": "application/json; charset= UTF-8",
-      },
-    }
-  )
+  //https://cors-anywhere.herokuapp.com/
+
+  fetch("https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/admin/login", {
+    method: "POST",
+    body: JSON.stringify({
+      email: email,
+      password: password,
+    }),
+    headers: {
+      "Content-Type": "application/json; charset= UTF-8",
+    },
+  })
     .then(function (response) {
       return response.json();
     })
@@ -47,10 +46,6 @@ Form.addEventListener("submit", function (e) {
       localStorage.setItem("name", name);
 
       //AT this block, i want to compare the id with the one in user also use the id for cart logic
-
-
-
-
 
       if (msg == "Log in Successful") {
         const name = data.payload.fullname;
@@ -76,9 +71,9 @@ Form.addEventListener("submit", function (e) {
           container.replaceChild(panel, loaderDiv);
         }, 1000);
 
-        
-        window.location.assign("/admindashboard/dashboard.html");
-    
+        setTimeout(function () {
+          window.location.assign("/admindashboard/dashboard.html");
+        }, 2200);
 
         localStorage.setItem("login", true);
         console.log("logged in");

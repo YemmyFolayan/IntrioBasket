@@ -52,8 +52,12 @@ const GetUserCart = () => {
 
     .catch((error) => {
       console.log("error", error);
-      alert("please relogin");
+      alert("please re login");
     });
+
+  setTimeout(function() {
+    window.location.assign("/Homepage.html");
+  }, 2200);
 
   console.log("GetUserCart");
 };
@@ -129,7 +133,7 @@ Form.addEventListener("submit", function (e) {
 
         localStorage.setItem("login", true);
         console.log("logged in");
-        window.location.assign("/Homepage.html");
+
       } else if (msg == "Incorrect Email or Password") {
         const name = email;
         const container = document.getElementById("containerr");

@@ -1,24 +1,24 @@
 //TODO : IMPLEMENT 7.5%tax on any purchase
 
-const shopCartTBodyDOM = document.getElementById("shopCartTBody");
-const updateCartButton = document.getElementById("updateCartButton");
-const emptyCartButton = document.getElementById("emptyCartButton");
+const shopCartTBodyCheckoutDOM = document.getElementById("shopCartTBody");
 const cartTotalTable = document.getElementById("cartTotalTable");
 const cartTotalTBodyDOM = document.getElementById("cartTotalTBody");
 
 //cart
-const cartItemTemplate = (productDetails) => {
+const cartItemTemplateCheckout = (productCheckoutDetails) => {
   return `
-        <tr id="${productDetails.id}">
-            <td class="product-name">${productDetails.name}</td>
-            <td class="product-price">NGN ${productDetails.price}</td>
-            <td class="product-quantity">
+        <tr id="${productCheckoutDetails.id}">
+            <td class="productCheckout-name">${productCheckoutDetails.name}</td>
+            <td class="productCheckout-price">NGN ${
+              productCheckoutDetails.price
+            }</td>
+            <td class="productCheckout-quantity">
             <input class="quantity no-round-input" type="number" min="1" value="${
-              productDetails.qty
+              productCheckoutDetails.qty
             }">
             </td>
-            <td class="product-total">NGN ${
-              productDetails.price * productDetails.qty
+            <td class="productCheckout-total">NGN ${
+              productCheckoutDetails.price * productCheckoutDetails.qty
             }</td>
             
         </tr>
@@ -36,24 +36,22 @@ const cartTotalTemplate = (totalPriceToPay, totalPriceToTax) => {
     `;
 };
 
-const handleNoItemsInCart = () => {
-  updateCartButton.style.display = "none";
-  emptyCartButton.style.display = "none";
+const handleNoItemsInCartCheckout = () => {
   cartTotalTable.style.display = "none";
 };
 
-const renderCartTotalTable = () => {
+const renderCartTotalTableCheckout = () => {
   let totalPriceToPay = 0;
   let totalPriceToTax = 0;
 
-  const cartStore = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+  const cartStoreCheckout = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
 
   // Handle empty cart again!
-  if (cartStore === null || cartStore.length === 0)
-    return handleNoItemsInCart();
+  if (cartStoreCheckout === null || cartStoreCheckout.length === 0)
+    return handleNoItemsInCartCheckout();
 
-  cartStore.forEach((product) => {
-    totalPriceToPay += product.price * product.qty;
+  cartStoreCheckout.forEach((productCheckout) => {
+    totalPriceToPay += productCheckout.price * productCheckout.qty;
     totalPriceToTax = totalPriceToPay + totalPriceToPay * 0.075;
   });
 
@@ -62,34 +60,32 @@ const renderCartTotalTable = () => {
   cartTotalTBodyDOM.innerHTML = htmlString;
 };
 
-const lookUpCartStore = () => {
-  const cartStore = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
+const lookUpCartCheckout = () => {
+  const cartStoreCheckout = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
 
-  if (cartStore === null || cartStore.length === 0)
+  if (cartStoreCheckout === null || cartStoreCheckout.length === 0)
     //// Create User Cart here from back end http://intriobasket.pexceptos.com/api/user/create-cart/5f4d0fd68cc9aa11e6151b88
-    return handleNoItemsInCart();
+    return handleNoItemsInCartCheckout();
 
-  cartStore.forEach((product) => {
-    let htmlString = cartItemTemplate(product);
+  cartStoreCheckout.forEach((productCheckout) => {
+    let htmlString = cartItemTemplateCheckout(productCheckout);
     //checkout
 
     let htmlFragment = document.createElement("tr");
 
-    htmlFragment.setAttribute("id", product.id);
+    htmlFragment.setAttribute("id", productCheckout.id);
     htmlFragment.innerHTML = htmlString;
 
-    shopCartTBodyDOM.appendChild(htmlFragment);
+    shopCartTBodyCheckoutDOM.appendChild(htmlFragment);
   });
 
-  // call renderCartTotalTable
-  renderCartTotalTable();
+  // call renderCartTotalTableCheckout
+  renderCartTotalTableCheckout();
 };
 
-lookUpCartStore();
+lookUpCartCheckout();
 
-
-
-var password = document.getElementById("password").value;
+//var password = document.getElementById("password").value;
 //delete each Item
 
 //TODO

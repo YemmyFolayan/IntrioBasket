@@ -30,22 +30,19 @@ Form.addEventListener("submit", function (e) {
   panel.className = "card-panel green";
   const text = document.createElement("span");
 
-  fetch(
-    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/admin/create",
-    {
-      method: "POST",
-      body: JSON.stringify({
-        fullname: fullname,
-        email: email,
-        password: password,
-        phonenumber: phonenumber,
-        gender: gender,
-      }),
-      headers: {
-        "Content-Type": "application/json; charset= UTF-8",
-      },
-    }
-  )
+  fetch("https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/admin/create", {
+    method: "POST",
+    body: JSON.stringify({
+      fullname: fullname,
+      email: email,
+      password: password,
+      phonenumber: phonenumber,
+      gender: gender,
+    }),
+    headers: {
+      "Content-Type": "application/json; charset= UTF-8",
+    },
+  })
     .then(function (response) {
       return response.json();
     })
@@ -67,8 +64,9 @@ Form.addEventListener("submit", function (e) {
           $(".card-panel green").remove();
         }, 1000);
 
+        setTimeout(function () {
           window.location.assign("/loginadmin.html");
-    
+        }, 2200);
 
         console.log("Admin Created Successfully");
       } else if (msg == "Email already exists") {
