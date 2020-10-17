@@ -142,12 +142,6 @@ const checkOutHistoryItemTemplate = (historyDetails) => {
         </div>
     </div>
 
-    <div class="col-12 col-md-6 col-lg-3">
-        <div class="benefit-detail boderless boderless d-flex flex-column align-items-center"><img class="benefit-img" src="assets/images/homepage01/benefit-icon4.png" alt="">
-        <h5 class="benefit-title">Item Image</h5>
-        <p class="benefit-describle">${historyDetails.itemImage}</p>
-        </div>
-    </div>
 
 
     <div class="col-12 col-md-6 col-lg-3">
