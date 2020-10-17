@@ -77,31 +77,33 @@
                 <div id="ogami-mobile-menu">
                   <button class="no-round-btn" id="mobile-menu--closebtn">Close menu</button>
                   <div class="mobile-menu_items">
-                    
                     <ul class="mb-0 d-flex flex-column">
                       <li class="toggleable"> <a class="menu-item active" href="Homepage.html">Home</a><span
                           class="sub-menu--expander"><i class="icon_plus"></i></span>
-                        <ul class="sub-menu">
-                          <li><a href="Homepage.html">Homepage</a></li>
-                        </ul>
+
                       </li>
-                      <li class="toggleable">
-                        <a class="menu-item" href="shop.html">Shop</a>
-                        <span class="sub-menu--expander"><i class="icon_plus"></i></span>
+                      <li class="toggleable"><a class="menu-item" href="shop.html">Shop</a><span
+                          class="sub-menu--expander"><i class="icon_plus"></i></span>
+
                       </li>
+
                       <li class="toggleable">
-                        
-                        <a class="menu-item" href="login.html">Logout</a>
-                        <span class="sub-menu--expander"><i class="icon_plus"></i></span>
+                          <a class="menu-item" href="login.html">Logout</a>
+                          <span class="sub-menu--expander"><i class="icon_plus"></i></span>
                         <ul class="sub-menu">
+                          <li><a href="login.html">logout</a></li>
+                          
                           <li><a href="FAQ.html">FAQ</a></li>
+
                           <li><a href="about_us.html">about us</a></li>
                           <li><a href="contact_us.html">contact us</a></li>
+
                         </ul>
                       </li>
                     </ul>
                   </div>
-                  <div class="mobile-login">
+                  <div class="mobile-login" id="mobilelogin">
+                    <h2>My account</h2><a href="login.html">Logout</a>
                   </div>
                   <div class="mobile-social"><a href=""><i class="fab fa-facebook-f"> </i></a><a href=""><i
                         class="fab fa-twitter"></i></a><a href=""><i class="fab fa-invision"> </i></a><a href=""><i
@@ -138,7 +140,7 @@
 
     <div class="ogami-breadcrumb">
       <div class="container">
-        <div class="warning"> Kindly Update Cart before Checking Out! </div>
+        <div class="warning"><marquee> Kindly Update Cart before Checking Out!</marquee> </div>
         <ul>
           <li> <a class="breadcrumb-link" href="Homepage.html"> <i class="fas fa-home"></i>Home</a></li>
           <li> <a class="breadcrumb-link" href="Homepage.html">Shop</a></li>
@@ -202,15 +204,15 @@
                   <col span="1" style="width: 30%">
                   <col span="1" style="width: 15%">
                   <col span="1" style="width: 15%">
-                  <col span="1" style="width: 15%">
-                  <col span="1" style="width: 10%">
+             
+               
                 </colgroup>
                 <thead>
                   <tr>
                     <th class="product-name" scope="col">Product name</th>
                     <th class="product-price" scope="col">Price</th>
                     <th class="product-quantity" scope="col">Quantity</th>
-                    <th class="product-total" scope="col" id="sub-total">Total</th>
+                    
                     <th class="product-clear" scope="col">Action</th>
                   </tr>
                 </thead>

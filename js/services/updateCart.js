@@ -5,9 +5,9 @@ console.log({ updateUserId });
 
 let updateUserToken = localStorage.getItem("token");
 console.log({ updateUserToken });
-// Mini Router (refreshes the page)
-//ROUTER for page redirect
-const router = (url) => {
+// Mini Routing (refreshes the page)
+//ROUTing for page redirect
+const routing = (url) => {
   // Check for url
   if (typeof url === "undefined") throw new Error("Invalid URL!");
 

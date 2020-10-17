@@ -24,9 +24,7 @@
 
   </head>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <body onload="startUp()">
-
-
+  <body>
   
     <div id="main">
       <header>
@@ -38,7 +36,7 @@
               <div class="col-8">
                 <div class="navgition-menu d-flex align-items-center justify-content-center">
                   <ul class="mb-0">
-                    <li class="toggleable"> <a class="menu-item" href="index.html">Home</a>
+                    <li class="toggleable"> <a class="menu-item" href="Homepage.html">Home</a>
                       
                     </li>
                     <li class="toggleable"> <a class="menu-item active" href="shop.html">Shop</a>
@@ -71,57 +69,66 @@
           <div class="container">
             <div class="row">
               <div class="col-3">
-                <div class="mobile-menu_block d-flex align-items-center"><a class="mobile-menu--control" href="javascript:void()"><i class="fas fa-bars"></i></a>
+                <div class="mobile-menu_block d-flex align-items-center"><a class="mobile-menu--control"
+                    href="javascript:void()"><i class="fas fa-bars"></i></a>
                   <div id="ogami-mobile-menu">
                     <button class="no-round-btn" id="mobile-menu--closebtn">Close menu</button>
                     <div class="mobile-menu_items">
                       <ul class="mb-0 d-flex flex-column">
-                        <li class="toggleable"> <a class="menu-item active" href="index.html">Home</a><span class="sub-menu--expander"><i class="icon_plus"></i></span>
-                          <ul class="sub-menu">
-                                        </ul>
+                        <li class="toggleable"> <a class="menu-item active" href="Homepage.html">Home</a><span
+                            class="sub-menu--expander"><i class="icon_plus"></i></span>
+
                         </li>
-                        <li class="toggleable"><a class="menu-item" href="shop.html">Shop</a><span class="sub-menu--expander"><i class="icon_plus"></i></span>
-                          <ul class="sub-menu">
-                                                    </ul>
+                        <li class="toggleable"><a class="menu-item" href="shop.html">Shop</a><span
+                            class="sub-menu--expander"><i class="icon_plus"></i></span>
+
                         </li>
-                        
-                        <li class="toggleable">  <a class="menu-item" href="login.html">Logout</a><span class="sub-menu--expander"><i class="icon_plus"></i></span>
+
+                        <li class="toggleable">
+                            <a class="menu-item" href="login.html">Logout</a>
+                            <span class="sub-menu--expander"><i class="icon_plus"></i></span>
                           <ul class="sub-menu">
                             <li><a href="login.html">logout</a></li>
                           
                             <li><a href="FAQ.html">FAQ</a></li>
-                          
+
                             <li><a href="about_us.html">about us</a></li>
                             <li><a href="contact_us.html">contact us</a></li>
-                            
+
                           </ul>
                         </li>
                       </ul>
                     </div>
-                    <div class="mobile-login">
+                    <div class="mobile-login" id="mobilelogin">
                       <h2>My account</h2><a href="login.html">Logout</a>
                     </div>
-                    <div class="mobile-social"><a href=""><i class="fab fa-facebook-f"> </i></a><a href=""><i class="fab fa-twitter"></i></a><a href=""><i class="fab fa-invision"> </i></a><a href=""><i class="fab fa-instagram"> </i></a></div>
+                    <div class="mobile-social"><a href=""><i class="fab fa-facebook-f"> </i></a><a href=""><i
+                          class="fab fa-twitter"></i></a><a href=""><i class="fab fa-invision"> </i></a><a href=""><i
+                          class="fab fa-instagram"> </i></a></div>
                   </div>
                   <div class="ogamin-mobile-menu_bg"></div>
                 </div>
               </div>
               <div class="col-6">
-                <div class="mobile-menu_logo text-center d-flex justify-content-center align-items-center"><a href=""><img src="assets/images/logo.png" alt=""></a></div>
+                <div class="mobile-menu_logo text-center d-flex justify-content-center align-items-center"><a href=""><img
+                      src="assets/images/logo.png" alt=""></a></div>
               </div>
               <div class="col-3">
                 <div class="mobile-product_function d-flex align-items-center justify-content-end">
-          
-                  <div onclick="router('shop_cart')" id="cartButton" class="function-icon hover">
-                    <i class="fa fa fa-shopping-cart"></i>
-                    <sup style="top: -.5em">
-                      <span id="cartButtonBadge" class="my-badge badge-success cartButtonBadge">0</span>
-                    </sup>
-                  </div>
-                  <!--shop_shop_cart.html-->
+              
+  
+
+                <div id="cartButton" class="function-icon hover">
+                  <i class="fa fa fa-shopping-cart"></i>
+                  <sup style="top: -.5em">
+                    <span id="cartButtonBadge" class="my-badge badge-success cartButtonBadge">0</span>
+                  </sup>
                 </div>
-   
-              </div>
+
+                </div>
+
+
+            </div>
             </div>
           </div>
         </div>
@@ -133,6 +140,7 @@
           <ul>
             <li> <a class="breadcrumb-link" href="Homepage.html"> <i class="fas fa-home"></i>Home</a></li>
             <li> <a class="breadcrumb-link" href="shop.html">Shop</a></li>
+            <li> <a class="breadcrumb-link" href="login.html">Logout</a></li>
            
           </ul>
         </div>
@@ -194,8 +202,7 @@
                     <col span="1" style="width: 30%">
                     <col span="1" style="width: 15%">
                     <col span="1" style="width: 15%">
-                    <col span="1" style="width: 15%">
-                    <col span="1" style="width: 10%">
+          
                   </colgroup>
                   <thead>
                     <tr>
@@ -240,62 +247,6 @@
               </div>
             </div>
           </div>
-<!--
-          <div class="container" id="form and user details">
-
-
-          <div class="row">
-            <div class="col-12 col-md-8 mx-auto">
-              <h2 class="form-title">Delivery details</h2>
-           
-              <div class="form-group">
-                <label for="inputFirstName">Purchaser Name *</label>
-                <div class="form-title">value </div>
-              </div>
-               
-              <div class="form-group">
-                <label for="inputFirstName">Number of Items Ordered*</label>
-                <div class="form-title">value </div>
-              </div>
-
-
-              <div class="form-group">
-                <label for="inputFirstName">Postcode / ZIP*</label>
-                <div class="form-title">value </div>
-              </div>
-
-
-              <div class="form-group">
-                <label for="inputFirstName">Phone*</label>
-                <div class="form-title">value </div>
-              </div>
-
-
-              <div class="form-group">
-                <label for="inputFirstName">Email address*</label>
-                <div class="form-title">value </div>
-              </div>
-
-
-              <div class="form-group">
-                <label for="inputFirstName">Country*</label>
-                <div class="form-title">value </div>
-                     
-              </div>
-
-              <div class="form-group">
-                <label for="inputFirstName">State*</label>
-                <div class="form-title">value </div>
-                     
-              </div>
-
-              <div class="form-group">
-                <label for="inputFirstName">City*</label>
-                <div class="form-title">value </div>
-                     
-              </div>
-
-              -->
 
 
              
@@ -432,7 +383,7 @@
     <script src="assets/js/vanilla-tilt.min.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <script src="js/services/updateCheckout.js"></script>
+    
  
     
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -444,6 +395,7 @@
 
     <!-- Utils -->
     <script src="js/utils/api-request.js"></script>
+    <script src="js/services/updateCheckout.js"></script>
 
 
     <!-- Services -->
@@ -451,9 +403,6 @@
     <!-- App Logic -->
     <script src="js/app.js"></script>
 
-
-    <!-- App Logic -->
-    <script src="js/app.js"></script>
 
     <script type="text/javascript" src="js/services/validateUser.js"></script>
 

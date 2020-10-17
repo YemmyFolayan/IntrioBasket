@@ -15,8 +15,13 @@ const cartTotalTable = document.getElementById("cartTotalTable");
 const cartTotalTBodyDOM = document.getElementById("cartTotalTBody");
 //const cartTotalPaystackDOM = document.getElementById("cartTotalPaystack");
 
+let qtyVar = 1;
+
 const getQuantity = (e) => {
+  qtyVar = e.value;
+  console.log({ qtyVar });
   console.log(e.value);
+  renderCartTotalTable();
 };
 
 const cartItemTemplate = (productDetails) => {
@@ -25,17 +30,11 @@ const cartItemTemplate = (productDetails) => {
             <td class="product-name">${productDetails.name}</td>
             <td class="product-price">NGN ${productDetails.price}</td>
             <td class="product-quantity">
-            <input class="quantity no-round-input" oninput="getQuantity(this)" type="number" min="1" value="${
-              productDetails.qty
-            }">
+            <input class="quantity no-round-input" oninput="getQuantity(this)" type="number" min="1" value="${qtyVar}">
             </td>
-            <td class="product-total">NGN ${
-              productDetails.price * productDetails.qty
-            }</td>
+          
             <td class="product-clear">
-            <button class="no-round-btn" onclick="deleteItem('${
-              productDetails.id
-            }')"><i class="icon_close"></i></button>
+            <button class="no-round-btn" onclick="deleteItem('${productDetails.id}')"><i class="icon_close"></i></button>
             </td>
         </tr>
     `;
@@ -69,26 +68,18 @@ const renderCartTotalTable = () => {
     return handleNoItemsInCart();
 
   cartStore.forEach((product) => {
-    totalPriceToPay += product.price * product.qty;
+    totalPriceToPay += product.price * qtyVar;
     totalPriceToTax = totalPriceToPay + totalPriceToPay * 0.075;
 
     localStorage.setItem("totalPrice", totalPriceToTax);
   });
 
   let htmlString = cartTotalTemplate(totalPriceToPay, totalPriceToTax);
-  // //cart
-  // let htmlStrings = cartTotalTemplateCheckout(totalPriceToPay, totalPriceToTax);
-  // let htmlPay = cartTotalPaystack(totalPriceToTax);
 
   cartTotalTBodyDOM.innerHTML = htmlString;
-  // cartTotalPaystackDOM.innerHTML = htmlPay;
 };
 
-//delete each Item
-//const shopCartTBodyDOM = document.getElementById("shopCartTBody");
 const deleteItem = (id) => {
-  // console.log(id)
-
   if (localStorage.getItem(CONFIG.CART_STORE) === null) {
     //something is wrong
     return false;
@@ -96,7 +87,9 @@ const deleteItem = (id) => {
     const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
     console.log(cartList, id);
 
-    let newCartList = cartList.filter((item, index) => item.id !== id);
+    let newCartList = cartList.filter(
+      (item, index) => String(item.id) !== String(id)
+    );
     console.log(newCartList);
     localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(newCartList));
   }
@@ -106,29 +99,6 @@ const deleteItem = (id) => {
 
   lookUpCartStore();
 };
-
-/*
-const deleteItem = (id) => {
-  // console.log(id)
-
-  if (localStorage.getItem(CONFIG.CART_STORE) === null) {
-    //something is wrong
-    return false;
-  } else {
-    const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
-    console.log(cartList, id);
-
-    let newCartList = cartList.filter((item, index) => item.id !== id);
-    console.log(newCartList);
-    localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(newCartList));
-  }
-
-  // update Cart
-  shopCartTBodyDOM.innerHTML = "";
-
-  lookUpCartStore();
-};
-*/
 
 console.log("CART DATA");
 
@@ -160,83 +130,3 @@ lookUpCartStore();
 
 //userId is GLOBAL across the site
 //let userId = localStorage.getItem("id");
-console.log({ userId });
-
-//const url = `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
-
-console.log(url);
-/*
-
-
-GetUserCart();
-*/
-//SYNCHRONIZE CART WITH THIS http://intriobasket.pexceptos.com/api/user/5f68560661c7d8002478bfed
-//ACCESS
-/**
- *  "cart": [
-    {
-        "item_name": "Bitter leaf",
-        "number": 3,
-        "initial_cost": 420,
-        "item_image": "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FBitter%20leaf.jpg?alt=media&token=e2a0f4d9-f66a-416e-bb51-8487de6d57cc"
-    },
-    {
-        "item_name": "Chicken3",
-        "number": 1,
-        "initial_cost": 1500,
-        "item_image": "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FChicken3.jpg?alt=media&token=aba72a85-a01f-4541-abab-84b52e78b000"
-    },
-    {
-        "item_name": "Baking powder",
-        "number": 3,
-        "initial_cost": 500,
-        "item_image": "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FBaking%20powder.jpg?alt=media&token=713ea73d-a563-45af-ba4f-a9bf6a60f08c"
-    },
-    {
-        "item_name": "Bitter leaf",
-        "number": 4,
-        "initial_cost": 420,
-        "item_image": "https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FBitter%20leaf.jpg?alt=media&token=e2a0f4d9-f66a-416e-bb51-8487de6d57cc"
-    }
-],
-
-TODO
-
-POST
-
- Create User Cart
- http://intriobasket.pexceptos.com/api/user/create-cart/5f4d0fd68cc9aa11e6151b88
-
- PUT
-
- Update User Checkout History
- http://intriobasket.pexceptos.com/api/checkout/user/5f4d0fd68cc9aa11e6151b88
-
- PUT
-
- Update User Cart
- http://intriobasket.pexceptos.com/api/user/update-cart/5f4d0fd68cc9aa11e6151b88
-
- **/
-
-/**
- *after login grab user id: 
- append the user id to the API
-
-
-
-
-
-
-cart_store: "[{"id":"5f4385e106c5350024edc172","name":"Ayoola Poundo yam","type":"FLOURS","imageUrl":"https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FAyoola%20Poundo%20yam%20.jpg?alt=media&token=0ed5878b-a26c-4166-a0ab-fd4dfd7f54f5","price":"900","qty":2},
-{"id":"5f4385e106c5350024edc171","name":"Baking powder","type":"BAKING INGREDIENTS","imageUrl":"https://firebasestorage.googleapis.com/v0/b/intriobasket-a601d.appspot.com/o/food_images%2FBaking%20powder.jpg?alt=media&token=713ea73d-a563-45af-ba4f-a9bf6a60f08c","price":"500","qty":1}]"
-
-//I'll use cartDetails here
-console.log("cartpush");
-var cartList = [];
-cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE)) || [];
-cartList.push(productDetails);
-localStorage.setItem(CONFIG.CART_STORE, JSON.stringify(cartList));
-
-console.log(cartList);
-console.log("cartStorage test run");*/

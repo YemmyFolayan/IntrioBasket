@@ -1,3 +1,18 @@
+let purchaserName = localStorage.getItem("purchaserName");
+console.log({ purchaserName });
+
+let numbers = localStorage.getItem("numbers");
+console.log({ numbers });
+
+let phoneNumber = localStorage.getItem("phoneNumber");
+console.log({ phoneNumber });
+
+let address = localStorage.getItem("address");
+console.log({ address });
+
+let zipCode = localStorage.getItem("zipCode");
+//console.log({ zipCode });
+
 let checkoutUserId = localStorage.getItem("id");
 console.log({ checkoutUserId });
 

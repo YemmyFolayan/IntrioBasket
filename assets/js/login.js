@@ -24,7 +24,10 @@ const GetUserCart = () => {
     headers: myHeaders,
   };
 
-  fetch(`https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/${userId}`, requestOptions)
+  fetch(
+    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/${userId}`,
+    requestOptions
+  )
     .then(function (response) {
       return response.json();
     })
@@ -55,10 +58,6 @@ const GetUserCart = () => {
       alert("please re login");
     });
 
-  setTimeout(function() {
-    window.location.assign("/Homepage.html");
-  }, 2200);
-
   console.log("GetUserCart");
 };
 ///////////////////
@@ -71,16 +70,19 @@ Form.addEventListener("submit", function (e) {
   console.log(email);
   console.log(password);
 
-  fetch("https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/login", {
-    method: "POST",
-    body: JSON.stringify({
-      email: email,
-      password: password,
-    }),
-    headers: {
-      "Content-Type": "application/json; charset= UTF-8",
-    },
-  })
+  fetch(
+    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/login",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+      headers: {
+        "Content-Type": "application/json; charset= UTF-8",
+      },
+    }
+  )
     .then(function (response) {
       return response.json();
     })
@@ -130,10 +132,12 @@ Form.addEventListener("submit", function (e) {
         }, 1000);
 
         GetUserCart();
+        setTimeout(function () {
+          window.location.assign("/Homepage.html");
+        }, 2200);
 
         localStorage.setItem("login", true);
         console.log("logged in");
-
       } else if (msg == "Incorrect Email or Password") {
         const name = email;
         const container = document.getElementById("containerr");
