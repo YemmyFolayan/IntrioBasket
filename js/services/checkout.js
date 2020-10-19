@@ -92,7 +92,7 @@ const checkoutHistoryDOM = document.getElementById("checkoutHistory");
 const checkOutHistoryItemTemplate = (historyDetails) => {
   return `
 <div class="col-12 text-center">
-<h2 class="title mx-auto">Date: ${historyDetails.Date} </h2>
+<small class="title mx-auto">Date: ${historyDetails.Date} </small>
 </div>
 
         

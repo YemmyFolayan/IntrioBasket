@@ -74,75 +74,97 @@ let adminToken = localStorage.getItem("adminToken");
 console.log({ adminToken });
 
 /**
-//FROM FETCH FOOD ENDPOINT
-//POST Create Food Listing http://intriobasket.pexceptos.com/api/food/create
-const createFoodListing = (foodListings) => {
-  console.log("updatecart function");
 
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
+var Form = document.getElementById("creatFoodForm");
+Form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-  var raw = JSON.stringify({
-    food_product_name: foodListings.foodName,
-    product_type: foodListings.productType,
-    category_type: foodListings.categoryType,
-    short_description: foodListings.shortDescription,
-    long_description: foodListings.description,
-    cost: foodListings.price,
-    image_link: foodListings.imageUrl,
-    in_stock_status: "Yes",
-  });
+  var productName = document.getElementById("food_product_name").value;
+  var productType = document.getElementById("product_type").value;
+  var categoryType = document.getElementById("category_type").value;
+  var shortDescription = document.getElementById("short_description").value;
+  var LongDescription = document.getElementById("long_description").value;
+  var price = document.getElementById("cost").value;
+  var ImageLink = document.getElementById("image_link").value;
+  var InStock = document.getElementById("in_stock_status").value;
 
-  var requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow",
+
+  const createFoodListing = () => {
+
+  
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+  
+    var raw = JSON.stringify({
+      food_product_name: productName,
+      product_type: productType,
+      category_type: categoryType,
+      short_description: shortDescription,
+      long_description: LongDescription,
+      cost: price,
+      image_link: ImageLink,
+      in_stock_status: InStock,
+    });
+  
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+  
+    fetch("http://intriobasket.pexceptos.com/api/food/create", requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+  
+
+    console.log("Create Food Listing[Admin] ");
   };
-
-  fetch("http://intriobasket.pexceptos.com/api/food/create", requestOptions)
-    .then((response) => response.text())
-    .then((result) => console.log(result))
-    .catch((error) => console.log("error", error));
-
-  //window.location.assign("/shop_cart.html");
-  console.log("Update Food Listing[Admin] ");
 };
+  
+  
+**/
 
-const updateFoodListing = (foodListings) => {
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("x-admin-token", `${adminToken}`);
-
-  var raw = JSON.stringify({
-    food_product_name: foodListings.foodName,
-    product_type: foodListings.productType,
-    category_type: foodListings.categoryType,
-    short_description: foodListings.shortDescription,
-    long_description: foodListings.description,
-    cost: foodListings.price,
-    image_link: foodListings.imageUrl,
-    in_stock_status: "Yes",
-  });
-
-  var requestOptions = {
-    method: "PUT",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow",
-  };
-
-  fetch(
-    `http://intriobasket.pexceptos.com/api/food/update/${AdminId}`,
-    requestOptions
-  )
-    .then((response) => response.text())
-    .then((result) => console.log(result))
-    .catch((error) => console.log("error", error));
-
-  //window.location.assign("/shop_cart.html");
-  console.log("Update Food Listing[Admin] ");
-};
+/**
+   //FROM FETCH FOOD ENDPOINT
+   //POST Create Food Listing http://intriobasket.pexceptos.com/api/food/create
+        
+   const updateFoodListing = (foodListings) => {
+          var myHeaders = new Headers();
+          myHeaders.append("Content-Type", "application/json");
+          myHeaders.append("x-admin-token", `${adminToken}`);
+        
+          var raw = JSON.stringify({
+            food_product_name: foodListings.foodName,
+            product_type: foodListings.productType,
+            category_type: foodListings.categoryType,
+            short_description: foodListings.shortDescription,
+            long_description: foodListings.description,
+            cost: foodListings.price,
+            image_link: foodListings.imageUrl,
+            in_stock_status: "Yes",
+          });
+        
+          var requestOptions = {
+            method: "PUT",
+            headers: myHeaders,
+            body: raw,
+            redirect: "follow",
+          };
+        
+          fetch(
+            `http://intriobasket.pexceptos.com/api/food/update/${AdminId}`,
+            requestOptions
+          )
+            .then((response) => response.text())
+            .then((result) => console.log(result))
+            .catch((error) => console.log("error", error));
+        
+          //window.location.assign("/shop_cart.html");
+          console.log("Update Food Listing[Admin] ");
+        };
+        
 
 //DEL Delete Food Listing[Admin] http://intriobasket.pexceptos.com/api/food/5f838f85fef8090024a53638
 
