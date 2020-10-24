@@ -91,19 +91,19 @@ Form.addEventListener("submit", function (e) {
 
       //this is user id;
 
-      const id = data.payload.id;
+      // const id = data.payload.id;
 
-      const token = data.payload.token;
+      // const token = data.payload.token;
 
-      //SAVE this ID to session storage to re-use it in cart
-      localStorage.setItem("id", id);
+      // //SAVE this ID to session storage to re-use it in cart
+      // localStorage.setItem("id", id);
 
-      localStorage.setItem("token", token);
+      // localStorage.setItem("token", token);
 
-      const name = data.payload.fullname;
-      console.log("this is : ", name, id);
+      // const name = data.payload.fullname;
+      // console.log("this is : ", name, id);
 
-      localStorage.setItem("name", name);
+      // localStorage.setItem("name", name);
 
       //AT this block, i want to compare the id with the one in user also use the id for cart logic
 
