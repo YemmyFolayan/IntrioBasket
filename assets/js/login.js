@@ -94,11 +94,6 @@ Form.addEventListener("submit", function (e) {
       //AT this block, i want to compare the id with the one in user also use the id for cart logic
 
       if (msg == "Log in Successful") {
-        const name = data.payload.fullname;
-        const container = document.getElementById("containerr");
-        const loader = document.createElement("div");
-        loader.className = "progress";
-
         const id = data.payload.id;
 
         const token = data.payload.token;
@@ -112,6 +107,9 @@ Form.addEventListener("submit", function (e) {
         console.log("this is : ", name, id);
 
         localStorage.setItem("name", name);
+        const container = document.getElementById("containerr");
+        const loader = document.createElement("div");
+        loader.className = "progress";
 
         const loadingBar = document.createElement("div");
         loadingBar.className = "indeterminate";
