@@ -91,20 +91,6 @@ Form.addEventListener("submit", function (e) {
 
       //this is user id;
 
-      // const id = data.payload.id;
-
-      // const token = data.payload.token;
-
-      // //SAVE this ID to session storage to re-use it in cart
-      // localStorage.setItem("id", id);
-
-      // localStorage.setItem("token", token);
-
-      // const name = data.payload.fullname;
-      // console.log("this is : ", name, id);
-
-      // localStorage.setItem("name", name);
-
       //AT this block, i want to compare the id with the one in user also use the id for cart logic
 
       if (msg == "Log in Successful") {
@@ -112,6 +98,21 @@ Form.addEventListener("submit", function (e) {
         const container = document.getElementById("containerr");
         const loader = document.createElement("div");
         loader.className = "progress";
+
+        const id = data.payload.id;
+
+        const token = data.payload.token;
+
+        //SAVE this ID to session storage to re-use it in cart
+        localStorage.setItem("id", id);
+
+        localStorage.setItem("token", token);
+
+        const name = data.payload.fullname;
+        console.log("this is : ", name, id);
+
+        localStorage.setItem("name", name);
+
         const loadingBar = document.createElement("div");
         loadingBar.className = "indeterminate";
         loader.appendChild(loadingBar);
