@@ -80,26 +80,23 @@
     		2.14. Tab template
     		2.15. Typography template
 *************************************/
-.warning{
-  color : maroon;
+.warning {
+  color: maroon;
   font-family: sans-serif;
 }
-.img .rad img{
+.img .rad img {
   border-radius: 50% !important;
 }
 
-
-
 @media (min-width: 1000px) and (max-width: 1344px) {
-  img.playStore{
+  img.playStore {
     width: 20%;
     height: 40;
     margin: 30px;
   }
 }
 
-
-img.playStore{
+img.playStore {
   width: 35% !important;
   height: 60 !important;
   margin: 30px;
@@ -3272,20 +3269,21 @@ product-img {
   display: inline-block;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 576px) and (max-width: 676px) {
   .product {
+    display: flex !important;
+    flex-direction: column !important;
+
     text-align: center;
-    align-self: center;
     align-items: center;
     padding: 10px 10px 20px;
     margin-bottom: 0;
-    height: 100%;
-    width: 80%;
-    
+    height: 300px;
+    width: 200px;
   }
-  .nomarg{
-    margin-left: 22px !important;
-  }
+
+}
+
   .product.borderless {
     border: 1px solid #ebebeb;
   }
@@ -4190,7 +4188,6 @@ product-img {
   display: block;
   margin-bottom: 0;
 }
-
 
 .shop-sidebar .shop-sidebar_tag .tag_bottom .tag-btn {
   margin: 0 8px 8px 0;
@@ -5757,14 +5754,12 @@ header.coffee-2 .navigation .product-function .function-icon span {
   margin-left: 15px;
 }
 
-
-
-::placeholder { 
+::placeholder {
   color: black !important;
 
-  font-size: 10em; 
+  font-size: 10em;
   font-style: normal;
- }
+}
 
 header.coffee-2 .navigation .product-function .function-icon span:hover {
   color: #f79823;
@@ -6422,12 +6417,10 @@ header.coffee-2
 *************************************/
 .items-category {
   padding: 60px 0 60px 0;
-
 }
 
-.items-category #categ{
+.items-category #categ {
   padding: 0 !important;
-
 }
 
 .items-category h1 {
@@ -7880,19 +7873,14 @@ footer.coffee .newletter .newletter_input button:focus {
   }
   footer .footer-credit .footer-creadit_block .payment-method {
     max-width: 150px;
-    
   }
-
 }
 
-
-img.payment-method{
+img.payment-method {
   height: 60px;
   width: 140px;
   border-radius: 10%;
 }
-
-
 
 @media (min-width: 768px) and (max-width: 991px) {
   footer .footer-v2_header .footer-social {
@@ -8468,8 +8456,6 @@ img.payment-method{
 
 	Quick banner block
 *************************************/
-
-
 
 .quick-banner_block {
   margin: 30px 0 60px 0;
@@ -11404,8 +11390,8 @@ img.payment-method{
 .shopping-cart {
   margin-bottom: 60px;
 }
-.shopping-cart h1{
-  margin-bottom:20px;
+.shopping-cart h1 {
+  margin-bottom: 20px;
 }
 .shopping-cart .product-table .table {
   border: 1px solid #ebebeb;
@@ -13287,14 +13273,14 @@ img.payment-method{
 .my-badge {
   display: inline-block !important;
   margin: 0 !important;
-  padding: .25em .4em;
+  padding: 0.25em 0.4em;
   font-size: 75% !important;
   font-weight: 700;
   line-height: 1;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   color: #fff !important;
 }
 
