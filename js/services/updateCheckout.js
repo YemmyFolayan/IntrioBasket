@@ -68,5 +68,6 @@ const updateCheckout = () => {
     .catch((error) => console.log("error", error));
 
   window.location.assign("/shop_checkoutHistory.html");
+  localStorage.removeItem(CONFIG.CART_STORE);
   console.log("UPDATECHECKOUT");
 };

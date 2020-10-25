@@ -1612,12 +1612,12 @@ product-img {
 }
 .product .product-type {
   font-family: "Cera Pro Bold";
-  font-size: 12px;
+  font-size: 8px;
   color: #88c74a;
   line-height: 1;
   display: block;
   text-transform: uppercase;
-  letter-spacing: 2.4px;
+  letter-spacing: 2.2px;
   margin-bottom: 10px;
 }
 .product .product-name,
@@ -3276,10 +3276,10 @@ product-img {
 
     text-align: center;
     align-items: center;
-    padding: 10px 10px 20px;
+    padding: 8px 8px 12px;
     margin-bottom: 0;
-    height: 300px;
-    width: 200px;
+    height: 290px;
+    width: 105px;
   }
 
 }
