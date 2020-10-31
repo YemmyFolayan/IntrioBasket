@@ -13,28 +13,35 @@ const updateCartButton = document.getElementById("updateCartButton");
 const emptyCartButton = document.getElementById("emptyCartButton");
 const cartTotalTable = document.getElementById("cartTotalTable");
 const cartTotalTBodyDOM = document.getElementById("cartTotalTBody");
-//const cartTotalPaystackDOM = document.getElementById("cartTotalPaystack");
 
-let qtyVar = 1;
+// let qtyVar = 1;
 
-const getQuantity = (e) => {
-  qtyVar = e.value;
-  console.log({ qtyVar });
-  console.log(e.value);
+const getQuantity = (e, index) => {
+  window["qtyVar" + index] = e.value;
+
+  console.log(e.value, index, window["qtyVar" + index]);
+
   renderCartTotalTable();
 };
 
-const cartItemTemplate = (productDetails) => {
+//TODO An update in one quantity affects all RESOLVE!!!!.
+
+const cartItemTemplate = (productDetails, index) => {
+  window["qtyVar" + index] = 1;
   return `
         <tr id="${productDetails.id}">
             <td class="product-name">${productDetails.name}</td>
             <td class="product-price">NGN ${productDetails.price}</td>
             <td class="product-quantity">
-            <input class="quantity no-round-input" oninput="getQuantity(this)" type="number" min="1" value="${qtyVar}">
+            <input class="quantity no-round-input" oninput="getQuantity(this,${index})" type="number"  min="1" value="${
+    window["qtyVar" + index]
+  }">
             </td>
           
             <td class="product-clear">
-            <button class="no-round-btn" onclick="deleteItem('${productDetails.id}')"><i class="icon_close"></i></button>
+            <button class="no-round-btn" onclick="deleteItem('${
+              productDetails.id
+            }')"><i class="icon_close"></i></button>
             </td>
         </tr>
     `;
@@ -67,8 +74,9 @@ const renderCartTotalTable = () => {
   if (cartStore === null || cartStore.length === 0)
     return handleNoItemsInCart();
 
-  cartStore.forEach((product) => {
-    totalPriceToPay += product.price * qtyVar;
+  cartStore.forEach((product, index) => {
+    console.log(index);
+    totalPriceToPay += product.price * (window["qtyVar" + index] || 1);
     totalPriceToTax = totalPriceToPay + totalPriceToPay * 0.075;
 
     localStorage.setItem("totalPrice", totalPriceToTax);
@@ -109,8 +117,8 @@ const lookUpCartStore = () => {
   if (cartStore === null || cartStore.length === 0)
     return handleNoItemsInCart();
 
-  cartStore.forEach((product) => {
-    let htmlString = cartItemTemplate(product);
+  cartStore.forEach((product, index) => {
+    let htmlString = cartItemTemplate(product, index);
     //checkout
 
     console.log("for each");

@@ -17,8 +17,6 @@ const featuredProductItemTemplate = (userDetails) => {
     `;
 };
 
-
-
 const fetchFoodList = async () => {
   const endpoint = "/user/"; // THOUGHTS: There should be an endpoint for featured products...
 
