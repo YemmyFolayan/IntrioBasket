@@ -60,7 +60,7 @@ const featuredProductItemTemplates = (checks) => {
       <div class="icon">
         <i class="ion ion-stats-bars"></i>
       </div>
-      <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+      <a href="../AllCheckouts.html" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
     </div>
 
     `;
@@ -145,3 +145,51 @@ fetchFoodListsS();
 //CHECKOUT HISTORY FUNCTION
 
 //USER REGISTRATION HISTORY FUNCTION : onclick =>more info
+
+const AdminNameDOM = document.getElementById("AdminName");
+console.log("USERNAMEEEEEEE");
+
+let adminName = localStorage.getItem("adminName");
+console.log({ adminName });
+
+const userNameTemplate = (adminName) => {
+  return `
+  <div class="info">
+  <a href="javascript:void()" class="d-block">Admin ${adminName}</a>
+</div>
+
+    `;
+};
+
+const DisplayUserNameTemplate = () => {
+  let htmlString = userNameTemplate(adminName);
+  let htmlFragment = document.createElement("div");
+  htmlFragment.innerHTML = htmlString;
+  AdminNameDOM.appendChild(htmlFragment);
+
+  console.log("USERNAMEEEEEEE");
+};
+
+DisplayUserNameTemplate();
+
+//username Mobile
+const adminNameMobileDOM = document.getElementById("userNameMobile");
+
+const userNameMobileTemplate = (adminName) => {
+  return `<div class="info">
+  <a href="javascript:void()" class="d-block">Admin</a>
+</div>
+    `;
+};
+
+const DisplayUserNameMobileTemplate = () => {
+  let htmlString = userNameMobileTemplate(adminName);
+  let htmlFragment = document.createElement("div");
+  htmlFragment.innerHTML = htmlString;
+  adminNameMobileDOM.appendChild(htmlFragment);
+
+  console.log("USERNAMEEEEEEE mobile");
+  console.log(name);
+};
+
+DisplayUserNameMobileTemplate();

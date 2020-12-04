@@ -36,12 +36,8 @@ Form.addEventListener("submit", function (e) {
 
       const AdminId = data.payload.id;
 
-      const adminToken = data.payload.token;
-
       //SAVE this ID to session storage to re-use it in cart
       localStorage.setItem("AdminId", AdminId);
-
-      localStorage.setItem("adminToken", adminToken);
 
       const name = data.payload.fullname;
       console.log("this is : ", name, AdminId);
@@ -52,6 +48,9 @@ Form.addEventListener("submit", function (e) {
 
       if (msg == "Log in Successful") {
         const name = data.payload.fullname;
+
+        localStorage.setItem("adminName", name);
+
         const container = document.getElementById("containerr");
         const loader = document.createElement("div");
         loader.className = "progress";

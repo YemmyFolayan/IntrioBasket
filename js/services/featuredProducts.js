@@ -7,7 +7,6 @@ document.addEventListener(
   false
 );
 
-
 const featuredProductDOM = document.getElementById("featuredProducts");
 
 // Returned first 9 products so as to make the design balance on the homepage
@@ -64,8 +63,6 @@ const featuredProductItemTemplate = (productDetails) => {
     `;
 };
 
-
-
 const popupTemplateDOM = document.getElementById("dialog-confirm");
 const PopUP = () => {
   $(function () {
@@ -95,9 +92,6 @@ const popupTemplate = () => {
   return `<p>
   `;
 };
-
-
-
 
 const CLIENTNameDOM = document.getElementById("userName");
 console.log("USERNAMEEEEEEE");
@@ -142,4 +136,3 @@ const DisplayUserNameMobileTemplate = () => {
 };
 
 DisplayUserNameMobileTemplate();
-

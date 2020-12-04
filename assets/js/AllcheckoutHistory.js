@@ -122,7 +122,7 @@ const GetAllCheckout = () => {
   };
 
   fetch(
-    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout/get-all",
+    "http://intriobasket.pexceptos.com/api/checkout/get-all",
     requestOptions
   )
     .then(function (response) {

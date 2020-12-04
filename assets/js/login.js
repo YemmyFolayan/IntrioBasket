@@ -70,6 +70,7 @@ Form.addEventListener("submit", function (e) {
   console.log(email);
   console.log(password);
 
+  //https://cors-anywhere.herokuapp.com/
   fetch(
     "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/login",
     {
