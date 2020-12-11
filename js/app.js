@@ -46,7 +46,7 @@ const router = (url) => {
  * - Cart is persistent
  *
  * Hook this  endpoint up with addtocart function to allow processing at the backend
- * https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart
+ * http://intriobasket.pexceptos.com/api/user/create-cart
  *
  * Param purchase id = 5f4d0fd68cc9aa11e6151b88
  * @param {String} id
@@ -65,7 +65,7 @@ console.log({ userId });
 let userToken = localStorage.getItem("token");
 console.log({ userToken });
 
-const url = `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
+const url = `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
 
 console.log(url);
 
@@ -111,8 +111,9 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
       redirect: "follow",
     };
 
+    //https://cors-anywhere.herokuapp.com/
     fetch(
-      `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`,
+      `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`,
       requestOptions
     )
       .then((response) => response.text())

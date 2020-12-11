@@ -1,8 +1,6 @@
-@import url(
-  http://fonts.googleapis.com/css?family=PT + Serif:400,
+@import url(http://fonts.googleapis.com/css?family=PT + Serif:400,
   700,
-  400italic
-);
+  400italic);
 
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 article,
@@ -191,7 +189,6 @@ body {
   font: 100%/1 "PT Serif", serif;
   background: #fff;
   color: #333;
-
 }
 
 :active,
@@ -300,6 +297,17 @@ h6 {
   color: #88c74a;
   line-height: 4;
   border-radius: 50%;
+}
+
+.product-inStock {
+  text-align: center;
+  color: #fc0;
+  margin: 0;
+  font-size: 1.4em;
+  padding-bottom: 0.2em;
+  border-bottom: 1px dotted red;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 form.add-to-cart div,
@@ -526,8 +534,7 @@ body#checkout-page #site-info {
   margin: 1.5em 0;
 }
 
-
-.displayflex{
+.displayflex {
   display: flex;
   flex-direction: row;
 }

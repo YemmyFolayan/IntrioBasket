@@ -52,12 +52,12 @@ Form.addEventListener("submit", function (e) {
     .then(function (data) {
       var msg = data.message;
 
-      if (msg == "User Created Succesfully") {
+      if (msg == "User Created Successfully") {
         setTimeout(function () {
           text.className = "white-text";
           text.appendChild(
             document.createTextNode(
-              `User Created Succesfully !, welcome to IntrioBasket ${name}, Proceed to Sign In`
+              `User Created Successfully !, welcome to IntrioBasket ${name}, Proceed to Sign In`
             )
           );
 

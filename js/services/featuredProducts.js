@@ -28,6 +28,7 @@ const fetchFoodList = async () => {
       imageUrl: product.image_link,
       price: product.cost,
       description: product.long_description,
+      inStock: product.in_stock_status,
     };
 
     let htmlString = featuredProductItemTemplate(productDetails);
@@ -45,9 +46,13 @@ const featuredProductItemTemplate = (productDetails) => {
             <a class="product-img" href="shop_detail_fullwidth.html?product=${productDetails.id}">
                 <img alt="product" src="${productDetails.imageUrl}" height="200" width="250">
             </a>
+           
+            <h3 class="product-name">In Stock: ${productDetails.inStock}</h3>
             <h5 class="product-type">${productDetails.type}</h5>
             <h3 class="product-name">${productDetails.name}</h3>
             <h3 class="product-price">NGN ${productDetails.price}</h3>
+          
+        
             <div class="product-select">
                 
                 <button onclick="addToCart('${productDetails.id}','${productDetails.name}','${productDetails.type}','${productDetails.imageUrl}','${productDetails.price}'); PopUP()" class="add-to-cart round-icon-btn">
