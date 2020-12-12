@@ -14,6 +14,7 @@ const manageProductItemTemplate = (foodListings) => {
             <a class="product-img" href="javascript:void()">
                 <img alt="product" src="${foodListings.imageUrl}" height="200" width="250">
             </a>
+            <h3 class="product-name">In Stock: ${foodListings.inStock}</h3>
             <h5 class="product-type">${foodListings.type}</h5>
             <h3 class="product-name">${foodListings.foodName}</h3>
             <h3 class="product-price">NGN ${foodListings.price}</h3>
@@ -29,10 +30,7 @@ const manageProductItemTemplate = (foodListings) => {
                 <button class="add-to-cart round-icon-btn" onclick="deleteFoodListing()">
                 <i class="fas fa-trash"></i>
               </button>
-              <select class="no-round-input" id="inStock" type="text" name="inStock"> 
-                <option value="Yes" id="Yes" name="Yes"> Yes </option>
-                <option value="No" id="No" name="No"> No </option>
-              </select>
+             
             </div>
         </div>  
     `;
@@ -56,6 +54,7 @@ const fetchFoodList = async () => {
       productType: product.product_type,
       categoryType: product.category_type,
       shortDescription: product.short_description,
+      inStock: product.in_stock_status,
     };
 
     let htmlString = manageProductItemTemplate(foodListings);
@@ -72,6 +71,24 @@ console.log({ AdminId });
 
 let adminToken = localStorage.getItem("adminToken");
 console.log({ adminToken });
+
+//Uploading product image
+window.addEventListener("load", function () {
+  document
+    .querySelector('input[type="file"]')
+    .addEventListener("change", function () {
+      if (this.files && this.files[0]) {
+        var img = document.querySelector("img"); // $('img')[0]
+        img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+        img.onload = imageIsLoaded;
+      }
+    });
+});
+
+function imageIsLoaded() {
+  alert(this.src); // blob url
+  // update width and height ...
+}
 
 /**
 
