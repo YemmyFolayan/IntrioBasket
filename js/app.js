@@ -1,4 +1,4 @@
-//TODO : IMPLEMENT 7.5%tax on any purchase
+//TODO : collect link from fire Store hold it in a map and write to eric API
 
 // Functions to run once DOM is loaded
 document.addEventListener(
