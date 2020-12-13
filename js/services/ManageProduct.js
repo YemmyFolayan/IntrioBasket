@@ -85,10 +85,7 @@ window.addEventListener("load", function () {
     });
 });
 
-function imageIsLoaded() {
-  alert(this.src); // blob url
-  // update width and height ...
-}
+
 
 /**
 
