@@ -123,11 +123,11 @@ function uploadFile() {
 
   //put request upload file to firebase storage
   thisRef.put(file, metadata).then(function (snapshot) {
-    alert("File Uploaded");
+    alert(imageName + "Uplaoded");
     console.log("Uploaded a blob or file!");
 
-    console.log(file);
-    alert(file);
+    //console.log(file);
+    //alert(file);
 
     thisRef.getDownloadURL().then(function (url) {
       // `url` is the download URL for 'images/stars.jpg'
