@@ -100,7 +100,6 @@ window.addEventListener("load", function () {
     });
 });
 
-<<<<<<< HEAD
 //function to save file
 function uploadFile() {
   // Create the file metadata
@@ -252,9 +251,6 @@ setTimeout(function () {
   //alert(this.src); // blob url
   // update width and height ...
 }
-=======
-
->>>>>>> eea6653b96a15ff001a877f38174e3f1e92d6587
 
 /////////////////////////////////////////////////////////////
 
