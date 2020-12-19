@@ -123,7 +123,7 @@ function uploadFile() {
 
   //put request upload file to firebase storage
   thisRef.put(file, metadata).then(function (snapshot) {
-    alert(imageName + "Uplaoded");
+    alert(imageName + "   Uplaoded =>100%");
     console.log("Uploaded a blob or file!");
 
     //console.log(file);
