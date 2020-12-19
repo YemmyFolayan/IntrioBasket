@@ -34,7 +34,7 @@
   <link rel='stylesheet' href="assets/css/owl.carousel.min.css">
   <link rel='stylesheet' href="assets/css/owl.theme.default.css">
   <link rel="stylesheet" href="assets/css/jquery.bxslider.css">
-
+  
 
         
 
@@ -90,7 +90,7 @@
           <div class="m-5 mx-auto warning"> CREATE FOOD LISTING (kindly Enter the Product Details to Add to the Database) </div>
     
                      
-          <form id="creatFoodForm">
+          <form id="foodForm">
   
 
  
@@ -98,35 +98,37 @@
 
              
 
-              <input type="text" id="food_product_name" name="food_product_name" class="no-round-input" placeholder="Food Product Name" required/>
+              <input type="text" id="productName" name="food_product_name" class="no-round-input" placeholder="Food Product Name" required/>
 
               </div>
               <div class="m-3">
 
-              <input type="text" id="product_type" name="product_type" class="no-round-input" placeholder="Product Type" required/>
+              <input type="text" id="productType" name="product_type" class="no-round-input" placeholder="Product Type" required/>
 
               </div>
               <div class="m-3">
-              <input type="text" id="category_type" name="category_type" class="no-round-input" placeholder="Category Type" required/>
+              <input type="text" id="categoryType" name="category_type" class="no-round-input" placeholder="Category Type" required/>
               </div>
               
               <div class="m-3">
 
-              <input type="text" id="short_description" name="short_description" class="no-round-input" placeholder="Short description" required/>
+              <input type="text" id="shortDescription" name="short_description" class="no-round-input" placeholder="Short description" required/>
              
              </div>
 
               <div class="m-3">
 
-              <input type="text" id="long_description" name="long_description" class="no-round-input" placeholder="Long description" required/>
+              <input type="text" id="LongDescription" name="long_description" class="no-round-input" placeholder="Long description" required/>
              
              </div>
 
               <div class="m-3">
 
-              <input type="text" id="cost" name="cost" class="no-round-input" placeholder="Cost" required/>
+              <input type="text" id="price" name="cost" class="no-round-input" placeholder="Cost" required/>
 
               </div>
+
+
 
               <div class="m-3">
 
@@ -136,12 +138,17 @@
 
 
             <!--Uploading product image -->
-             <input class="no-round-btn" type='file' />
-             <br><img id="myImg" src="#" alt="UPLOAD PRODUCT IMAGE" height=200 width=200>      
 
-              </div>
-              <select class="no-round-input m-3" id="in_stock_status" type="text" name="inStock"> 
-                <option value="Instock" id="Instock" name="Instock">Is Product In Stock? </option>
+             <input class="no-round-btn" type='file' onchange="uploadFile()" id="files" name="files[]" multiple/>
+             <br><img id="myImg" src="#" alt="UPLOAD PRODUCT IMAGE" height=200 width=200>   
+
+
+
+            </div>
+              <div class="m-3"> Is Product In Stock? </div>
+
+              <select class="round-input m-3" id="id_of_select" type="text" name="inStock"> 
+            
                 <option value="Yes" id="Yes" name="Yes"> Yes </option>
                 <option value="No" id="No" name="No"> No </option>
               </select>
@@ -273,6 +280,63 @@
 
   <!-- Services -->
   <script src="js/services/ManageProduct.js"></script>
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-storage.js"></script>
+
+ 
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyCSUUbaWz5rwrHhGNgOSj2e5tgfpElDX5E",
+      authDomain: "intriobasket-a601d.firebaseapp.com",
+      databaseURL: "https://intriobasket-a601d.firebaseio.com",
+      projectId: "intriobasket-a601d",
+      storageBucket: "intriobasket-a601d.appspot.com",
+      messagingSenderId: "676795094466",
+      appId: "1:676795094466:web:c67f029835361da297b25b",
+      measurementId: "G-5HNWSZLWVK"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+
+
+ 
+
+
+
+
+
+<!--
+
+
+   Insert these scripts at the bottom of the HTML, but before you use any Firebase services
+
+  Firebase App (the core Firebase SDK) is always required and must be listed first
+  <script src="/__/firebase/8.1.2/firebase-app.js"></script>
+If you enabled Analytics in your project, add the Firebase SDK for Analytics
+  <script src="/__/firebase/8.1.2/firebase-analytics.js"></script>
+ Add Firebase products that you want to use
+  <script src="/__/firebase/8.1.2/firebase-auth.js"></script>
+  <script src="/__/firebase/8.1.2/firebase-firestore.js"></script>
+
+  -- >
+
 
 </body>
 

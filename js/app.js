@@ -1,5 +1,10 @@
 //TODO : collect link from fire Store hold it in a map and write to eric API
 
+//
+//
+// Set the configuration for your app
+// TODO: Replace with your app's config object
+
 // Functions to run once DOM is loaded
 document.addEventListener(
   "DOMContentLoaded",
@@ -65,7 +70,7 @@ console.log({ userId });
 let userToken = localStorage.getItem("token");
 console.log({ userToken });
 
-const url = `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
+const url = `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
 
 console.log(url);
 
@@ -113,7 +118,7 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
 
     //https://cors-anywhere.herokuapp.com/
     fetch(
-      `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`,
+      `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`,
       requestOptions
     )
       .then((response) => response.text())
