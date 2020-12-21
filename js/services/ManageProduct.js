@@ -146,8 +146,15 @@ setTimeout(function () {
     e.preventDefault();
 
     var productName = document.getElementById("productName").value;
-    var productType = document.getElementById("productType").value;
-    var categoryType = document.getElementById("categoryType").value;
+
+    var selectorProd = document.getElementById("productType");
+
+    var productType = selectorProd[selectorProd.selectedIndex].value;
+
+    var selectorCat = document.getElementById("categoryType");
+
+    var categoryType = selectorCat[selectorCat.selectedIndex].value;
+
     var shortDescription = document.getElementById("shortDescription").value;
     var LongDescription = document.getElementById("LongDescription").value;
     var price = document.getElementById("price").value;
@@ -201,6 +208,7 @@ setTimeout(function () {
 
     createFoodListing();
     //console.log(create food);
+    alert("Uploaded Successfully....100%");
   });
 }, 6000);
 

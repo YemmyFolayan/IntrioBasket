@@ -54,7 +54,7 @@ Form.addEventListener("submit", function (e) {
     .then(function (data) {
       var msg = data.message;
 
-      if (msg == "Admin Created Succesfully") {
+      if (msg == "Admin Created Sucessfully") {
         const name = data.payload.fullname;
         setTimeout(function () {
           text.className = "white-text";

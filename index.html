@@ -35,6 +35,8 @@
   <link rel='stylesheet' href="assets/css/owl.carousel.min.css">
   <link rel='stylesheet' href="assets/css/owl.theme.default.css">
   <link rel="stylesheet" href="assets/css/jquery.bxslider.css">
+  <!-- Load icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -245,6 +247,7 @@
                 </div>
               </div>
             </div>
+
             <div class="col-12 col-md-8 col-lg-8 col-xl-9 order-1 order-md-2">
               <div class="website-search">
                 <div class="row no-gutters">
@@ -261,7 +264,9 @@
                   </div>
                 </div>
               </div>
+              
             </div>
+       
           </div>
         </div>
 
@@ -277,29 +282,51 @@
               <div class="col-12">
                 <div class="navgition-menu d-flex align-items-center justify-content-center">
                   <ul class="mb-0">
-                    <li class="toggleable">
-                      <a class="menu-item active title" href="javascript:void()">INTRIOBASKET</a>
-                    </li>
-                  
+                   
                     <li class="toggleable">
                       <a class="menu-item" href="shop4.html">MEAT & FISH</a>
+                      <ul class="sub-menu">
+                        <li><a href="shop4.html" id="logout"> MEAT AND FISH/WHITE MEAT</a></li>
+                        <li><a href="shop4.html">MEAT AND FISH/RED MEAT</a></li>
+                        <li><a href="shop4.html">MEAT AND FISH/FISH</a></li>
+                      </ul>
                     </li>
+
+
+               
+
+
+
                     <li class="toggleable">
                       <a class="menu-item" href="shop3.html">TUBBER</a>
+                      
                     </li>
                     <li class="toggleable">
                       <a class="menu-item" href="shop1.html">FLOUR</a>
+                      
                     </li>
                     <li class="toggleable">
                       <a class="menu-item" href="shop2.html">VEGETABLE</a>
+                      <ul class="sub-menu">
+                        <li><a href="shop2.html" id="logout">VEGETABLES/LEAFY </a></li>
+                        <li><a href="shop2.html">VEGETABLES/NON-LEAFY</a></li>
+                  
+                      </ul>
                     </li>
                     <li class="toggleable">
                       <a class="menu-item" href="shop5.html">BAKING INGREDIENT</a>
+               
                     </li>
                   
                   </ul>
                 </div>
               </div>
+
+              <!-- The form -->
+              <form class="example" action="action_page.php" style="width: 350px;">
+                <input type="text" placeholder="Search.." name="search" class="round-input">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
 
             </div>
           </div>

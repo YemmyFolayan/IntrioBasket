@@ -10,17 +10,17 @@ document.addEventListener(
 const featuredProductDOM = document.getElementById("featuredProducts");
 
 // Returned first 9 products so as to make the design balance on the homepage
-const getFirst9 = (foodList) => {
+/*const getFirst9 = (foodList) => {
   return foodList.slice(0, 20);
-};
+};*/
 
 const fetchFoodList = async () => {
   const endpoint = "/food"; // THOUGHTS: There should be an endpoint for featured products...
 
   const res = await api.request(endpoint); // TODO: handle errors..
 
-  const featuredProducts = getFirst9(res.payload);
-  featuredProducts.forEach((product) => {
+  //const featuredProducts = getFirst9(res.payload);
+  res.payload.forEach((product) => {
     let productDetails = {
       id: product._id,
       name: product.food_product_name,
