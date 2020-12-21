@@ -13303,6 +13303,8 @@ form.example input[type=text] {
   float: left;
   width: 80%;
   background: #f1f1f1;
+  margin-top: 15px;
+  
 }
 
 /* Style the submit button */
@@ -13313,9 +13315,12 @@ form.example button {
   background: #88c74a;
   color: white;
   font-size: 17px;
-  border: 1px solid grey;
+  border: 1px solid #88c74a;
   border-left: none; /* Prevent double borders */
   cursor: pointer;
+  margin-top: 17px;
+  
+ 
 }
 
 form.example button:hover {
