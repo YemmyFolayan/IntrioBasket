@@ -158,6 +158,8 @@ const emptyCart = () => {
 
   updateCartButtonBadge();
 };
+
+document.getElementById("mobileSearch").style.visibility = "hidden";
 //update cart button function
 //update from localstorage
 
