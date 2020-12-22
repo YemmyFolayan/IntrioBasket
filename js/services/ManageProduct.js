@@ -139,7 +139,7 @@ function uploadFile() {
 }
 
 ///TODO GET IMAGE LINK FROM FIREBASE , USE IT TO CREATE FOODLISTINGS WITH CREATE FOODLISTINGS API
-
+//CREATE FOODLISTING
 var FoodForm = document.getElementById("foodForm");
 setTimeout(function () {
   FoodForm.addEventListener("submit", function (e) {
@@ -209,6 +209,112 @@ setTimeout(function () {
     createFoodListing();
     //console.log(create food);
     alert("Uploaded Successfully....100%");
+  });
+}, 6000);
+
+//UPDATE FOODLISTING
+
+var FoodForm = document.getElementById("UpdatefoodForm");
+setTimeout(function () {
+  FoodForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    var NewproductName = document.getElementById("UpdateproductName").value;
+
+    var selectorProd = document.getElementById("UpdateproductType");
+
+    var NewproductType = selectorProd[selectorProd.selectedIndex].value;
+
+    var selectorCat = document.getElementById("UpdatecategoryType");
+
+    var NewcategoryType = selectorCat[selectorCat.selectedIndex].value;
+
+    var NewshortDescription = document.getElementById("UpdateshortDescription")
+      .value;
+    var NewLongDescription = document.getElementById("UpdateLongDescription")
+      .value;
+    var Newprice = document.getElementById("Updateprice").value;
+
+    var selector = document.getElementById("UpdateId_of_select");
+    var inStock = selector[selector.selectedIndex].value;
+
+    console.log(NewproductName);
+    console.log(NewproductType);
+    console.log(NewcategoryType);
+    console.log(NewshortDescription);
+    console.log(NewLongDescription);
+    console.log(Newprice);
+    console.log(inStock);
+    console.log(NewimageUrl);
+
+    //Set time out for this
+
+
+
+    const endpoint = "/food"; // THOUGHTS: There should be an endpoint for featured products...
+
+    const res = await api.request(endpoint); // TODO: handle errors..
+
+
+    ///NOT so SURE FOREACH
+
+    res.payload.forEach((product) => {
+
+
+      let foodId = product._id;
+      let foodName = product.food_product_name;
+
+      if (foodName == NewproductName) {
+
+        const foodIdd = foodId;
+        localStorage.setItem("foodIdd", foodIdd);
+
+        console.log(foodIdd);
+
+      }
+    });
+
+    //userId is GLOBAL across the site
+    let foodIdd = localStorage.getItem("foodIdd");
+    console.log({ foodIdd });
+
+
+    const UpdateFoodListing = () => {
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      var raw = JSON.stringify({
+        food_product_name: productName,
+        product_type: productType,
+        category_type: categoryType,
+        short_description: shortDescription,
+        long_description: LongDescription,
+        cost: price,
+        image_link: imageUrl,
+        in_stock_status: inStock,
+      });
+
+      var requestOptions = {
+        method: "PUT",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
+
+      fetch(
+        `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food/update/${foodIdd}`,
+        requestOptions
+      )
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
+
+      console.log("Update Food Listing ");
+    };
+
+    UpdateFoodListing();
+    //console.log(create food);
+    alert("Updated Successfully....100%");
   });
 }, 6000);
 
