@@ -20,13 +20,7 @@ const manageProductItemTemplate = (foodListings) => {
             <h3 class="product-price">NGN ${foodListings.price}</h3>
             <div class="product-select">
                 
-                <button onclick="createFoodListing()" class="add-to-cart round-icon-btn">
-                    <i class="fas fa-edit"></i>
-                </button>
-                <button class="quickview round-icon-btn" onclick="updateFoodListing()">
-                <i class="fas fa-sync"></i>
-                </button>
-               
+                
                 <button class="add-to-cart round-icon-btn" onclick="deleteFoodListing()">
                 <i class="fas fa-trash"></i>
               </button>
@@ -62,6 +56,7 @@ const fetchFoodList = async () => {
     htmlFragment.innerHTML = htmlString;
     manageProductDOM.appendChild(htmlFragment);
   });
+  
 };
 
 fetchFoodList();
