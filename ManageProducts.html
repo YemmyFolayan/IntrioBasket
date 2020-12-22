@@ -82,9 +82,10 @@
 
     <div class="container form">
 
-    <div class="row">
-                 
-        <div class="panel panel-danger">
+  
+    <div class="container">
+      <div class="row">
+        <div class="col">
         
           <div class="col-8">
 
@@ -95,14 +96,14 @@
           </form>
 
 
-          <div class="m-5 mx-auto warning"> CREATE FOOD LISTING (kindly Enter the Product Details to Add to the Database) </div>
+          <div class="m-5 mx-auto warning"><u> CREATE FOOD LISTING (kindly Enter the Product Details to Add to the Database) </u></div>
     
                      
           <form id="foodForm">
   
 
  
-               <div class="m-3 ">     
+              <div class="m-3 ">     
 
              
 
@@ -132,7 +133,7 @@
                 
               </div>
               <div class="m-3">
-               <div class="m-3"> Category Type </div>
+              <div class="m-3"> Category Type </div>
                 <select class="round-input m-3" id="categoryType" type="text" name="category_type" style="width: 320px;"> 
 
             
@@ -157,13 +158,13 @@
 
               <input type="text" id="shortDescription" name="short_description" class="no-round-input" placeholder="Short description" required/>
              
-             </div>
+            </div>
 
               <div class="m-3">
 
               <input type="text" id="LongDescription" name="long_description" class="no-round-input" placeholder="Long description" required/>
              
-             </div>
+            </div>
 
               <div class="m-3">
 
@@ -182,8 +183,8 @@
 
             <!--Uploading product image -->
 
-             <input class="no-round-btn" type='file' onchange="uploadFile()" id="files" name="files[]" multiple/>
-             <br><img id="myImg" src="#" alt="UPLOAD PRODUCT IMAGE" height=200 width=200>   
+            <input class="no-round-btn" type='file' onchange="uploadFile()" id="files" name="files[]" multiple/>
+            <br><img id="myImg" src="#" alt="UPLOAD PRODUCT IMAGE" height=200 width=200>   
 
 
 
@@ -197,131 +198,164 @@
               </select>
               <div class="m-5 mx-auto" style="width: 200px;">
               
-              <input type="submit" id="js_send" class="no-round-btn" value="Create Food Listing"/>
+              <input type="submit" id="js_send" class="no-round-btn" value="CREATE Food Listing"/>
             </div>
 
                           
           </form>
           </div>
 
-          <!--  <div class="col-8 flex-column d-flex">
+        
+        </div>
+        <div class="col">
+        
+        
+          <div class="row">
+                 
+          <div class="panel panel-danger">
+        
+         
+          <div class="col-8 flex-column d-flex">
 
 
-            <div class="m-5 mx-auto warning"> UPDATE FOOD LISTING (kindly Enter the Product Details to Update to the Database) </div>
+              <div class="m-5 mx-auto warning"><u> UPDATE FOOD LISTING (kindly Enter the Product Details to Update to the Database) </u></div>
     
                      
-            <form id="foodForm">
+              <form id="foodForm">
   
 
  
-                <div class="m-3 ">     
+                  <div class="m-3 ">     
 
              
 
-                <input type="text" id="productName" name="food_product_name" class="no-round-input" placeholder="Food Product Name" required/>
+                  <input type="text" id="productName" name="food_product_name" class="no-round-input" placeholder="Food Product Name" required/>
 
-                </div>
-                <div class="m-3">
+                  </div>
+                  <div class="m-3">
 
               
-                  <div class="m-3"> Product Type </div>
-                  <select class="round-input m-3" id="productType" type="text" name="product_type" style="width: 320px;"> 
+                    <div class="m-3"> Product Type </div>
+                    <select class="round-input m-3" id="productType" type="text" name="product_type" style="width: 320px;"> 
             
-                    <option value="BAKING INGREDIENTS" id="Yes" name="Yes"> BAKING INGREDIENTS </option>
-                    <option value="VEGETABLES/LEAFY" id="No" name="No"> VEGETABLES/LEAFY </option>
-                    <option value="BEVERAGES AND TEA" id="No" name="No"> BEVERAGES AND TEA </option>
-                    <option value="GRAINS" id="No" name="No"> GRAINS</option>
-                    <option value="SPICES" id="No" name="No"> SPICES </option>
-                    <option value="CEREAL" id="No" name="No"> CEREAL </option>
-                    <option value="VEGETABLES/NON-LEAFY" id="No" name="No"> VEGETABLES/NON-LEAFY </option>
-                    <option value="TUBERS" id="No" name="No"> TUBERS</option>
-                    <option value="MEAT AND FISH/WHITE MEAT" id="No" name="No"> MEAT AND FISH/WHITE MEAT </option>
-                    <option value="FLOURS" id="No" name="No"> FLOURS</option>
-                    <option value="MEAT AND FISH/RED MEAT" id="No" name="No"> MEAT AND FISH/RED MEAT</option>
-                    <option value="MEAT AND FISH/FISH" id="No" name="No"> MEAT AND FISH/FISH</option>
+                      <option value="BAKING INGREDIENTS" id="Yes" name="Yes"> BAKING INGREDIENTS </option>
+                      <option value="VEGETABLES/LEAFY" id="No" name="No"> VEGETABLES/LEAFY </option>
+                      <option value="BEVERAGES AND TEA" id="No" name="No"> BEVERAGES AND TEA </option>
+                      <option value="GRAINS" id="No" name="No"> GRAINS</option>
+                      <option value="SPICES" id="No" name="No"> SPICES </option>
+                      <option value="CEREAL" id="No" name="No"> CEREAL </option>
+                      <option value="VEGETABLES/NON-LEAFY" id="No" name="No"> VEGETABLES/NON-LEAFY </option>
+                      <option value="TUBERS" id="No" name="No"> TUBERS</option>
+                      <option value="MEAT AND FISH/WHITE MEAT" id="No" name="No"> MEAT AND FISH/WHITE MEAT </option>
+                      <option value="FLOURS" id="No" name="No"> FLOURS</option>
+                      <option value="MEAT AND FISH/RED MEAT" id="No" name="No"> MEAT AND FISH/RED MEAT</option>
+                      <option value="MEAT AND FISH/FISH" id="No" name="No"> MEAT AND FISH/FISH</option>
                  
-                  </select>
+                    </select>
                 
-                </div>
-                <div class="m-3">
-                <div class="m-3"> Category Type </div>
-                  <select class="round-input m-3" id="categoryType" type="text" name="category_type" style="width: 320px;"> 
+                  </div>
+                  <div class="m-3">
+                  <div class="m-3"> Category Type </div>
+                    <select class="round-input m-3" id="categoryType" type="text" name="category_type" style="width: 320px;"> 
 
             
-                    <option value="BAKING INGREDIENTS" id="Yes" name="Yes"> BAKING INGREDIENTS </option>
-                    <option value="VEGETABLES/LEAFY" id="No" name="No"> VEGETABLES/LEAFY </option>
-                    <option value="BEVERAGES AND TEA" id="No" name="No"> BEVERAGES AND TEA </option>
-                    <option value="GRAINS" id="No" name="No"> GRAINS</option>
-                    <option value="SPICES" id="No" name="No"> SPICES </option>
-                    <option value="CEREAL" id="No" name="No"> CEREAL </option>
-                    <option value="VEGETABLES/NON-LEAFY" id="No" name="No"> VEGETABLES/NON-LEAFY </option>
-                    <option value="TUBERS" id="No" name="No"> TUBERS</option>
-                    <option value="MEAT AND FISH/WHITE MEAT" id="No" name="No"> MEAT AND FISH/WHITE MEAT </option>
-                    <option value="FLOURS" id="No" name="No"> FLOURS</option>
-                    <option value="MEAT AND FISH/RED MEAT" id="No" name="No"> MEAT AND FISH/RED MEAT</option>
-                    <option value="MEAT AND FISH/FISH" id="No" name="No"> MEAT AND FISH/FISH</option>
+                      <option value="BAKING INGREDIENTS" id="Yes" name="Yes"> BAKING INGREDIENTS </option>
+                      <option value="VEGETABLES/LEAFY" id="No" name="No"> VEGETABLES/LEAFY </option>
+                      <option value="BEVERAGES AND TEA" id="No" name="No"> BEVERAGES AND TEA </option>
+                      <option value="GRAINS" id="No" name="No"> GRAINS</option>
+                      <option value="SPICES" id="No" name="No"> SPICES </option>
+                      <option value="CEREAL" id="No" name="No"> CEREAL </option>
+                      <option value="VEGETABLES/NON-LEAFY" id="No" name="No"> VEGETABLES/NON-LEAFY </option>
+                      <option value="TUBERS" id="No" name="No"> TUBERS</option>
+                      <option value="MEAT AND FISH/WHITE MEAT" id="No" name="No"> MEAT AND FISH/WHITE MEAT </option>
+                      <option value="FLOURS" id="No" name="No"> FLOURS</option>
+                      <option value="MEAT AND FISH/RED MEAT" id="No" name="No"> MEAT AND FISH/RED MEAT</option>
+                      <option value="MEAT AND FISH/FISH" id="No" name="No"> MEAT AND FISH/FISH</option>
                  
-                  </select>
+                    </select>
    
-                </div>
+                  </div>
               
-                <div class="m-3">
+                  <div class="m-3">
 
-                <input type="text" id="shortDescription" name="short_description" class="no-round-input" placeholder="Short description" required/>
+                  <input type="text" id="shortDescription" name="short_description" class="no-round-input" placeholder="Short description" required/>
              
-              </div>
-
-                <div class="m-3">
-
-                <input type="text" id="LongDescription" name="long_description" class="no-round-input" placeholder="Long description" required/>
-             
-              </div>
-
-                <div class="m-3">
-
-                <input type="text" id="price" name="cost" class="no-round-input" placeholder="Cost" required/>
-
                 </div>
 
+                  <div class="m-3">
+
+                  <input type="text" id="LongDescription" name="long_description" class="no-round-input" placeholder="Long description" required/>
+             
+                </div>
+
+                  <div class="m-3">
+
+                  <input type="text" id="price" name="cost" class="no-round-input" placeholder="Cost" required/>
+
+                  </div>
 
 
-                <div class="m-3">
+
+                  <div class="m-3">
 
 
                
-                <input type="text" id="image_link" name="image_link" class="no-round-input" placeholder="Image Link" required/> -->
+                  <input type="text" id="image_link" name="image_link" class="no-round-input" placeholder="Image Link" required/>
 
-
-              <!--Uploading product image -->
-              <!--
-
-              <input class="no-round-btn" type='file' onchange="uploadFile()" id="files" name="files[]" multiple/>
-              <br><img id="myImg" src="#" alt="UPLOAD PRODUCT IMAGE" height=200 width=200>   
-
-
-
-              </div>
-                <div class="m-3"> Is Product In Stock? </div>
-
-                <select class="round-input m-3" id="id_of_select" type="text" name="inStock" style="width: 320px;"> 
-            
-                  <option value="Yes" id="Yes" name="Yes"> Yes </option>
-                  <option value="No" id="No" name="No"> No </option>
-                </select>
-                <div class="m-5 mx-auto" style="width: 200px;">
+                <!--Uploading product image -->
               
-                <input type="submit" id="js_send" class="no-round-btn" value="Create Food Listing"/>
-              </div>
+
+                <input class="no-round-btn" type='file' onchange="uploadFile()" id="files" name="files[]" multiple/>
+                <br><img id="myImg" src="#" alt="UPLOAD PRODUCT IMAGE" height=200 width=200>   
+
+
+
+                </div>
+                  <div class="m-3"> Is Product In Stock? </div>
+
+                  <select class="round-input m-3" id="id_of_select" type="text" name="inStock" style="width: 320px;"> 
+            
+                    <option value="Yes" id="Yes" name="Yes"> Yes </option>
+                    <option value="No" id="No" name="No"> No </option>
+                  </select>
+                  <div class="m-5 mx-auto" style="width: 200px;">
+              
+                  <input type="submit" id="js_send" class="no-round-btn" value="UPDATE Food Listing"/>
+                </div>
 
                           
-            </form>
-            </div>
-            -->
-            </div>
-          </div>
-          </div>
+              </form>
+              </div>
+        
 
-    <div class="feature-products feature-products_v2">
+
+
+              </div>
+            </div>
+            </div>
+
+
+        
+        
+        
+        
+        </div>
+        <div class="w-100"></div>
+        <div class="col">
+        
+        
+        
+        
+        
+        
+        </div>
+        <div class="col">
+        
+        </div>
+      </div>
+    </div>
+
+        <div class="feature-products feature-products_v2">
       <div class="container">
         <div class="row">
           <div class="col-12 text-center card-title">
