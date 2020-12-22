@@ -13334,7 +13334,13 @@ form.example::after {
   display: table;
 }
 
-#foodForm, #UpdatefoodForm input[type="text"] {
-  width: 340px;
+#foodForm  input[type="text"], #UpdatefoodForm input[type="text"] {
+  width: 360px;
+  border: 1px solid #88c74a !important;
 }
 
+
+#foodForm, #UpdatefoodForm {
+  width: 400px;
+  border: 1px solid #88c74a !important;
+}
