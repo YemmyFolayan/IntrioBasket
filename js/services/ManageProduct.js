@@ -56,7 +56,6 @@ const fetchFoodList = async () => {
     htmlFragment.innerHTML = htmlString;
     manageProductDOM.appendChild(htmlFragment);
   });
-  
 };
 
 fetchFoodList();
@@ -244,35 +243,30 @@ setTimeout(function () {
 
     //Set time out for this
 
+    const updateFetchFoodList = async () => {
+      const endpoint = "/food"; // THOUGHTS: There should be an endpoint for featured products...
 
+      const res = await api.request(endpoint); // TODO: handle errors..
 
-    const endpoint = "/food"; // THOUGHTS: There should be an endpoint for featured products...
+      ///NOT so SURE FOREACH
 
-    const res = await api.request(endpoint); // TODO: handle errors..
+      res.payload.forEach((product) => {
+        let foodId = product._id;
+        let foodName = product.food_product_name;
 
+        if (foodName == NewproductName) {
+          const foodIdd = foodId;
+          localStorage.setItem("foodIdd", foodIdd);
 
-    ///NOT so SURE FOREACH
-
-    res.payload.forEach((product) => {
-
-
-      let foodId = product._id;
-      let foodName = product.food_product_name;
-
-      if (foodName == NewproductName) {
-
-        const foodIdd = foodId;
-        localStorage.setItem("foodIdd", foodIdd);
-
-        console.log(foodIdd);
-
-      }
-    });
+          console.log(foodIdd);
+        }
+      });
+    };
+    updateFetchFoodList();
 
     //userId is GLOBAL across the site
     let foodIdd = localStorage.getItem("foodIdd");
     console.log({ foodIdd });
-
 
     const UpdateFoodListing = () => {
       var myHeaders = new Headers();
