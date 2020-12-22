@@ -70,7 +70,7 @@ console.log({ userId });
 let userToken = localStorage.getItem("token");
 console.log({ userToken });
 
-const url = `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
+const url = `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`;
 
 console.log(url);
 
@@ -116,9 +116,9 @@ const addToCart = (id, name, type, imageUrl, price, qty) => {
       redirect: "follow",
     };
 
-    //https://cors-anywhere.herokuapp.com/
+    //
     fetch(
-      `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`,
+      `http://intriobasket.pexceptos.com/api/user/create-cart/${userId}`,
       requestOptions
     )
       .then((response) => response.text())

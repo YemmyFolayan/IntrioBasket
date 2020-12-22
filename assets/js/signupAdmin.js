@@ -30,24 +30,21 @@ Form.addEventListener("submit", function (e) {
   panel.className = "card-panel green";
   const text = document.createElement("span");
 
-  //https://cors-anywhere.herokuapp.com/
+  //
 
-  fetch(
-    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/admin/create",
-    {
-      method: "POST",
-      body: JSON.stringify({
-        fullname: fullname,
-        email: email,
-        password: password,
-        phonenumber: phonenumber,
-        gender: gender,
-      }),
-      headers: {
-        "Content-Type": "application/json; charset= UTF-8",
-      },
-    }
-  )
+  fetch("http://intriobasket.pexceptos.com/api/admin/create", {
+    method: "POST",
+    body: JSON.stringify({
+      fullname: fullname,
+      email: email,
+      password: password,
+      phonenumber: phonenumber,
+      gender: gender,
+    }),
+    headers: {
+      "Content-Type": "application/json; charset= UTF-8",
+    },
+  })
     .then(function (response) {
       return response.json();
     })

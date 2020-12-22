@@ -189,10 +189,7 @@ setTimeout(function () {
         redirect: "follow",
       };
 
-      fetch(
-        "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food/create",
-        requestOptions
-      )
+      fetch("http://intriobasket.pexceptos.com/api/food/create", requestOptions)
         .then((response) => response.text())
         .then((result) => console.log(result))
         .catch((error) => console.log("error", error));
@@ -291,7 +288,7 @@ setTimeout(function () {
       };
 
       fetch(
-        `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food/update/${foodIdd}`,
+        `http://intriobasket.pexceptos.com/api/food/update/${foodIdd}`,
         requestOptions
       )
         .then((response) => response.text())
