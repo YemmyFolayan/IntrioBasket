@@ -325,10 +325,6 @@ form input.qty {
   margin-left: 0.4em;
 }
 
-#foodForm input[type="text"] {
-  width: 600px;
-}
-
 .btn,
 a.btn {
   display: inline-block;
