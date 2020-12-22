@@ -13333,3 +13333,8 @@ form.example::after {
   clear: both;
   display: table;
 }
+
+#foodForm, #UpdatefoodForm input[type="text"] {
+  width: 340px;
+}
+
