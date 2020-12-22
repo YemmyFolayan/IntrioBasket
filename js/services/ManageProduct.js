@@ -21,7 +21,8 @@ const manageProductItemTemplate = (foodListings) => {
             <div class="product-select">
                 
                 
-                <button class="add-to-cart round-icon-btn" onclick="deleteFoodListing()">
+                <button class="add-to-cart round-icon-btn"
+onclick="DeleteFoodListing()">
                 <i class="fas fa-trash"></i>
               </button>
              
@@ -50,11 +51,50 @@ const fetchFoodList = async () => {
       shortDescription: product.short_description,
       inStock: product.in_stock_status,
     };
+    
 
     let htmlString = manageProductItemTemplate(foodListings);
     let htmlFragment = document.createElement("div");
     htmlFragment.innerHTML = htmlString;
     manageProductDOM.appendChild(htmlFragment);
+    
+    
+    //DELETE FOODLISTING 
+    const DeleteFoodListing = () => {
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      var raw = JSON.stringify({
+        food_product_name: productName,
+        product_type: productType,
+        category_type: categoryType,
+        short_description: shortDescription,
+        long_description: LongDescription,
+        cost: price,
+        image_link: imageUrl,
+        in_stock_status: inStock,
+      });
+
+      var requestOptions = {
+        method: "DEL",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
+
+      fetch(
+        `http://intriobasket.pexceptos.com/api/food/${foodIdd}`,
+        requestOptions
+      )
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
+
+      console.log("Update Food Listing ");
+    };
+
+    //DeleteFoodListing();
+    
   });
 };
 
