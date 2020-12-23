@@ -1,6 +1,38 @@
 const shopDetailsDOM = document.getElementById("shopDetails");
 const shopDOM = document.getElementById("shopDOM");
 
+//POP UP
+
+const popupTemplateDOM = document.getElementById("dialog-confirm");
+const PopUP = () => {
+  $(function () {
+    $("#dialog-confirm").dialog({
+      resizable: false,
+      height: "auto",
+      width: 360,
+      modal: true,
+      buttons: {
+        "Continue Shopping": function () {
+          window.location.assign("/Homepage.html");
+        },
+        "Goto Cart": function () {
+          window.location.assign("/shop_cart.html");
+        },
+      },
+    });
+  });
+
+  let htmlString = popupTemplate();
+  let htmlFragment = document.createElement("div");
+  htmlFragment.innerHTML = htmlString;
+  popupTemplateDOM.appendChild(htmlFragment);
+};
+
+const popupTemplate = () => {
+  return `<p>
+  `;
+};
+
 const productDetailsTemplate = (productDetails) => {
   return `
   <div class="col-8 col-sm-10" >
@@ -48,10 +80,9 @@ const productDetailsTemplate = (productDetails) => {
           <input class="no-round-input" id="quantity" type="number" min="0" value="1">
         </div>
 
-        <!-- WRITE JAVASCRIPT FOR ADD TO CART FUNCTION-->
 
         <div class="product-select">
-          <button class="add-to-cart normal-btn outline" onclick="addToCart('${productDetails.id}','${productDetails.name}','${productDetails.type}','${productDetails.imageUrl}','${productDetails.price}')">Add to Cart</button>
+          <button class="add-to-cart normal-btn outline" onclick="PopUP(); addToCart('${productDetails.id}','${productDetails.name}','${productDetails.type}','${productDetails.imageUrl}','${productDetails.price}')">Add to Cart</button>
           
         </div>
         <div class="product-guarante">

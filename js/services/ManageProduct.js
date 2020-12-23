@@ -21,8 +21,7 @@ const manageProductItemTemplate = (foodListings) => {
             <div class="product-select">
                 
                 
-                <button class="add-to-cart round-icon-btn"
-onclick="DeleteFoodListing()">
+                <button class="add-to-cart round-icon-btn" onclick="DeleteFoodListing()">
                 <i class="fas fa-trash"></i>
               </button>
              
