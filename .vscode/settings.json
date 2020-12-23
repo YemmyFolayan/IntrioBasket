@@ -9,6 +9,8 @@
         "newproduct name",
         "paystack",
         "phonenumber",
-        "total"
+        "total",
+        "updateproduct",
+        "updateproduct name"
     ]
 }
