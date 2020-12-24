@@ -37,6 +37,10 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  </head>
+
+
 </head>
 
 <body>
@@ -366,15 +370,135 @@
             </div>
           </div>
           <!-- The form -->
+   
+        
      
-          <form class="example" action="#" style="width: 350px;">
-            <input type="text" placeholder="Search.." name="search" class="round-input">
+
+      
+
+          <!--Make sure the form has the autocomplete function switched off:-->
+          
+          <form autocomplete="off" action="/action_page.php" class="example">
+            <div class="autocomplete" >
+              <input id="myInput" type="text" name="myFood" placeholder="Food Items.." class="no-round-input">
+            </div>
+
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
-        
-        </div>
 
-        <!-- quick link-->
+
+
+          <script>
+          function autocomplete(inp, arr) {
+            /*the autocomplete function takes two arguments,
+            the text field element and an array of possible autocompleted values:*/
+            var currentFocus;
+            /*execute a function when someone writes in the text field:*/
+            inp.addEventListener("input", function(e) {
+                var a, b, i, val = this.value;
+                /*close any already open lists of autocompleted values*/
+                closeAllLists();
+                if (!val) { return false;}
+                currentFocus = -1;
+                /*create a DIV element that will contain the items (values):*/
+                a = document.createElement("DIV");
+                a.setAttribute("id", this.id + "autocomplete-list");
+                a.setAttribute("class", "autocomplete-items");
+                /*append the DIV element as a child of the autocomplete container:*/
+                this.parentNode.appendChild(a);
+                /*for each item in the array...*/
+                for (i = 0; i < arr.length; i++) {
+                  /*check if the item starts with the same letters as the text field value:*/
+                  if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                    /*create a DIV element for each matching element:*/
+                    b = document.createElement("DIV");
+                    /*make the matching letters bold:*/
+                    b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                    b.innerHTML += arr[i].substr(val.length);
+                    /*insert a input field that will hold the current array item's value:*/
+                    b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                    /*execute a function when someone clicks on the item value (DIV element):*/
+                    b.addEventListener("click", function(e) {
+                        /*insert the value for the autocomplete text field:*/
+                        inp.value = this.getElementsByTagName("input")[0].value;
+                        /*close the list of autocompleted values,
+                        (or any other open lists of autocompleted values:*/
+                        closeAllLists();
+                    });
+                    a.appendChild(b);
+                  }
+                }
+            });
+            /*execute a function presses a key on the keyboard:*/
+            inp.addEventListener("keydown", function(e) {
+                var x = document.getElementById(this.id + "autocomplete-list");
+                if (x) x = x.getElementsByTagName("div");
+                if (e.keyCode == 40) {
+                  /*If the arrow DOWN key is pressed,
+                  increase the currentFocus variable:*/
+                  currentFocus++;
+                  /*and and make the current item more visible:*/
+                  addActive(x);
+                } else if (e.keyCode == 38) { //up
+                  /*If the arrow UP key is pressed,
+                  decrease the currentFocus variable:*/
+                  currentFocus--;
+                  /*and and make the current item more visible:*/
+                  addActive(x);
+                } else if (e.keyCode == 13) {
+                  /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                  e.preventDefault();
+                  if (currentFocus > -1) {
+                    /*and simulate a click on the "active" item:*/
+                    if (x) x[currentFocus].click();
+                  }
+                }
+            });
+            function addActive(x) {
+              /*a function to classify an item as "active":*/
+              if (!x) return false;
+              /*start by removing the "active" class on all items:*/
+              removeActive(x);
+              if (currentFocus >= x.length) currentFocus = 0;
+              if (currentFocus < 0) currentFocus = (x.length - 1);
+              /*add class "autocomplete-active":*/
+              x[currentFocus].classList.add("autocomplete-active");
+            }
+            function removeActive(x) {
+              /*a function to remove the "active" class from all autocomplete items:*/
+              for (var i = 0; i < x.length; i++) {
+                x[i].classList.remove("autocomplete-active");
+              }
+            }
+            function closeAllLists(elmnt) {
+              /*close all autocomplete lists in the document,
+              except the one passed as an argument:*/
+              var x = document.getElementsByClassName("autocomplete-items");
+              for (var i = 0; i < x.length; i++) {
+                if (elmnt != x[i] && elmnt != inp) {
+                  x[i].parentNode.removeChild(x[i]);
+                }
+              }
+            }
+            /*execute a function when someone clicks in the document:*/
+            document.addEventListener("click", function (e) {
+                closeAllLists(e.target);
+            });
+          }
+
+
+
+
+
+          /*An array containing all the Food names in the world:*/
+          var FoodItems = ["Baking powder","Ayoola Poundo yam","Beans flour","Bitter leaf","Cabbage","Cassava","Cat fish","Chicken","Chicken breast","Chicken3","Chilli pepper","Coco pops","Cocoa powder","Colouring","Cornflakes 350g","Cow meat","Cray fish","Cucumber","Egg","Flavour","Fried rice spice","Garlic","Ginger tea","Frosties home","Gizzard","Golden morn","Green beans","Golden morn","Green pepper","Green tea","Honey beans","Icing sugar","Irish potato","Jollof rice spice","Jelly","Lettuce","Kilishi","Lard","Lipton","Chile","Liver","Local rice","Maggi","Milk","Milo crunches","Mint leaf","Mutton","Nutmeg","Okra","Onions","Plantain-flour","Ponmo","Pork","Plantain","Poundo yam","Prawn","Rabbit","Red Yeast Coffee","Rice krispies","Salt","Semovita","Salt","Shrimp","Snail","Sweet potato","Spinach","Titus fish","Tilapia fish","Titus fish","Sugar","Tomatoes","Tumeric","Tuna fish","Turkey","Veal","Water leaf","Yale biscuit","White beans","Thyme","Whole milk","Yam flour","Yam"];
+
+          /*initiate the autocomplete function on the "myInput" element, and pass along the FoodItems array as possible autocomplete values:*/
+          autocomplete(document.getElementById("myInput"), FoodItems);
+          </script>
+
+          
+         <!-- quick link-->
       
         <nav class="navigation d-flex align-items-center">
           <div class="container">
@@ -492,13 +616,7 @@
               </div>
 
              
-              <!-- The form -->
-              <div id="mobileSearch">
-                <form class="example" action="#" style="width: 350px;">
-                  <input type="text" placeholder="Search.." name="search" class="round-input">
-                  <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
-              </div>
+       
 
 
             </div>
@@ -999,6 +1117,7 @@
     <!-- End footer-->
   </div>
 
+ 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="assets/js/jquery-ui.min.js"></script>
   <script src="assets/js/jquery.countdown.min.js"></script>
@@ -1023,6 +1142,10 @@
   <script src="js/utils/api-request.js"></script>
   <!-- Services -->
   <script src="js/services/featuredProducts.js"></script>
+
+  <script src="js/services/shopDetails.js"></script>
+
+  
 
   <!-- App Logic -->
   <script src="js/app.js"></script>

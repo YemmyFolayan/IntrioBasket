@@ -60,30 +60,6 @@ const fetchFoodList = async () => {
     //DeleteFoodListing();
   });
 };
-//DELETE FOODLISTING
-const DeleteFoodListing = () => {
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-
-  var requestOptions = {
-    method: "DEL",
-    headers: myHeaders,
-
-    redirect: "follow",
-  };
-
-  fetch(
-    `http://intriobasket.pexceptos.com/api/food/${productId}`,
-    requestOptions
-  )
-    .then((response) => response.text())
-    .then((result) => console.log(result))
-    .catch((error) => console.log("error", error));
-
-  console.log("Delete Food Listing ");
-};
-
-console.log("Delete Food Listing 2");
 
 fetchFoodList();
 
@@ -330,6 +306,31 @@ setTimeout(function () {
     alert("Updated Successfully....100%");
   });
 }, 6000);
+
+//DELETE FOODLISTING
+const DeleteFoodListing = () => {
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var requestOptions = {
+    method: "DEL",
+    headers: myHeaders,
+
+    redirect: "follow",
+  };
+
+  fetch(
+    `http://intriobasket.pexceptos.com/api/food/${productId}`,
+    requestOptions
+  )
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.log("error", error));
+
+  console.log("Delete Food Listing ");
+};
+
+console.log("Delete Food Listing 2");
 
 /*
   // Upload file and metadata to the object 'images/mountains.jpg'
