@@ -311,9 +311,10 @@ setTimeout(function () {
 const DeleteFoodListing = () => {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
+  myHeaders.append("x-admin-token", `${adminToken}`);
 
   var requestOptions = {
-    method: "DEL",
+    method: "DELETE",
     headers: myHeaders,
 
     redirect: "follow",
