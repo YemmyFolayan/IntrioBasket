@@ -3,6 +3,7 @@ const shopDOM = document.getElementById("shopDOM");
 
 //POP UP
 
+/*
 const popupTemplateDOM = document.getElementById("dialog-confirm");
 const PopUP = () => {
   $(function () {
@@ -32,6 +33,7 @@ const popupTemplate = () => {
   return `<p>
   `;
 };
+*/
 
 const productDetailsTemplate = (productDetails) => {
   return `
@@ -104,6 +106,8 @@ const handleProductIdError = () => {
   shopDOM.style.display = "none";
 };
 
+let searchName;
+
 const initProductDetails = async () => {
   let productId;
 
@@ -127,6 +131,8 @@ const initProductDetails = async () => {
     description: product.long_description,
   };
 
+  searchName = productDetails.name;
+
   let htmlString = productDetailsTemplate(productDetails);
   let htmlFragment = document.createElement("div");
   htmlFragment.innerHTML = htmlString;
@@ -134,3 +140,24 @@ const initProductDetails = async () => {
 };
 
 initProductDetails();
+
+/*
+//TASK TARGET THE SEARCH WORD. MATCH IT WITH PRODUCT DETAILS NAME.
+//THEN DISPLAY SHOP DETAILS PAGE
+var searchForm = document.getElementById("searchForm");
+
+searchForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  var searchItem = document.getElementById("myInput").value;
+
+  if (searchItem === searchName) {
+
+  } else {
+  }
+
+  console.log("====================================");
+  console.log(searchItem);
+  console.log("====================================");
+});
+
+*/
