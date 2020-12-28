@@ -283,13 +283,13 @@
                   <!-- The form -->
    
         
-     
+   
 
       
 
                   <!--Make sure the form has the autocomplete function switched off:-->
           
-                  <form autocomplete="off" action="/action_page.php" class="example">
+                  <form autocomplete="off" action="#" class="example" id="searchForm">
                     <div class="autocomplete" >
                       <input id="myInput" type="text" name="myFood" placeholder="Food Items.." class="no-round-input">
                     </div>
@@ -300,6 +300,8 @@
 
 
                   <script>
+
+
                   function autocomplete(inp, arr) {
                     /*the autocomplete function takes two arguments,
                     the text field element and an array of possible autocompleted values:*/
@@ -407,6 +409,7 @@
                   /*initiate the autocomplete function on the "myInput" element, and pass along the FoodItems array as possible autocomplete values:*/
                   autocomplete(document.getElementById("myInput"), FoodItems);
                   </script>
+
 
                 </div>
               </div>
@@ -616,6 +619,8 @@
 
     <!-- App Logic -->
     <script src="js/app.js"></script>
+
+    <script src="js/services/shopDetails.js"></script>
 
 
     <script type="text/javascript" src="assets/categoryQuery/Queryfoodlistingbycatgory2.js"></script>

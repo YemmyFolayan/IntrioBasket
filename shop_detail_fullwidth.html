@@ -21,6 +21,9 @@
   <link rel="shortcut icon" href="assets/images/shortcut_logo.png">
 
 
+
+
+
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -29,165 +32,455 @@
 </head>
 
 <body>
-  <div id="main">
-    <header>
-      <div class="header-block d-flex align-items-center">
-        <div class="ogami-container-fluid">
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="header-left d-flex flex-column flex-md-row align-items-center">
-                <p class="d-flex align-items-center"><i class="fas fa-envelope"></i>info@intriobasket.ng</p>
-                <p class="d-flex align-items-center"><i class="fas fa-phone"></i>+234456789999</p>
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
-              <div
-                class="header-right d-flex flex-column flex-md-row justify-content-md-end justify-content-center align-items-center">
-                <div class="social-link d-flex"><a href=""><i class="fab fa-facebook-f"> </i></a><a href=""><i
-                      class="fab fa-twitter"></i></a><a href=""><i class="fab fa-invision"> </i></a><a href=""><i
-                      class="fab fa-instagram"> </i></a></div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="mobile-menu">
-        <div class="container">
-          <div class="row">
-            <div class="col-3">
-              <div class="mobile-menu_block d-flex align-items-center"><a class="mobile-menu--control"
-                  href="index.html"><i class="fas fa-bars"></i></a>
-                <div id="ogami-mobile-menu">
-                  <button class="no-round-btn" id="mobile-menu--closebtn">Close menu</button>
-                  <div class="mobile-menu_items">
-                    <ul class="mb-0 d-flex flex-column">
-                      <li class="toggleable"> <a class="menu-item active" href="index.html">Home</a><span
-                          class="sub-menu--expander"><i class="icon_plus"></i></span>
-                        <ul class="sub-menu">
-                          <li><a href="index.html">Homepage</a></li>
-                        </ul>
-                      </li>
-                      <li class="toggleable"><a class="menu-item" href="shop.html">Shop</a><span
-                          class="sub-menu--expander"><i class="icon_plus"></i></span>
-
-                      </li>
-
-                      <li class="toggleable"><a class="menu-item" href="javascript:void()">Pages</a><span
-                          class="sub-menu--expander"><i class="icon_plus"></i></span>
-                        <ul class="sub-menu">
-                          <li><a href="FAQ.html">FAQ</a></li>
-
-                          <li><a href="about_us.html">about us</a></li>
-                          <li><a href="contact_us.html">contact us</a></li>
-
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="mobile-social"><a href=""><i class="fab fa-facebook-f"> </i></a><a href=""><i
-                        class="fab fa-twitter"></i></a><a href=""><i class="fab fa-invision"> </i></a><a href=""><i
-                        class="fab fa-instagram"> </i></a></div>
-                </div>
-                <div class="ogamin-mobile-menu_bg"></div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="mobile-menu_logo text-center d-flex justify-content-center align-items-center"><a href=""><img
-                    src="assets/images/logo.png" alt=""></a></div>
-            </div>
-            <div class="col-3">
-              <div class="mobile-product_function d-flex align-items-center justify-content-end"><a
-                  class="function-icon icon_heart_alt" href="shop_wishlist.html"></a><a
-                  class="function-icon fa fa-shopping-cart" href="shop_cart.html"></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <nav class="navigation navigation_v2 d-flex align-items-center">
-        <div class="ogami-container-fluid">
-          <div class="row align-items-xxl-center">
-            <div class="col-12 col-xl-6 col-xxxl-1 text-lg-center text-xl-left order-xl-1 order-xxxl-1"><a class="logo"
-                href="index.html"><img src="assets/images/logo.png" alt=""></a></div>
-            <div class="col-12 col-md-12 col-xl-6 col-xxxl-4 order-xl-3 order-xxxl-2">
-              <div class="navigation-filter">
-                <div class="website-search_v2">
-                  <div class="row no-gutters">
-                    <div class="col-0 col-md-3 col-lg-3 col-xl-4">
-                      <div class="filter-search">
-
+              <div id="main">
+              <header>
+                <div class="header-block d-flex align-items-center">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-12 col-md-6">
+                        <div class="header-left d-flex flex-column flex-md-row align-items-center">
+                          <p class="d-flex align-items-center"><i class="fas fa-envelope"></i>info@intriobasket.ng</p>
+                          <p class="d-flex align-items-center"><i class="fas fa-phone"></i>+234456789999</p>
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-8 col-md-7 col-lg-8 col-xl-7">
-                      <div class="search-input">
-                        <input class="no-round-input no-border" type="text" placeholder="What do you need">
+                      <div class="col-12 col-md-6">
+                        <div
+                          class="header-right d-flex flex-column flex-md-row justify-content-md-end justify-content-center align-items-center">
+                          <div class="social-link d-flex"><a href=""><i class="fab fa-facebook-f"> </i></a><a href=""><i
+                                class="fab fa-twitter"></i></a><a href=""><i class="fab fa-invision">
+                              </i></a><a href=""><i class="fab fa-instagram"> </i></a></div>
+
+                          <div id="form">
+                  
+                          </div>
+
+
+
+
+                          <div id="user">
+                  
+                          </div>
+
+
+                          <div class="login d-flex" id="loginflex">
+                            <div id="userName">
+          
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-4 col-md-2 col-lg-1 col-xl-1">
-                      <button class="no-round-btn"><i class="icon_search"></i></button>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-8 col-xl-6 col-xxxl-5 order-xl-4 order-xxxl-3">
-              <div class="navgition-menu d-flex align-items-center justify-content-center justify-content-xl-center">
-                <ul class="mb-0">
-                  <li class="toggleable"> <a class="menu-item" href="index.html">Home</a>
-                    <ul class="sub-menu">
-                    </ul>
-                  </li>
-                  <li class="toggleable"> <a class="menu-item active" href="shop.html">Shop</a>
-                    <ul class="sub-menu shop d-flex">
-                      <div class="nav-column">
+                <nav class="navigation d-flex align-items-center">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-2">
+                        <a class="logo" href="index.html"><img src="assets/images/logo.png" alt=""></a>
                       </div>
-                      <div class="nav-column">
-                        <h2>Detail shop</h2>
-                        <li><a href="shop_detail_fullwidth.html">shop detail</a></li>
-
+                      <div class="col-8">
+                        <div class="navgition-menu d-flex align-items-center justify-content-center">
+                          <ul class="mb-0">
+                            <li class="toggleable">
+                              <a class="menu-item active" href="Homepage.html">Home</a>
+                            </li>
+                            <li class="toggleable">
+                              <a class="menu-item" href="shop.html">Shop</a>
+                            </li>
+                            <li class="toggleable">
+                              <a class="menu-item" href="javascript:void()">Pages</a>
+                              <ul class="sub-menu">
+                                <li><a href="login.html" id="logout">logout</a></li>
+                                <li><a href="FAQ.html">FAQ</a></li>
+                                <li><a href="contact_us.html">contact us</a></li>
+                              </ul>
+                            </li>
+                            <li class="toggleable">
+                              <a class="menu-item" href="about_us.html">About us</a>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
-                      <div class="nav-column">
-                        <h2>Pages shop</h2>
-                        <li><a href="shop_checkout.html">checkout</a></li>
-                        <li><a href="shop_order_complete.html">order complete</a></li>
-                        <li><a href="shop_wishlist.html">wishlist</a></li>
-                        <li><a href="shop_compare.html">compare</a></li>
-                        <li><a href="shop_cart.html">cart</a></li>
+
+
+
+
+                      <div id="dialog-confirm" title="Intriobasket says">
+    
                       </div>
-                    </ul>
-                  </li>
 
-                  <li class="toggleable">   <a class="menu-item" href="login.html">Logout</a>
-                    <ul class="sub-menu">
-                      <li><a href="FAQ.html">FAQ</a></li>
 
-                      <li><a href="contact_us.html">contact us</a></li>
 
-                    </ul>
-                  </li>
-                  <li class="toggleable"><a class="menu-item" href="about_us.html">About us</a></li>
-                </ul>
-              </div>
-            </div>
 
-            <div id="dialog-confirm" title="Intriobasket says">
+                      <div class="col-2">
+                        <div class="product-function d-flex align-items-center justify-content-end">
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </nav>
+                <div id="mobile-menu">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-3">
+                        <div class="mobile-menu_block d-flex align-items-center"><a class="mobile-menu--control"
+                            href="javascript:void()"><i class="fas fa-bars"></i></a>
+                          <div id="ogami-mobile-menu">
+                            <button class="no-round-btn" id="mobile-menu--closebtn">Close menu</button>
+                            <div class="mobile-menu_items">
+                              <ul class="mb-0 d-flex flex-column">
+                                <li class="toggleable"> <a class="menu-item active" href="Homepage.html">Home</a><span
+                                    class="sub-menu--expander"><i class="icon_plus"></i></span>
+
+                                </li>
+                                <li class="toggleable"><a class="menu-item" href="shop.html">Shop</a><span
+                                    class="sub-menu--expander"><i class="icon_plus"></i></span>
+
+                                </li>
+
+                                <li class="toggleable">
+                                    <a class="menu-item" href="login.html" id="logout">Logout</a>
+                                    <span class="sub-menu--expander"><i class="icon_plus"></i></span>
+                                  <ul class="sub-menu">
+                                    <li><a href="login.html" id="logout">logout</a></li>
+                          
+                                    <li><a href="FAQ.html">FAQ</a></li>
+
+                                    <li><a href="about_us.html">about us</a></li>
+                                    <li><a href="contact_us.html">contact us</a></li>
+
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="mobile-login" id="mobilelogin">
+                              <h2>My account</h2><a href="login.html" id="logout">Logout</a>
+                            </div>
+                            <div class="mobile-social"><a href=""><i class="fab fa-facebook-f"> </i></a><a href=""><i
+                                  class="fab fa-twitter"></i></a><a href=""><i class="fab fa-invision"> </i></a><a href=""><i
+                                  class="fab fa-instagram"> </i></a></div>
+                          </div>
+                          <div class="ogamin-mobile-menu_bg"></div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="mobile-menu_logo text-center d-flex justify-content-center align-items-center">
+                          <a href=""><img src="assets/images/logo.png" alt=""></a></div>
+                      </div>
+                      <div class="col-3">
+                        <div class="mobile-product_function d-flex align-items-center justify-content-end">
             
-            </div>
+                            <div onclick="router('shop_cart')" id="cartButton" class="function-icon hover mobile-product_function d-flex align-items-center justify-content-end">
+                              <i class="fa fa fa-shopping-cart"></i>
+                              <sup style="top: -.5em">
+                                <span id="cartButtonBadge" class="my-badge badge-success cartButtonBadge">0</span>
+                              </sup>
+                        </div>
+                        </div>
+          
+                      </div>
+
+                      <div class="mobile-product_function d-flex justify-content-end">
+                        <div id="userNameMobile">
+  
+                          </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="navigation-filter">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-12 col-md-4 col-lg-4 col-xl-3 order-2 order-md-1">
+                      <div class="department-menu_block">
+                          <div class="department-menu d-flex justify-content-between align-items-center"><i
+                              class="fas fa-bars"></i>CATEGORIES<span><i class="arrow_carrot-down"></i></span>
+                          </div>
+                          <div class="department-dropdown-menu">
+                  
+                            <ul>
+                              <li><a href="#"> <i class="icon-1"></i>MEAT & FISH</a>
+                                <ul class="sub-menu">
+                                  <li><a href="shop4.html">Titus fish</a></li>
+                                  <li><a href="shop4.html">Tilapia fish</a></li>
+                                  <li><a href="shop4.html">Tuna fish</a></li>
+                                  <li><a href="shop4.html">Turkey</a></li>
+                                  <li><a href="shop4.html">Veal</a></li>
+                                  <li><a href="shop4.html">Cat fish</a></li>
+                        
+                                  <li><a href="shop4.html">Kilishi</a></li>
+                                  <li><a href="shop4.html">Lard</a></li>
+                                  <li><a href="shop4.html">Liver</a></li>
+                                  <li><a href="shop4.html">Mutton</a></li>
+                                  <li><a href="shop4.html">Pork</a></li>
+                                  <li><a href="shop4.html">Prawn</a></li>
+                                  <li><a href="shop4.html">Rabbit</a></li>
+                                  <li><a href="shop4.html">Shrimp</a></li>
+                                  <li><a href="shop4.html">Snail</a></li>
+                 
+                                </ul>
 
 
 
-            <div class="col-4 col-xl-6 col-xxxl-2 order-xl-2 order-xxxl-4">
+
+                    
+                    
+                    
+                    
+                    
+                              </li>
+               
+  
+                              <li><a href="#"> <i class="icon-4"></i>BAKING INGREDIENTS</a>
+                                <ul class="sub-menu">
+
+                                  <li><a href="shop4.html">Baking powder</a></li>
+                                  <li><a href="shop4.html">Cocoa powder</a></li>
+                                  <li><a href="shop4.html">Colouring</a></li>
+                                  <li><a href="shop4.html">Egg</a></li>
+                                  <li><a href="shop4.html">Flavours</a></li>
+                                  <li><a href="shop4.html">Icing sugar</a></li>
+                                  <li><a href="shop4.html">Jelly</a></li>
+                                  <li><a href="shop4.html">Nutmeg</a></li>
+                                  <li><a href="shop4.html">Red Yeast Coffee</a></li>
+                                  <li><a href="shop4.html">Sugar</a></li>
+                                  <li><a href="shop4.html">Yam-Flour</a></li>
+  
+                  
+
+                     
+
+
+
+                                </ul>
+                    
+                              </li>
+                   
+
+                              <li><a href="shop2.html"><i class="icon-6"></i>VEGETABLES & LEAFY</a>
+                    
+                                <ul class="sub-menu">
+                                  <li><a href="shop4.html">Cabbage</a></li>
+                                  <li><a href="shop4.html">Tomatoes</a></li>
+                                  <li><a href="shop4.html">Bitter leaf</a></li>
+                                  <li><a href="shop4.html">Chilli pepper</a></li>
+                                  <li><a href="shop4.html">Cucumber</a></li>
+                                  <li><a href="shop4.html">Green beans</a></li>
+                                  <li><a href="shop4.html">Green peppe</a></li>
+                                  <li><a href="shop4.html">Lettuce</a></li>
+                                  <li><a href="shop4.html">Okra</a></li>
+                                  <li><a href="shop4.html">Spinach</a></li>
+                     
+
+
+
+                                </ul>
+                    
+                              </li>
+                              <li><a href="shop3.html"><i class="icon-7"></i>TUBBERS</a>
+                                <ul class="sub-menu">
+                                  <li><a href="shop4.html">Cassava</a></li>
+                                  <li><a href="shop4.html">Irish potato</a></li>
+                                  <li><a href="shop4.html">Plantain-flour</a></li>
+                                  <li><a href="shop4.html">Plantain</a></li>
+                                  <li><a href="shop4.html">Sweet potato</a></li>
+                                  <li><a href="shop4.html">Yam flour</a></li>
+                                  <li><a href="shop4.html">Yam</a></li>
+                        
+                        
+                                </ul>
+                    
+                              </li>
+                              <li><a href="shop1.html"> <i class="icon-8"></i>FLOUR</a>
+                    
+                                <ul class="sub-menu">
+                                  <li><a href="shop4.html">Ayoola Poundo yam</a></li>
+                                  <li><a href="shop4.html">Beans flour</a></li>
+                                  <li><a href="shop4.html">Poundo yam</a></li>
+                                  <li><a href="shop4.html">Semovita</a></li>
+                                  <li><a href="shop4.html">Yam flour</a></li>
+                  
+                        
+                        
+                                </ul>
+                              </li>
+
+                            </ul>
+
+                  
+                            <!--
+                            <ul>
+                              <li><a href="shop.html"> <i class="icon-1"></i>MEAT & FISH</a></li>
+                              <li><a href="shop.html"> <i class="icon-2"></i>BEVERAGES TEAS</a></li>
+                              <li><a href="shop.html"> <i class="icon-3"></i>CEREAL</a></li>
+                              <li><a href="shop.html"> <i class="icon-4"></i>BAKING INGREDIENTS</a></li>
+                              <li><a href="shop.html"> <i class="icon-5"></i>SPICES</a></li>
+                              <li><a href="shop.html"><i class="icon-6"></i>VEGETABLES & LEAFY</a></li>
+                              <li><a href="shop.html"><i class="icon-7"></i>TUBBERS</a></li>
+                              <li><a href="shop.html"> <i class="icon-8"></i>FLOUR</a></li>
+                              <li><a href="shop.html"> <i class="icon-9"></i>GRAINS</a></li>
+                              <li><a href="shop.html"><i class="icon-10"></i>Oatmeal</a></li>
+                              <li><a href="shop.html"> <i class="icon-11"></i>FRUITS</a></li>
+                              <li><a href="shop.html"> <i class="icon-12"></i>OILS</a></li>
+                              <li><a href="shop.html"> <i class="icon-8"></i>NUTS</a></li>
+                            </ul>-->
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-md-8 col-lg-8 col-xl-9 order-1 order-md-2">
+                        <div class="website-search">
+                          <div class="row no-gutters">
+
+                            <div class="col-8 col-md-8 col-lg-5 col-xl-7">
+                              <div class="search-input">
+                                <div class="no-round-input no-border">What do you need, Varieties of Food ?. We have your back. </div>
+                              </div>
+                            </div>
+                            <div class="col-5 col-md-5 col-lg-4 col-xl-3">
+                              <marquee>
+                              <button class="no-round-btn">INTRIOBASKET</button>
+                              </marquee>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- The form -->
+   
+        
+     
+
+      
+
+                    <!--Make sure the form has the autocomplete function switched off:-->
+          
+                    <form autocomplete="off" action="#" class="example" id="searchForm">
+                      <div class="autocomplete" >
+                        <input id="myInput" type="text" name="myFood" placeholder="Food Items.." class="no-round-input">
+                      </div>
+
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+
+
+
+                    <script>
+                    function autocomplete(inp, arr) {
+                      /*the autocomplete function takes two arguments,
+                      the text field element and an array of possible autocompleted values:*/
+                      var currentFocus;
+                      /*execute a function when someone writes in the text field:*/
+                      inp.addEventListener("input", function(e) {
+                          var a, b, i, val = this.value;
+                          /*close any already open lists of autocompleted values*/
+                          closeAllLists();
+                          if (!val) { return false;}
+                          currentFocus = -1;
+                          /*create a DIV element that will contain the items (values):*/
+                          a = document.createElement("DIV");
+                          a.setAttribute("id", this.id + "autocomplete-list");
+                          a.setAttribute("class", "autocomplete-items");
+                          /*append the DIV element as a child of the autocomplete container:*/
+                          this.parentNode.appendChild(a);
+                          /*for each item in the array...*/
+                          for (i = 0; i < arr.length; i++) {
+                            /*check if the item starts with the same letters as the text field value:*/
+                            if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                              /*create a DIV element for each matching element:*/
+                              b = document.createElement("DIV");
+                              /*make the matching letters bold:*/
+                              b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                              b.innerHTML += arr[i].substr(val.length);
+                              /*insert a input field that will hold the current array item's value:*/
+                              b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                              /*execute a function when someone clicks on the item value (DIV element):*/
+                              b.addEventListener("click", function(e) {
+                                  /*insert the value for the autocomplete text field:*/
+                                  inp.value = this.getElementsByTagName("input")[0].value;
+                                  /*close the list of autocompleted values,
+                                  (or any other open lists of autocompleted values:*/
+                                  closeAllLists();
+                              });
+                              a.appendChild(b);
+                            }
+                          }
+                      });
+                      /*execute a function presses a key on the keyboard:*/
+                      inp.addEventListener("keydown", function(e) {
+                          var x = document.getElementById(this.id + "autocomplete-list");
+                          if (x) x = x.getElementsByTagName("div");
+                          if (e.keyCode == 40) {
+                            /*If the arrow DOWN key is pressed,
+                            increase the currentFocus variable:*/
+                            currentFocus++;
+                            /*and and make the current item more visible:*/
+                            addActive(x);
+                          } else if (e.keyCode == 38) { //up
+                            /*If the arrow UP key is pressed,
+                            decrease the currentFocus variable:*/
+                            currentFocus--;
+                            /*and and make the current item more visible:*/
+                            addActive(x);
+                          } else if (e.keyCode == 13) {
+                            /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                            e.preventDefault();
+                            if (currentFocus > -1) {
+                              /*and simulate a click on the "active" item:*/
+                              if (x) x[currentFocus].click();
+                            }
+                          }
+                      });
+                      function addActive(x) {
+                        /*a function to classify an item as "active":*/
+                        if (!x) return false;
+                        /*start by removing the "active" class on all items:*/
+                        removeActive(x);
+                        if (currentFocus >= x.length) currentFocus = 0;
+                        if (currentFocus < 0) currentFocus = (x.length - 1);
+                        /*add class "autocomplete-active":*/
+                        x[currentFocus].classList.add("autocomplete-active");
+                      }
+                      function removeActive(x) {
+                        /*a function to remove the "active" class from all autocomplete items:*/
+                        for (var i = 0; i < x.length; i++) {
+                          x[i].classList.remove("autocomplete-active");
+                        }
+                      }
+                      function closeAllLists(elmnt) {
+                        /*close all autocomplete lists in the document,
+                        except the one passed as an argument:*/
+                        var x = document.getElementsByClassName("autocomplete-items");
+                        for (var i = 0; i < x.length; i++) {
+                          if (elmnt != x[i] && elmnt != inp) {
+                            x[i].parentNode.removeChild(x[i]);
+                          }
+                        }
+                      }
+                      /*execute a function when someone clicks in the document:*/
+                      document.addEventListener("click", function (e) {
+                          closeAllLists(e.target);
+                      });
+                    }
+
+
+
+
+
+                    /*An array containing all the Food names in the world:*/
+                    var FoodItems = ["Baking powder","Ayoola Poundo yam","Beans flour","Bitter leaf","Cabbage","Cassava","Cat fish","Chicken","Chicken breast","Chicken3","Chilli pepper","Coco pops","Cocoa powder","Colouring","Cornflakes 350g","Cow meat","Cray fish","Cucumber","Egg","Flavour","Fried rice spice","Garlic","Ginger tea","Frosties home","Gizzard","Golden morn","Green beans","Golden morn","Green pepper","Green tea","Honey beans","Icing sugar","Irish potato","Jollof rice spice","Jelly","Lettuce","Kilishi","Lard","Lipton","Chile","Liver","Local rice","Maggi","Milk","Milo crunches","Mint leaf","Mutton","Nutmeg","Okra","Onions","Plantain-flour","Ponmo","Pork","Plantain","Poundo yam","Prawn","Rabbit","Red Yeast Coffee","Rice krispies","Salt","Semovita","Salt","Shrimp","Snail","Sweet potato","Spinach","Titus fish","Tilapia fish","Titus fish","Sugar","Tomatoes","Tumeric","Tuna fish","Turkey","Veal","Water leaf","Yale biscuit","White beans","Thyme","Whole milk","Yam flour","Yam"];
+
+                    /*initiate the autocomplete function on the "myInput" element, and pass along the FoodItems array as possible autocomplete values:*/
+                    autocomplete(document.getElementById("myInput"), FoodItems);
+                    </script>
+
+          
+                  <!-- quick link-->
+                  <div class="col-4 col-xl-6 col-xxxl-2 order-xl-2 order-xxxl-4">
               <div class="product-function d-flex align-items-center justify-content-center justify-content-xl-end">
-                <div id="wishlist">
-                  <a class="function-icon icon_heart_alt" href="javascript:void()"></a>
-                </div>
-                <div onclick="router('shop_cart')" id="cartButton" class="function-icon hover">
-                  <i class="fa fa fa-shopping-cart"></i>
-                  <sup style="top: -.5em">
-                    <span id="cartButtonBadge" class="my-badge badge-success cartButtonBadge">0</span>
-                  </sup>
-                </div>
+                
               </div>
             </div>
           </div>
