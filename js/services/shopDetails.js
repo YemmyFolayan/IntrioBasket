@@ -199,7 +199,7 @@ searchForm.addEventListener("submit", function (e) {
   console.log(searchItem);
 
   if (searchItem === "Ayoola Poundo yam") {
-    console.log("yes");
+    //console.log("yes");
 
     //redirect page to shop details page
 
@@ -207,7 +207,7 @@ searchForm.addEventListener("submit", function (e) {
       "shop_detail_fullwidth.html?product=5f4385e106c5350024edc172"
     );
 
-    alert(searchItem);
+    //alert(searchItem);
   } else if (searchItem === "Baking powder") {
     window.location.assign(
       "shop_detail_fullwidth.html?product=5f4385e106c5350024edc171"
