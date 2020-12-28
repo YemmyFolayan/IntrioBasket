@@ -11,18 +11,19 @@ Form.addEventListener("submit", function (e) {
   console.log(email);
   console.log(password);
 
-  //
-
-  fetch("http://intriobasket.pexceptos.com/api/admin/login", {
-    method: "POST",
-    body: JSON.stringify({
-      email: email,
-      password: password,
-    }),
-    headers: {
-      "Content-Type": "application/json; charset= UTF-8",
-    },
-  })
+  fetch(
+    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/admin/login",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+      headers: {
+        "Content-Type": "application/json; charset= UTF-8",
+      },
+    }
+  )
     .then(function (response) {
       return response.json();
     })
