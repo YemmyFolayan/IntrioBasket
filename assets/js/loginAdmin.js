@@ -11,6 +11,7 @@ Form.addEventListener("submit", function (e) {
   console.log(email);
   console.log(password);
 
+  //https://cors-anywhere.herokuapp.com/
   fetch(
     "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/admin/login",
     {
@@ -34,6 +35,8 @@ Form.addEventListener("submit", function (e) {
 
       const AdminId = data.payload.id;
 
+      const adminToken = data.payload.token;
+
       //SAVE this ID to session storage to re-use it in cart
       localStorage.setItem("AdminId", AdminId);
 
@@ -41,6 +44,8 @@ Form.addEventListener("submit", function (e) {
       console.log("this is : ", name, AdminId);
 
       localStorage.setItem("name", name);
+
+      localStorage.setItem("adminToken", adminToken);
 
       //AT this block, i want to compare the id with the one in user also use the id for cart logic
 

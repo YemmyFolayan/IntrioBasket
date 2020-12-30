@@ -3,7 +3,6 @@ const shopDOM = document.getElementById("shopDOM");
 
 //POP UP
 
-/*
 const popupTemplateDOM = document.getElementById("dialog-confirm");
 const PopUP = () => {
   $(function () {
@@ -33,7 +32,6 @@ const popupTemplate = () => {
   return `<p>
   `;
 };
-*/
 
 const productDetailsTemplate = (productDetails) => {
   return `
@@ -296,6 +294,10 @@ searchForm.addEventListener("submit", function (e) {
     window.location.assign(
       "shop_detail_fullwidth.html?product=5f4385f706c5350024edc18d"
     );
+  } else if (searchItem === "Flavour") {
+    window.location.assign(
+      "shop_detail_fullwidth.html?product=5f4385f706c5350024edc18d"
+    );
   } else if (searchItem === "Fried rice spice") {
     window.location.assign(
       "shop_detail_fullwidth.html?product=5f4385f906c5350024edc18f"
@@ -372,6 +374,10 @@ searchForm.addEventListener("submit", function (e) {
     window.location.assign(
       "shop_detail_fullwidth.html?product=5f43860e06c5350024edc1a8"
     );
+  } else if (searchItem === "rice") {
+    window.location.assign(
+      "shop_detail_fullwidth.html?product=5f43860e06c5350024edc1a8"
+    );
   } else if (searchItem === "Maggi") {
     window.location.assign(
       "shop_detail_fullwidth.html?product=5f43860f06c5350024edc1aa"
@@ -405,6 +411,10 @@ searchForm.addEventListener("submit", function (e) {
       "shop_detail_fullwidth.html?product=5f43861806c5350024edc1b6"
     );
   } else if (searchItem === "Onions") {
+    window.location.assign(
+      "shop_detail_fullwidth.html?product=5f43861906c5350024edc1b7"
+    );
+  } else if (searchItem === "Onion") {
     window.location.assign(
       "shop_detail_fullwidth.html?product=5f43861906c5350024edc1b7"
     );

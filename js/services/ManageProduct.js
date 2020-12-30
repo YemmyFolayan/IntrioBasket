@@ -324,14 +324,21 @@ const DeleteFoodListing = () => {
   };
 
   fetch(
-    `http://intriobasket.pexceptos.com/api/food/${productId}`,
+    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food/${productId}`,
     requestOptions
   )
-    .then((response) => response.text())
-    .then((result) => console.log(result))
-    .catch((error) => console.log("error", error));
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var msg = data.message;
+
+      alert(msg);
+    });
+  //.catch((error) => console.log("error", error));
 
   console.log("Delete Food Listing ");
+  fetchFoodList();
 };
 
 console.log("Delete Food Listing 2");

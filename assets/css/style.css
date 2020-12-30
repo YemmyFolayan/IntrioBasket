@@ -822,12 +822,17 @@ a:focus {
   .title-bb {
     font-size: 38px;
   }
+
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .title,
   .title-bb {
     font-size: 38px;
   }
+  .featured{
+    margin-top: 30px !important;
+  }
+}
 }
 .title.green-underline:after,
 .title.coffee-underline:after,
