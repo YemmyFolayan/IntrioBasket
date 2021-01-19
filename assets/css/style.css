@@ -88,6 +88,11 @@
   border-radius: 50% !important;
 }
 
+.andriodcurve {
+  border-radius: 9%;
+}
+
+
 @media (min-width: 1000px) and (max-width: 1344px) {
   img.playStore {
     width: 20%;
