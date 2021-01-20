@@ -37,6 +37,7 @@ Form.addEventListener("submit", function (e) {
   //https://cors-anywhere.herokuapp.com/
 
   //use query Params
+  /*
   let resetId;
   const resetPassDetails = async () => {
     try {
@@ -50,13 +51,14 @@ Form.addEventListener("submit", function (e) {
       throw new Error(err);
     }
   };
+  */
 
   //http://intriobasket.pexceptos.com/resetform/563273f5c7597adca6f1d6ccc5e08d577f3dda6d
 
-  resetPassDetails();
+  //resetPassDetails();
 
   fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/reset-password/${resetId}`,
+    `http://intriobasket.pexceptos.com/api/user/reset-password/${resetId}`,
     {
       method: "POST",
       body: JSON.stringify({
