@@ -58,7 +58,7 @@ Form.addEventListener("submit", function (e) {
   //resetPassDetails();
 
   fetch(
-    `http://intriobasket.pexceptos.com/api/user/reset-password/${resetId}`,
+    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/reset-password/${resetId}`,
     {
       method: "POST",
       body: JSON.stringify({
