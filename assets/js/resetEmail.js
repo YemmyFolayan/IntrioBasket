@@ -1,3 +1,5 @@
+var Form = document.getElementById("form");
+
 Form.addEventListener("submit", function (e) {
   e.preventDefault();
 
