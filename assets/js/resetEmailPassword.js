@@ -37,7 +37,7 @@ Form.addEventListener("submit", function (e) {
   const text = document.createElement("span");
 
   fetch(
-    `http://intriobasket.pexceptos.com/api/user/reset-password/${resetToken}`,
+    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/reset-password/${resetToken}`,
     {
       method: "POST",
       body: JSON.stringify({
@@ -72,7 +72,7 @@ Form.addEventListener("submit", function (e) {
 
         setTimeout(function () {
           window.location.assign("/login.html");
-        }, 2200);
+        }, 2900);
 
         console.log("password updated successfully");
       } else {
