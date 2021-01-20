@@ -1,14 +1,16 @@
-//save token in local storage and access it here
-//let resetToken = localStorage.getItem("resetPassToken");
-//console.log({ resetToken });
-//.get() resource from //http://intriobasket.pexceptos.com/resetform/9018eaca87c1c8387948978868b9c62d96a921d6
+let resetToken;
+const initResetToken = async () => {
+  try {
+    resetToken = decodeURI(document.location.href).split("?")[1].split("=")[1];
+  } catch (err) {
+    throw new Error(err);
+  }
+};
 
-/*
-$.get('http://127.0.0.1:5500/resetform', params {
-  resetPassToken: DOMSettableTokenList,
-});
+initResetToken();
 
-*/
+console.log("token");
+console.log(resetToken);
 
 var Form = document.getElementById("form");
 
@@ -34,31 +36,8 @@ Form.addEventListener("submit", function (e) {
   panel.className = "card-panel green";
   const text = document.createElement("span");
 
-  //https://cors-anywhere.herokuapp.com/
-
-  //use query Params
-  /*
-  let resetId;
-  const resetPassDetails = async () => {
-    try {
-      resetId = decodeURI(`http://127.0.0.1:5500/resetform`)
-        .split("/")[1]
-        .split("/")[1];
-      //document.location.href
-      console.log(resetId);
-    } catch (err) {
-      handleProductIdError();
-      throw new Error(err);
-    }
-  };
-  */
-
-  //http://intriobasket.pexceptos.com/resetform/563273f5c7597adca6f1d6ccc5e08d577f3dda6d
-
-  //resetPassDetails();
-
   fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/reset-password/${resetId}`,
+    `http://intriobasket.pexceptos.com/api/user/reset-password/${resetToken}`,
     {
       method: "POST",
       body: JSON.stringify({
@@ -75,12 +54,13 @@ Form.addEventListener("submit", function (e) {
     })
     .then(function (data) {
       var msg = data.message;
-
-      if (msg == "User Created Successfully") {
+      console.log(resetToken);
+      console.log(msg);
+      if (msg == "password updated successfully") {
         setTimeout(function () {
           text.className = "white-text";
           text.appendChild(
-            document.createTextNode(`Password Successfully Reset`)
+            document.createTextNode(`password updated successfully`)
           );
 
           panel.appendChild(text);
@@ -94,12 +74,12 @@ Form.addEventListener("submit", function (e) {
           window.location.assign("/login.html");
         }, 2200);
 
-        console.log("User Created Succesfully");
+        console.log("password updated successfully");
       } else {
         setTimeout(function () {
           text.className = "white-text";
           text.appendChild(
-            document.createTextNode(`An error occurred, Try Again!`)
+            document.createTextNode(`Token Expired, Try Again!`)
           );
 
           panel.appendChild(text);
@@ -111,7 +91,7 @@ Form.addEventListener("submit", function (e) {
         //   $(".card-panel green").remove();
         // }, 1009);
 
-        console.log("An error occurred, Try Again!");
+        console.log("Token Expired, Try Again!");
       }
     });
 });
