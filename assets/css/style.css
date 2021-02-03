@@ -13349,7 +13349,7 @@ form.example::after {
 }
 
 
-#foodForm, #UpdatefoodForm {
+#foodForm, #UpdatefoodForm, #UpdateUserProfile, #UpdateCheckoutSuperadmin, #UpdateCreateSuperadmin {
   width: 400px;
   border: 1px solid #88c74a !important;
 }

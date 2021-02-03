@@ -77,7 +77,7 @@ Form.addEventListener("submit", function (e) {
         }, 1000);
 
         setTimeout(function () {
-          window.location.assign("/admindashboard/dashboard.html");
+          window.location.assign("/admindashboard/dashboardadmin.html");
         }, 2200);
 
         localStorage.setItem("login", true);

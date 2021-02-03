@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Edit | SuperAdmin</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <meta name="keywords" content="food items rice vegetables flour ecommerce shopping cart ">
+  <meta name="author" content="IntrioBasket.ng">
+
+
+
+  <meta property="og:title" content="IntrioBasket |  Online Shopping for Food Products,  &amp; More!" />
+  <meta property="og:description" content="IntrioBasket the #1 Online Foodstore in Nigeria - Shop Online for All Kinds of Products &amp; Enjoy Great Prices And Offers | Secure Payments - Fast Delivery - Free Returns" />
+  <meta property="og:url" content="/" />
+  <meta property="og:image" content="assets/images/shortcut_logo.png" />
+  <meta property="og:locale" content="en_NG" />
+  <meta name="title" content="IntrioBasket |  Online Shopping for Food Products,  &amp; More!" />
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/custom_bootstrap.css">
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/elegant.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/scroll.css">
+  <link rel="stylesheet" href="assets/css/icomoon.css">
+  <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+  <link rel="shortcut icon" href="assets/images/shortcut_logo.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
+
+  <link rel='stylesheet' href="assets/css/owl.carousel.min.css">
+  <link rel='stylesheet' href="assets/css/owl.theme.default.css">
+  <link rel="stylesheet" href="assets/css/jquery.bxslider.css">
+  
+
+        
+
+</head>
+
+<body>
+
+  <div id="main">
+
+    
+  
+    
+    <!-- End header-->
+
+    <div class="ogami-breadcrumb">
+    <div class="container">
+      <marquee>
+      <div class="col-12 mx-auto title">
+    
+      <i class="fas fa-edit">&nbsp; &nbsp;Create Food Listing&nbsp; </i>
+      <i class="fas fa-sync"> &nbsp; Update Food Listing&nbsp; </i>
+      <i class="fas fa-trash">&nbsp; Delete Food Listing </i><p>
+
+      </div>
+    
+      <div class="col-12 warning text-bold">Select YES OR NO (for product In stock)</div>
+      </marquee>
+
+      </div>
+     
+  
+
+      <div class="container">
+        <ul>
+          <li> <a class="breadcrumb-link" href="index.html"> <i class="fas fa-home"></i>Home</a></li>
+          <li> <a class="breadcrumb-link" href="/admindashboard/dashboard.html">Dashboard</a></li>
+          <li> <a class="breadcrumb-link active" href="javascript:void()">Admin</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- End breadcrumb-->
+    
+
+    <!-- End slider-->
+
+    <div class="container form">
+
+  
+    <div class="container">
+      <div class="row">
+        <div class="col">
+        
+          <div class="col-8">
+
+         
+          <!-- The form -->
+   
+        
+   
+
+      
+
+          <!--Make sure the form has the autocomplete function switched off:-->
+          
+          <form autocomplete="off" action="#" class="example" id="searchForm">
+            <div class="autocomplete" >
+              <input id="myInput" type="text" name="myFood" placeholder="Food Items.." class="no-round-input">
+            </div>
+
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+
+
+
+          <script>
+
+
+          function autocomplete(inp, arr) {
+            /*the autocomplete function takes two arguments,
+            the text field element and an array of possible autocompleted values:*/
+            var currentFocus;
+            /*execute a function when someone writes in the text field:*/
+            inp.addEventListener("input", function(e) {
+                var a, b, i, val = this.value;
+                /*close any already open lists of autocompleted values*/
+                closeAllLists();
+                if (!val) { return false;}
+                currentFocus = -1;
+                /*create a DIV element that will contain the items (values):*/
+                a = document.createElement("DIV");
+                a.setAttribute("id", this.id + "autocomplete-list");
+                a.setAttribute("class", "autocomplete-items");
+                /*append the DIV element as a child of the autocomplete container:*/
+                this.parentNode.appendChild(a);
+                /*for each item in the array...*/
+                for (i = 0; i < arr.length; i++) {
+                  /*check if the item starts with the same letters as the text field value:*/
+                  if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                    /*create a DIV element for each matching element:*/
+                    b = document.createElement("DIV");
+                    /*make the matching letters bold:*/
+                    b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                    b.innerHTML += arr[i].substr(val.length);
+                    /*insert a input field that will hold the current array item's value:*/
+                    b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                    /*execute a function when someone clicks on the item value (DIV element):*/
+                    b.addEventListener("click", function(e) {
+                        /*insert the value for the autocomplete text field:*/
+                        inp.value = this.getElementsByTagName("input")[0].value;
+                        /*close the list of autocompleted values,
+                        (or any other open lists of autocompleted values:*/
+                        closeAllLists();
+                    });
+                    a.appendChild(b);
+                  }
+                }
+            });
+            /*execute a function presses a key on the keyboard:*/
+            inp.addEventListener("keydown", function(e) {
+                var x = document.getElementById(this.id + "autocomplete-list");
+                if (x) x = x.getElementsByTagName("div");
+                if (e.keyCode == 40) {
+                  /*If the arrow DOWN key is pressed,
+                  increase the currentFocus variable:*/
+                  currentFocus++;
+                  /*and and make the current item more visible:*/
+                  addActive(x);
+                } else if (e.keyCode == 38) { //up
+                  /*If the arrow UP key is pressed,
+                  decrease the currentFocus variable:*/
+                  currentFocus--;
+                  /*and and make the current item more visible:*/
+                  addActive(x);
+                } else if (e.keyCode == 13) {
+                  /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                  e.preventDefault();
+                  if (currentFocus > -1) {
+                    /*and simulate a click on the "active" item:*/
+                    if (x) x[currentFocus].click();
+                  }
+                }
+            });
+            function addActive(x) {
+              /*a function to classify an item as "active":*/
+              if (!x) return false;
+              /*start by removing the "active" class on all items:*/
+              removeActive(x);
+              if (currentFocus >= x.length) currentFocus = 0;
+              if (currentFocus < 0) currentFocus = (x.length - 1);
+              /*add class "autocomplete-active":*/
+              x[currentFocus].classList.add("autocomplete-active");
+            }
+            function removeActive(x) {
+              /*a function to remove the "active" class from all autocomplete items:*/
+              for (var i = 0; i < x.length; i++) {
+                x[i].classList.remove("autocomplete-active");
+              }
+            }
+            function closeAllLists(elmnt) {
+              /*close all autocomplete lists in the document,
+              except the one passed as an argument:*/
+              var x = document.getElementsByClassName("autocomplete-items");
+              for (var i = 0; i < x.length; i++) {
+                if (elmnt != x[i] && elmnt != inp) {
+                  x[i].parentNode.removeChild(x[i]);
+                }
+              }
+            }
+            /*execute a function when someone clicks in the document:*/
+            document.addEventListener("click", function (e) {
+                closeAllLists(e.target);
+            });
+          }
+
+
+
+
+
+          /*An array containing all the Food names in the world:*/
+          var FoodItems = ["Baking powder","Ayoola Poundo yam","Beans flour","Bitter leaf","Cabbage","Cassava","Cat fish","Chicken","Chicken breast","Chicken3","Chilli pepper","Coco pops","Cocoa powder","Colouring","Cornflakes 350g","Cow meat","Cray fish","Cucumber","Egg","Flavour","Fried rice spice","Garlic","Ginger tea","Frosties home","Gizzard","Golden morn","Green beans","Golden morn","Green pepper","Green tea","Honey beans","Icing sugar","Irish potato","Jollof rice spice","Jelly","Lettuce","Kilishi","Lard","Lipton","Chile","Liver","Local rice","Maggi","Milk","Milo crunches","Mint leaf","Mutton","Nutmeg","Okra","Onions","Plantain-flour","Ponmo","Pork","Plantain","Poundo yam","Prawn","Rabbit","Red Yeast Coffee","Rice krispies","Salt","Semovita","Salt","Shrimp","Snail","Sweet potato","Spinach","Titus fish","Tilapia fish","Titus fish","Sugar","Tomatoes","Tumeric","Tuna fish","Turkey","Veal","Water leaf","Yale biscuit","White beans","Thyme","Whole milk","Yam flour","Yam"];
+
+          /*initiate the autocomplete function on the "myInput" element, and pass along the FoodItems array as possible autocomplete values:*/
+          autocomplete(document.getElementById("myInput"), FoodItems);
+          </script>
+
+
+
+          <div class="m-5 mx-auto warning"><u> CREATE FOOD LISTING (kindly Enter the Product Details to Add to the Database) </u></div>
+    
+                     
+          <form id="foodForm">
+  
+
+ 
+              <div class="m-3 ">     
+
+             
+
+              <input type="text" id="productName" name="food_product_name" class="no-round-input" placeholder="Food Product Name" required/>
+
+              </div>
+              <div class="m-3">
+
+              
+                <div class="m-3"> Product Type </div>
+                <select class="round-input m-3" id="productType" type="text" name="product_type" style="width: 320px;"> 
+            
+                  <option value="BAKING INGREDIENTS" id="Yes" name="Yes"> BAKING INGREDIENTS </option>
+                  <option value="VEGETABLES/LEAFY" id="No" name="No"> VEGETABLES/LEAFY </option>
+                  <option value="BEVERAGES AND TEA" id="No" name="No"> BEVERAGES AND TEA </option>
+                  <option value="GRAINS" id="No" name="No"> GRAINS</option>
+                  <option value="SPICES" id="No" name="No"> SPICES </option>
+                  <option value="CEREAL" id="No" name="No"> CEREAL </option>
+                  <option value="VEGETABLES/NON-LEAFY" id="No" name="No"> VEGETABLES/NON-LEAFY </option>
+                  <option value="TUBERS" id="No" name="No"> TUBERS</option>
+                  <option value="MEAT AND FISH/WHITE MEAT" id="No" name="No"> MEAT AND FISH/WHITE MEAT </option>
+                  <option value="FLOURS" id="No" name="No"> FLOURS</option>
+                  <option value="MEAT AND FISH/RED MEAT" id="No" name="No"> MEAT AND FISH/RED MEAT</option>
+                  <option value="MEAT AND FISH/FISH" id="No" name="No"> MEAT AND FISH/FISH</option>
+                 
+                </select>
+                
+              </div>
+              <div class="m-3">
+              <div class="m-3"> Category Type </div>
+                <select class="round-input m-3" id="categoryType" type="text" name="category_type" style="width: 320px;"> 
+
+            
+                  <option value="BAKING INGREDIENTS" id="Yes" name="Yes"> BAKING INGREDIENTS </option>
+                  <option value="VEGETABLES/LEAFY" id="No" name="No"> VEGETABLES/LEAFY </option>
+                  <option value="BEVERAGES AND TEA" id="No" name="No"> BEVERAGES AND TEA </option>
+                  <option value="GRAINS" id="No" name="No"> GRAINS</option>
+                  <option value="SPICES" id="No" name="No"> SPICES </option>
+                  <option value="CEREAL" id="No" name="No"> CEREAL </option>
+                  <option value="VEGETABLES/NON-LEAFY" id="No" name="No"> VEGETABLES/NON-LEAFY </option>
+                  <option value="TUBERS" id="No" name="No"> TUBERS</option>
+                  <option value="MEAT AND FISH/WHITE MEAT" id="No" name="No"> MEAT AND FISH/WHITE MEAT </option>
+                  <option value="FLOURS" id="No" name="No"> FLOURS</option>
+                  <option value="MEAT AND FISH/RED MEAT" id="No" name="No"> MEAT AND FISH/RED MEAT</option>
+                  <option value="MEAT AND FISH/FISH" id="No" name="No"> MEAT AND FISH/FISH</option>
+                 
+                </select>
+   
+              </div>
+              
+              <div class="m-3">
+
+              <input type="text" id="shortDescription" name="short_description" class="no-round-input" placeholder="Short description" required/>
+             
+            </div>
+
+              <div class="m-3">
+
+              <input type="text" id="LongDescription" name="long_description" class="no-round-input" placeholder="Long description" required/>
+             
+            </div>
+
+              <div class="m-3">
+
+              <input type="text" id="price" name="cost" class="no-round-input" placeholder="Cost" required/>
+
+              </div>
+
+
+
+              <div class="m-3">
+
+
+              <!--
+              <input type="text" id="image_link" name="image_link" class="no-round-input" placeholder="Image Link" required/> -->
+
+
+            <!--Uploading product image -->
+
+            <input class="no-round-btn" type='file' onchange="uploadFile()" id="files" name="files[]" multiple/>
+            <br><img id="myImg" src="#" alt="UPLOAD PRODUCT IMAGE" height=200 width=200>   
+
+
+
+            </div>
+              <div class="m-3"> Is Product In Stock? </div>
+
+              <select class="round-input m-3" id="id_of_select" type="text" name="inStock" style="width: 320px;"> 
+            
+                <option value="Yes" id="Yes" name="Yes"> Yes </option>
+                <option value="No" id="No" name="No"> No </option>
+              </select>
+              <div class="m-5 mx-auto" style="width: 200px;">
+              
+              <input type="submit" id="js_send" class="no-round-btn" value="CREATE Food Listing"/>
+            </div>
+
+                          
+          </form>
+          </div>
+
+        
+        </div>
+        <div class="col">
+        
+        
+          <div class="row">
+                 
+          <div class="panel panel-danger">
+        
+         
+          <div class="col-8 flex-column d-flex">
+
+
+              <div class="m-5 mx-auto warning"><u> UPDATE FOOD LISTING (kindly Enter the Product Details to Update to the Database) 
+              
+              <p class="m-5 mx-auto">
+              Note: PROVIDE EXACT FOOD PRODUCT NAME WITHOUT ALTERATION !!</u></div>
+    
+                     
+              <form id="UpdatefoodForm">
+  
+
+ 
+                  <div class="m-3 ">     
+
+             
+
+                  <input type="text" id="UpdateproductName" name="food_product_name" class="no-round-input" placeholder="Food Product Name" required/>
+
+                  </div>
+                  <div class="m-3">
+
+              
+                    <div class="m-3"> Product Type </div>
+                    <select class="round-input m-3" id="UpdateproductType" type="text" name="product_type" style="width: 320px;"> 
+                      <option value="BEVERAGES AND TEA" id="No" name="No"> BEVERAGES AND TEA </option>
+                     
+                      <option value="BAKING INGREDIENTS" id="Yes" name="Yes"> BAKING INGREDIENTS </option>
+                      <option value="VEGETABLES/LEAFY" id="No" name="No"> VEGETABLES/LEAFY </option>
+                      <option value="GRAINS" id="No" name="No"> GRAINS</option>
+                      <option value="SPICES" id="No" name="No"> SPICES </option>
+                      <option value="CEREAL" id="No" name="No"> CEREAL </option>
+                      <option value="VEGETABLES/NON-LEAFY" id="No" name="No"> VEGETABLES/NON-LEAFY </option>
+                      <option value="TUBERS" id="No" name="No"> TUBERS</option>
+                      <option value="MEAT AND FISH/WHITE MEAT" id="No" name="No"> MEAT AND FISH/WHITE MEAT </option>
+                      <option value="FLOURS" id="No" name="No"> FLOURS</option>
+                      <option value="MEAT AND FISH/RED MEAT" id="No" name="No"> MEAT AND FISH/RED MEAT</option>
+                      <option value="MEAT AND FISH/FISH" id="No" name="No"> MEAT AND FISH/FISH</option>
+                 
+                    </select>
+                
+                  </div>
+                  <div class="m-3">
+                  <div class="m-3"> Category Type </div>
+                    <select class="round-input m-3" id="UpdatecategoryType" type="text" name="category_type" style="width: 320px;"> 
+
+                      <option value="BEVERAGES AND TEA" id="No" name="No"> BEVERAGES AND TEA </option>
+                     
+                      <option value="BAKING INGREDIENTS" id="Yes" name="Yes"> BAKING INGREDIENTS </option>
+                      <option value="VEGETABLES/LEAFY" id="No" name="No"> VEGETABLES/LEAFY </option>
+                 
+                      <option value="GRAINS" id="No" name="No"> GRAINS</option>
+                      <option value="SPICES" id="No" name="No"> SPICES </option>
+                      <option value="CEREAL" id="No" name="No"> CEREAL </option>
+                      <option value="VEGETABLES/NON-LEAFY" id="No" name="No"> VEGETABLES/NON-LEAFY </option>
+                      <option value="TUBERS" id="No" name="No"> TUBERS</option>
+                      <option value="MEAT AND FISH/WHITE MEAT" id="No" name="No"> MEAT AND FISH/WHITE MEAT </option>
+                      <option value="FLOURS" id="No" name="No"> FLOURS</option>
+                      <option value="MEAT AND FISH/RED MEAT" id="No" name="No"> MEAT AND FISH/RED MEAT</option>
+                      <option value="MEAT AND FISH/FISH" id="No" name="No"> MEAT AND FISH/FISH</option>
+                 
+                    </select>
+   
+                  </div>
+              
+                  <div class="m-3">
+
+                  <input type="text" id="UpdateshortDescription" name="short_description" class="no-round-input" placeholder="New Short description" required/>
+             
+                </div>
+
+                  <div class="m-3">
+
+                  <input type="text" id="UpdateLongDescription" name="long_description" class="no-round-input" placeholder="New Long description" required/>
+             
+                </div>
+
+                  <div class="m-3">
+
+                  <input type="text" id="Updateprice" name="cost" class="no-round-input" placeholder="New Cost" required/>
+
+                  </div>
+
+
+
+                  <div class="m-3">
+
+
+                           <!--Uploading product image -->
+              
+
+                <input class="no-round-btn" type='file' onchange="uploadFile()" id="files" name="files[]" multiple/>
+                <br><img id="myImg" src="#" alt="UPLOAD PRODUCT IMAGE" height=200 width=200>   
+
+
+
+                </div>
+                  <div class="m-3"> Is Product In Stock? </div>
+
+                  <select class="round-input m-3" id="UpdateId_of_select" type="text" name="inStock" style="width: 320px;"> 
+            
+                    <option value="Yes" id="Yes" name="Yes"> Yes </option>
+                    <option value="No" id="No" name="No"> No </option>
+                  </select>
+                  <div class="m-5 mx-auto" style="width: 200px;">
+              
+                  <input type="submit" id="js_send" class="no-round-btn" value="UPDATE Food Listing"/>
+                </div>
+
+                          
+              </form>
+              </div>
+        
+
+
+
+              </div>
+            </div>
+            </div>
+
+<!--UPDATE USER PROFILE-->
+
+
+
+
+          <div class="col">
+
+        
+        
+          <div class="row">
+                 
+          <div class="panel panel-danger">
+        
+         
+          <div class="col-8 flex-column d-flex">
+
+
+              <div class="m-5 mx-auto warning"><u> UPDATE USER PROFILE[SUPERADMIN] 
+              
+              <p class="m-5 mx-auto">
+              Note:  !!</u></div>
+    
+                     
+              <form id="UpdateUserProfile">
+  
+
+ 
+                  <div class="m-3 ">     
+
+             
+
+                  <input type="text" id="UpdateFullName" name="UpdateFullName" class="no-round-input" placeholder="Full Name" required/>
+
+                  </div>
+                 
+              
+                 
+
+                  <div class="m-3">
+
+                  <input type="text" id="UpdatePhoneNo" name="UpdatePhoneNo" class="no-round-input" placeholder="Number" required/>
+             
+                </div>
+
+               
+                  <div class="m-3">
+
+
+                           <!--Uploading product image -->
+              
+
+                <input class="no-round-btn" type='file' onchange="uploadFile()" id="files profile_image" name="files[]" multiple/>
+                <br><img id="myImg" src="#" alt="UPLOAD PRODUCT IMAGE" height=200 width=200>   
+
+
+
+                </div>
+                
+                  <div class="m-5 mx-auto" style="width: 200px;">
+              
+                  <input type="submit" id="js_send" class="no-round-btn" value="UPDATE Food Listing"/>
+                </div>
+
+                          
+              </form>
+              </div>
+        
+
+
+
+              </div>
+
+
+
+        
+            <div class="row">
+                 
+            <div class="panel panel-danger">
+        
+         
+            <div class="col-8 flex-column d-flex">
+
+
+                <div class="m-5 mx-auto warning"><u> CREATE ADMIN [SUPER ADMIN] 
+              
+                <p class="m-5 mx-auto">
+                ROLES : SuperAdmin,  Admin, Account Manager, Aggregator, Foreman </u></div>
+    
+                     
+                <form id="UpdateCreateSuperadmin">
+  
+
+         
+                    <div class="m-3 ">     
+
+             
+
+                    <input type="text" id="UpdateCreateName" name="UpdateCreateName" class="no-round-input" placeholder="Full Name" required/>
+
+                    </div>
+
+                    <div class="m-3">
+
+                      <input type="number" id="UpdateCreateEmail" name="UpdateCreateEmail" class="no-round-input" placeholder="Email" required/>
+             
+                    </div>
+
+                 
+              
+                    <div class="m-3">
+
+                    <input type="number" id="UpdateCreatePassword" name="UpdateCreatePassword" class="no-round-input" placeholder="password" required/>
+             
+                  </div>
+
+                    <div class="m-3">
+
+                    <input type="text" id="UpdateCreatePhoneNo" name="UpdateCreatePhoneNo" class="no-round-input" placeholder="Phone Number" required/>
+             
+                  </div>
+
+               
+                    <div class="m-3">
+                    
+                            <div class="m-3"> GENDER </div>
+
+                            <select class="round-input m-3" id="UpdateId_of_Gender" type="text" name="inStock" style="width: 320px;"> 
+            
+                              <option value="Male" id="Male" name="Yes"> MALE </option>
+                              <option value="Female" id="Female" name="No"> FEMALE </option>
+                       
+                            </select>
+
+                             <div class="m-3"> ADMIN ROLES </div>
+
+                            <select class="round-input m-3" id="UpdateId_of_Role" type="text" name="inStock" style="width: 320px;"> 
+            
+                              <option value="SuperAdmin" id="SuperAdmin" name="SuperAdmin"> SuperAdmin </option>
+                              <option value="Admin" id="Admin" name="Admin"> Admin </option>
+                              <option value="Account_Manager" id="Account_Manager" name="Account_Manager"> Account Manager </option>
+                              <option value="Aggregator" id="Aggregator" name="Aggregator"> Aggregator </option>
+                              <option value="Foreman" id="Foreman" name="Foreman"> Foreman </option>
+                            </select>
+  
+                             <!--Uploading product image -->
+              
+
+                 
+
+
+                  </div>
+
+
+
+
+                
+
+                
+                    <div class="m-5 mx-auto" style="width: 200px;">
+              
+                    <input type="submit" id="js_send" class="no-round-btn" value="UPDATE Food Listing"/>
+                  </div>
+
+                          
+                </form>
+                </div>
+            
+           
+
+            
+        
+        
+            <div class="row">
+                 
+            <div class="panel panel-danger">
+        
+         
+            <div class="col-8 flex-column d-flex">
+
+
+                <div class="m-5 mx-auto warning"><u> UPDATE USER CHECKOUT [SUPERADMIN] 
+              
+                <p class="m-5 mx-auto">
+                Note:  !!</u></div>
+    
+                     
+                <form id="UpdateCheckoutSuperadmin">
+  
+                     <div class="m-3 ">     
+
+                        <input type="text" id="purchaser_name" name="purchaser_name" class="no-round-input" placeholder="Purchaser Name *" required/>
+
+                    </div>
+                 
+
+                    <div class="m-3 ">     
+
+                        <input type="text" id="UpdateAddressName" name="food_product_name" class="no-round-input" placeholder="Address Name" required/>
+
+                    </div>
+                 
+              
+                    <div class="m-3">
+
+                    <input type="number" id="UpdateCheckoutEmail" name="short_description" class="no-round-input" placeholder="ZipCode" required/>
+             
+                  </div>
+
+                    <div class="m-3">
+
+                    <input type="text" id="UpdateCheckoutPhoneNo" name="long_description" class="no-round-input" placeholder="Number" required/>
+             
+                  </div>
+
+               
+                    <div class="m-3">
+                    
+                            <div class="m-3"> Delivery Status </div>
+
+                            <select class="round-input m-3" id="UpdateId_of_select" type="text" name="inStock" style="width: 320px;"> 
+            
+                              <option value="Yes" id="Yes" name="Yes"> Completed </option>
+                              <option value="No" id="No" name="No"> Incomplete </option>
+                            </select>
+                             <!--Uploading product image -->
+              
+
+                 
+
+
+                  </div>
+                
+                    <div class="m-5 mx-auto" style="width: 200px;">
+              
+                    <input type="submit" id="js_send" class="no-round-btn" value="UPDATE Food Listing"/>
+                  </div>
+
+                          
+                </form>
+                </div>
+        
+
+
+
+                </div>
+              </div>
+           
+
+
+
+
+
+            <!--end of update profile-->
+
+        
+        
+        
+        
+        </div>
+        <div class="w-100"></div>
+        <div class="col">
+        
+        
+        
+        
+        
+        
+        </div>
+        <div class="col">
+        
+        </div>
+      </div>
+    </div>
+
+        <div class="feature-products feature-products_v2">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center card-title">
+            <h1 class="title mx-auto">Delete Products</h1>
+               </div>
+          <div id="tab-1">
+            <div id="ManageProducts" class="product-item  d-flex flex-wrap align-items-center justify-content-center">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End feature-products-->
+
+
+
+
+
+
+    
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-4 text-sm-center text-md-left">
+            <div class="footer-logo"><img src="assets/images/logo.png" alt=""></div>
+            <div class="footer-contact">
+              <p>Address: S01, Pathfield mall, Beside Rainoil Filling Station, 4th Avenue,Gwarimpa, Abuja, F.C.T</p>
+              <p>Phone: +234456789999</p>
+              <p>Email: info@intriobasket.ng</p>
+            </div>
+            <div class="footer-social"><a class="round-icon-btn" href=""><i class="fab fa-facebook-f"> </i></a><a
+                class="round-icon-btn" href=""><i class="fab fa-twitter"></i></a><a class="round-icon-btn" href=""><i
+                  class="fab fa-invision"> </i></a><a class="round-icon-btn" href=""><i
+                  class="fab fa-instagram"></i></a></div>
+          </div>
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-12 col-sm-6 text-sm-center text-md-left">
+                <div class="footer-quicklink">
+                  <h5>Infomation</h5><a href="about_us.html">About us</a><a href="checkout.html">Check out</a><a
+                    href="contact_us.html">Contact</a><a href="about_us.html">Service</a>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 text-sm-center text-md-left">
+                <div class="footer-quicklink">
+                  <h5>My Account</h5><a href="contact_us.html">Contact</a>
+                  <a href="shop_cart.html">Shopping cart</a>
+                  <a href="shop.html">Shop Now</a>
+                  <a href="registeradmin.html">Admin Page</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="newletter">
+        <div class="container">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-12 col-md-7">
+              <div class="newletter_text text-center text-md-left">
+                <h5>Join Our Newsletter Now</h5>
+                <p>Get E-mail updates about our latest shop and special offers.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-5">
+              <div class="newletter_input">
+                <input class="round-input" type="text" placeholder="Enter your email">
+                <button>Subcribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-credit">
+        <div class="container">
+          <div
+            class="footer-creadit_block d-flex flex-column flex-md-row justify-content-start justify-content-md-between align-items-baseline align-items-md-center">
+            <p class="author">Copyright © 2020 IntrioBasket- All Rights Reserved.</p><img class="payment-method"
+              src="assets/images/payment.png" alt="">
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End footer-->
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="assets/js/jquery-ui.min.js"></script>
+  <script src="assets/js/jquery.countdown.min.js"></script>
+  <script src="assets/js/slick.min.js"></script>
+  <script src="assets/js/jquery.easing.js"></script>
+  <script src="assets/js/jquery.scrollUp.min.js"></script>
+  <script src="assets/js/jquery.zoom.min.js"></script>
+  <script src="assets/js/parallax.js"></script>
+  <script src="assets/js/jquery.fancybox.js"></script>
+  <script src="assets/js/numscroller-1.0.js"></script>
+  <script src="assets/js/vanilla-tilt.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- <script type="text/javascript" src="assets/js/foodlist.js"></script> -->
+
+  <!--Config -->
+  <script src="config/constants.js"></script>
+
+  <!-- Utils -->
+  <script src="js/utils/api-request.js"></script>
+
+  <!-- App Logic -->
+  <script src="js/app.js"></script>
+
+  <!-- Services -->
+  <script src="js/services/ManageProduct_SuperAdmin.js"></script>
+
+  <script src="js/services/shopDetails.js"></script>
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-storage.js"></script>
+
+ 
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyCSUUbaWz5rwrHhGNgOSj2e5tgfpElDX5E",
+      authDomain: "intriobasket-a601d.firebaseapp.com",
+      databaseURL: "https://intriobasket-a601d.firebaseio.com",
+      projectId: "intriobasket-a601d",
+      storageBucket: "intriobasket-a601d.appspot.com",
+      messagingSenderId: "676795094466",
+      appId: "1:676795094466:web:c67f029835361da297b25b",
+      measurementId: "G-5HNWSZLWVK"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+
+
+ 
+
+
+
+
+
+<!--
+
+
+   Insert these scripts at the bottom of the HTML, but before you use any Firebase services
+
+  Firebase App (the core Firebase SDK) is always required and must be listed first
+  <script src="/__/firebase/8.1.2/firebase-app.js"></script>
+If you enabled Analytics in your project, add the Firebase SDK for Analytics
+  <script src="/__/firebase/8.1.2/firebase-analytics.js"></script>
+ Add Firebase products that you want to use
+  <script src="/__/firebase/8.1.2/firebase-auth.js"></script>
+  <script src="/__/firebase/8.1.2/firebase-firestore.js"></script>
+
+  -- >
+
+
+</body>
+
+</html>

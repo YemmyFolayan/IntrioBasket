@@ -1,5 +1,5 @@
 //List of roles: ["superAdmin" || "admin" || "accountManager" || "aggregator" || "foreman"]
-
+//GET PENDING ORDERS
 const featuredProductDOM = document.getElementById("userReg");
 
 const featuredProductItemTemplate = (count) => {
@@ -143,6 +143,58 @@ const fetchFoodListsS = async () => {
 };
 
 fetchFoodListsS();
+
+////////////////////////////NEW
+
+const featuredProductDOM = document.getElementById("pendingOrders");
+
+const featuredPendingOrderTemplate = (orders) => {
+  return `
+    <!-- small box -->
+      <div class="small-box bg-warning">
+        <div class="inner">
+          <h3>${orders}</h3>
+
+          <p>Registered Users</p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-person-add"></i>
+        </div>
+        <a href="/AllUsers.html" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+       </div>
+
+    `;
+};
+
+// GET
+
+// Get All Checkouts
+// http://intriobasket.pexceptos.com/api/checkout/get-all
+
+// GET
+
+// Get All Users
+// http://intriobasket.pexceptos.com/api/user/
+
+const fetchPendingOrderList = async () => {
+  const endpoint = "/admin/orders?status=Pending"; // THOUGHTS: There should be an endpoint for featured products...
+
+  const res = await api.request(endpoint); // TO DO: handle errors..
+
+  const count = res.payload.length;
+
+  console.log(res.payload.length);
+  console.log("hi  Pending orders");
+
+  let htmlString = featuredPendingOrderTemplate(orders);
+  let htmlFragment = document.createElement("div");
+  htmlFragment.innerHTML = htmlString;
+  featuredProductDOM.appendChild(htmlFragment);
+};
+
+fetchPendingOrderList();
+
+/////////////////////////////END NEW
 
 //CHECKOUT HISTORY FUNCTION
 
