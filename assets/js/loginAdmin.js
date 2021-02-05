@@ -47,10 +47,14 @@ Form.addEventListener("submit", function (e) {
 
       localStorage.setItem("adminToken", adminToken);
 
+      const role = data.payload.role;
+
       //AT this block, i want to compare the id with the one in user also use the id for cart logic
 
       if (msg == "Log in Successful") {
         const name = data.payload.fullname;
+
+        //const role = data.payload.role;
 
         localStorage.setItem("adminName", name);
 
@@ -76,12 +80,43 @@ Form.addEventListener("submit", function (e) {
           container.replaceChild(panel, loaderDiv);
         }, 1000);
 
-        setTimeout(function () {
-          window.location.assign("/admindashboard/dashboardadmin.html");
-        }, 2200);
+        if (role == "admin") {
+          console.log("Admin ROLE");
+          setTimeout(function () {
+            window.location.assign("/admindashboard/dashboardadmin.html");
+          }, 2200);
+        } else if (role == "superAdmin") {
+          console.log("SuperAdmin ROLE");
+          setTimeout(function () {
+            window.location.assign("/admindashboard/dashboardSuperAdmin.html");
+          }, 2200);
+        } else if (role == "accountManager") {
+          console.log("AccountManager ROLE");
+          setTimeout(function () {
+            window.location.assign(
+              "/admindashboard/dashboardAccountManager.html"
+            );
+          }, 2200);
+        } else if (role == "aggregator") {
+          console.log("Aggregator ROLE");
+          setTimeout(function () {
+            window.location.assign("/admindashboard/dashboardAggregator.html");
+          }, 2200);
+        } else if (role == "foreman") {
+          console.log("foreman ROLE");
+          setTimeout(function () {
+            window.location.assign("/admindashboard/dashboardForeman.html");
+          }, 2200);
+        } else {
+          alert("An error occurred, Contact administrator!");
+        }
 
-        localStorage.setItem("login", true);
-        console.log("logged in");
+        // setTimeout(function () {
+        //   window.location.assign("/admindashboard/dashboardadmin.html");
+        // }, 2200);
+
+        localStorage.setItem("AdminLogin", true);
+        console.log("Admin logged in");
       } else if (msg == "Incorrect Email or Password") {
         const name = email;
         const container = document.getElementById("containerr");

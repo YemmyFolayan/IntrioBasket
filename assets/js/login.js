@@ -137,7 +137,8 @@ Form.addEventListener("submit", function (e) {
           window.location.assign("/Homepage.html");
         }, 2200);
 
-        localStorage.setItem("login", true);
+        //For authentication
+        localStorage.setItem("UserLogin", true);
         console.log("logged in");
       } else if (msg == "Incorrect Email or Password") {
         const name = email;

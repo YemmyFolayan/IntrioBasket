@@ -2,11 +2,11 @@
 //CREATE AUTHORIZATION MODEL => REDIRECT PAGE\
 
 //check if requests to server returns an error, invalid token. then redirect user to login
-// let cookie = localStorage.getItem("token");
-// console.log({ cookie });
+// let cookieSupperAdmin = localStorage.getItem("tokenSupperAdmin");
+// console.log({ cookieSupperAdmin });
 
 // const redirect = () => {
-// if (cookie === "true") {
+// if (cookieSupperAdmin === "true") {
 //     console.log("logged in, YES");
 // } else {
 //     console.log("not logged in");
