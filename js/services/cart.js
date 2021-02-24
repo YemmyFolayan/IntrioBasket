@@ -24,7 +24,7 @@ const getQuantity = (e, index) => {
   renderCartTotalTable();
 };
 
-//TODO An update in one quantity affects all RESOLVE!!!!.
+//TO DO An update in one quantity affects all RESOLVE!!!!.
 
 const cartItemTemplate = (productDetails, index) => {
   window["qtyVar" + index] = 1;
@@ -77,7 +77,8 @@ const renderCartTotalTable = () => {
   cartStore.forEach((product, index) => {
     console.log(index);
     totalPriceToPay += product.price * (window["qtyVar" + index] || 1);
-    totalPriceToTax = totalPriceToPay + totalPriceToPay * 0.075;
+    var totalPriceToTaxFloat = totalPriceToPay + totalPriceToPay * 0.075;
+    totalPriceToTax = Math.trunc(totalPriceToTaxFloat);
 
     localStorage.setItem("totalPrice", totalPriceToTax);
   });

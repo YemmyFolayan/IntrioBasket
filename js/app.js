@@ -1,9 +1,9 @@
-//TODO : collect link from fire Store hold it in a map and write to eric API
+//TO DO : collect link from fire Store hold it in a map and write to eric API
 
 //
 //
 // Set the configuration for your app
-// TODO: Replace with your app's config object
+//TO DO: Replace with your app's config object
 
 // Functions to run once DOM is loaded
 document.addEventListener(
@@ -16,7 +16,7 @@ document.addEventListener(
 );
 
 const updateCartButtonBadge = () => {
-  //todo get this by querySelector
+  //to do get this by querySelector
   var cartBadges = document.querySelectorAll(".cartButtonBadge");
 
   const cartList = JSON.parse(localStorage.getItem(CONFIG.CART_STORE));
