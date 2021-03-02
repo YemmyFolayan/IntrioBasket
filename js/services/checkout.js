@@ -203,9 +203,9 @@ const QueryCheckout = () => {
     headers: myHeaders,
     redirect: "follow",
   };
-
+  //https://cors-anywhere.herokuapp.com/
   fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout?purchaser_id=${userId}`,
+    `http://intriobasket.pexceptos.com/api/checkout?purchaser_id=${userId}`,
     requestOptions
   )
     .then(function (response) {

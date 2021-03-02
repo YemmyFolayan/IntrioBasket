@@ -20,18 +20,15 @@ Form.addEventListener("submit", function (e) {
   panel.className = "card-panel green";
   const text = document.createElement("span");
 
-  fetch(
-    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/reset-token/",
-    {
-      method: "POST",
-      body: JSON.stringify({
-        email: email,
-      }),
-      headers: {
-        "Content-Type": "application/json; charset= UTF-8",
-      },
-    }
-  )
+  fetch("http://intriobasket.pexceptos.com/api/user/reset-token/", {
+    method: "POST",
+    body: JSON.stringify({
+      email: email,
+    }),
+    headers: {
+      "Content-Type": "application/json; charset= UTF-8",
+    },
+  })
     .then(function (response) {
       return response.json();
     })

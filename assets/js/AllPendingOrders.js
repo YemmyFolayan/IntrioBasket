@@ -59,17 +59,14 @@ const featuredPendingItemTemplate = (pendingDetails) => {
 };
 
 const fetchPendingList = async () => {
-  fetch(
-    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/admin/orders?status=Pending",
-    {
-      method: "GET",
+  fetch("http://intriobasket.pexceptos.com/api/admin/orders?status=Pending", {
+    method: "GET",
 
-      headers: {
-        "Content-Type": "application/json; charset= UTF-8",
-        "x-admin-token": `${adminToken}`,
-      },
-    }
-  )
+    headers: {
+      "Content-Type": "application/json; charset= UTF-8",
+      "x-admin-token": `${adminToken}`,
+    },
+  })
     .then(function (response) {
       return response.json();
     })

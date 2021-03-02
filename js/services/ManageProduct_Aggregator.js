@@ -195,7 +195,7 @@ setTimeout(function () {
       };
 
       fetch(
-        "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food/create",
+        "http://intriobasket.pexceptos.com/api/food/create",
         requestOptions
       )
         .then((response) => response.text())
@@ -293,7 +293,7 @@ setTimeout(function () {
       };
 
       fetch(
-        `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food/update/${foodIdd}`,
+        `http://intriobasket.pexceptos.com/api/food/update/${foodIdd}`,
         requestOptions
       )
         .then((response) => response.text())
@@ -323,7 +323,7 @@ const DeleteFoodListing = () => {
   };
 
   fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/food/${productId}`,
+    `http://intriobasket.pexceptos.com/api/food/${productId}`,
     requestOptions
   )
     .then(function (response) {

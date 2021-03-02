@@ -13,7 +13,7 @@ Form.addEventListener("submit", function (e) {
 
   //https://cors-anywhere.herokuapp.com/
   fetch(
-    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/admin/login",
+    "http://intriobasket.pexceptos.com/api/admin/login",
     {
       method: "POST",
       body: JSON.stringify({

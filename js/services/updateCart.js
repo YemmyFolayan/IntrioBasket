@@ -55,7 +55,7 @@ const updateCart = () => {
   };
 
   fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/update-cart/${updateUserId}`,
+    `http://intriobasket.pexceptos.com/api/user/update-cart/${updateUserId}`,
     requestOptions
   )
     .then((response) => response.text())

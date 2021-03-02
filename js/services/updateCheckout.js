@@ -58,9 +58,9 @@ const updateCheckout = () => {
     body: raw,
     redirect: "follow",
   };
-
+  //https://cors-anywhere.herokuapp.com
   fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/checkout/user/${checkoutUserId}`,
+    `http://intriobasket.pexceptos.com/api/checkout/user/${checkoutUserId}`,
     requestOptions
   )
     .then((response) => response.text())

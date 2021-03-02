@@ -26,7 +26,7 @@ const GetUserCart = () => {
 
   //https://cors-anywhere.herokuapp.com/
   fetch(
-    `https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/${userId}`,
+    `http://intriobasket.pexceptos.com/api/user/${userId}`,
     requestOptions
   )
     .then(function (response) {
@@ -73,7 +73,7 @@ Form.addEventListener("submit", function (e) {
 
   //
   fetch(
-    "https://cors-anywhere.herokuapp.com/http://intriobasket.pexceptos.com/api/user/login",
+    "http://intriobasket.pexceptos.com/api/user/login",
     {
       method: "POST",
       body: JSON.stringify({
